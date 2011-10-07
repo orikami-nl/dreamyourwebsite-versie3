@@ -21,7 +21,7 @@ class ContactController < ApplicationController
 		@partners = Partner.all
 		@addresses = ["info@dreamyourweb.nl"]
 		@partners.each do |partner|
-			@addresses = @addresses << (partner_name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl")
+			@addresses = @addresses << (partner.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl")
 		end
 	end
 
