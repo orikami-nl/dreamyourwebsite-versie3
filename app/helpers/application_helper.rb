@@ -26,4 +26,8 @@ module ApplicationHelper
 			"projects/mobile"
 		end
 	end
+
+  def build_mail_address(partner_name)
+		partner_name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"
+	end
 end

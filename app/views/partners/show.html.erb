@@ -10,7 +10,7 @@
   <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
 </div>
 <div class="black-button">
-	<%= link_to "Contact", {:action => "index", :controller => "contact", :to => (@partner.name.downcase + "@dreamyourweb.nl")} %>
+	<%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)} %>
 </div>
 <div style="clear:both"></div>
 

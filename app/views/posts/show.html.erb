@@ -17,7 +17,7 @@
 	<%= link_to 'Write comment', {:action => "new", :controller => "comments", :post_id => @post.title_for_url} %> | 
 </div>
 <div class="black-button">
-	<%= link_to 'Contact', {:action => "index", :controller => "contact", :to => (@partner.name.downcase + "@dreamyourweb.nl"), :subject => @post.title} %>
+	<%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
 </div> 
 <div style="clear:both"></div>
 <% if admin_signed_in? %>
