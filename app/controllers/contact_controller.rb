@@ -21,7 +21,7 @@ class ContactController < ApplicationController
 		@partners = Partner.all
 		@addresses = ["info@dreamyourweb.nl"]
 		@partners.each do |partner|
-			@addresses = @addresses << (partner.name.downcase + "@dreamyourweb.nl")
+			@addresses = @addresses << build_mail_address(partner.name)
 		end
 	end
 
