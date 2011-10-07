@@ -3,6 +3,8 @@
 	<%= manageable_content_for :webdevelopment %>
 </div>
 <br>
-<%= link_to "Neem contact met ons op", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Webdevelopment"} %>
- / <%= link_to "Terug naar projectoverzicht", projects_path %>
+<div class="black-button">
+	<%= link_to "Contact", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Dreamyourweb webonwikkeling"} %>
+</div><br>
+<%= link_to "Terug naar projectoverzicht", projects_path %>
 
