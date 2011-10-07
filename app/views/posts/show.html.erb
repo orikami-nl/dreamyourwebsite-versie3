@@ -1,0 +1,30 @@
+<div id="post-header">
+ 	<div id="partner-blog-photo">
+		<%= link_to image_tag(@post.partner.avatar_url.to_s, :alt => @post.partner.name, :title => @post.partner.name), partner_path(@post.partner) %>
+	</div>
+	<div id="post-info">
+   	<h4><%= @post.title %></h4>
+		<p>Geschreven door <%= @post.partner.name %> op <%= @post.updated_at.to_date.to_s %></p>
+	</div>
+</div>
+<div style="clear:both"></div>
+	
+<div id="post-body">
+	<%= @post.body.html_safe %>
+</div>
+
+<div class="black-button">
+	<%= link_to 'Write comment', {:action => "new", :controller => "comments", :post_id => @post.title_for_url} %> | 
+</div>
+<div class="black-button">
+	<%= link_to 'Contact', {:action => "index", :controller => "contact", :to => (@partner.name.downcase + "@dreamyourweb.nl"), :subject => @post.title} %>
+</div> 
+<div style="clear:both"></div>
+<% if admin_signed_in? %>
+	<br><%= link_to 'Edit post', edit_partner_post_path(@partner, @post) %> | 
+	<%= link_to 'Delete post', partner_post_path(@partner, @post), confirm: "Are you sure?", method: :delete %>
+<% end %>
+
+<hr>
+<h4>Comments</h4>
+<%= render :partial => "comment", :collection => @comments%>

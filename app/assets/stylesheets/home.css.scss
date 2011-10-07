@@ -1,0 +1,259 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass/css3";
+@import "compass/utilities/general/clearfix" ;
+@import "compass/css3/opacity";
+@import "compass/css3/border-radius" ; 
+
+/* Button shizzle */
+@mixin rounded($border)
+{
+  -webkit-border-radius: $border ;
+  -moz-border-radius: $border ;
+  border-radius: $border ;
+}
+
+@mixin shadow
+{
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2) ;
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2) ;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2) ;
+}
+
+@mixin gradient($top, $bottom)
+{
+  background-color: $bottom;
+  background: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
+  background: -moz-linear-gradient(top, $top,  $bottom);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr:'#{$top}', endColorstr:'#{$bottom}');
+}
+
+@mixin button
+{
+  display: inline-block;
+  padding: .5em 2em .55em;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  @include rounded('.5em');
+  // this determines Mozilla to show the padding
+  border: solid 1px #ccc;
+  @include shadow;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  &:hover
+  {
+    text-decoration: none;
+  }
+  &:active
+  {
+    position: relative;
+    top: 1px;
+  }
+}
+
+@mixin color($background)
+{
+  border: solid 1px darken($background, 3%) ;
+  @include gradient(lighten($background, 13%), $background);
+  color: mix(#fff, $background, 90%);
+  &:hover
+  {
+    @include gradient(lighten($background, 10%), darken($background, 5%));
+  }
+  &:active
+  {
+    @include gradient($background, lighten($background, 10%));
+    color: mix(#fff, $background, 70%);
+  }
+}
+
+
+
+
+
+// Moet eigenlijk niet hier.
+$dyw-pink: #f1667d ;
+$dyw-yellow: #f7ca02 ;
+$dyw-grey: #e3e3e3 ;
+$dyw-green: #5aab01 ;
+$dyw-black: #17161b ;
+$dyw-blue: #668aba ;
+$dyw-box-blue: #bdc8d6;
+
+#home-content {
+	@include clearfix ;
+	float: left ;
+	width: 600px ;
+	margin-right: 50px ;
+}
+
+#home-banner {
+	@include border-radius(8px);
+	@include clearfix ; 
+	width: 970px ;
+	height: 180px ;
+	overflow: hidden ;
+	margin-top: 5px ; 
+	margin-bottom: 5px ;
+	margin-left: 30px ;
+}
+
+@mixin home-banner-element($bgimage) {
+	width: 100% ;
+	height: 100% ;	
+	background-image:url($bgimage);
+	padding: 20px ;
+	position: relative ;
+	float: left ;
+	p {
+	 padding-left: 10px ;	
+	 font-size: 16px ;
+	 line-height: 20px ;
+	 position: absolute ;
+	 padding-top: 10px ;
+ 	 height: 60px ; 
+	 left: 270px ;
+ 	 top: 120px ;
+	 width: 700px ;
+		a {
+			position: absolute ; 
+			right: 20px ; 
+			top: 10px ;
+		}
+	}
+}
+
+#home_banner_web {
+  @include home-banner-element("webbg.png") ;
+}
+
+#home_banner_concept {
+  @include home-banner-element("green2.png") ;
+}
+
+#home_banner_mobile {
+  @include home-banner-element("blue2.png") ;
+}
+
+#home-banner-overlay-left {
+  @include opacity(1) ;   
+  float: left ;
+  background: $dyw-blue ;
+  height: 180px ; 
+  width: 270px ;
+}
+
+#home-banner-overlay-bottom {
+  @include opacity(0.8) ;   
+  @include border-bottom-right-radius(8px);
+  position: absolute ;
+  background: #ffffff ;
+  height: 60px ; 
+  left: 270px ;
+  top: 120px ;
+  width: 700px ;
+}
+
+#home-banner-categories {
+  @include border-bottom-left-radius(8px);
+  position: absolute ;
+  height: 180px ;
+  width: 270px ;	
+  a {
+	line-height: 60px ;
+	font-size: 24px ;
+	color: $dyw-black ;
+	text-decoration: none ;
+	&:visited {
+		color: $dyw-black ;
+	}
+	&:hover {
+		color: #fff ;
+	}
+  }
+  li {
+	background-color: $dyw-blue ;
+	padding-left: 5px ;
+	line-height: 60px ;
+	font-size: 24px ;
+	color: $dyw-black ;
+	cursor: pointer ;
+	&.active-li {
+  		@include border-top-left-radius(8px);
+  		@include border-bottom-left-radius(8px);
+		width: 265px ;	
+		position: relative ; 
+		left: -25px ;
+		color: $dyw-grey ;
+		border-bottom: 1px solid #fff ;
+		border-top: 1px solid #fff ;
+		height: 58px ;
+		padding-left: 30px ;
+	}
+	&:hover {
+		color: $dyw-grey ;
+	}
+  }
+}
+
+#home-banner-fixed {
+  @include clearfix ;
+  @include border-radius(8px);
+  position: absolute ;
+  height: 180px ; 
+  width: 310px ; 
+}
+
+#home-banner-arrow {
+  @include opacity(1) ;
+  float: left ;
+  height: 180px ;
+  width: 30px ;
+  background-image: url("pointright.png") ; 
+  background-repeat: no-repeat ;
+  background-position: 0px 0px ;
+}
+
+#home-content {
+	width:640px;
+	margin-bottom:25px;
+}
+
+#featured-project {
+	@include box-shadow(black 2px 2px 10px);
+	@include border-radius(8px);
+	background-color: $dyw-box-blue ;
+	width:640px;
+	height:200px;
+	float:left;
+	#project-picture{
+		img{
+			width:200px;
+			height:200px;
+		}
+		float:left;
+	}
+	#project-excerpt{
+		float:left;
+		width:350px;
+		margin-left:25px;
+		margin-right:25px;
+	}
+}
+
+.sidebar-post{
+	img{ 
+		float:left;
+		margin-right:5px;
+	}
+}
+
+.button {
+  @include button;
+  @include color($dyw-black);
+  @include rounded(5px) ;
+}
+
+

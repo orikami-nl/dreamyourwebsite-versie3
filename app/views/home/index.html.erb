@@ -1,0 +1,17 @@
+<div id="home-content">
+	<h1>Welkom</h1>
+	<%= manageable_layout_content_for :body %>
+</div>
+
+<% if !@project.nil? %>
+	<div id="featured-project">
+		<div id="project-picture"><%= image_tag @project.picture_url.to_s %></div>
+		<div id="project-excerpt"><h3>Featured project</h3><%= @project.excerpt.html_safe %> - <%= link_to "Lees meer over onze aanpak...", path_to_category(@project) %></div>
+		<div style="clear:both"></div>
+	</div>
+<% end %>
+
+
+
+
+

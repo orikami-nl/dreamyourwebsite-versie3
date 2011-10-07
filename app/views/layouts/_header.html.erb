@@ -1,0 +1,32 @@
+<header id="header">
+
+<div class="content">
+
+<div id="header-logo">
+<%= image_tag "globe.png", alt: "dreamyourweb" %>
+</div>
+
+<div id="header-title">
+<h1>dreamyourweb </h1><h2> { Design & development }</h2>  
+</div>
+<div id="clearfix"></div>
+<div id="header-menu">
+  <nav>
+  <ul>
+  <li><%= link_to menu_item('Home', 'home') + ' / ', home_path %></li>
+  <li><%= link_to menu_item('Portfolio', 'projects') + ' / ', projects_path %></li>
+  <li><%= link_to menu_item('About', 'partners') + ' / ', partners_path %></li>
+  <li><%= link_to menu_item('Blog', 'blog') + ' / ', blog_path %></li>
+  <li><%= link_to menu_item('Contact', 'contact'), contact_path %></li>
+	<% if admin_signed_in? %>
+	  <li><%= link_to ' / ' + menu_item('Admin', 'admin/pages') + ' / ', admin_pages_path %></li>
+	  <li><%= link_to menu_item('Logout', 'logout'), logout_path %></li>
+	<% end %>
+  </ul>
+  </nav>
+</div>
+
+</div>
+
+</header>
+

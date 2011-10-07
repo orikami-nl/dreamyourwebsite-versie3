@@ -1,0 +1,41 @@
+
+<div id="footer">
+<footer>
+	<div class="content">
+
+		<div id="footer-container">
+
+		<div id="footer-left">
+
+		<p>
+			dreamyourweb VOF<br>
+			Muntweg 512<br>
+			6532 TS Nijmegen<br>
+			Tel: +31 (0) 6 46 213 243<br>
+			E-mail: info@dreamyourweb.nl<br>
+			KvK: 52749096<br>
+			BTW: 8505.80.626<br>
+		</p>
+		</div>
+
+		<div id="footer-right">
+			<nav id="footer-navigation">
+				<%= link_to "Wat doen wij?", projects_path %> /
+				<%= link_to "Wie zijn wij?", partners_path %> /
+				<%= link_to "Wat houdt ons bezig?", blog_path %> /
+				<%= link_to "Contact", contact_path(:to => "info@dreamyourweb.nl") %>
+			</nav>
+
+			<nav id="disclaimers">
+				<%= link_to menu_item('Disclaimer', 'disclaimer') + ' / ', disclaimer_path %>		
+				<%= link_to menu_item('Algemene voorwaarden', 'terms_and_conditions'), terms_and_conditions_path %>		
+			</nav>
+		</div>
+		<div style="clear:both"></div>
+
+		</div>
+	</div>
+</footer>
+</div>
+
+

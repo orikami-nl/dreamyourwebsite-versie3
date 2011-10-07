@@ -1,0 +1,43 @@
+// Moet eigenlijk niet hier.
+$dyw-pink: #f1667d ;
+$dyw-yellow: #f7ca02 ;
+$dyw-grey: #e3e3e3 ;
+$dyw-green: #5aab01 ;
+$dyw-black: #17161b ;
+$dyw-blue: #668aba ;
+
+@import "compass/layout/sticky-footer" ;
+@import "compass/css3/box-shadow";
+
+#footer {
+background-color: $dyw-black ;
+margin-top:25px;
+height: 200px ;
+color: $dyw-grey ;
+a {
+	text-decoration: none;
+  color: $dyw-grey;
+  &:visited {
+    color: $dyw-grey; }
+  &:hover {
+    color: #fff;
+  }
+} }
+
+#footer-container {
+	padding-top:25px;
+	#footer-left{
+		float:left;
+	}
+	#footer-right{
+		float:right;
+		text-align:right;
+		margin-right:0px;
+		#disclaimers {
+			margin-top:90px;
+		}
+	
+	}
+}
+
+

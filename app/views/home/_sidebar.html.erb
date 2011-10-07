@@ -1,0 +1,12 @@
+<h3>Laatste blogposts</h3><br>
+<% @posts.each do |post| %>
+	<% if !post.partner.nil? %>
+		<div class="sidebar-post">
+			<%= image_tag post.partner.avatar_url(:thumb).to_s %>
+			<p>Posted by: <%= post.partner.name %>, <%= post.updated_at.to_date.to_s %></p>
+			<h4><%= post.title %></h4>
+			<%= post.excerpt.html_safe %> - <%= link_to "Lees meer...", partner_post_path(post.partner, post) %>
+		</div>
+		<% if post != @posts.last %><hr><% end %>
+	<% end %>
+<% end %>

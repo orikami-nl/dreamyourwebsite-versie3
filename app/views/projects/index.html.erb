@@ -1,0 +1,10 @@
+<h1>Al onze projecten:</h1>
+
+<div class="roundabout">
+	<%= render :partial => "project", :collection => @projects%>
+</div>
+
+<% if admin_signed_in? %>
+	<br />
+	<%= link_to 'New Project', new_project_path %>
+<% end %>

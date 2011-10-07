@@ -1,0 +1,82 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass/css3";
+@import "compass/utilities/general/clearfix" ;
+
+// Moet eigenlijk niet hier.
+$dyw-pink: #f1667d ;
+$dyw-yellow: #f7ca02 ;
+$dyw-grey: #e3e3e3 ;
+$dyw-green: #5aab01 ;
+$dyw-black: #17161b ;
+$dyw-blue: #668aba ;
+$dyw-box-blue: #bdc8d6;
+
+#tagcloud {
+	.css1 { float:left;  padding:5px; font-size: 1.0em;}
+	.css2 { float:left;  padding:7px; font-size: 1.2em; }
+	.css3 { float:left;  padding:12px; font-size: 1.4em; }
+	.css4 { float:left;  padding:15px; font-size: 1.6em; }
+}
+
+#blog-content{
+	float:left;
+	width:775px;
+	margin-right:25px;
+}
+
+#blog-logo{
+	float:left;
+	width: 200px ;
+	height: 200px ;
+	img {
+		height:100%;
+	}
+}
+
+#partner-container{
+	margin-bottom:10px;
+	margin-top:10px;
+}
+
+#partner-blog-photo{
+	float:left;
+	img {
+		width: 75px ;
+		height: 75px ;
+	}
+}
+
+#post-body{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.selection-picture{
+	float:left;
+	margin:5px;
+	width:40px;
+	height:40px;
+	img{
+		border-style:solid;
+		border-width:2px;
+	}
+}
+
+#post-info{
+	float:left;
+	padding-right:5px;
+	padding-left:5px;
+}
+
+#post-header{
+	padding-bottom:5px;
+}
+
+#partner-description{
+	float:left;
+	width:300;
+	padding-left:5px;
+}

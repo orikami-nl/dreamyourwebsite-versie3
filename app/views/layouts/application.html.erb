@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dreamyourweb | <%= manageable_content_for :title %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/cleditor/jquery.cleditor.css" />
+  <script type="text/javascript" src="/cleditor/jquery.cleditor.js"></script>
+  <script type="text/javascript" src="/cleditor/jquery.cleditor.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".input").cleditor();
+    });
+  </script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="root">
+	<%= render 'layouts/header' %>
+
+	<div style="clear:both"></div>
+
+	<% flash.each do |key, value| %>
+ 		<%= content_tag(:div, value, :class => "site-flash #{key}") %>
+	<% end %>
+	
+	<%= render "strip" %>
+
+	<div class="content">
+		<div id="admin-content">
+			<div id="admin-container">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+
+	<div style="clear:both"></div>
+   	<div id="root_footer"></div>
+	</div>
+	</div>
+	<%= render 'layouts/footer' %>
+</body>
+</html>

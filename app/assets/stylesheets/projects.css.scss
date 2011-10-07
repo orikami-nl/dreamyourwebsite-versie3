@@ -1,0 +1,40 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius" ;
+
+$dyw-yellow: #f7ca02 ;
+$dyw-green: #5aab01 ;
+$dyw-blue: #668aba ;
+
+.roundabout-holder { padding: 0; height: 340px; list-style: none }
+.roundabout-moveable-item {
+  height: 20em;
+  width: 40em;
+  cursor: pointer;
+	background-color:$dyw-blue;
+	/* border-style:solid;
+	border-width:0.5em;
+	border-color:black;*/
+	@include border-radius(8px);
+	p { font-size:1em; }
+	h4 { font-size:1.5em; height:1.5em;}
+	img {
+		float:left;
+		height:20em;
+		width:20em;
+	}
+	.project-description{
+		float:left;
+		width:18em;
+		padding:0.5em;
+	}
+}
+.roundabout-in-focus { cursor: auto; }
+
+.mobiel{ 	@include box-shadow($dyw-blue 2px 2px 10px); }
+.concept-development{ 	@include box-shadow($dyw-green 2px 2px 10px); }
+.webdevelopment{ @include box-shadow($dyw-yellow 2px 2px 10px); }
+

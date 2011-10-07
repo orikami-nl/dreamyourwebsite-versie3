@@ -1,0 +1,209 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3/opacity"; 
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius" ;
+@import "compass/utilities/general/clearfix" ;
+@import "compass/layout/sticky-footer" ;
+
+// Moet eigenlijk niet hier.
+$dyw-pink: #f1667d ;
+$dyw-yellow: #f7ca02 ;
+$dyw-grey: #e3e3e3 ;
+$dyw-green: #5aab01 ;
+$dyw-black: #17161b ;
+$dyw-blue: #668aba ;
+$dyw-box-blue: #bdc8d6;
+
+@include sticky-footer(225px) ;
+
+body {
+  background-color: #e3e3e3;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#root {
+  @include clearfix ;
+}
+
+.content {
+  width: 1000px ;
+  margin-left: auto ;
+  margin-right: auto ;
+} 
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+hr {
+	border-bottom : 1px dotted $dyw-black;
+	border-top : none;
+	color : $dyw-black;
+} 
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: #000;
+  &:visited {
+    color: #666; }
+  &:hover {
+    color: #fff;
+  }
+}
+div {
+  &.field, &.actions {
+    margin-bottom: 10px; } }
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  ul li {
+    font-size: 12px;
+    list-style: square; } }
+
+/*
+Typography presets
+------------------ */
+.gigantic {
+   font-size: 110px;
+   line-height: 120px;
+   letter-spacing: -2px;
+} 
+
+.huge, h1 {
+   font-size: 68px;
+   line-height: 72px;
+   letter-spacing: -1px;
+   font-family: 'Prociono', serif;
+}
+
+.large, h2 {
+   font-size: 42px;
+   line-height: 48px;
+   font-family: 'Prociono', serif;
+} 
+
+.bigger, h3 {
+   font-size: 26px;
+   line-height: 36px;
+   font-family: 'Prociono', serif;
+} 
+
+.big, h4 {
+   font-size: 22px;
+   line-height: 30px;
+} 
+
+.small, small {
+   font-size: 13px; line-height: 18px;
+}
+
+#strip {
+	@include box-shadow(black 2px 2px 10px);
+	float:left;
+	width: 100% ;
+	height: 190px ;
+	background-color: $dyw-box-blue ;
+	margin-bottom:25px;
+	margin-top:25px;
+	padding-top:25px;
+	padding-bottom:25px;
+}
+
+#strip-content{
+	float:left;
+	width:775px;
+	margin-right:25px;
+}
+
+#sidebar-right {
+	padding:5px;
+	@include box-shadow(black 2px 2px 10px);
+	background-color: $dyw-box-blue ;
+	@include border-radius(8px);
+	width: 300px ;
+	vertical-align:top;
+}
+
+#globe-logo{
+	float:left;
+	width: 200px ;
+	height: 200px ;
+	img {
+		height:100%;
+	}
+}
+
+#admin-container{
+	@include box-shadow(black 2px 2px 10px);
+	background-color: $dyw-box-blue ;
+	@include border-radius(8px);
+	padding:5px;
+	width:1000px;
+}
+
+#header {
+	margin-top:25px;
+}
+
+.main-left{
+	padding-right:50px;
+}
+
+#main-container{
+	@include box-shadow(black 2px 2px 10px);
+	background-color: $dyw-box-blue ;
+	@include border-radius(8px);
+	padding:5px;
+	vertical-align:top;
+	width:640px;
+}
+
+.black-button{
+	@include border-radius(8px);
+	float:left;
+	background: $dyw-black;
+	width:150px;
+	margin-right:10px;
+	text-align:center;
+  a {
+		line-height: 40px ;
+		font-size: 18px ;
+		text-decoration:none;
+		color:white;
+	}	
+}

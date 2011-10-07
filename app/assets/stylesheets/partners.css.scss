@@ -1,0 +1,52 @@
+// Place all the styles related to the partners controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass/css3";
+@import "compass/utilities/general/clearfix" ;
+
+// Moet eigenlijk niet hier.
+$dyw-pink: #f1667d ;
+$dyw-yellow: #f7ca02 ;
+$dyw-grey: #e3e3e3 ;
+$dyw-green: #5aab01 ;
+$dyw-black: #17161b ;
+$dyw-blue: #668aba ;
+$dyw-box-blue: #bdc8d6;
+
+#partner-container{
+	margin-bottom:10px;
+	margin-top:10px;
+}
+
+#partner-photo{
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+	width: 150px ;
+	height: 150px ;
+	img {
+		width:100%;
+	}
+}
+
+#partner-description{
+	float:left;
+	width:300;
+	padding-left:5px;
+}
+
+.technique-container{
+	padding-top:5px;
+	.technique-image{
+		float:left;
+		width:50px;
+		height:50px;
+		margin:5px;
+		img{
+			width:100%;
+		}
+	}
+}
+
+

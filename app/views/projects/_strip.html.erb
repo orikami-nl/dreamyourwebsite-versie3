@@ -1,0 +1,16 @@
+<div id="strip">
+	<div class="content">
+		<div id="strip-content">	
+			<h1>Portfolio</h1>
+			<%= manageable_content_for :body %>
+		</div>
+		<div id="categories-navigation">
+			<ul>
+				<li><%= link_to sub_menu_item('Webdevelopment', 'webdevelopment') + ' / ', projects_webdevelopment_path %></li>
+				<li><%= link_to sub_menu_item('Concept development', 'concept_development') + ' / ', projects_concept_development_path %></li>
+				<li><%= link_to sub_menu_item('Mobiel', 'mobile'), projects_mobile_path %></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div style="clear:both"></div>

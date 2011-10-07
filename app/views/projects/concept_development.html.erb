@@ -1,0 +1,7 @@
+<%= render 'categories' %>
+<div class="category-explanation">
+	<%= manageable_content_for :concept_development %>
+</div>
+<br>
+<%= link_to "Neem contact met ons op", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Concept development"} %>
+ / <%= link_to "Terug naar projectoverzicht", projects_path %>

@@ -1,0 +1,7 @@
+<%= render :partial => "layouts/blog/post", :collection => @posts%>
+<%= paginate @posts %>
+<br />
+
+<% if admin_signed_in? %>
+	<%= link_to 'New Post', new_partner_post_path(@partner) %>
+<% end %>

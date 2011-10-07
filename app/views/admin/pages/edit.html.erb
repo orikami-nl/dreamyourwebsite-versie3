@@ -1,0 +1,25 @@
+<h3>Editing the <%= @page.key.titleize %> page</h3>
+<%= link_to "Back", admin_pages_path %><br>
+<%= form_for @page, :url => admin_page_path(@page), :method => :put do |form| %>
+  <p>
+  <%= form.label :key %>
+  <%= form.text_field :key, :disabled => true %>
+  </p>
+  <p>
+  <%= form.label :locale %>
+  <%= form.text_field :locale, :disabled => true %>
+  </p>
+
+  <% unless form.object.page_contents.empty? %>
+    <% eligible_contents = ManageableContent::Manager.eligible_contents(form.object.key) %>
+    <%= form.fields_for :page_contents do |content_form| %>
+      <% if eligible_contents.include?(content_form.object.key.to_sym) %>
+        <%= content_form.label :content, content_form.object.key %>
+       	<%= content_form.text_area :content %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= form.submit 'Save' %>
+<% end %>
+<br><%= link_to "Back", admin_pages_path %>
