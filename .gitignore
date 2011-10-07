@@ -4,4 +4,4 @@ log/*.log
 tmp/
 .sass-cache/
 public/uploads
-app/assets/images/green.jpg
+config/heroku_env.rb
