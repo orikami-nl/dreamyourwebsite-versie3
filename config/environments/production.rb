@@ -50,6 +50,6 @@ Dywsite2::Application.configure do
   config.active_support.deprecation = :notify
 
 	#Devise mailer, SET DO ACTUAL DOMAIN ON PRODUCTION	
-	#config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+	config.action_mailer.default_url_options = { :host => 'hollow-beach-3958.herokuapp.com' }
 
 end
