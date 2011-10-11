@@ -15,7 +15,7 @@
 
 body {
   background-color: white;
-  color: #333;
+  color: $dyw-black;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -48,11 +48,11 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000;
+  color: $dyw-blue;
   &:visited {
-    color: #666; }
+    color: $dyw-blue; }
   &:hover {
-    color: #fff;
+    color: $dyw-black;
   }
 }
 div {
@@ -90,6 +90,11 @@ div {
 /*
 Typography presets
 ------------------ */
+@font-face {
+  font-family: BebasNeue;
+  src: url('/BebasNeue.otf');
+}
+
 .gigantic {
    font-size: 110px;
    line-height: 120px;
@@ -100,19 +105,19 @@ Typography presets
    font-size: 68px;
    line-height: 72px;
    letter-spacing: -1px;
-   font-family: 'Prociono', serif;
+   font-family: BebasNeue, serif;
 }
 
 .large, h2 {
    font-size: 42px;
    line-height: 48px;
-   font-family: 'Prociono', serif;
+   font-family: BebasNeue, serif;
 } 
 
 .bigger, h3 {
    font-size: 26px;
    line-height: 36px;
-   font-family: 'Prociono', serif;
+   font-family: BebasNeue, serif;
 } 
 
 .big, h4 {
@@ -135,6 +140,14 @@ Typography presets
 	margin-top:25px;
 	padding-top:25px;
 	padding-bottom:25px;
+	a {
+	  color: white;
+	  &:visited {
+	    color: white; }
+	  &:hover {
+	    color: $dyw-blue;
+	  }
+	}
 }
 
 #strip-content{
@@ -150,6 +163,14 @@ Typography presets
 	@include border-radius(8px);
 	width: 300px ;
 	vertical-align:top;
+	a {
+	  color: $dyw-black;
+	  &:visited {
+	    color: $dyw-black; }
+	  &:hover {
+	    color: white;
+	  }
+}
 }
 
 #globe-logo{
