@@ -3,17 +3,17 @@
 @import "compass/css3/box-shadow";
 
 #footer {
-background-color: $dyw-black ;
+background-color: $dyw-blue ;
 margin-top:25px;
 height: 200px ;
-color: $dyw-grey ;
+color: $dyw-black ;
 a {
 	text-decoration: none;
-  color: $dyw-grey;
+  color: $dyw-black;
   &:visited {
-    color: $dyw-grey; }
+    color: $dyw-black; }
   &:hover {
-    color: #fff;
+    color: #dyw-grey;
   }
 } }
 
