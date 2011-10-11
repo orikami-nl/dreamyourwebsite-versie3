@@ -9,20 +9,12 @@
 @import "compass/css3/border-radius" ;
 @import "compass/utilities/general/clearfix" ;
 @import "compass/layout/sticky-footer" ;
-
-// Moet eigenlijk niet hier.
-$dyw-pink: #f1667d ;
-$dyw-yellow: #f7ca02 ;
-$dyw-grey: #e3e3e3 ;
-$dyw-green: #5aab01 ;
-$dyw-black: #17161b ;
-$dyw-blue: #668aba ;
-$dyw-box-blue: #bdc8d6;
+@import "colors" ;
 
 @include sticky-footer(225px) ;
 
 body {
-  background-color: #e3e3e3;
+  background-color: white;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 14px;

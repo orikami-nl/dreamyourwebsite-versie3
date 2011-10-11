@@ -4,10 +4,7 @@
 
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius" ;
-
-$dyw-yellow: #f7ca02 ;
-$dyw-green: #5aab01 ;
-$dyw-blue: #668aba ;
+@import "colors" ;
 
 .roundabout-holder { padding: 0; height: 340px; list-style: none }
 .roundabout-moveable-item {
@@ -15,9 +12,6 @@ $dyw-blue: #668aba ;
   width: 40em;
   cursor: pointer;
 	background-color:$dyw-blue;
-	/* border-style:solid;
-	border-width:0.5em;
-	border-color:black;*/
 	@include border-radius(8px);
 	p { font-size:1em; }
 	h4 { font-size:1.5em; height:1.5em;}
@@ -33,8 +27,3 @@ $dyw-blue: #668aba ;
 	}
 }
 .roundabout-in-focus { cursor: auto; }
-
-.mobiel{ 	@include box-shadow($dyw-blue 2px 2px 10px); }
-.concept-development{ 	@include box-shadow($dyw-green 2px 2px 10px); }
-.webdevelopment{ @include box-shadow($dyw-yellow 2px 2px 10px); }
-

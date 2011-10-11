@@ -2,33 +2,22 @@
 @import "compass/typography/lists/horizontal-list";
 @import "compass/css3/border-radius" ;
 @import "compass/utilities/general/clearfix" ;
-
-
-// Moet eigenlijk niet hier.
-$dyw-pink: #f1667d ;
-$dyw-yellow: #f7ca02 ;
-$dyw-grey: #e3e3e3 ;
-$dyw-green: #5aab01 ;
-$dyw-black: #17161b ;
-$dyw-blue: #668aba ;
-
-#header-title {
+@import "colors" ;
+#header-logo {
 	float: left ;
-	h2 {
-		float: left ;
-		line-height: 72px; 
-	}
-	h1 {
-		float: left ;
-		margin-left: 10px ;
-		margin-right: 10px ;
+	width: 300px ;
+	height: 100px ;
+	img {
+		height: 100% ;
 	}
 }
 
-#header-logo {
+#header-slogan {
 	float: left ;
-	width: 72px ;
-	height: 72px ;
+	width: 320px ;
+	height: 40px ;
+	margin-top:50px;
+	margin-left:-20px;
 	img {
 		height: 100% ;
 	}
