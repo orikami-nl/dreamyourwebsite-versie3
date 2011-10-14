@@ -223,7 +223,7 @@
 }
 
 #featured-project {
-	@include box-shadow(black 2px 2px 10px);
+	@include box-shadow(2px 2px 10px black);
 	@include border-radius(8px);
 	background-color: $dyw-box-blue ;
 	width:640px;
