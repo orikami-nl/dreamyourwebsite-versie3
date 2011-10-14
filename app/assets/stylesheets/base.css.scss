@@ -59,9 +59,6 @@ div {
   &.field, &.actions {
     margin-bottom: 10px; } }
 
-#notice {
-  color: green; }
-
 .field_with_errors {
   padding: 2px;
   background-color: red;
@@ -193,7 +190,6 @@ Typography presets
 }
 
 #admin-container{
-	padding:5px;
 	width:1000px;
 }
 
@@ -206,7 +202,6 @@ Typography presets
 }
 
 #main-container{
-	padding:5px;
 	vertical-align:top;
 	width:640px;
 }
