@@ -1,5 +1,5 @@
 class PartnersController < ApplicationController
-	manageable_content_for :body, :title
+	manageable_content_for :body, :title, :sidebar
 
 	before_filter :authenticate_admin!, :except => [:show, :index]
 	layout "sidebar_layout"
