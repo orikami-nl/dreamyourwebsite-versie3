@@ -20,6 +20,7 @@
 	<%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
 </div> 
 <div style="clear:both"></div>
+<%= link_to "Terug", :back %>
 <% if admin_signed_in? %>
 	<br><%= link_to 'Edit post', edit_partner_post_path(@partner, @post) %> | 
 	<%= link_to 'Delete post', partner_post_path(@partner, @post), confirm: "Are you sure?", method: :delete %>
