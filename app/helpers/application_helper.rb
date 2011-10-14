@@ -1,19 +1,36 @@
 module ApplicationHelper
 	def menu_item(text, controller)
-		if request.path_parameters[:controller] == controller
-			'{ ' + text + ' }'
-		elsif request.path.include?(controller) && controller == "blog"
-			'{ ' + text + ' }'
+		if controller_active?(controller)
+			'>> ' + text
 		else
 			text
 		end
 	end
 
 	def sub_menu_item(text, action)
-		if request.path_parameters[:action] == action
-			'{ ' + text + ' }'
+		if action_active?(action)
+			'>> ' + text
 		else
 			text
+		end
+
+	end
+	
+	def action_active?(action)
+		if request.path_parameters[:action] == action
+			true
+		else
+			false
+		end
+	end
+
+	def controller_active?(controller)
+		if request.path_parameters[:controller] == controller
+			true
+		elsif request.path.include?(controller) && controller == "blog"
+			true
+		else
+			false
 		end
 	end
 

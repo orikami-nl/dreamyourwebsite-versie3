@@ -141,12 +141,15 @@ Typography presets
 	padding-top:25px;
 	padding-bottom:25px;
 	a {
-	  color: white;
-	  &:visited {
-	    color: white; }
+	}
+	.true {
+		color:$dyw-blue;
+	}
+	.false {
+		color:white;
 	  &:hover {
-	    color: $dyw-blue;
-	  }
+			color:$dyw-blue;
+		}
 	}
 }
 
