@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	manageable_content_for :webdevelopment, :concept_development, :mobile, :body, :layout => "portfolio_layout"	
+	manageable_content_for :webdevelopment, :concept_development, :mobile, :title, :body, :layout => "portfolio_layout"	
 
 	before_filter :authenticate_admin!, :except => [:show, :index, :webdevelopment, :concept_development, :mobile] 
 	layout 'application'
