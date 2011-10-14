@@ -12,10 +12,10 @@
 	</div>
 	<div partner-button-container>
 		<div class="black-button">
-	    <%= link_to 'Info', partner_path(partner) %>
+	    <%= link_to 'Bekijk blog', partner_posts_path(partner) %>
 		</div>
 		<div class="black-button">
-	    <%= link_to 'Bekijk blog', partner_posts_path(partner) %>
+	    <%= link_to 'Lees bio', partner_path(partner) %>
 		</div>
 		<div class="black-button">
 	    <%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(partner.name)} %>
