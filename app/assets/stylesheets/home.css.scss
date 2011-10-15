@@ -222,26 +222,27 @@
 	margin-bottom:25px;
 }
 
+#project-picture{
+	float:left;
+}
+
 #featured-project {
 	/*@include box-shadow(2px 2px 10px black);*/
 	@include border-radius(8px);
 	background-color: $dyw-box-blue ;
-	width:640px;
-	height:200px;
 	float:left;
-	overflow-y:auto;
-	#project-picture{
-		img{
-			width:200px;
-			height:200px;
-		}
+	img{
 		float:left;
+		width:200px;
+		height:200px;
 	}
 	#project-excerpt{
-		float:left;
-		width:350px;
-		margin-left:25px;
-		margin-right:25px;
+		overflow-y:auto;
+		float:right;
+		width:400px;
+		padding-left:25px;
+		padding-right:25px;
+		height:200px;
 	}
 	a {
 	  color: $dyw-black;

@@ -5,7 +5,7 @@
 
 <% if !@project.nil? %>
 	<div id="featured-project">
-		<div id="project-picture"><%= image_tag @project.picture_url.to_s %></div>
+		<%= image_tag @project.picture_url.to_s %>
 		<div id="project-excerpt"><h3>Featured project</h3><%= @project.excerpt.html_safe %> - <%= link_to "Lees meer over onze aanpak...", path_to_category(@project) %></div>
 		<div style="clear:both"></div>
 	</div>
