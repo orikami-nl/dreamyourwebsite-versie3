@@ -88,8 +88,14 @@ div {
 Typography presets
 ------------------ */
 @font-face {
-  font-family: BebasNeue;
-  src: url('/BebasNeue.otf');
+    font-family: 'BebasNeueRegular';
+    src: url('/BebasNeue-webfont.eot');
+    src: url('/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/BebasNeue-webfont.otf'),
+         url('/BebasNeue-webfont.ttf') format('truetype'),
+         url('/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .gigantic {
@@ -102,19 +108,19 @@ Typography presets
    font-size: 68px;
    line-height: 72px;
    letter-spacing: -1px;
-   font-family: BebasNeue, impact, sans-serif;
+   font-family: 'BebasNeueRegular', impact, sans-serif;
 }
 
 .large, h2 {
    font-size: 42px;
    line-height: 48px;
-   font-family: BebasNeue, impact, sans-serif;
+   font-family: 'BebasNeueRegular', impact, sans-serif;
 } 
 
 .bigger, h3 {
    font-size: 26px;
    line-height: 36px;
-   font-family: BebasNeue, impact, sans-serif;
+   font-family: 'BebasNeueRegular', impact, sans-serif;
 } 
 
 .big, h4 {
