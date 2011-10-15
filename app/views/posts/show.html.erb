@@ -4,7 +4,7 @@
 	</div>
 	<div id="post-info">
    	<h4><%= @post.title %></h4>
-		<p>Geschreven door <%= @post.partner.name %> op <%= @post.updated_at.to_date.to_s %></p>
+		<p>Geschreven door <%= @post.partner.name %><br><%= @post.updated_at.to_date.to_s %></p>
 	</div>
 </div>
 <div style="clear:both"></div>
