@@ -1,5 +1,5 @@
 <div class="moveable <%=project.category.to_url%>">
-  <%= image_tag(project.picture_url.to_s) %>
+  <%= image_tag(project.picture_url(:portfolio_full).to_s) %>
 	<div class="project-description">
 		<p><%= project.category + ':'%></p>
 		<h4><%= project.title %></h4>
