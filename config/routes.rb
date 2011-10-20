@@ -12,6 +12,8 @@ Dywsite2::Application.routes.draw do
 	get "/projects/webdevelopment", :to => "projects#webdevelopment"
 	get "/projects/concept_development", :to => "projects#concept_development"
 
+  match 'mobile', :to => 'mobile#index'
+  match 'full', :to => 'home#full'
   devise_for :admins
   devise_scope :admin do
 		get "login", :to => "devise/sessions#new"
