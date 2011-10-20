@@ -2,18 +2,8 @@
 <html>
 <head>
   <title>Dreamyourweb | <%= manageable_layout_content_for :title %></title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <link href='http://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/cleditor/jquery.cleditor.css" />
-  <script type="text/javascript" src="/cleditor/jquery.cleditor.js"></script>
-  <script type="text/javascript" src="/cleditor/jquery.cleditor.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".input").cleditor();
-    });
-  </script>
-  <%= csrf_meta_tags %>
+	<%= render 'layouts/head' %>
+	<%= csrf_meta_tags %>
 	<%= render 'layouts/analytics' %>
 </head>
 <body>

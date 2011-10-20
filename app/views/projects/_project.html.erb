@@ -1,5 +1,5 @@
 <div class="moveable <%=project.category.to_url%>">
-  <%= image_tag(project.picture_url.to_s) %>
+  <%= image_tag(project.picture_url(:portfolio_full).to_s) %>
 	<div class="project-description">
 		<p><%= project.category + ':'%></p>
 		<h4><%= project.title %></h4>
@@ -8,6 +8,6 @@
   	  <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br>
 		<% end %>
   	<p><%= project.excerpt.html_safe %> - <%= link_to "Lees meer over onze aanpak...", path_to_category(project) %></p>
-	</div>
+	</div> 
 	<div style="clear:both"></div>
 </div>
