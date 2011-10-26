@@ -3,27 +3,29 @@
 }
 
 .ui-icon-dyw-home {
-	background: url("dyw-home.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background: url("dyw-home@2x.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+        width: 40px ; 
+	height: 40px ;
 }
 
 .ui-icon-dyw-phone {
-	background: url("dyw-phone.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background: url("dyw-phone@2x.png") no-repeat rgba(0, 0, 0, 0.4) !important;
 }
 
 .ui-icon-dyw-chat {
-	background: url("dyw-chat.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background: url("dyw-chat@2x.png") no-repeat rgba(0, 0, 0, 0.4) !important;
 }
 
 .ui-icon-dyw-lab {
-	background: url("dyw-lab.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background: url("dyw-lab@2x.png") no-repeat rgba(0, 0, 0, 0.4) !important;
 }
 
 .ui-icon-dyw-briefcase {
-	background: url("dyw-briefcase.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background: url("dyw-briefcase@2x.png") no-repeat rgba(0, 0, 0, 0.4) !important;
 }
 
 .ui-icon-dyw-about {
-	background: url("dyw-about.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background: url("dyw-about@2x.png") no-repeat rgba(0, 0, 0, 0.4) !important;
 }
 
 #footer {
@@ -52,3 +54,7 @@ list-style-type: square ;
 .ui-navbar {
  font-color: #ffffff ;
 } 
+
+#header {
+ margin-top: 0px ;
+}
