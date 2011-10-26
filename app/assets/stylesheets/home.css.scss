@@ -77,6 +77,10 @@
 	margin-right: 50px ;
 }
 
+#home-left {
+	padding-right:10px;
+}
+
 #home-banner {
 	@include border-radius(8px);
 	@include clearfix ; 
