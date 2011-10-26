@@ -7,7 +7,7 @@
   	  <%= link_to 'Edit', edit_project_path(project) %> / 
   	  <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br>
 		<% end %>
-  	<p><%= project.excerpt.html_safe %> - <%= link_to "Lees meer over onze aanpak...", path_to_category(project) %></p>
+  	<p><%= project.excerpt.html_safe %> - <%= link_to ("Lees meer over onze " + project.category.downcase + " aanpak..."), path_to_category(project) %></p>
 	</div> 
 	<div style="clear:both"></div>
 </div>
