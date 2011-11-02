@@ -3,8 +3,8 @@ class HomeController < ApplicationController
 	layout "home_layout"
 
   def mobile_agent?
-    request.user_agent =~ /Mobile|webOS/
-    #false
+    #  request.user_agent =~ /Mobile|webOS/
+    false
   end
   
   def parse_boolean(value)    
