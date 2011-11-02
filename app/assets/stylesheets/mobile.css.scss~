@@ -122,8 +122,4 @@ margin-left: 10px ;
 display: none ;
 }
 
-.ui-btn-up-a, ui-body-c {
-text-shadow: 0 ; 
-font-weight: normal ;
-}
 
