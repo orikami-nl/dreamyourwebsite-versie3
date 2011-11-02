@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 	attr_accessible :title, :picture, :excerpt, :category, :title_for_url, :external_url
-	validates_presence_of :title
+	validates_presence_of :title, :external_url
 	mount_uploader :picture, PictureUploader
 	validates_uniqueness_of :title_for_url
 	before_save :build_url
