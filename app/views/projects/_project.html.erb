@@ -1,8 +1,8 @@
 <div class="moveable <%=project.category.to_url%>">
-  <%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+ 	<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
 	<div class="project-description">
 		<p><%= project.category + ':'%></p>
-		<h4><%= project.title %></h4>
+		<h4><%= link_to project.external_url, project.external_url, :target => "_blank" %></h4>
 		<% if admin_signed_in? %>
   	  <%= link_to 'Edit', edit_project_path(project) %> / 
   	  <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br>
