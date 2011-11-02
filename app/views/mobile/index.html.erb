@@ -134,7 +134,7 @@
     	<div class="content-intro"><h2>Over ons</h2></div>
 		<ul data-role="listview">
 			<% @partners.each do |partner| %>
-				<li><a href="<%= partner_mobile_path(partner) %>">
+				<li><a href='<%= partner_mobile_path(partner.name) %>'>
 					<%= image_tag partner.avatar_url.to_s %>
 					<h3><%= partner.name %></h3>
 					<p><%= build_mail_address(partner.name) %></p>
