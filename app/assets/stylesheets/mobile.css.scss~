@@ -118,4 +118,12 @@ ul {
 margin-left: 10px ;
 }}
 
+#mobile_to {
+display: none ;
+}
+
+.ui-btn-up-a, ui-body-c {
+text-shadow: 0 ; 
+font-weight: normal ;
+}
 

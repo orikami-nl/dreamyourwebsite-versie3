@@ -134,7 +134,7 @@
     	<div class="content-intro"><h2>Over ons</h2></div>
 		<ul data-role="listview">
 			<% @partners.each do |partner| %>
-				<li><a href=<%= partner_mobile_path(partner.name) %>>
+				<li><a href='<%= partner_mobile_path(partner.name) %>' data-rel="dialog" data-transition="flip">
 					<%= image_tag partner.avatar_url.to_s %>
 					<h3><%= partner.name %></h3>
 					<p><%= build_mail_address(partner.name) %></p>
@@ -148,6 +148,29 @@
   		dreamyourweb 2011<br> <a href="www.dreamyourweb.nl/full">Volledige site</a>
 </div>
 </div><!-- /about -->
+
+<% @partners.each do |partner| %>
+<div data-role="page" id="<%= first_name(partner.name) %>" class="project">
+	<div data-role="header" data-theme="a">
+		<h1><%= partner.name %></h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+		<p><a href="#about" data-rel="back" data-role="button" data-inline="true" data-icon="back">Portfolio</a></p>	
+		<%= image_tag partner.avatar_url.to_s %>		   
+ 		<p><%= partner.description.html_safe %></p>
+
+
+	</div><!-- /page popup -->
+
+		<li><a href='<%= partner_mobile_path(partner.name) %>'>
+		<%= image_tag partner.avatar_url.to_s %>
+		<h3><%= partner.name %></h3>
+		<p><%= build_mail_address(partner.name) %></p>
+		</a></li>
+<% end %>
+
+
 
 <!-- Start of fourth page: #contact -->
 <div data-role="page" id="contact">
