@@ -49,6 +49,10 @@ module ApplicationHelper
 	end
 
   def partner_mobile_path(partner_name)
-		"#" + partner_name.match(/\w+/).to_s.downcase 
+		"#" + first_name(partner_name)
+	end
+
+  def first_name(partner_name)
+		partner_name.match(/\w+/).to_s.downcase 
 	end
 end

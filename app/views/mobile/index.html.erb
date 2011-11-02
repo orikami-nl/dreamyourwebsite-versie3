@@ -1,19 +1,6 @@
 <!-- Start of first page: #one -->
 <div data-role="page" id="foo">
-
-
-<div data-role="header" id="header">
-		<%= image_tag "banner.png", alt: "dreamyourweb" %>
-    <div data-role="navbar" data-theme="a">
-      <ul>
-      <li><a href="#home" data-role="button" data-icon="dyw-home" data-icon-pos="top">Home</a></li>
-      <li><a href="#portfolio" data-role="button" data-icon="dyw-briefcase" data-icon-pos="top">Wat</a></li>
-      <li><a href="#werkwijze" data-role="button" data-icon="dyw-lab" data-icon-pos="top">Hoe</a></li>
-      <li><a href="#about" data-role="button" data-icon="dyw-about" data-icon-pos="top">Wie</a></li>
-      <li><a href="#contact" data-role="button" data-icon="dyw-chat" data-icon-pos="top">Contact</a></li>
-      </ul>
-    </div>
-	</div><!-- /header -->
+<%= render 'header' %>
 
 	<div data-role="content" id="home">	
   <fieldset class="ui-grid-a" id="home-belcontact">
@@ -29,28 +16,13 @@
 
 </div><!-- /content -->
 
-	
-	<div data-role="footer" data-theme="d" id="footer">
-  		dreamyourweb 2011<br> <a href="www.dreamyourweb.nl/full">Volledige site</a>
-	</div><!-- /footer -->
+<%= render 'footer' %>
 </div><!-- /page one -->
 
 
 <!-- Start of second page: #portfolio -->
 <div data-role="page" id="portfolio">
-
-<div data-role="header" id="header">
-		<%= image_tag "banner.png", alt: "dreamyourweb" %>
-    <div data-role="navbar" data-theme="a">
-      <ul>
-      <li><a href="#home" data-role="button" data-icon="dyw-home" data-icon-pos="top">Home</a></li>
-      <li><a href="#portfolio" data-role="button" data-icon="dyw-briefcase" data-icon-pos="top">Wat</a></li>
-      <li><a href="#werkwijze" data-role="button" data-icon="dyw-lab" data-icon-pos="top">Hoe</a></li>
-      <li><a href="#about" data-role="button" data-icon="dyw-about" data-icon-pos="top">Wie</a></li>
-      <li><a href="#contact" data-role="button" data-icon="dyw-chat" data-icon-pos="top">Contact</a></li>
-      </ul>
-    </div>
-	</div><!-- /header -->
+<%= render 'header' %>
 
 	<div data-role="content">	
 		<div class="content-intro"><h2>Portfolio</h2>
@@ -58,42 +30,37 @@
 <div>
 			<ul data-role="listview">
 <% @projects.each do |project| %>
-			<li><a href="#<%= project.title %>" data-rel="dialog">
+			<li><a href="#<%= project_short(project.title) %>" data-rel="dialog">
  			<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+			<h2><%= project.title %></h2><br>
 			<p>Meer informatie</p>
 			</a></li>
 <% end %>
 		</ul>
-</div>
-	</div><!-- /content -->
-
-
-
-</div>
-
-
-
-
-	<div data-role="footer" data-theme="d" id="footer">
-  		dreamyourweb 2011<br> <a href="www.dreamyourweb.nl/full">Volledige site</a>
 	</div>
+</div><!-- /content -->
+<%= render 'footer' %>
 </div><!-- /portfolio -->
+
+<% @projects.each do |project| %>
+<div data-role="page" id="<%= project_short(project.title) %>" class="project">
+	<div data-role="header" data-theme="a">
+		<h1><%= project.title %></h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+		<p><a href="#portfolio" data-rel="back" data-role="button" data-inline="true" data-icon="back">Terug</a></p>	
+ 		<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+		<p><%= project.excerpt.html_safe %></p>
+	</div>
+</div><!-- /page popup -->
+<% end %>
+
 
 <!-- Start of third page: #werkwijze -->
 <div data-role="page" id="werkwijze">
 
-<div data-role="header" id="header">
-		<%= image_tag "banner.png", alt: "dreamyourweb" %>
-    <div data-role="navbar" data-theme="a">
-      <ul>
-      <li><a href="#home" data-role="button" data-icon="dyw-home" data-icon-pos="top">Home</a></li>
-      <li><a href="#portfolio" data-role="button" data-icon="dyw-briefcase" data-icon-pos="top">Wat</a></li>
-      <li><a href="#werkwijze" data-role="button" data-icon="dyw-lab" data-icon-pos="top">Hoe</a></li>
-      <li><a href="#about" data-role="button" data-icon="dyw-about" data-icon-pos="top">Wie</a></li>
-      <li><a href="#contact" data-role="button" data-icon="dyw-chat" data-icon-pos="top">Contact</a></li>
-      </ul>
-    </div>
-	</div><!-- /header -->
+<%= render 'header' %>
 
 	<div data-role="content">	
 		<div class="content-intro"><h2>Werkwijze</h2>	
@@ -109,27 +76,12 @@
 	</div>
 	
 	</div><!-- /content -->
-
-	<div data-role="footer" data-theme="d" id="footer">
-  		dreamyourweb 2011<br> <a href="www.dreamyourweb.nl/full">Volledige site</a>
-	</div>
+<%= render 'footer' %>
 </div><!-- /werkwijze -->
 
 <!-- Start of third page: #about -->
 <div data-role="page" id="about">
-
-<div data-role="header" id="header">
-		<%= image_tag "banner.png", alt: "dreamyourweb" %>
-    <div data-role="navbar" data-theme="a">
-      <ul>
-      <li><a href="#home" data-role="button" data-icon="dyw-home" data-icon-pos="top">Home</a></li>
-      <li><a href="#portfolio" data-role="button" data-icon="dyw-briefcase" data-icon-pos="top">Wat</a></li>
-      <li><a href="#werkwijze" data-role="button" data-icon="dyw-lab" data-icon-pos="top">Hoe</a></li>
-      <li><a href="#about" data-role="button" data-icon="dyw-about" data-icon-pos="top">Wie</a></li>
-      <li><a href="#contact" data-role="button" data-icon="dyw-chat" data-icon-pos="top">Contact</a></li>
-      </ul>
-    </div>
-	</div><!-- /header -->
+<%= render 'header' %>
 
 	<div data-role="content">	
     	<div class="content-intro"><h2>Over ons</h2></div>
@@ -145,9 +97,7 @@
 		</ul>
 	</div><!-- /content -->
 
-	<div data-role="footer" data-theme="d" id="footer">
-  		dreamyourweb 2011<br> <a href="www.dreamyourweb.nl/full">Volledige site</a>
-</div>
+<%= render 'footer' %>
 </div><!-- /about -->
 
 <% @partners.each do |partner| %>
@@ -170,38 +120,17 @@
 
 <!-- Start of fourth page: #contact -->
 <div data-role="page" id="contact">
-<div data-role="header" id="header">
-		<%= image_tag "banner.png", alt: "dreamyourweb" %>
-    <div data-role="navbar" data-theme="a">
-      <ul>
-      <li><a href="#home" data-role="button" data-icon="dyw-home" data-icon-pos="top">Home</a></li>
-      <li><a href="#portfolio" data-role="button" data-icon="dyw-briefcase" data-icon-pos="top">Wat</a></li>
-      <li><a href="#werkwijze" data-role="button" data-icon="dyw-lab" data-icon-pos="top">Hoe</a></li>
-      <li><a href="#about" data-role="button" data-icon="dyw-about" data-icon-pos="top">Wie</a></li>
-      <li><a href="#contact" data-role="button" data-icon="dyw-chat" data-icon-pos="top">Contact</a></li>
-      </ul>
-    </div>
-	</div><!-- /header -->
+<%= render 'header' %>
 
 	<div data-role="content">	
-	<% flash.each do |key, value| %>
- 		<%= content_tag(:div, value, :class => "site-flash #{key}") %>
-	<% end %>
-
 
 		<div class="content-intro"><p>Neem contact met ons op.</p>	
 <%= render 'form' %>
 
-
-
-
-
-
 	</div><!-- /contact -->
 
-	<div data-role="footer" data-theme="d" id="footer">
-  		dreamyourweb 2011<br> <a href="www.dreamyourweb.nl/full">Volledige site</a></div>
-</div><!-- /contact -->
+	<%= render 'footer' %>
+</div>
 
 
 
