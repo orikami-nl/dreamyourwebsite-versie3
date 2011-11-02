@@ -1,6 +1,6 @@
 class ContactController < ApplicationController
 	before_filter :check_honeypots, :only => [:create]
-	layout "sidebar_layout"
+	layout "sidebar_layout", :except => "completed"
 	manageable_content_for :body, :title, :side, :layout => "sidebar_layout" 
 
   def check_honeypots
@@ -26,7 +26,7 @@ class ContactController < ApplicationController
 	end
 
 	def completed
-		redirect_to root_url, :notice => "Uw bericht is verzonden, u krijgt zo snel mogelijk een reactie van ons."
+		render :layout => 'application'
 	end
 
 	def create
