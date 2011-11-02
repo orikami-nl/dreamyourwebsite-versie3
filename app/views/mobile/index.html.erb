@@ -32,7 +32,7 @@
 <% @projects.each do |project| %>
 			<li><a href="#<%= project_short(project.title) %>" data-rel="dialog">
  			<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
-			<h2><%= project.title %></h2><br>
+			<h2><%= project.title %></h2>
 			<p>Meer informatie</p>
 			</a></li>
 <% end %>
@@ -50,7 +50,7 @@
 
 	<div data-role="content" data-theme="d">	
 		<p><a href="#portfolio" data-rel="back" data-role="button" data-inline="true" data-icon="back">Terug</a></p>	
- 		<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+ 		<div class="mobile_project_image"><%= image_tag(project.picture_url(:portfolio_full).to_s) %></div>
 		<p><%= project.excerpt.html_safe %></p>
 	</div>
 </div><!-- /page popup -->

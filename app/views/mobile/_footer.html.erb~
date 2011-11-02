@@ -1,4 +1,4 @@
 	
 	<div data-role="footer" data-theme="d" id="footer">
-  		dreamyourweb 2011<br> <%= link_to "Volledige site", full_path %>
+  		dreamyourweb 2011<br> <a href="/full">Volledige site</a>
 	</div><!-- /footer -->

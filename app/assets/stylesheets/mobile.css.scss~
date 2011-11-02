@@ -122,4 +122,25 @@ margin-left: 10px ;
 display: none ;
 }
 
+.ui-btn-corner-all {
+	.ui-icon {
+height: 18px;
+width: 18px ;
+}}
 
+.mobile_project_image {
+width: 90% ; 
+margin-left: auto ; 
+margin-right: auto ;
+img {
+width: 100% ;
+}
+}
+
+.ui-bar-a {
+font-weight: normal ; 
+}
+
+#footer {
+height: auto ;
+}
