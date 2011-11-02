@@ -26,7 +26,7 @@ class ContactController < ApplicationController
 	end
 
 	def completed
-		render :layout => 'application'
+		render :layout => 'application' 
 	end
 
 	def create
