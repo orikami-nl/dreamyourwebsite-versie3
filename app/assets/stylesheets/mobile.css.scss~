@@ -118,7 +118,4 @@ ul {
 margin-left: 10px ;
 }}
 
-#mobile_to {
-display: none ;
-}
 

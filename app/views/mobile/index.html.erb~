@@ -142,6 +142,41 @@
 				</a></li>
 			<% end %>
 		</ul>
+			<li><a href="#luc">
+				<%= image_tag "luc.png", alt: "Luc" %>
+				<h3>Luc</h3>
+				<p>luc@dreamyourweb.nl</p>
+
+			</a></li>
+			<li><a href="index.html">
+				<%= image_tag "jelmer.png", alt: "Jelmer" %>
+				<h3>Jelmer</h3>
+				<p>jelmer@dreamyourweb.nl</p>
+			</a></li>
+			<li><a href="index.html">
+				<%= image_tag "andres.png", alt: "Andres" %>
+
+				<h3>Andres</h3>
+				<p>andres@dreamyourweb.nl</p>
+			</a></li>
+			<li><a href="index.html">
+				<%= image_tag "thijs.png", alt: "Thijs" %>
+				<h3>Thijs</h3>
+				<p>thijs@dreamyourweb.nl</p>
+
+			</a></li>
+			<li><a href="index.html">
+				<%= image_tag "roel.png", alt: "Roel" %>
+				<h3>Roel</h3>
+				<p>roel@dreamyourweb.nl</p>
+			</a></li>
+
+			<li><a href="index.html">
+				<%= image_tag "bram.png", alt: "Bram" %>
+				<h3>Bram</h3>
+				<p>bram@dreamyourweb.nl</p>
+			</a></li>
+		</ul>
 	</div><!-- /content -->
 
 	<div data-role="footer" data-theme="d" id="footer">

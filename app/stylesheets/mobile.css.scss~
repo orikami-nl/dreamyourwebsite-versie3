@@ -3,7 +3,7 @@
 }
 
 .ui-icon-dyw-home {
-	background: url("dyw-home.png") no-repeat  !important;
+	background: url("dyw-home.png") no-repeat rgba(0, 0, 0, 0.4) !important;
 }
 
 .ui-icon-dyw-phone {
