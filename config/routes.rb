@@ -5,6 +5,7 @@ Dywsite2::Application.routes.draw do
   get "/disclaimer", :to => "disclaimer#index"
 
   get "/contact", :to => "contact#index"
+	get "/contact/completed", :to => "contact#completed"
 	post "/contact", :to => "contact#create"
   get "/home", :to => "home#index"
 	get "/blog", :to => "blog#index"

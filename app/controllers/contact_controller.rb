@@ -25,11 +25,15 @@ class ContactController < ApplicationController
 		end
 	end
 
+	def completed
+		redirect_to root_url, :notice => "Uw bericht is verzonden, u krijgt zo snel mogelijk een reactie van ons."
+	end
+
 	def create
     @contact_form = ContactForm.new(params[:contact_form])
 		if @contact_form.deliver
       respond_to do |format|
-        format.html { redirect_to root_url, :notice => "Uw bericht is verzonden, u krijgt zo snel mogelijk een reactie van ons."}
+        format.html { redirect_to contact_completed_path}
         format.js {render}
 			end
     else
