@@ -56,22 +56,34 @@
 		<div class="content-intro"><h2>Portfolio</h2>
 		<p>Dit is ons werk.</p>	</div>
 <div>
-			<ul data-role="listview" data-split-icon="arrow-r" data-split-theme="a">
-			<li><a href="#ortel" data-rel="dialog">
-<%= image_tag "thumb-ortel.jpg", alt: "ortel" %>
-				<h3>iphonemaken.nl</h3>
-				<p>Meer informatie</p>
-			</a></a><a href="http://www.iphonemaken.nl">Website
+			<ul data-role="listview">
+<% @projects.each do |project| %>
+			<li><a href="#<%= project.title %>" data-rel="dialog">
+ 			<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+			<p>Meer informatie</p>
 			</a></li>
-			<li><a href="#ruudvandoorn" data-rel="dialog">
-<%= image_tag "ruud.png", alt: "ruud" %>
-				<h3>ruudvandoorn</h3>
-				<p>Meer informatie</p>
-			</a></a><a href="http://www.ruudvandoorn.com">Website
-			</a></li>
+<% end %>
 		</ul>
 </div>
 	</div><!-- /content -->
+
+
+<div class="moveable <%=project.category.to_url%>">
+  <%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+	<div class="project-description">
+		<p><%= project.category + ':'%></p>
+		<h4><%= project.title %></h4>
+		<% if admin_signed_in? %>
+  	  <%= link_to 'Edit', edit_project_path(project) %> / 
+  	  <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br>
+		<% end %>
+  	<p><%= project.excerpt.html_safe %> - <%= link_to ("Lees meer over onze " + project.category.downcase + " aanpak..."), path_to_category(project) %></p>
+	</div> 
+	<div style="clear:both"></div>
+</div>
+
+
+
 
 	<div data-role="footer" data-theme="d" id="footer">
   		dreamyourweb 2011<br> <a href="www.dreamyourweb.nl/full">Volledige site</a>
@@ -156,12 +168,13 @@
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="d">	
-		<p><a href="#about" data-rel="back" data-role="button" data-inline="true" data-icon="back">Portfolio</a></p>	
+		<p><a href="#about" data-rel="back" data-role="button" data-inline="true" data-icon="back">Terug</a></p>	
 		<%= image_tag partner.avatar_url.to_s %>		   
  		<p><%= partner.description.html_safe %></p>
 		<%= build_mail_address(partner.name) %>
+	</div>
 
-	</div><!-- /page popup -->
+</div><!-- /page popup -->
 <% end %>
 
 
