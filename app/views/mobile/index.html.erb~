@@ -30,8 +30,9 @@
 <div>
 			<ul data-role="listview">
 <% @projects.each do |project| %>
-			<li><a href="#<%= project.title %>" data-rel="dialog">
+			<li><a href="#<%= project_short(project.title) %>" data-rel="dialog">
  			<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+			<h2><%= project.title %></h2><br>
 			<p>Meer informatie</p>
 			</a></li>
 <% end %>
@@ -40,6 +41,22 @@
 </div><!-- /content -->
 <%= render 'footer' %>
 </div><!-- /portfolio -->
+
+<% @projects.each do |project| %>
+<div data-role="page" id="<%= project_short(project.title) %>" class="project">
+	<div data-role="header" data-theme="a">
+		<h1><%= project.title %></h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+		<p><a href="#portfolio" data-rel="back" data-role="button" data-inline="true" data-icon="back">Terug</a></p>	
+ 		<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+		<p><%= project.excerpt.html_safe %></p>
+	</div>
+
+</div><!-- /page popup -->
+<% end %>
+
 
 <!-- Start of third page: #werkwijze -->
 <div data-role="page" id="werkwijze">
@@ -114,6 +131,7 @@
 	</div><!-- /contact -->
 
 	<%= render 'footer' %>
+</div>
 
 
 

@@ -55,4 +55,8 @@ module ApplicationHelper
   def first_name(partner_name)
 		partner_name.match(/\w+/).to_s.downcase 
 	end
+
+  def project_short(project_title)
+	project_title.match(/\w+/).to_s.downcase
+  end
 end
