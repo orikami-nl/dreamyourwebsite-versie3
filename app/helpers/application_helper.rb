@@ -1,10 +1,4 @@
 module ApplicationHelper
-	def arrows(controller)
-		if controller_active?(controller)
-			'>>'
-		end
-	end
-
 	#Obsolete for Andres design
 	def sub_menu_item(text, action)
 		if action_active?(action)
