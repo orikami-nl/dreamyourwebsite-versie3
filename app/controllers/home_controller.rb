@@ -23,6 +23,7 @@ class HomeController < ApplicationController
   end
 
   def index
+		@ref = params[:ref]
     if mobile?
       redirect_to mobile_path
     end

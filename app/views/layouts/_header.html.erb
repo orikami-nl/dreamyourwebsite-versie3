@@ -11,14 +11,14 @@
 <div id="header-menu">
   <nav>
   <ul>
-  <li><%= link_to menu_item('Home', 'home'), home_path, :class => controller_active?('home').to_s %> / </li>
-  <li><%= link_to menu_item('Portfolio', 'projects'), projects_path, :class => controller_active?('projects').to_s %> / </li>
-  <li><%= link_to menu_item('About', 'partners'), partners_path, :class => controller_active?('partners').to_s %> / </li>
-  <li><%= link_to menu_item('Blog', 'blog'), blog_path, :class => controller_active?('blog').to_s %> / </li>
-  <li><%= link_to menu_item('Contact', 'contact'), contact_path, :class => controller_active?('contact').to_s %></li>
+  <li><p class="top-nav">Naar</p><%= link_to 'Home', home_path, :class => controller_active?('home').to_s %><p class="arrows"><%= arrows('home') %></p><p class="bottom-nav">aub</p></li>
+  <li><%= link_to 'Portfolio', projects_path, :class => controller_active?('projects').to_s %> / </li>
+  <li><%= link_to 'About', partners_path, :class => controller_active?('partners').to_s %> / </li>
+  <li><%= link_to 'Blog', blog_path, :class => controller_active?('blog').to_s %> / </li>
+  <li><%= link_to 'Contact', contact_path, :class => controller_active?('contact').to_s %></li>
 	<% if admin_signed_in? %>
-	  <li> / <%= link_to menu_item('Admin', 'admin/pages'), admin_pages_path, :class => controller_active?('admin/pages').to_s %> / </li>
-	  <li><%= link_to menu_item('Logout', 'logout'), logout_path, :class => controller_active?('logout').to_s %></li>
+	  <li> / <%= link_to 'Admin', admin_pages_path, :class => controller_active?('admin/pages').to_s %> / </li>
+	  <li><%= link_to 'Logout', logout_path, :class => controller_active?('logout').to_s %></li>
 	<% end %>
   </ul>
   </nav>
