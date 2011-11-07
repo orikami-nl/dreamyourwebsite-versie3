@@ -1,15 +1,29 @@
 <div id="home-content">
-	<h1>Welkom</h1>
+	<h3>Wij zijn dreamyourweb</h3>
 	<%= manageable_layout_content_for :body %>
 </div>
 
 <% if !@project.nil? %>
-	<div id="featured-project">
+	<hr>
+	<div class="featured">
 		<%= image_tag @project.picture_url.to_s %>
-		<div id="project-excerpt"><h3>Featured project</h3><%= @project.excerpt.html_safe %> - <%= link_to "Lees meer over onze aanpak...", path_to_category(@project) %></div>
-		<div style="clear:both"></div>
+		<div class="excerpt">
+			<h4>Featured project</h4>
+			<%= @project.excerpt.html_safe %>
+			<div class="read-more"><%= link_to ">> Lees meer", path_to_category(@project) %></div>
+		</div>
 	</div>
 <% end %>
+
+<hr>
+
+<div class="featured">
+	<div class="excerpt"><h4>Het Dream Team</h4>
+		<p>Tekst hiero!</p>
+		<div class="read-more"><%= link_to ">> Lees meer", path_to_category(@project) %></div>
+	</div>
+	<%= image_tag @project.picture_url.to_s %>
+</div>
 
 
 

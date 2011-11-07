@@ -11,14 +11,34 @@
 <div id="header-menu">
   <nav>
   <ul>
-  <li><%= link_to menu_item('Home', 'home'), home_path, :class => controller_active?('home').to_s %> / </li>
-  <li><%= link_to menu_item('Portfolio', 'projects'), projects_path, :class => controller_active?('projects').to_s %> / </li>
-  <li><%= link_to menu_item('About', 'partners'), partners_path, :class => controller_active?('partners').to_s %> / </li>
-  <li><%= link_to menu_item('Blog', 'blog'), blog_path, :class => controller_active?('blog').to_s %> / </li>
-  <li><%= link_to menu_item('Contact', 'contact'), contact_path, :class => controller_active?('contact').to_s %></li>
+  <li>
+		<%= link_to(home_path, :class => controller_active?('home').to_s) do %>
+				<%= image_tag("menu_home.png") %>
+		<% end %>
+	</li>
+  <li>
+		<%= link_to(projects_path, :class => controller_active?('projects').to_s) do %>
+				<%= image_tag("menu_portfolio.png") %>
+		<% end %>
+	</li>
+  <li>
+		<%= link_to(partners_path, :class => controller_active?('partners').to_s) do %>
+				<%= image_tag("menu_about.png") %>
+		<% end %>
+	</li>
+  <li>
+		<%= link_to(blog_path, :class => controller_active?('blog').to_s) do %>
+				<%= image_tag("menu_blog.png") %>
+		<% end %>
+	</li>
+  <li>
+		<%= link_to(contact_path, :class => controller_active?('contact').to_s) do %>
+				<%= image_tag("menu_contact.png") %>
+		<% end %>
+	</li>
 	<% if admin_signed_in? %>
-	  <li> / <%= link_to menu_item('Admin', 'admin/pages'), admin_pages_path, :class => controller_active?('admin/pages').to_s %> / </li>
-	  <li><%= link_to menu_item('Logout', 'logout'), logout_path, :class => controller_active?('logout').to_s %></li>
+	  <li><%= link_to 'Admin', admin_pages_path %> / </li>
+	  <li><%= link_to 'Logout', logout_path %></li>
 	<% end %>
   </ul>
   </nav>

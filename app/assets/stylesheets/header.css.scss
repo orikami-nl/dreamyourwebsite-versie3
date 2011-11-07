@@ -6,12 +6,17 @@
 @import "fonts";
 
 #header-logo {
-  background: url(dywlogo_100x300.png) no-repeat scroll 0 0 transparent;
+  background: url(logo.png) no-repeat scroll 0 0 transparent;
   display: block;
   height: 100px;
   text-indent: -9999px;
   width: 300px;
 	float:left;
+}
+
+#menu-nav-item{
+  height: 100px;
+	overflow:hidden
 }
 
 #header-menu {
@@ -21,25 +26,35 @@
 	margin-top:30px;
 	ul {
 		@include horizontal-list ;
-		font-size: 30px ;
+		font-size: 42px ;
 	  font-family: 'BebasNeueRegular', impact, sans-serif;
+		li {
+			height:50px;
+			overflow:hidden;
+			.true {
+				img {
+					top:-50px;
+				}
+			}
+			img {
+				position:relative
+			}
+			&:hover {
+				img {
+					top:-50px;
+				}
+			}
+		}
 	}
 	a {
 		text-decoration: none ;
-		line-height: 36px ;
-	}
-	.true {
-		color:$dyw-blue;
-	}
-	.false {
-		color:$dyw-black;
-	  &:hover {
-			color:$dyw-blue;
-		}
 	}
 }
 
 header {
+  background-color: black;
+	background-image: url(header_background.png);
+	height:112px;
 	@include clearfix ;
 }
 // OLD
