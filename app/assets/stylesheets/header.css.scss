@@ -27,8 +27,6 @@
 	margin-top:30px;
 	ul {
 		@include horizontal-list ;
-		font-size: 42px ;
-	  font-family: 'BebasNeueRegular', impact, sans-serif;
 		li {
 			margin: 0 0 0 20px;
 			height:50px;
@@ -51,6 +49,44 @@
 	a {
 		text-decoration: none ;
 	}
+}
+
+#categories-strip {
+	width:100%;
+	height:154px;
+	background-image: url(bluegradient.png);
+	#categories-pictures-container{
+		width:870px;
+		margin:0 auto 0 auto;
+		ul {
+			@include horizontal-list ;
+			padding-top:20px;
+			li{
+				margin: 0 10px 0 10px;
+				height:92px;
+				overflow:hidden;
+				.true {
+					img {
+						top:-92px;
+					}
+				}
+				img {
+					position:relative
+				}
+				&:hover {
+					img {
+						top:-92px;
+					}
+				}
+			}
+		}
+	}
+}
+
+#strip-content{
+	float:left;
+	width:775px;
+	margin-right:25px;
 }
 
 header {

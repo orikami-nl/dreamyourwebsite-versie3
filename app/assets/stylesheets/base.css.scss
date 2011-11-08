@@ -157,21 +157,6 @@ Typography presets
 		width:928px;
 	}
 }
-#categories-strip {
-	width:100%;
-	height:154px;
-	background-image: url(bluegradient.png);
-	#categories-pictures-container{
-		width:600px;
-		margin:0 auto 0 auto;
-	}
-}
-
-#strip-content{
-	float:left;
-	width:775px;
-	margin-right:25px;
-}
 
 #sidebar-right {
 	width: 300px ;
@@ -182,7 +167,6 @@ Typography presets
 	background-color: $dyw-light-blue ;
 	text-align:center ;
 	line-height:25px;
-	margin-top: 15px;
 }
 
 #globe-logo{
