@@ -55,19 +55,21 @@
 	width:100%;
 	height:154px;
 	background-image: url(bluegradient.png);
-	#categories-pictures-container{
-		width:870px;
-		margin:0 auto 0 auto;
+	#categories-pictures-container{		
+		width: 358px + 283px + 216px;
+		height: 87px;
+		margin: 0 auto;
+		padding-top: round(67px/2);	
 		ul {
 			@include horizontal-list ;
-			padding-top:20px;
 			li{
-				margin: 0 10px 0 10px;
-				height:92px;
+				margin: 0 0 0 0;
+				padding: 0;
+				height:87px;
 				overflow:hidden;
 				.true {
 					img {
-						top:-92px;
+						top:-87px;
 					}
 				}
 				img {
@@ -75,7 +77,7 @@
 				}
 				&:hover {
 					img {
-						top:-92px;
+						top:-87px;
 					}
 				}
 			}
