@@ -1,3 +1,5 @@
+<h3>Blog post</h3>
+<hr class="small-line">
 <div id="post-header">
  	<div id="partner-blog-photo">
 		<%= link_to image_tag(@post.partner.avatar_url.to_s, :alt => @post.partner.name, :title => @post.partner.name), partner_path(@post.partner) %>
@@ -27,6 +29,6 @@
 	<%= link_to 'Delete post', partner_post_path(@partner, @post), confirm: "Are you sure?", method: :delete %>
 <% end %>
 
-<hr>
+<hr class="small-line"><br>
 <h4>Comments</h4>
 <%= render :partial => "comment", :collection => @comments%>

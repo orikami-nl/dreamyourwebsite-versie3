@@ -5,7 +5,7 @@
 					<%= link_to image_tag(post.partner.avatar_url.to_s, :alt => post.partner.name, :title => post.partner.name), partner_path(post.partner) %>
 				</div>
 				<div id="post-info">
-	  	  	<h4><%= post.title %></h4>
+	  	  	<h4><%= link_to(post.title, partner_post_path(post.partner, post), :class => "post-title")%></h4>
 					<p>Geschreven door <%= post.partner.name %> op <%= post.updated_at.to_date.to_s %></p>
 				</div>
 			</div>

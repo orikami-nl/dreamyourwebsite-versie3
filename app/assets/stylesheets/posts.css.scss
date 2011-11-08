@@ -67,6 +67,13 @@
 	padding-bottom:5px;
 }
 
+.post-title {
+	color:$dyw-black;
+	a &:visited {
+		color:$dyw-black;
+	}
+}
+
 #partner-description{
 	float:left;
 	width:300;
