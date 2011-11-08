@@ -7,10 +7,11 @@
 
 #header-logo {
   background: url(logo.png) no-repeat scroll 0 0 transparent;
+	margin: 25px 0 0 0;
   display: block;
-  height: 100px;
+  height: 67px;
   text-indent: -9999px;
-  width: 300px;
+  width: 359px;
 	float:left;
 }
 
@@ -29,6 +30,7 @@
 		font-size: 42px ;
 	  font-family: 'BebasNeueRegular', impact, sans-serif;
 		li {
+			margin: 0 0 0 20px;
 			height:50px;
 			overflow:hidden;
 			.true {
