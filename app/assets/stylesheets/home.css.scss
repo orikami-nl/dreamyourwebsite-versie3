@@ -244,15 +244,20 @@
 		width:400px;
 		padding:0 0 0 15px;
 		height:200px;
-		.read-more{
-			position:absolute;
-			right:15px;
-			bottom:0;
-		}
 	}
 }
 
+.read-more{
+	font-family: bookman, 'Times New Roman', serif;
+	font-style: italic;
+	font-weight: bold;
+	position:absolute;
+	right:15px;
+	bottom:0;
+}
+
 .sidebar-post{
+	position:relative;
 	img{ 
 		float:left;
 		margin-right:5px;

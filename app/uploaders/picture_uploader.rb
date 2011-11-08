@@ -3,7 +3,7 @@
 class PictureUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or ImageScience support:
-  #include CarrierWave::RMagick
+  include CarrierWave::RMagick
   #include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
 
@@ -38,7 +38,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fill => [40, 40]
+    process :resize_to_fill => [60, 60]
   end
 
   version :portfolio_full do
