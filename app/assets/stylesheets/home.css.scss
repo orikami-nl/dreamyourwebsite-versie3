@@ -79,6 +79,7 @@
 }
 
 #home-banner {
+	display:none;
 	@include border-radius(8px);
 	@include clearfix ; 
 	width: 970px ;
