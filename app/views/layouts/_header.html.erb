@@ -36,10 +36,6 @@
 				<%= image_tag("menu_contact.png") %>
 		<% end %>
 	</li>
-	<% if admin_signed_in? %>
-	  <li><%= link_to 'Admin', admin_pages_path %> / </li>
-	  <li><%= link_to 'Logout', logout_path %></li>
-	<% end %>
   </ul>
   </nav>
 </div>
@@ -49,4 +45,13 @@
 </div>
 
 </header>
+
+<% if admin_signed_in? %>
+	<div id="admin-nav">
+		<h3>
+  	<%= link_to 'Admin', admin_pages_path %> /
+  	<%= link_to 'Logout', logout_path %>
+		</h3>
+	</div>
+<% end %>
 
