@@ -4,9 +4,10 @@
 	<% if !post.partner.nil? %>
 		<div class="sidebar-post">
 			<%= image_tag post.partner.avatar_url(:thumb).to_s %>
-			<p>Door: <%= post.partner.name %><br>Datum: <%= post.updated_at.to_date.to_s %></p>
-			<div style="clear:both"></div>
 			<h4><%= post.title %></h4>
+			<p><%= post.partner.name %><br>
+			<%= post.updated_at.to_date.to_s %></p>
+			<div style="clear:both"></div>
 			<%= post.excerpt.html_safe %> - <%= link_to "Lees meer...", partner_post_path(post.partner, post) %>
 		</div>
 		<% if post != @posts.last %><hr><% end %>
