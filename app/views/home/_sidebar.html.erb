@@ -8,8 +8,11 @@
 			<p><%= post.partner.name %><br>
 			<%= post.updated_at.to_date.to_s %></p>
 			<div style="clear:both"></div>
-			<%= post.excerpt.html_safe %> - <%= link_to "Lees meer...", partner_post_path(post.partner, post) %>
+			<%= post.excerpt.html_safe %><br><br>
+			<div class='read-more'>
+				<%= link_to ">> Lees meer", partner_post_path(post.partner, post) %>
+			</div>
 		</div>
-		<% if post != @posts.last %><hr><% end %>
+		<hr>
 	<% end %>
 <% end %>
