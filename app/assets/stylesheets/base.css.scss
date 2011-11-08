@@ -39,12 +39,22 @@ p, ol, ul, td {
   line-height: 18px; }
 
 hr {
-	border:none;
-	height:5px;
-	background-image: url(separator_small.png);
+	border-top:1px;
+	border-bottom: 0;
+	border-left:0;
+	border-right:0;
+	border-style:dotted;
+	border-color:gray; 
 } 
 
+.small-line{
+	border:none;
+	height:5px;
+	background-image: url(separator_small.png);	
+}
+
 .big-line {
+	border:none;
 	background-image: url(separator_big.png);
 	height:7px;
 }
