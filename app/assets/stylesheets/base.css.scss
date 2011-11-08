@@ -141,7 +141,7 @@ Typography presets
    font-size: 13px; line-height: 18px;
 }
 
-#strip {
+#home-strip {
 	float:left;
 	width: 100% ;
 	height: 398px ;
@@ -156,6 +156,14 @@ Typography presets
 		height:332px;
 		width:928px;
 	}
+}
+
+#strip{
+	color:white;
+	width: 100% ;
+	height: 200px ;
+	padding: 25px 0 25px 0;
+	background-color: $dyw-black ;
 }
 
 #sidebar-right {
