@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-		    CommentMail.create(:body => @comment.body, :name => @comment.name, :email => @comment.email, :partner_email => (@post.partner.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"), :post_title => @post.title).deliver
+		    CommentMail.new(:body => @comment.body, :name => @comment.name, :email => @comment.email, :partner_email => (@post.partner.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"), :post_title => @post.title).deliver
         format.html { redirect_to partner_post_path(@partner, @post), notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
