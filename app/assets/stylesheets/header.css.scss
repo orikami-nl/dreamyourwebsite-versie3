@@ -119,6 +119,14 @@ header {
 	background-image: url(header_about_sides.png);
 }
 
+#strip-blog-sides{
+	background-color: black;
+}
+
+#strip-contact-sides{
+	background-color: black;
+}
+
 #strip-portfolio-center{
 	background-color: #75a557;
 	background-image: url(header_portfolio.jpg);
@@ -127,4 +135,14 @@ header {
 #strip-about-center{
 	background-color: #316497;
 	background-image: url(header_about.jpg);
+}
+
+#strip-blog-center{
+	background-color: black;
+	background-image: url(header_blog.jpg);
+}
+
+#strip-contact-center{
+	background-color: black;
+	background-image: url(header_contact.jpg);
 }
