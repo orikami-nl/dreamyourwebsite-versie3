@@ -8,15 +8,15 @@
 
 .project_container {
 	width:290px;
-	padding:5px;
-	margin:5px;
+	margin:12px;
 	/*border: 1px solid $dyw-black;*/
 	float:left;
 	position:relative;
 	.image_container {
 		overflow:hidden;
 		width:290px;
-		height:200px;		
+		height:200px;
+		border:1px solid gray;		
 	}
 	h4 {
 		text-align:center;
