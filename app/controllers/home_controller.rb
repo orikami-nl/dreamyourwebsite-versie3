@@ -30,6 +30,9 @@ class HomeController < ApplicationController
     @posts = Post.last(2)
     @project = Project.last
     @lasttweet = Twitter.user_timeline("invite2eat").first.text
+    @lasttweet = @lasttweet.strip.gsub(/(#\w+)/) {|s| '<a href=http://twitter.com/#!/search?q=%23' + s.gsub(/#/,"") + '>' + s + '</a>'}
+    @lasttweet = @lasttweet.strip.gsub(/(@\w+)/) {|s| '<a href=http://twitter.com/#!/' + s.gsub(/@/,"") + '>' + s + '</a>'}
+    @lasttweet = @lasttweet.html_safe
   end
 
   def full
