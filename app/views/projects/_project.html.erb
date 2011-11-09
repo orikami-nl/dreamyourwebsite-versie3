@@ -1,13 +1,20 @@
-<div class="moveable <%=project.category.to_url%>">
- 	<%= image_tag(project.picture_url(:portfolio_full).to_s) %>
+<div class="project_container">
+	<div class="image_container">
+ 		<%= link_to image_tag(project.picture_url(:portfolio_full).to_s), project_path(project) %>
+	</div>
 	<div class="project-description">
-		<p><%= project.category + ':'%></p>
-		<h4><%= link_to project.external_url, 'http://' + project.external_url.to_s, :target => "_blank" %></h4>
+		<h4><%= link_to(project.title, project_path(project))%></h4>
 		<% if admin_signed_in? %>
   	  <%= link_to 'Edit', edit_project_path(project) %> / 
   	  <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br>
 		<% end %>
-  	<p><%= project.excerpt.html_safe %> - <%= link_to ("Lees meer over onze " + project.category.downcase + " aanpak..."), path_to_category(project) %></p>
+		<div class="excerpt-container">
+  		<%= project.excerpt.html_safe %>
+		</div>
+		<div class="read-more-portfolio">		
+			<%= link_to ("Lees meer over " + project.category.downcase), path_to_category(project) %>
+		</div>
 	</div> 
-	<div style="clear:both"></div>
+	<br><hr>
 </div>
+
