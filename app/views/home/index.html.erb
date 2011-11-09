@@ -4,6 +4,27 @@
 	<%= manageable_layout_content_for :body %>
 </div>
 
+<% if !@project.nil? %>
+<hr>
+<div class="featured">
+<%= image_tag @project.picture_url.to_s %>
+<div class="excerpt">
+<h4>Featured project</h4>
+<%= @project.excerpt.html_safe %>
+<div class="read-more"><%= link_to ">> Lees meer", path_to_category(@project) %></div>
+</div>
+</div>
+<% end %>
+
+<hr>
+
+<div class="featured">
+<div class="excerpt"><h4>Het Dream Team</h4>
+<%= manageable_layout_content_for :dreamteam %>
+<div class="read-more"><%= link_to ">> Lees meer", partners_path %></div>
+</div>
+<%= image_tag @project.picture_url.to_s %>
+</div>
 
 <hr>
 
