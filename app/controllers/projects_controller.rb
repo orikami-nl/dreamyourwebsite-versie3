@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
 	manageable_content_for :webdevelopment, :concept_development, :mobile, :title, :body, :layout => "portfolio_layout"	
 
 	before_filter :authenticate_admin!, :except => [:show, :index, :webdevelopment, :concept_development, :mobile] 
-	layout 'application'
+	layout 'application', :except => [:index, :show]
 
   # GET /projects
   # GET /projects.json
@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
 		@project = Project.find_by_title_for_url(params[:id])
+		render :layout => 'sidebar_layout'
   end
 
   # GET /projects/new
