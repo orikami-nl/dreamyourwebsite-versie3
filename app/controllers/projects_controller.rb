@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-		redirect_to projects_path
+		@project = Project.find_by_title_for_url(params[:id])
   end
 
   # GET /projects/new
