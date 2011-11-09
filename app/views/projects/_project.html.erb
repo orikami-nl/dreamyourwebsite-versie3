@@ -1,10 +1,9 @@
 <div class="project_container">
-	<p><%= link_to project.category + ':', path_to_category(project)%></p>
 	<div class="image_container">
  		<%= link_to image_tag(project.picture_url(:portfolio_full).to_s), project_path(project) %>
 	</div>
 	<div class="project-description">
-		<h4><%= link_to project.external_url, 'http://' + project.external_url.to_s, :target => "_blank" %></h4>
+		<h4><%= link_to(project.title, project_path(project))%></h4>
 		<% if admin_signed_in? %>
   	  <%= link_to 'Edit', edit_project_path(project) %> / 
   	  <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br>
