@@ -13,13 +13,14 @@
 	background-position: center top;
 	a {
 		text-decoration: none;
-	  color: $dyw-black;
-	  &:visited {
-	    color: $dyw-black; }
-	  &:hover {
-	    color: white;
-	  }
-	} }
+	 	color: $dyw-black;
+	 	&:visited {
+	    	color: $dyw-black;
+	    }
+	  	&:hover {
+	    	color: white;
+	  	}
+	}
 
 
 	#footer-container {
@@ -97,6 +98,21 @@
 				background-googleplus: url(icon_googleplus.png);
 			}
 		}
+
+		#footer-more{
+			position: absolute;
+			left: 650px;
+			margin-top: 25px;
+			#contact-button{
+				a{
+					display: block;
+					width: 173px;
+					height: 32px;
+					background-image: url(footer_contact.png)
+				}
+			}
+		}
+	}
 }
 
 
