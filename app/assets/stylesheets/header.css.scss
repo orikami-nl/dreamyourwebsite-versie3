@@ -98,3 +98,33 @@ header {
 	height:112px;
 	@include clearfix ;
 }
+
+.strip-wide{
+	width: 100%;
+	height: 275px;
+}
+
+.strip-center{
+	width: 1280px;
+	height: 275px;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+}
+
+#strip-portfolio-sides{
+	background-image: url(header_portfolio_sides.png);
+}
+
+#strip-about-sides{
+	background-image: url(header_about_sides.png);
+}
+
+#strip-portfolio-center{
+	background-color: #75a557;
+	background-image: url(header_portfolio.jpg);
+}
+
+#strip-about-center{
+	background-color: #316497;
+	background-image: url(header_about.jpg);
+}
