@@ -10,11 +10,13 @@
 		<% end %>
 		<div class="excerpt-container">
   		<%= project.excerpt.html_safe %>
-		</div>
+		</div><br>
 		<div class="read-more-portfolio">		
 			<%= link_to ("Lees meer over " + project.category.downcase), path_to_category(project) %>
 		</div>
 	</div> 
-	<br><hr>
 </div>
+<% if (project_counter + 1) % 3 == 0 %>
+	<div style="clear:both"><hr></div>
+<% end %>
 
