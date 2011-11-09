@@ -6,36 +6,39 @@
 @import "compass/css3/border-radius" ;
 @import "colors" ;
 
-.roundabout-holder { padding: 0; height: 340px; list-style: none }
-.roundabout-moveable-item {
-  height: 20em;
-  width: 40em;
-  cursor: pointer;
-	background-color:$dyw-blue;
-	@include border-radius(8px);
-	p { font-size:0.9em; line-height:1em;}
-	h4 { font-size:1.5em; line-height:1.5em;}
-	a { 
-		color:$dyw-black ;
-		&:hover {
-			color:white;
-		}
+.project_container {
+	background-color:white;
+	width:290px;
+	padding:5px;
+	margin:5px;
+	/*border: 1px solid $dyw-black;*/
+	float:left;
+	position:relative;
+	.image_container {
+		overflow:hidden;
+		width:290px;
+		height:200px;		
 	}
-	img {
-		float:left;
-		height:20em;
-		width:20em;
+	h4 {
+		text-align:center;
+		padding:10px 0 5px 0;
 	}
-	.project-description{
+	.excerpt-container{
+		font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+		font-style: italic;
+		height:200px;
 		overflow-y:auto;
-		float:right;
-		width:18.5em;
-		height:19em;
-		padding:0.5em;
 	}
 }
-.roundabout-in-focus { cursor: auto; }
 
+.read-more-portfolio {
+	font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+	font-style: italic;
+	font-weight: bold;
+	position:absolute;
+	right:7px;
+	bottom:20px;
+}
 #categories-navigation {
 	font-size:1.5em;
 	a {
