@@ -32,7 +32,10 @@ class HomeController < ApplicationController
     @lasttweet = Twitter.user_timeline("invite2eat").first.text
     @lasttweet = @lasttweet.strip.gsub(/(#\w+)/) {|s| '<a href=http://twitter.com/#!/search?q=%23' + s.gsub(/#/,"") + '>' + s + '</a>'}
     @lasttweet = @lasttweet.strip.gsub(/(@\w+)/) {|s| '<a href=http://twitter.com/#!/' + s.gsub(/@/,"") + '>' + s + '</a>'}
+    @lasttweet = @lasttweet.strip.gsub(/(http:\w+)/) {|s| '<a href=' + s.gsub(/@/,"") + '>' + s + '</a>'}
     @lasttweet = @lasttweet.html_safe
+    # @lasttweet = Twitter.user_timeline("invite2eat",{:include_entities => 1}).first.hashtags
+    
   end
 
   def full
