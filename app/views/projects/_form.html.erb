@@ -24,12 +24,20 @@
     <%= f.file_field :picture %>
   </div>
   <div class="field">
+    <%= f.label :full_picture %><br />
+    <%= f.file_field :full_picture %>
+  </div>
+  <div class="field">
     <%= f.label :category %><br />
 		<%= f.select(:category, ["Webdevelopment", "Concept development", "Mobiel"]) %>
   </div>
   <div class="field">
     <%= f.label :excerpt %><br />
-    <%= f.text_area :excerpt, :class => "input"%>
+    <%= f.text_area :excerpt%>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :class => "input"%>
   </div>
   <div class="actions">
     <%= f.submit %>
