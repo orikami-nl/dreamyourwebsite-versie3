@@ -126,9 +126,9 @@ Typography presets
 
 .bigger, h3 {
    font-size: 22px;
-   line-height: 36px;
+   line-height: 24px;
    font-family: 'BebasNeueRegular', impact, sans-serif;
-	 padding-bottom: 10px;
+	 padding-top: 16px;
 	 color:$dyw-blue;
 } 
 
@@ -167,9 +167,19 @@ Typography presets
 	background-color: $dyw-black ;
 }
 
+#home-left {
+	/*padding-right:30px;*/
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 670px - 20px;
+	float: left;
+}
+
 #sidebar-right {
-	width: 300px ;
-	vertical-align:top;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 960px - 20px - 670px;
 }
 
 .site-flash {
@@ -201,7 +211,7 @@ Typography presets
 
 #main-container{
 	vertical-align:top;
-	width:640px;
+	width:100%;
 }
 
 .black-button{

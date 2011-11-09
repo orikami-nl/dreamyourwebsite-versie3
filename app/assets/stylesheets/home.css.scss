@@ -71,7 +71,7 @@
 }
 
 #home-left {
-	padding-right:30px;
+	/*padding-right:30px;*/
 }
 
 #home-banner {
@@ -244,7 +244,7 @@
 }
 
 .read-more{
-	font-family: bookman, 'Times New Roman', serif;
+	font-family: bookman-old-style, bookman, 'Times New Roman', serif;
 	font-style: italic;
 	font-weight: bold;
 	position:absolute;
@@ -264,6 +264,13 @@
   @include button;
   @include color($dyw-black);
   @include rounded(5px) ;
+}
+
+#last-tweet{
+	font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+	color: #637579;
+	font-style: italic;
+	font-size: 18px;
 }
 
 

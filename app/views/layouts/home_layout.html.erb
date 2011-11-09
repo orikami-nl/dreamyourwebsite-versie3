@@ -18,16 +18,19 @@
 	
 	<%= render "strip" %>
 
-<div class='content'>
-	<table><tr>
-	<td id='home-left'>
-		<%= yield %>
-	</td>
-	<td id="sidebar-right">
-		<%= render "sidebar" %>
-	</td>
-	</tr></table>
-</div>
+	<div class='content'>
+		<div id='home-left'>
+			<%= yield %>
+		</div>
+		<div id="sidebar-right">
+			<%= render "sidebar" %>
+			<h3>Laatste tweet</h3>
+			<hr class="small-line">
+			<div id="last-tweet">
+				<%= @lasttweet %>
+			</div>
+		</div>
+	</div>
 
 	<div style="clear:both"></div>
    	<div id="root_footer"></div>

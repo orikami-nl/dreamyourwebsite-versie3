@@ -29,6 +29,7 @@ class HomeController < ApplicationController
     end
     @posts = Post.last(2)
     @project = Project.last
+    @lasttweet = Twitter.user_timeline("invite2eat").first.text
   end
 
   def full
