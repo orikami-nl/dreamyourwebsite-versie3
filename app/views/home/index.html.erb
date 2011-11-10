@@ -8,7 +8,7 @@
 <hr>
 <div class="featured">
 <div class="feature-shadow">
-	<%= image_tag @project.picture_url.to_s %>
+	<%= link_to image_tag(@project.picture_url.to_s), path_to_category(@project) %>
 </div>
 <div class="excerpt-container">
 	<div class="excerpt">
@@ -24,7 +24,7 @@
 
 <div class="featured">
 <div class="feature-shadow dreamteam-img">
-	<%= image_tag @project.picture_url.to_s %>
+	<%= link_to image_tag(@project.picture_url.to_s), path_to_category(@project) %>
 </div>
 	<div class="excerpt-container dreamteam">
 		<div class="excerpt"><h4>Het Dream Team</h4>
