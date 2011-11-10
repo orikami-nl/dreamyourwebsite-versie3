@@ -74,146 +74,62 @@
 	/*padding-right:30px;*/
 }
 
-#home-banner {
-	display:none;
-	@include border-radius(8px);
-	@include clearfix ; 
-	width: 970px ;
-	height: 180px ;
-	overflow: hidden ;
-	margin-top: 5px ; 
-	margin-bottom: 5px ;
-	margin-left: 30px ;
-	position:relative;
-}
-
-@mixin home-banner-element($bgimage) {
+#home-strip {
 	width: 100% ;
-	height: 100% ;	
-	background-image:url($bgimage);
+	height: 398px ;
+	background-color: $dyw-black ;
+	background-image: url(splash.jpg);
 	background-repeat: no-repeat;
-	background-position: right center ;
-	padding: 20px ;
-	position: relative ;
-	float: left ;
-	p {
-	 padding-left: 10px ;	
-	 font-size: 16px ;
-	 color: $dyw-black ;
-	 line-height: 20px ;
-	 position: absolute ;
-	 padding-top: 10px ;
- 	 height: 60px ; 
-	 left: 270px ;
- 	 top: 120px ;
-	 width: 700px ;
-		a {
-  			font-family: BebasNeue, impact, sans-serif;
-			text-transform: uppercase; 
-			position: absolute ; 
-			right: 20px ; 
-			top: 10px ;
+	background-position: center;
+	color: white;
+	overflow: hidden;
+	position: relative;
+	#left{
+		position: absolute;
+		top: 150px;
+		left: 0px;
+		float:left;
+		z-index: 5;
+	}
+	#right{
+		position: absolute;
+		top: 150px;
+		right: 0px;
+		float:left;
+		z-index: 5;
+	}
+	#home-banner-container{
+		height: 398px;
+		/*width: 100%px;*/
+		overflow: auto;
+		position:relative;
+		margin:30px auto;
+		.home-banner-element
+		{
+			background-image: url(glasspanel.png);
+			background-repeat: no-repeat;
+			background-position: center top;
+			height:332px;
+			margin: 0 auto;
+			.banner-element-content{
+				height:332px;
+				width:928px;
+				margin: 0 auto;
+			}
 		}
+	}
+	a.control, a.control:link, a.control:hover, a.control:visited{
+		color: white;
+		text-decoration: none;
 	}
 }
 
-#home_banner_web {
-  @include home-banner-element("webbg.png") ;
-}
-
-#home_banner_concept {
-  @include home-banner-element("conceptbg.png") ;
-}
-
-#home_banner_mobile {
-  @include home-banner-element("iphone.png") ;
-}
-
-#home-banner-overlay-left {
-  @include opacity(1) ;   
-  float: left ;
-  background: $dyw-blue ;
-  height: 180px ; 
-  width: 270px ;
-}
-
-#home-banner-overlay-bottom {
-  @include opacity(0.8) ;   
-  @include border-bottom-right-radius(8px);
-  position: absolute ;
-  background: #ffffff ;
-  height: 60px ; 
-  left: 270px ;
-  top: 120px ;
-  width: 700px ;
+#home-banner{
 }
 
 @font-face {
   font-family: BebasNeue;
   src: url('/BebasNeue.otf');
-}
-
-
-#home-banner-categories {
-  @include border-bottom-left-radius(8px);
-  position: absolute ;
-  height: 180px ;
-  width: 270px ;	
-  text-transform: uppercase ;
-  a {
-	line-height: 60px ;
-	font-size: 24px ;
-	color: $dyw-black ;
-	text-decoration: none ;
-	&:visited {
-		color: $dyw-black ;
-	}
-	&:hover {
-		color: #fff ;
-	}
-  }
-  li {
-  	font-family: BebasNeue, impact, sans-serif;
-	background-color: $dyw-blue ;
-	padding-left: 5px ;
-	line-height: 60px ;
-	font-size: 24px ;
-	color: $dyw-black ;
-	cursor: pointer ;
-	&.active-li {
-  		@include border-top-left-radius(8px);
-  		@include border-bottom-left-radius(8px);
-		width: 265px ;	
-		position: relative ; 
-		left: -25px ;
-		color: $dyw-grey ;
-		border-bottom: 1px solid #fff ;
-		border-top: 1px solid #fff ;
-		height: 58px ;
-		padding-left: 30px ;
-	}
-	&:hover {
-		color: $dyw-grey ;
-	}
-  }
-}
-
-#home-banner-fixed {
-  @include clearfix ;
-  @include border-radius(8px);
-  position: absolute ;
-  height: 180px ; 
-  width: 310px ; 
-}
-
-#home-banner-arrow {
-  @include opacity(1) ;
-  float: left ;
-  height: 180px ;
-  width: 30px ;
-  background-image: url("pointright.png") ; 
-  background-repeat: no-repeat ;
-  background-position: 0px 0px ;
 }
 
 #project-picture{
