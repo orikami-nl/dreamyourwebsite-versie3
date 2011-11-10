@@ -1,12 +1,13 @@
 	<% if !post.partner.nil? %>
-		<div id="post-container">
-			<div id="post-header">
- 	  		<div id="partner-blog-photo">
+		<div class="post-container">
+			<div class="post-header">
+			<div class="post-blog-photo-shadow">
 					<%= link_to image_tag(post.partner.avatar_url.to_s, :alt => post.partner.name, :title => post.partner.name), partner_path(post.partner) %>
 				</div>
 				<div id="post-info">
-	  	  	<h4><%= link_to(post.title, partner_post_path(post.partner, post), :class => "post-title")%></h4>
-					<p>Geschreven door <%= post.partner.name %> op <%= post.updated_at.to_date.to_s %></p>
+	  	  			<h4><%= link_to(post.title, partner_post_path(post.partner, post), :class => "post-title")%></h4>
+					<p class="bookman">Geschreven door <%= post.partner.name %></p>
+					<p class="bebas"><%= post.updated_at.to_date.to_s %></p>
 				</div>
 			</div>
 			<div style="clear:both"></div>

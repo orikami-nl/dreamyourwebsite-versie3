@@ -28,16 +28,24 @@
 	}
 }
 
-#partner-container{
-	margin-bottom:10px;
-	margin-top:10px;
+.post-container{
+	margin-bottom:20px;
+	margin-top:20px;
 }
 
-#partner-blog-photo{
-	float:left;
+.post-blog-photo-shadow{
+	float: left;
+	width: 81px ;
+	height: 81px ;
+	background-image: url(blog_image_shadow.png);
+	margin-bottom: 10px;
+	margin-right:10px;
 	img {
 		width: 75px ;
 		height: 75px ;
+		margin-top: 2px;
+		margin-left: 3px;
+		margin-right: 3px;
 	}
 }
 
@@ -59,11 +67,24 @@
 
 #post-info{
 	float:left;
-	padding-right:5px;
-	padding-left:5px;
+	margin-right:10px;
+	margin-left:10px;
+	h4{
+		margin-bottom: 5px;
+	}
+	.bookman
+	{
+		font-size: 14px;
+		text-transform:uppercase;
+		margin-bottom: 5px;
+	}
+	.bebas
+	{
+		font-size:16px;
+	}
 }
 
-#post-header{
+.post-header{
 	padding-bottom:5px;
 }
 
