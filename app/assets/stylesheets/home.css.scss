@@ -245,9 +245,36 @@
 
 .sidebar-post{
 	position:relative;
-	img{ 
-		float:left;
-		margin-right:5px;
+	.sidebar-post-image-shadow{
+		float: left;
+		background-image: url(post_thumb_shadow.png);
+		width: 60px;
+		height: 58px;
+		img{
+			width: 52px;
+			height: 52px;
+			margin-top: 2px;
+			margin-left: 4px;
+			margin-right: 4px;
+		}
+	}
+	.sidebar-post-header{
+		margin-left: 70px;
+		h4{
+			line-height: 26px;
+		}
+		.bookman{
+			font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+			font-size: 13px;
+			line-height: 15px;
+			text-transform: uppercase;
+		}
+		.bebas{
+			font-family: 'BebasNeueRegular', impact, sans-serif;
+			font-size: 12px;
+			line-height: 20px;
+			text-transform: uppercase;
+		}
 	}
 }
 
