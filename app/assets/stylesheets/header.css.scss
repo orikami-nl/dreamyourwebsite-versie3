@@ -28,7 +28,9 @@
 	ul {
 		@include horizontal-list ;
 		li {
-			margin: 0 0 0 20px;
+			border-right: 1px solid #666666;
+			margin: 0;
+			padding: 0 15px 0 15px;
 			height:50px;
 			overflow:hidden;
 			.true {
@@ -44,6 +46,9 @@
 					top:-50px;
 				}
 			}
+		}
+		li:last-child{
+			border: none;
 		}
 	}
 	a {
