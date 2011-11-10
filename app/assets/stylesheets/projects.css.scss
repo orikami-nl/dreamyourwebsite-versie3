@@ -31,10 +31,41 @@
 		padding-left: 8px;
 		padding-right: 8px;
 		padding-top: 2px;
-		width:296px;
+		width:280px;
 		height:200px;
-		/*border:1px solid gray;*/
+		a:hover + a{
+			display: block;
+		}
 	}
+
+	a.image_overlay, a.image_overlay:link, a.image_overlay:visited{
+		display: none;		
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		margin-left: 8px;
+		margin-right: 8px;
+		margin-top: 2px;
+		width:280px;
+		height:200px;		
+		color: $dyw-blue;
+		text-decoration: none;
+		font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+		font-weight: bolder;
+		text-align: center;
+		font-size: 16px;
+		line-height: 200px;
+
+		background: rgb(0, 0, 0);
+		background: rgba(0, 0, 0, 0.6);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)";
+	}
+
+	a.image_overlay:hover{
+		display: block;
+	}
+
 	h4 {
 		text-align:center;
 		padding:10px 0 5px 0;
