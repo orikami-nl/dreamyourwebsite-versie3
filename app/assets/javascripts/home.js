@@ -30,12 +30,22 @@ $(document).ready(function(){
     .prepend('<a href="#" class="control" id="left">Move left</a>')
     .append('<a href="#" class="control" id="right">Move right</a>');
 
-  // Hide left arrow control on first load
-  //manageControls(mod(currentPosition,numberOfSlides));
+  $(document).everyTime(5000,'bannertimer',function(i) {
+		  currentPosition = currentPosition + 1;
+					// Move slideInner using margin-left
+      $('#slideInner').animate({
+        'marginLeft' : slideWidth*(-(currentPosition % numberOfSlides))
+      });
 
+      $("#home-banner-bullets ul li").removeClass("active-bullet");
+      $("#home-banner-bullets ul li:nth-child("+((currentPosition % numberOfSlides)+1)+")").addClass("active-bullet");
+				}); 
+      
   // Create event listeners for .controls clicks
   $('.control')
     .bind('click', function(){
+
+     $(document).stopTime('bannertimer');
     // Determine new position
       currentPosition = ($(this).attr('id')=='right')
     ? currentPosition+1 : currentPosition-1;
@@ -53,6 +63,7 @@ $(document).ready(function(){
   	$('.bullet')
     .bind('click', function(){
     // Determine new position
+    $(document).stopTime('bannertimer');
       currentPosition = ($(this).index());
 
       // Move slideInner using margin-left
@@ -64,7 +75,10 @@ $(document).ready(function(){
       $("#home-banner-bullets ul li:nth-child("+((currentPosition % numberOfSlides)+1)+")").addClass("active-bullet");
 
     });
+
   });
+
+
 
 $(window).resize(function(){
 	slideWidth = $(window).width();
