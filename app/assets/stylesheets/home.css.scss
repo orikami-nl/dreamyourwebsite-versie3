@@ -225,35 +225,58 @@
 	@include border-radius(8px);
 	background-color: $dyw-box-blue ;*/
 	height:200px;
-	position: relative;
-	img{
-		@include clearfix;
-		float:left;
-		width:200px;
-		height:200px;
-		margin:0 0 0 15px;
-	}
-	.excerpt{
-		h4{
-			margin-bottom: 5px;
-		}
-		@include clearfix;
-		overflow-y:hidden;
-		float:left;
-		position:relative;
-		width:400px;
-		padding:0 0 0 15px;
-		height:170px;
-	}
-	.read-more
+	.feature-shadow
 	{
+		background-image: url(feature_shadow.png);
+		width: 254px;
+		heigth: 210px;
+		float:left;
+		img{
+			@include clearfix;
+			width:240px;
+			height:200px;
+			margin-top: 2px;
+			margin-left: 7px;
+			margin-right: 7px;
+		}	
+	}
+	.excerpt-container{
+		position: relative;
+		width: 380px;
+		height: 200px;
+		float:right;
+		.excerpt{
+			h4{
+				margin-bottom: 5px;
+			}
+			@include clearfix;
+			overflow-y:hidden;
+			position:relative;
+			width:100%;
+			height:170px;
+		}
+		.read-more
+		{
 		position: absolute;
 		bottom: 0;
 		right: 15;
 	}
+	}
+
 	margin-top: 20px;
 	margin-bottom: 20px;
+
+	.dreamteam
+	{
+		float: left;
+	}
+
+	.dreamteam-img
+	{
+		float: right;
+	}
 }
+
 
 .sidebar-post{
 	position:relative;
