@@ -119,6 +119,18 @@
 				width:928px;
 				margin: 0 auto;
 				position: relative;
+				vertical-align: top;
+				.banner-element-text{
+					margin: 40px;
+					width: 300px;
+					position: absolute;
+					h4{
+						margin-bottom: 20px;
+					}
+					p{
+						font-style: italic;
+					}
+				}
 				.banner-element-image{
 					z-index:100;
 					position: absolute;
