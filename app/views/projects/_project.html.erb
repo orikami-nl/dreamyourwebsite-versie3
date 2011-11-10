@@ -1,6 +1,8 @@
 <div class="project_container">
-	<div class="image_container">
- 		<%= link_to image_tag(project.picture_url(:portfolio_full).to_s), project_path(project) %>
+	<div class="image-shadow-container">
+		<div class="image_container">
+	 		<%= link_to image_tag(project.picture_url(:portfolio_full).to_s), project_path(project) %>
+		</div>
 	</div>
 	<div class="project-description">
 		<h4><%= link_to(project.title, project_path(project))%></h4>
@@ -12,7 +14,8 @@
   		<%= project.excerpt.html_safe %>
 		</div><br>
 		<div class="read-more-portfolio">		
-			<%= link_to ("Lees meer over " + project.category.downcase), path_to_category(project) %>
+			 <!-- link_to ("Lees meer over " + project.category.downcase), path_to_category(project) -->
+			 <%= link_to ("Lees meer"), path_to_category(project) %>
 		</div>
 	</div> 
 </div>

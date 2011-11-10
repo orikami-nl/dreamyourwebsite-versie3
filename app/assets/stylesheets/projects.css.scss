@@ -6,37 +6,63 @@
 @import "compass/css3/border-radius" ;
 @import "colors" ;
 
+#projects-container
+{
+	margin-top: 15px;
+}
+
 .project_container {
-	width:290px;
-	margin:12px;
+	width:300px;
+	margin: 10px;
 	/*border: 1px solid $dyw-black;*/
 	float:left;
 	position:relative;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	.image-shadow-container
+	{
+		width: 296x;
+		height: 210px;
+		background-image: url(imageshadow-300x200.png);
+		background-repeat: no-repeat;
+	}
 	.image_container {
 		overflow:hidden;
-		width:290px;
+		padding-left: 8px;
+		padding-right: 8px;
+		padding-top: 2px;
+		width:296px;
 		height:200px;
-		border:1px solid gray;		
+		/*border:1px solid gray;*/
 	}
 	h4 {
 		text-align:center;
 		padding:10px 0 5px 0;
+		a:link{
+			text-decoration: none;
+		}
 	}
 	.excerpt-container{
 		font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+		font-size: 14px;
 		font-style: italic;
-		height:200px;
+		height:160px;
 		overflow-y:auto;
+		margin-left: 15px;
+		margin-right: 15px;
 	}
 }
 
 .read-more-portfolio {
-	font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+	font-family: bookman-old-style, bookman,'Times New Roman', serif;
+	font-size: 16px;
 	font-style: italic;
-	font-weight: bold;
+	a, a:link, a:hover, a:active{
+		font-weight: bold;
+	}
 	position:absolute;
-	right:5px;
-	bottom:0px;
+	right:20px;
+	bottom:5px;
 }
 #categories-navigation {
 	font-size:1.5em;
