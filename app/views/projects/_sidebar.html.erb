@@ -8,18 +8,18 @@
 			<%= link_to " >>", project_path(@next_project), :class => "arrow" %>
 		<% end %>
 	</h4>
-	<hr>
+	<hr class="small-line">
 	<div class="bookman-link">
-	<%= link_to ">> Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank" %>
+	>> <%= link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank" %>
 	</div>
 	<hr>
 	<h5>Datum</h5>
-	<%= @project.created_at.to_date.httpdate %>
+	<p class="bookman"><%= @project.created_at.to_date.httpdate %></p>
 	<hr>
 	<h5>Type</h5>
-	<%= @project.category %>
+	<p class="bookman"><%= @project.category %></p>
 	<hr>
-	<%= @project.body %>
+	<p><%= @project.body %></p>
 	<hr>
 	<%= link_to ">> Ga terug naar overzicht", projects_path, :class => "bookman-link" %> 
 	<% if admin_signed_in? %>
