@@ -81,11 +81,3 @@ $(window).resize(function(){
         'margin-left' : slideWidth*(-(currentPosition % numberOfSlides))
       });
 });
-
-
-
-      // currentPosition = currentPosition+1;
-      // // Move slideInner using margin-left
-      // $('#slideInner').animate({
-      //   'marginLeft' : slideWidth*(-(currentPosition % numberOfSlides))
-      // });
