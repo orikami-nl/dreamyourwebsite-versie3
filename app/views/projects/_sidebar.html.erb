@@ -1,1 +1,19 @@
-lala, sidebar
+<div id="portfolio-sidebar">
+	<h4><%= @project.title %></h4>
+	<hr>
+	<div class="bookman-link">
+	<%= link_to ">> Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank" %>
+	</div>
+	<hr>
+	<h5>Datum</h5>
+	<%= @project.created_at.to_date.httpdate %>
+	<hr>
+	<h5>Type</h5>
+	<%= @project.category %>
+	<hr>
+	<%= @project.body %>
+	<% if admin_signed_in? %>
+		<br><br>
+		<%= link_to "Edit Project", edit_project_path(@project) %>
+	<% end %>
+</div>
