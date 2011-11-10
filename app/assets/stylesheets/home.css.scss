@@ -84,6 +84,7 @@
 	color: white;
 	overflow: hidden;
 	position: relative;
+	text-align: center;	
 	#left{
 		position: absolute;
 		top: 150px;
@@ -99,11 +100,12 @@
 		z-index: 5;
 	}
 	#home-banner-container{
-		height: 398px;
+		height: 338px;
 		/*width: 100%px;*/
 		overflow: auto;
 		position:relative;
-		margin:30px auto;
+		margin:0 auto;
+		margin-top: 30px;
 		.home-banner-element
 		{
 			background-image: url(glasspanel.png);
@@ -121,6 +123,26 @@
 	a.control, a.control:link, a.control:hover, a.control:visited{
 		color: white;
 		text-decoration: none;
+	}
+	#home-banner-bullets
+	{
+		height: 16px;
+		display: inline-block;
+		margin-left: 8px;
+		ul{
+			height: 16px;
+			li{
+				float: left;
+				width: 16px;
+				height: 16px;
+				background-image: url(splash_bullets.png);
+				background-position: 0 16px;
+				cursor: pointer;
+			}
+			.active-bullet{
+				background-position: 0 0;
+			}
+		}
 	}
 }
 
