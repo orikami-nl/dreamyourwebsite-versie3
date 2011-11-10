@@ -142,6 +142,10 @@ Typography presets
    font-size: 13px; line-height: 18px;
 }
 
+.bookman{
+	font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+}
+
 #home-strip {
 	float:left;
 	width: 100% ;
@@ -242,7 +246,7 @@ Typography presets
 }
 
 .read-more{
-	font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+	font-family: "Bookman Old Style", bookman, 'Times New Roman', serif;
 	font-style: italic;
 	font-weight: bold;
 	position:absolute;
