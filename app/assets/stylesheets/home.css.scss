@@ -245,6 +245,9 @@
 
 .sidebar-post{
 	position:relative;
+	margin-bottom: 10px;
+	margin-top: 10px;
+
 	.sidebar-post-image-shadow{
 		float: left;
 		background-image: url(post_thumb_shadow.png);
@@ -258,6 +261,17 @@
 			margin-right: 4px;
 		}
 	}
+
+	.read-more
+	{
+		color: $dyw-blue;
+		font-weight: bolder;
+		a, a:link, a:hover, a:visited{
+			font-size: 14px;
+			font-weight: bolder;
+		}
+	}
+	
 	.sidebar-post-header{
 		margin-left: 70px;
 		h4{
