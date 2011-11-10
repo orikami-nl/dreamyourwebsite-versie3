@@ -1,19 +1,20 @@
 <h3>Blog post</h3>
 <hr class="small-line">
 <div id="post-header">
- 	<div id="partner-blog-photo">
+	<div class="post-blog-photo-shadow">
 		<%= link_to image_tag(@post.partner.avatar_url.to_s, :alt => @post.partner.name, :title => @post.partner.name), partner_path(@post.partner) %>
 	</div>
 	<div id="post-info">
-   	<h4><%= @post.title %></h4>
-		<p>Geschreven door <%= @post.partner.name %><br><%= @post.updated_at.to_date.to_s %></p>
+		<h4><%= link_to(@post.title, partner_post_path(@post.partner, @post), :class => "post-title")%></h4>
+		<p class="bookman">Geschreven door <%= @post.partner.name %></p>
+		<p class="bebas"><%= @post.updated_at.to_date.to_s %></p>
 	</div>
 </div>
 <div style="clear:both"></div>
-	
+
 <div id="post-body">
 	<p style="font-weight:bold"><%= @post.excerpt.html_safe %></p><br>
-	<%= @post.body.html_safe %>
+	<p><%= @post.body.html_safe %></p>
 </div>
 
 <div class="black-button">

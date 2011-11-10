@@ -54,14 +54,17 @@
 	padding-bottom:10px;
 }
 
-.selection-picture{
-	float:left;
-	margin:5px;
-	width:60px;
-	height:60px;
+.selection-picture-shadow{
+	float: left;
+	background-image: url(post_thumb_shadow.png);
+	width: 60px;
+	height: 58px;
 	img{
-		border-style:solid;
-		border-width:2px;
+		width: 52px;
+		height: 52px;
+		margin-top: 2px;
+		margin-left: 4px;
+		margin-right: 4px;
 	}
 }
 
