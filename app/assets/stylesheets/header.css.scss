@@ -105,13 +105,15 @@ header {
 }
 
 .strip-center{
-	width: 1280px;
+	max-width: 1280px;
 	height: 275px;
 	margin: 0 auto;
 	background-repeat: no-repeat;
+	background-position: center top;
 }
 
 #strip-portfolio-sides{
+	width: 100%;
 	background-image: url(header_portfolio_sides.png);
 }
 

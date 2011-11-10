@@ -225,6 +225,7 @@
 	@include border-radius(8px);
 	background-color: $dyw-box-blue ;*/
 	height:200px;
+	position: relative;
 	img{
 		@include clearfix;
 		float:left;
@@ -233,14 +234,25 @@
 		margin:0 0 0 15px;
 	}
 	.excerpt{
+		h4{
+			margin-bottom: 5px;
+		}
 		@include clearfix;
 		overflow-y:hidden;
 		float:left;
 		position:relative;
 		width:400px;
 		padding:0 0 0 15px;
-		height:200px;
+		height:170px;
 	}
+	.read-more
+	{
+		position: absolute;
+		bottom: 0;
+		right: 15;
+	}
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .sidebar-post{
