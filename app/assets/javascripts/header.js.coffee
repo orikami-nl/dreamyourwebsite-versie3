@@ -1,3 +1,4 @@
+###
 next = home_li_web: "#home_li_concept", home_li_concept: "#home_li_mobile", home_li_mobile: "#home_li_web"
 mapping = home_banner_web: "#home_li_web", home_banner_concept: "#home_li_concept", home_banner_mobile: "#home_li_mobile"
 bwmapping = home_li_web: "#home_banner_web", home_li_concept: "#home_banner_concept", home_li_mobile: "#home_banner_mobile"
@@ -64,5 +65,5 @@ jQuery -> $("#home-banner-categories li").live 'click', (event) ->
 jQuery -> 
   clearInterval(timer) 
   timer = setInterval(runSlider, 5000)
-
+###
 
