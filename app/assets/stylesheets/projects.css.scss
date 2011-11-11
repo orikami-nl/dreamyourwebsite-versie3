@@ -94,7 +94,7 @@
 	}
 	position:absolute;
 	right:20px;
-	bottom:5px;
+	bottom:0;
 }
 #categories-navigation {
 	font-size:1.5em;
@@ -111,4 +111,8 @@
 
 #portfolio-sidebar{
 	margin-top:25px;
+}
+
+.arrow {
+	text-decoration:none;
 }

@@ -1,11 +1,11 @@
 <div id="portfolio-sidebar">
 	<h4>
 		<% if !@previous_project.nil? %>
-			<%= link_to "<<", project_path(@previous_project) %>
+			<%= link_to "<< ", project_path(@previous_project), :class => "arrow" %>
 		<% end %>
 		<%= @project.title %>
 		<% if !@next_project.nil? %>
-			<%= link_to ">>", project_path(@next_project) %>
+			<%= link_to " >>", project_path(@next_project), :class => "arrow" %>
 		<% end %>
 	</h4>
 	<hr>
