@@ -13,4 +13,12 @@ class Project < ActiveRecord::Base
 	def to_param
 		self.title_for_url
 	end
+
+	def previous_project
+	  self.class.first(:conditions => ["id > ?", id])
+	end
+
+	def next_project
+	  self.class.first(:conditions => ["id < ?", id])
+	end
 end

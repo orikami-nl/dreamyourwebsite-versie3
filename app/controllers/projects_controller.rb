@@ -23,6 +23,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
 		@project = Project.find_by_title_for_url(params[:id])
+		@previous_project = @project.previous_project
+		@next_project = @project.next_project
 		render :layout => 'sidebar_layout'
   end
 
