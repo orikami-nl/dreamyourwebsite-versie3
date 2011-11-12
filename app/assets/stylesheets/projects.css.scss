@@ -79,7 +79,8 @@
 		font-size: 14px;
 		font-style: italic;
 		height:160px;
-		overflow-y:auto;
+		/*overflow-y:auto;*/
+		overflow: hidden;
 		margin-left: 15px;
 		margin-right: 15px;
 	}
