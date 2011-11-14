@@ -29,11 +29,11 @@ module ApplicationHelper
 
 	def path_to_category(project)
 		if project.category == "Webdevelopment"
-			"projects/webdevelopment"
+			"services/webdevelopment"
 		elsif project.category == "Concept development"
-			"projects/concept_development"
+			"services/concept_development"
 		else
-			"projects/mobile"
+			"services/mobile"
 		end
 	end
 
