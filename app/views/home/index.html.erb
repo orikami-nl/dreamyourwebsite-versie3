@@ -23,9 +23,11 @@
 <hr>
 
 <div class="featured">
-<div class="feature-shadow dreamteam-img">
-	<%= link_to image_tag(@project.picture_url.to_s), path_to_category(@project) %>
-</div>
+	<% if !@project.nil? %>
+		<div class="feature-shadow dreamteam-img">
+			<%= link_to image_tag(@project.picture_url.to_s), path_to_category(@project) %>
+		</div>
+	<% end %>
 	<div class="excerpt-container dreamteam">
 		<div class="excerpt"><h4>Het Dream Team</h4>
 			<%= manageable_layout_content_for :dreamteam %>
