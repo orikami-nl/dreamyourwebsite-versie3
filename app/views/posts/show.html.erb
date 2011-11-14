@@ -1,3 +1,5 @@
+<div id="fb-root"></div>
+
 <h3>Blog post</h3>
 <hr class="small-line">
 <div id="post-header">
@@ -17,19 +19,22 @@
 	<p><%= @post.body.html_safe %></p>
 </div>
 
-<div class="black-button">
-	<%= link_to 'Write comment', {:action => "new", :controller => "comments", :post_id => @post.title_for_url} %> | 
+<div class="bookman-link-float">
+	<%= link_to '>> Geef commentaar', {:action => "new", :controller => "comments", :post_id => @post.title_for_url} %>
 </div>
-<div class="black-button">
-	<%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
+<div class="bookman-link-float">
+	<%= link_to '>> Neem contact op', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
 </div> 
+<div class="bookman-link-float">
+	<%= link_to ">> Ga terug", :back %>
+</div>
 <div style="clear:both"></div>
-<%= link_to "Terug", :back %>
 <% if admin_signed_in? %>
 	<br><%= link_to 'Edit post', edit_partner_post_path(@partner, @post) %> | 
-	<%= link_to 'Delete post', partner_post_path(@partner, @post), confirm: "Are you sure?", method: :delete %>
+	<%= link_to 'Delete post', partner_post_path(@partner, @post), confirm: "Are you sure?", method: :delete %><br>
 <% end %>
+<br><div class="fb-like" data-href=<%=partner_post_path(@partner, @post)%> data-send="true" data-width="450" data-show-faces="true", :data-href></div>
 
-<hr class="small-line"><br>
+<hr class="small-line">
 <h4>Comments</h4>
 <%= render :partial => "comment", :collection => @comments%>

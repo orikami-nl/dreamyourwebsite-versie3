@@ -172,6 +172,16 @@ h5 {
 	color: $dyw-blue;
 }
 
+.bookman-link-float{
+	float:left;
+	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
+	font-style: italic;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: bold;
+	color: $dyw-blue;
+	margin-right:15px;
+}
 #strip{
 	color:white;
 	width: 100% ;
