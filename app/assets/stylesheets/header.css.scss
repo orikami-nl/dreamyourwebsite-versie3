@@ -6,19 +6,19 @@
 @import "fonts";
 
 #header-logo {
-	background: url(logo.png) no-repeat scroll 0 0 transparent;
+	background: url(logo_smaller.png) no-repeat scroll 0 0 transparent;
 	margin: 20px 0 0 0;
   	display: block;
-  	height: 79px;
   	text-indent: -9999px;
-  	width: 369px;
+	width:201px;
+	height:64px;
 	float:left;
 	display: block;
 }
 
 #header-logo-link{
-	width:369px;
-	height:79px;
+	width:201px;
+	height:64px;
 	display: block;
 }
 
