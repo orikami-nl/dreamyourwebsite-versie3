@@ -29,6 +29,7 @@
 	<% if partner != @partners.last %><hr><% end %>
 <% end %>
 
+<br>
 <% if admin_signed_in? %>
 	<%= link_to 'New project', new_project_path %>
 <% end %>
