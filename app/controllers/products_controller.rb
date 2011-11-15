@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	manageable_content_for :title, :body, :webdevelopment, :concept_development, :mobile, :layout => "portfolio_layout"
+	manageable_content_for :title, :body, :webdevelopment, :concept_development, :mobile, :layout => "products_layout"
 
   def index
   end
