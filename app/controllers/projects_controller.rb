@@ -2,12 +2,12 @@ class ProjectsController < ApplicationController
 	manageable_content_for :webdevelopment, :concept_development, :mobile, :title, :body, :layout => "portfolio_layout"	
 
 	before_filter :authenticate_admin!, :except => [:show, :index, :webdevelopment, :concept_development, :mobile] 
-	layout 'application'
+	layout 'application', :except => [:index, :show]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.all.reverse
 		render :layout => 'portfolio_layout'
   end
 
@@ -22,7 +22,10 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-		redirect_to projects_path
+		@project = Project.find_by_title_for_url(params[:id])
+		@previous_project = @project.previous_project
+		@next_project = @project.next_project
+		render :layout => 'sidebar_layout'
   end
 
   # GET /projects/new

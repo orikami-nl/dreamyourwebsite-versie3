@@ -1,0 +1,29 @@
+<div id="portfolio-sidebar">
+	<h4>
+		<% if !@previous_project.nil? %>
+			<%= link_to "<< ", project_path(@previous_project), :class => "arrow" %>
+		<% end %>
+		<%= @project.title %>
+		<% if !@next_project.nil? %>
+			<%= link_to " >>", project_path(@next_project), :class => "arrow" %>
+		<% end %>
+	</h4>
+	<hr class="small-line">
+	<div class="bookman-link">
+	>> <%= link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank" %>
+	</div>
+	<hr>
+	<h5>Datum</h5>
+	<p class="bookman"><%= @project.created_at.to_date.httpdate %></p>
+	<hr>
+	<h5>Type</h5>
+	<p class="bookman"><%= @project.category %></p>
+	<hr>
+	<p><%= @project.body %></p>
+	<hr>
+	<%= link_to ">> Ga terug naar overzicht", projects_path, :class => "bookman-link" %> 
+	<% if admin_signed_in? %>
+		<br><br>
+		<%= link_to "Edit Project", edit_project_path(@project) %>
+	<% end %>
+</div>

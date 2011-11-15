@@ -1,22 +1,23 @@
 	<% if !post.partner.nil? %>
-		<div id="post-container">
-			<div id="post-header">
- 	  		<div id="partner-blog-photo">
+		<div class="post-container">
+			<div class="post-header">
+			<div class="post-blog-photo-shadow">
 					<%= link_to image_tag(post.partner.avatar_url.to_s, :alt => post.partner.name, :title => post.partner.name), partner_path(post.partner) %>
-				</div>
-				<div id="post-info">
-	  	  	<h4><%= post.title %></h4>
-					<p>Geschreven door <%= post.partner.name %> op <%= post.updated_at.to_date.to_s %></p>
-				</div>
 			</div>
-			<div style="clear:both"></div>
-			<div id="post-excerpt">
- 	  		<p><%= post.excerpt.html_safe %> - <%= link_to "Lees meer...", partner_post_path(post.partner, post) %></p>
-				<% if admin_signed_in? %>
-	  	  	<br><%= link_to 'Edit', edit_partner_post_path(post.partner, post) %> | 
-   				<%= link_to 'Destroy', partner_post_path(post.partner, post), confirm: 'Are you sure?', method: :delete %>
-				<% end %>
-			</div>			
+			<div id="post-info">
+  	  			<h4><%= link_to(post.title, partner_post_path(post.partner, post), :class => "post-title")%></h4>
+				<p class="bookman">Geschreven door <%= post.partner.name %></p>
+				<p class="bebas"><%= post.updated_at.to_date.to_s %></p>
+			</div>
 		</div>
-		<% if post != @posts.last %><hr><% end %>
+		<div style="clear:both"></div>
+		<div id="post-excerpt">
+	  		<p><%= post.excerpt.html_safe %> - <span class="bookman-link"><%= link_to "Lees meer...", partner_post_path(post.partner, post) %></span></p>
+			<% if admin_signed_in? %>
+  	  			<br><%= link_to 'Edit', edit_partner_post_path(post.partner, post) %> | 
+				<%= link_to 'Destroy', partner_post_path(post.partner, post), confirm: 'Are you sure?', method: :delete %>
+			<% end %>
+		</div>			
+		</div>
+		<hr>
 	<% end %>

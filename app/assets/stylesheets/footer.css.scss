@@ -3,30 +3,116 @@
 @import "compass/css3/box-shadow";
 
 #footer {
-background-color: $dyw-light-blue ;
-margin-top:25px;
-height: 200px ;
-color: $dyw-black ;
-a {
-	text-decoration: none;
-  color: $dyw-black;
-  &:visited {
-    color: $dyw-black; }
-  &:hover {
-    color: white;
-  }
-} }
-
-#footer-container {
-	padding-top:25px;
-	#footer-left{
-		float:left;
-		text-align:left;
+	background-color: $dyw-light-blue ;
+	margin: 0;
+	margin-top: 20px;
+	padding: 0;
+	height: 194px ;
+	width: 100%;
+	color: $dyw-black ;
+	background-image: url(footer_background.png);
+	background-position: center top;
+	a {
+		text-decoration: none;
+	 	color: $dyw-black;
+	 	&:visited {
+	    	color: $dyw-black;
+	    }
+	  	&:hover {
+	    	color: white;
+	  	}
 	}
-	#footer-right{
-		float:right;
-		text-align:right;
-		margin-right:0px;
+
+
+	#footer-container {
+		position: relative;
+		width: 960px;
+		height: 194px ;
+		margin: 0 auto;
+		background-image: url(footer_backgroundshadow.png);
+
+		h2{
+			font-size: 24px;
+			line-height: 32px;
+			margin-bottom: 10px;
+		}
+
+		p{
+			color: #637579;
+			font-family: bookman, serif;
+			font-size: 14px;
+			line-height: 15px;
+			font-style: italic;
+			b{
+				font-weight: bolder;
+			}
+		}
+
+		ul{
+			font-size: 18px;
+			line-height: 22px;
+			font-family: bookman-old-style, bookman, serif;
+			font-style: italic;
+			font-weight: bold;
+			color: #637579;
+			a, a:visited{
+				color: #637579;
+			}
+			a:hover{
+				color: white;
+			}
+		}
+
+		#footer-navigation{
+			position: absolute;
+			left: 10px;
+			margin-top: 25px;
+			text-align:left;
+		}
+
+		#footer-contact{
+			position: absolute;
+			left: 190px;
+			margin-top: 25px;
+		}
+
+		#footer-social{
+			position: absolute;
+			left: 450px;
+			margin-top: 25px;
+			li{
+				display: block;
+				padding-left: 28px;
+				background-repeat: no-repeat;
+				margin-bottom: 5px;
+			}
+			li.twitter{
+				background-image: url(icon_twitter.png);
+			}
+			li.facebook{
+				background-image: url(icon_facebook.png);
+			}
+			li.linkedin{
+				background-image: url(icon_linkedin.png);
+			}
+			li.googleplus{
+				background-image: url(icon_gplus.png);
+			}
+		}
+
+		#footer-more{
+			position: absolute;
+			left: 650px;
+			margin-top: 25px;
+			#contact-button{
+				a{
+					display: block;
+					width: 173px;
+					height: 32px;
+					background-image: url(footer_contact.png)
+				}
+			}
+		}
 	}
 }
 

@@ -15,19 +15,20 @@
 @include sticky-footer(225px) ;
 
 body {
-  background-color: white;
+  background-color: $dyw-very-light-blue;
   color: $dyw-black;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 13px;
+  line-height: 17px;
 }
 
 #root {
   @include clearfix ;
+  margin: 0;
 }
 
 .content {
-  width: 1000px ;
+  width: 960px ;
   margin-left: auto ;
   margin-right: auto ;
   position:relative;
@@ -39,10 +40,29 @@ p, ol, ul, td {
   line-height: 18px; }
 
 hr {
-	border-bottom : 1px dotted $dyw-black;
-	border-top : none;
-	color : $dyw-black;
+	border-top:1px;
+	border-bottom: 0;
+	border-left:0;
+	border-right:0;
+	border-style:dotted;
+	border-color:gray; 
+	margin-top: 15px;
+	margin-bottom: 15px;
 } 
+
+.small-line{
+	border:none;
+	height:5px;
+	background-image: url(separator_small.png);	
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+.big-line {
+	border:none;
+	background-image: url(separator_big.png);
+	height:7px;
+}
 
 pre {
   background-color: #eee;
@@ -50,9 +70,9 @@ pre {
   font-size: 11px; }
 
 a {
-  color: $dyw-blue;
+  color: $dyw-box-blue;
   &:visited {
-    color: $dyw-blue; }
+    color: $dyw-box-blue; }
   &:hover {
     color: $dyw-black;
   }
@@ -109,73 +129,91 @@ Typography presets
 } 
 
 .bigger, h3 {
-   font-size: 26px;
-   line-height: 36px;
+   font-size: 22px;
+   line-height: 24px;
    font-family: 'BebasNeueRegular', impact, sans-serif;
-	 padding-bottom: 10px;
+	 padding-top: 16px;
+	 color:$dyw-blue;
 } 
 
 .big, h4 {
-   font-size: 22px;
+   font-size: 26px;
    line-height: 30px;
+   font-family: 'BebasNeueRegular', impact, sans-serif;
 } 
+
+h5 {
+	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: bold;
+}
 
 .small, small {
    font-size: 13px; line-height: 18px;
 }
 
-#strip {
-	@include box-shadow(2px 2px 10px black);
-	float:left;
-	width: 100% ;
-	height: 190px ;
-	background-color: $dyw-black ;
-	color: white;
-	margin-bottom:25px;
-	margin-top:25px;
-	padding-top:25px;
-	padding-bottom:25px;
-	a {
-	}
-	.true {
-		color:$dyw-blue;
-	}
-	.false {
-		color:white;
-	  &:hover {
-			color:$dyw-blue;
-		}
-	}
+.bookman{
+	font-family: 'Bookman Old Style', bookman, 'Times New Roman', serif;
+	font-size: 14px;
+	line-height: 24px;
 }
 
-#strip-content{
+.bebas{
+	font-family: 'BebasNeueRegular', impact, sans-serif;
+}
+
+.bookman-link{
+	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
+	font-style: italic;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: bold;
+	color: $dyw-blue;
+}
+
+.bookman-link-float{
 	float:left;
-	width:775px;
-	margin-right:25px;
+	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
+	font-style: italic;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: bold;
+	color: $dyw-blue;
+	margin-right:15px;
+}
+
+.blue{
+	color: $dyw-blue;	
+}
+
+#strip{
+	color:white;
+	width: 100% ;
+	height: 200px ;
+	padding: 25px 0 25px 0;
+	background-color: $dyw-black ;
+}
+
+#home-left {
+	/*padding-right:30px;*/
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 670px - 20px;
+	float: left;
 }
 
 #sidebar-right {
-	padding:5px;
-	/*@include box-shadow(2px 2px 10px black);*/
-	background-color: $dyw-box-blue ;
-	@include border-radius(8px);
-	width: 300px ;
-	vertical-align:top;
-	a {
-	  color: $dyw-black;
-	  &:visited {
-	    color: $dyw-black; }
-	  &:hover {
-	    color: white;
-	  }
-}
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 960px - 20px - 670px;
 }
 
 .site-flash {
 	background-color: $dyw-light-blue ;
 	text-align:center ;
 	line-height:25px;
-	margin-top: 15px;
 }
 
 #globe-logo{
@@ -192,7 +230,7 @@ Typography presets
 }
 
 #header {
-	margin-top:25px;
+	margin: 0;
 }
 
 .main-left{
@@ -201,7 +239,7 @@ Typography presets
 
 #main-container{
 	vertical-align:top;
-	width:640px;
+	width:100%;
 }
 
 .black-button{
@@ -218,3 +256,25 @@ Typography presets
 		color:white;
 	}	
 }
+
+#admin-nav{
+	height:55px;
+	width:150px;
+	z-index:10;
+	background-color:white;
+	border:solid 3px black;
+	text-align:center;
+	position:fixed;
+	top:10px;
+	right:10px;
+}
+
+.read-more{
+	font-family: "Bookman Old Style", bookman, 'Times New Roman', serif;
+	font-style: italic;
+	font-weight: bold;
+	position:absolute;
+	right:15px;
+	bottom:0;
+}
+

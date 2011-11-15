@@ -6,9 +6,6 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $(".input").cleditor();
-      $('div.roundabout').roundabout({
-				childSelector: 'div.moveable',
-			});
     });
   </script>
   <%= csrf_meta_tags %>
@@ -31,8 +28,6 @@
 	</div>
 
 	<div style="clear:both"></div>
-   	<div id="root_footer"></div>
-	</div>
 	</div>
 	<%= render 'layouts/footer' %>
 </body>

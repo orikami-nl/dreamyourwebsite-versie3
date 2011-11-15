@@ -1,32 +1,27 @@
 <h3>Onze mensen</h3>
+<hr class="small-line">
 <% @partners.each do |partner| %>
-	<div id="partner-container">
-   	<div id="partner-photo">
-			<%= image_tag partner.avatar_url.to_s %>
+	<div class="partner-container">
+	   	<div class="partner-photo-shadow">
+				<%= image_tag partner.avatar_url.to_s %>
 		</div>
-		<div id="partner-description">
-	    <h4><%= partner.name %></h4>
-	    <p><%= partner.description.html_safe %></p>
+		<div class="partner-description">
+			<h4><%= partner.name %></h4>
+		    <p><%= partner.description.html_safe %></p>
 		</div>
-		<div style="clear:both"></div>
+		<div class="partner-button-container">
+		<ul class="bookman">
+			<li> >> <%= link_to 'Bekijk blog', partner_posts_path(partner) %></li>
+		    <li> >> <%= link_to 'Lees bio', partner_path(partner) %></li>
+		    <li> >> <%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(partner.name)} %></li>
+	    	<% if admin_signed_in? %>
+		   		<li> >> <%= link_to 'Edit', edit_partner_path(partner) %></li>
+		   		<li> >> <%= link_to 'Destroy', partner, confirm: 'Are you sure?', method: :delete %></li>
+			<% end %>
+		</ul>
+		</div>
 	</div>
-	<div partner-button-container>
-		<div class="black-button">
-	    <%= link_to 'Bekijk blog', partner_posts_path(partner) %>
-		</div>
-		<div class="black-button">
-	    <%= link_to 'Lees bio', partner_path(partner) %>
-		</div>
-		<div class="black-button">
-	    <%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(partner.name)} %>
-		</div>
-		<div style="clear:both"></div>
-	</div>
-	<% if admin_signed_in? %>
-   	<%= link_to 'Edit', edit_partner_path(partner) %> | 
-   	<%= link_to 'Destroy', partner, confirm: 'Are you sure?', method: :delete %>
-	<% end %>
-	<% if partner != @partners.last %><hr><% end %>
+	<div style="clear:both"><hr></div>
 <% end %>
 
 <% if admin_signed_in? %>

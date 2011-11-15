@@ -70,88 +70,114 @@
   }
 }
 
-#home-content {
-	@include clearfix ;
-	float: left ;
-	width: 600px ;
-	margin-right: 50px ;
-}
-
 #home-left {
-	padding-right:20px;
+	/*padding-right:30px;*/
 }
 
-#home-banner {
-	@include border-radius(8px);
-	@include clearfix ; 
-	width: 970px ;
-	height: 180px ;
-	overflow: hidden ;
-	margin-top: 5px ; 
-	margin-bottom: 5px ;
-	margin-left: 30px ;
-	position:relative;
-}
-
-@mixin home-banner-element($bgimage) {
+#home-strip {
 	width: 100% ;
-	height: 100% ;	
-	background-image:url($bgimage);
+	height: 398px ;
+	background-color: $dyw-black ;
+	background-image: url(splash.jpg);
 	background-repeat: no-repeat;
-	background-position: right center ;
-	padding: 20px ;
-	position: relative ;
-	float: left ;
-	p {
-	 padding-left: 10px ;	
-	 font-size: 16px ;
-	 color: $dyw-black ;
-	 line-height: 20px ;
-	 position: absolute ;
-	 padding-top: 10px ;
- 	 height: 60px ; 
-	 left: 270px ;
- 	 top: 120px ;
-	 width: 700px ;
-		a {
-  			font-family: BebasNeue, impact, sans-serif;
-			text-transform: uppercase; 
-			position: absolute ; 
-			right: 20px ; 
-			top: 10px ;
+	background-position: center;
+	color: white;
+	overflow: hidden;
+	position: relative;
+	text-align: center;	
+	#left{
+		position: absolute;
+		top: 150px;
+		left: 0px;
+		float:left;
+		z-index: 5;
+	}
+	#right{
+		position: absolute;
+		top: 150px;
+		right: 0px;
+		float:left;
+		z-index: 5;
+	}
+	#home-banner-container{
+		text-align: left;	
+		height: 368px;
+		/*width: 100%px;*/
+		overflow: auto;
+		position:relative;
+		margin:0 auto;
+		padding-top: 30px;
+		.home-banner-element
+		{
+			background-image: url(glasspanel.png);
+			background-repeat: no-repeat;
+			background-position: center top;
+			height:332px;
+			margin: 0 auto;
+			.banner-element-content{
+				height:332px;
+				width:928px;
+				margin: 0 auto;
+				position: relative;
+				vertical-align: top;
+				.banner-element-text{
+					margin: 40px;
+					width: 500px;
+					position: absolute;
+					h2{
+						margin-bottom: 15px;
+					}
+					p{
+						font-style: italic;
+					}
+				}
+				.banner-element-image{
+					z-index:100;
+					position: absolute;
+					overflow: visible;
+					background-repeat: no-repeat;
+				}
+			}
+			#banner-element-cocktails
+			{
+				right: 50px;
+				top: -20px;
+				width: 245px;
+				height: 374px;
+				background-image: url(drinks.png);
+			}
+		}
+	}
+	a.control, a.control:link, a.control:hover, a.control:visited{
+		color: white;
+		text-decoration: none;
+	}
+	#home-banner-bullets
+	{
+		height: 16px;
+		display: inline-block;
+		margin-left: 8px;
+		z-index: 50;
+		position: relative;
+		top: -30px;
+		ul{
+			height: 16px;
+			li{
+				float: left;
+				width: 16px;
+				height: 16px;
+				background-image: url(splash_bullets.png);
+				background-position: 0 16px;
+				cursor: pointer;
+			}
+			.active-bullet{
+				background-position: 0 0;
+			}
 		}
 	}
 }
 
-#home_banner_web {
-  @include home-banner-element("webbg.png") ;
-}
-
-#home_banner_concept {
-  @include home-banner-element("conceptbg.png") ;
-}
-
-#home_banner_mobile {
-  @include home-banner-element("iphone.png") ;
-}
-
-#home-banner-overlay-left {
-  @include opacity(1) ;   
-  float: left ;
-  background: $dyw-blue ;
-  height: 180px ; 
-  width: 270px ;
-}
-
-#home-banner-overlay-bottom {
-  @include opacity(0.8) ;   
-  @include border-bottom-right-radius(8px);
-  position: absolute ;
-  background: #ffffff ;
-  height: 60px ; 
-  left: 270px ;
-  top: 120px ;
-  width: 700px ;
+#home-banner{
 }
 
 @font-face {
@@ -159,110 +185,111 @@
   src: url('/BebasNeue.otf');
 }
 
-
-#home-banner-categories {
-  @include border-bottom-left-radius(8px);
-  position: absolute ;
-  height: 180px ;
-  width: 270px ;	
-  text-transform: uppercase ;
-  a {
-	line-height: 60px ;
-	font-size: 24px ;
-	color: $dyw-black ;
-	text-decoration: none ;
-	&:visited {
-		color: $dyw-black ;
-	}
-	&:hover {
-		color: #fff ;
-	}
-  }
-  li {
-  	font-family: BebasNeue, impact, sans-serif;
-	background-color: $dyw-blue ;
-	padding-left: 5px ;
-	line-height: 60px ;
-	font-size: 24px ;
-	color: $dyw-black ;
-	cursor: pointer ;
-	&.active-li {
-  		@include border-top-left-radius(8px);
-  		@include border-bottom-left-radius(8px);
-		width: 265px ;	
-		position: relative ; 
-		left: -25px ;
-		color: $dyw-grey ;
-		border-bottom: 1px solid #fff ;
-		border-top: 1px solid #fff ;
-		height: 58px ;
-		padding-left: 30px ;
-	}
-	&:hover {
-		color: $dyw-grey ;
-	}
-  }
-}
-
-#home-banner-fixed {
-  @include clearfix ;
-  @include border-radius(8px);
-  position: absolute ;
-  height: 180px ; 
-  width: 310px ; 
-}
-
-#home-banner-arrow {
-  @include opacity(1) ;
-  float: left ;
-  height: 180px ;
-  width: 30px ;
-  background-image: url("pointright.png") ; 
-  background-repeat: no-repeat ;
-  background-position: 0px 0px ;
-}
-
-#home-content {
-	width:640px;
-	margin-bottom:25px;
-}
-
 #project-picture{
 	float:left;
 }
 
-#featured-project {
-	/*@include box-shadow(2px 2px 10px black);*/
-	@include border-radius(8px);
-	background-color: $dyw-box-blue ;
-	float:left;
-	img{
+.featured {
+	/*@include box-shadow(2px 2px 10px black);
+	background-color: $dyw-box-blue ;*/
+	height:210px;
+	.feature-shadow
+	{
+		background-image: url(feature_shadow.png);
+		width: 254px;
+		height: 210px;
 		float:left;
-		width:200px;
-		height:200px;
+		img{
+			width:240px;
+			height:200px;
+			margin-top: 2px;
+			margin-left: 7px;
+			margin-right: 7px;
+		}	
 	}
-	#project-excerpt{
-		overflow-y:auto;
+	.excerpt-container{
+		position: relative;
+		width: 380px;
+		height: 210px;
 		float:right;
-		width:400px;
-		padding-left:25px;
-		padding-right:25px;
-		height:200px;
+		.excerpt{
+			h4{
+				margin-bottom: 5px;
+			}
+			@include clearfix;
+			overflow-y:hidden;
+			position:relative;
+			width:100%;
+			height:170px;
+		}
+		.read-more
+		{
+		position: absolute;
+		bottom: 5px;
+		right: 15px;
 	}
-	a {
-	  color: $dyw-black;
-	  &:visited {
-	    color: $dyw-black; }
-	  &:hover {
-	    color: white;
-	  }
+	}
+
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	.dreamteam
+	{
+		float: left;
+	}
+
+	.dreamteam-img
+	{
+		float: right;
 	}
 }
 
+
 .sidebar-post{
-	img{ 
-		float:left;
-		margin-right:5px;
+	position:relative;
+	margin-bottom: 10px;
+	margin-top: 10px;
+
+	.sidebar-post-image-shadow{
+		float: left;
+		background-image: url(post_thumb_shadow.png);
+		width: 60px;
+		height: 58px;
+		img{
+			width: 52px;
+			height: 52px;
+			margin-top: 2px;
+			margin-left: 4px;
+			margin-right: 4px;
+		}
+	}
+
+	.read-more
+	{
+		color: $dyw-blue;
+		font-weight: bolder;
+		a, a:link, a:hover, a:visited{
+			font-size: 14px;
+			font-weight: bolder;
+		}
+	}
+	
+	.sidebar-post-header{
+		margin-left: 70px;
+		h4{
+			line-height: 26px;
+		}
+		.bookman{
+			font-size: 13px;
+			line-height: 15px;
+			text-transform: uppercase;
+		}
+		.bebas{
+			font-family: 'BebasNeueRegular', impact, sans-serif;
+			font-size: 12px;
+			line-height: 20px;
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -270,6 +297,13 @@
   @include button;
   @include color($dyw-black);
   @include rounded(5px) ;
+}
+
+#last-tweet{
+	font-family: bookman-old-style, bookman, 'Times New Roman', serif;
+	color: #637579;
+	font-style: italic;
+	font-size: 18px;
 }
 
 

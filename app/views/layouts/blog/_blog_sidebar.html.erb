@@ -1,21 +1,23 @@
 <h3>Filter</h3>
+<hr class="small-line">
 <p><%= link_to "Geef alle artikelen weer", blog_path %></p>
 <hr>
-<p>Selecteer op medewerker:</p>
+<h5>Selecteer op medewerker:</h5>
 <div id="partner-selection">
 	<% @partners.each do |partner| %>
-		<div class="selection-picture">
+		<div class="selection-picture-shadow">
 			<%= link_to image_tag(partner.avatar_url(:thumb).to_s, :alt => partner.name, :title => partner.name), partner_posts_path(partner) %> 
 		</div>
 	<% end %>
 </div>
 <div style="clear:both"></div>
 <hr>
-<p>Selecteer op onderwerp:</p>
+<h5>Selecteer op onderwerp:</h5>
 <div id="tagcloud">
 	<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
 	  <%= link_to tag.name, {:controller => :blog, :action => :index, :tag => tag.name }, :class => css_class %>
 	<% end %>
 	<div style="clear:both"></div>
 </div>
+<hr>
 

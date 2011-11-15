@@ -1,9 +1,9 @@
 <p>Published at: <%= comment.created_at %></p> 
-<p>By: <%= comment.name if comment.name.html_safe? %></p>
-<p><%= comment.body.html_safe if comment.body.html_safe? %></p>
+<p>By: <%= comment.name %></p>
+<p><%= comment.body %></p>
 <% if admin_signed_in? %>
-	<p><%= comment.email if comment.email.html_safe? %></p>
+	<p><%= comment.email %></p>
 	<p><%= link_to 'Edit comment', edit_partner_post_comment_path(@partner, @post, comment) %> |
 	<%= link_to 'Delete comment', partner_post_comment_path(@partner, @post, comment), confirm: "Are you sure?", method: :delete %></p>
 <% end %>	
-<% if comment != @comments.last %><hr><% end %>
+<hr>

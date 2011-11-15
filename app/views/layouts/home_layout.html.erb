@@ -18,20 +18,16 @@
 	
 	<%= render "strip" %>
 
-<div class='content'>
-	<table><tr>
-	<td id='home-left'>
-		<%= yield %>
-	</td>
-	<td id="sidebar-right">
-		<%= render "sidebar" %>
-	</td>
-	</tr></table>
-</div>
+	<div class='content'>
+		<div id='home-left'>
+			<%= yield %>
+		</div>
+		<div id="sidebar-right">
+			<%= render "sidebar" %>
+		</div>
+	</div>
 
 	<div style="clear:both"></div>
-   	<div id="root_footer"></div>
-	</div>
 	</div>
 	<%= render 'layouts/footer' %>
 </body>
