@@ -1,4 +1,4 @@
-class ServicesController < ApplicationController
+class ProductsController < ApplicationController
 	manageable_content_for :title, :body, :webdevelopment, :concept_development, :mobile, :layout => "portfolio_layout"
 
   def index
