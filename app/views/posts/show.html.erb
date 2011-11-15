@@ -19,8 +19,9 @@
 	<p><%= @post.body.html_safe %></p>
 </div>
 
+<hr class="small-line">
 <div class="bookman-link-float">
-	<%= link_to '>> Neem contact op', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
+	<%= link_to '>> Neem contact op met de auteur', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
 </div> 
 <div class="bookman-link-float">
 	<%= link_to ">> Ga terug", :back %>

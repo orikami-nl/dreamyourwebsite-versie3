@@ -1,5 +1,5 @@
-<p>Published at: <%= comment.created_at %></p> 
-<p>By: <%= comment.name %></p>
+<p>Geschreven op: <%= comment.created_at.to_date %></p> 
+<p>Door: <%= comment.name %></p>
 <p><%= comment.body %></p>
 <% if admin_signed_in? %>
 	<p><%= comment.email %></p>
