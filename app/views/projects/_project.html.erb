@@ -15,10 +15,6 @@
 		<div class="excerpt-container">
   		<%= project.excerpt.html_safe %>
 		</div><br>
-		<div class="read-more-portfolio">		
-			 <%= link_to ("Meer over " + project.category.downcase), path_to_category(project) %>
-			 <!-- link_to ("Lees meer"), path_to_category(project) -->
-		</div>
 	</div> 
 </div>
 <% if (project_counter + 1) % 3 == 0 %>

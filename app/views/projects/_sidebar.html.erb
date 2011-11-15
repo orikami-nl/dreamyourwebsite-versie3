@@ -17,7 +17,7 @@
 	<p class="bookman"><%= @project.created_at.to_date.httpdate %></p>
 	<hr>
 	<h5>Type</h5>
-	<p class="bookman"><%= @project.category %></p>
+	<p class="bookman-link"><%= link_to ">> " + @project.category, path_to_category(@project) %></p>
 	<hr>
 	<p><%= @project.body %></p>
 	<hr>
