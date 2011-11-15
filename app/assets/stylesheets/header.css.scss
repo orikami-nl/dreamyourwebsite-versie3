@@ -141,6 +141,11 @@ header {
 	background-color: black;
 }
 
+#strip-services-sides{
+	background-image: url(header_products_sides.png);
+}
+
+
 #strip-portfolio-center{
 	background-color: #75a557;
 	background-image: url(header_portfolio.jpg);
@@ -159,4 +164,9 @@ header {
 #strip-contact-center{
 	background-color: black;
 	background-image: url(header_contact.jpg);
+}
+
+#strip-services-center{
+	background-color: black;
+	background-image: url(header_products.jpg);
 }
