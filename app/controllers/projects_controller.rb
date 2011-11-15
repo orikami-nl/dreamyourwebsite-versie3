@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
-	manageable_content_for :webdevelopment, :concept_development, :mobile, :title, :body, :layout => "portfolio_layout"	
+	manageable_content_for :title, :body, :layout => "portfolio_layout"	
 
-	before_filter :authenticate_admin!, :except => [:show, :index, :webdevelopment, :concept_development, :mobile] 
+	before_filter :authenticate_admin!, :except => [:show, :index] 
 	layout 'application', :except => [:index, :show]
 
   # GET /projects
@@ -11,14 +11,6 @@ class ProjectsController < ApplicationController
 		render :layout => 'portfolio_layout'
   end
 
-	def webdevelopment
-	end
-
-	def concept_development
-	end
-
-	def mobile
-	end
   # GET /projects/1
   # GET /projects/1.json
   def show

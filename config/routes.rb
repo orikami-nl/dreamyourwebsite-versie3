@@ -1,5 +1,4 @@
 Dywsite2::Application.routes.draw do
-
   get "/terms_and_conditions", :to => "terms_and_conditions#index"
 
   get "/disclaimer", :to => "disclaimer#index"
@@ -9,9 +8,10 @@ Dywsite2::Application.routes.draw do
 	post "/contact", :to => "contact#create"
   get "/home", :to => "home#index"
 	get "/blog", :to => "blog#index"
-	get "/projects/mobile", :to => "projects#mobile"
-	get "/projects/webdevelopment", :to => "projects#webdevelopment"
-	get "/projects/concept_development", :to => "projects#concept_development"
+  get "/services", :to => "services#index"
+	get "/services/mobile", :to => "services#mobile"
+	get "/services/webdevelopment", :to => "services#webdevelopment"
+	get "/services/concept_development", :to => "services#concept_development"
 
   match 'mobile', :to => 'mobile#index'
   match 'full', :to => 'home#full'
