@@ -8,10 +8,10 @@ Dywsite2::Application.routes.draw do
 	post "/contact", :to => "contact#create"
   get "/home", :to => "home#index"
 	get "/blog", :to => "blog#index"
-  get "/services", :to => "services#index"
-	get "/services/mobile", :to => "services#mobile"
-	get "/services/webdevelopment", :to => "services#webdevelopment"
-	get "/services/concept_development", :to => "services#concept_development"
+  get "/products", :to => "products#index"
+	get "/products/mobile", :to => "products#mobile"
+	get "/products/webdevelopment", :to => "products#webdevelopment"
+	get "/products/concept_development", :to => "products#concept_development"
 
   match 'mobile', :to => 'mobile#index'
   match 'full', :to => 'home#full'
