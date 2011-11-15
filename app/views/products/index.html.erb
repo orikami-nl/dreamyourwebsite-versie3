@@ -1,5 +1,10 @@
-<h2>Onze diensten</h2>
+<h3>Onze diensten</h3>
+<hr class="small-line">
 <%= manageable_layout_content_for :body %><br>
+<%= link_to ">> Concept Development", products_concept_development_path %><br>
+<%= link_to ">> Webdevelopment", products_webdevelopment_path %><br>
+<%= link_to ">> Mobiel", products_mobile_path %><br>
+<hr>
 <div class="bookman-link-float">
 	<%= link_to ">> Contact", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Diensten dreamyourweb"} %>
 </div>
