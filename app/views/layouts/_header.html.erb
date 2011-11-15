@@ -9,35 +9,40 @@
 </nav>
 
 <div id="header-menu">
-  <nav>
-  <ul>
-  <li>
-		<%= link_to(home_path, :class => controller_active?('home').to_s) do %>
-				<%= image_tag("menu_home.png") %>
-		<% end %>
-	</li>
-  <li>
-		<%= link_to(projects_path, :class => controller_active?('projects').to_s) do %>
-				<%= image_tag("menu_portfolio.png") %>
-		<% end %>
-	</li>
-  <li>
-		<%= link_to(partners_path, :class => controller_active?('partners').to_s) do %>
-				<%= image_tag("menu_about.png") %>
-		<% end %>
-	</li>
-  <li>
-		<%= link_to(blog_path, :class => controller_active?('blog').to_s) do %>
-				<%= image_tag("menu_blog.png") %>
-		<% end %>
-	</li>
-  <li>
-		<%= link_to(contact_path, :class => controller_active?('contact').to_s) do %>
-				<%= image_tag("menu_contact.png") %>
-		<% end %>
-	</li>
-  </ul>
-  </nav>
+  	<nav>
+  		<ul>
+		  	<li>
+				<%= link_to(home_path, :class => controller_active?('home').to_s) do %>
+						<%= image_tag("menu_home.png") %>
+				<% end %>
+			</li>
+		 	 <li>
+				<%= link_to(services_path, :class => controller_active?('services').to_s) do %>
+						<%= image_tag("menu_products.png") %>
+				<% end %>
+			</li>
+		 	 <li>
+				<%= link_to(projects_path, :class => controller_active?('projects').to_s) do %>
+						<%= image_tag("menu_portfolio.png") %>
+				<% end %>
+			</li>
+		  	<li>
+				<%= link_to(partners_path, :class => controller_active?('partners').to_s) do %>
+						<%= image_tag("menu_about.png") %>
+				<% end %>
+			</li>
+		 	 <li>
+				<%= link_to(blog_path, :class => controller_active?('blog').to_s) do %>
+						<%= image_tag("menu_blog.png") %>
+				<% end %>
+			</li>
+		 	 <li>
+				<%= link_to(contact_path, :class => controller_active?('contact').to_s) do %>
+						<%= image_tag("menu_contact.png") %>
+				<% end %>
+			</li>
+ 		</ul>
+	</nav>
 </div>
 
 <div id="clearfix"></div>
