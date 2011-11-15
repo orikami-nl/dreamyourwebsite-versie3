@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-	manageable_content_for :title, :body, :sidebar, :webdevelopment, :concept_development, :mobile, :layout => "sidebar_layout"
+
+manageable_content_for :title, :body, :sidebar, :webdevelopment, :concept_development, :mobile, :layout => "sidebar_layout"
 	layout "sidebar_layout"
 
   def index
