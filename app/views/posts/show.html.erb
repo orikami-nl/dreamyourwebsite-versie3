@@ -20,9 +20,6 @@
 </div>
 
 <div class="bookman-link-float">
-	<%= link_to '>> Geef commentaar', {:action => "new", :controller => "comments", :post_id => @post.title_for_url} %>
-</div>
-<div class="bookman-link-float">
 	<%= link_to '>> Neem contact op', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
 </div> 
 <div class="bookman-link-float">
@@ -36,5 +33,9 @@
 <br><div class="fb-like" data-href=<%=partner_post_path(@partner, @post)%> data-send="true" data-width="450" data-show-faces="true", :data-href></div>
 
 <hr class="small-line">
-<h4>Comments</h4>
+<h4>Geef commentaar</h4>
+<%= render 'comments/form' %>
+<hr class="small-line">
+
+<h4>Commentaar</h4>
 <%= render :partial => "comment", :collection => @comments%>

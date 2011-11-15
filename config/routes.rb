@@ -25,7 +25,7 @@ Dywsite2::Application.routes.draw do
 	#scope '/admin' do
 	resources :partners do
 		resources :posts, :path => "blog" do
-			resources :comments
+			resources :comments, :except => [:new]
 		end
 	end
 	#end
