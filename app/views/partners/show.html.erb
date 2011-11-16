@@ -8,12 +8,18 @@
 
 	<%= @partner.biography.html_safe %>
 
-	<div class="bookman-link blue">
-	  >> <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
-	</div>
-	<div class="bookman-link blue">
-		>> <%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)} %>
-	</div>
+	<ul>
+		<li>
+			<div class="bookman-link blue">
+			  >> <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
+			</div>
+		</li>
+		<li>
+			<div class="bookman-link blue">
+				>> <%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)} %>
+			</div>
+		</li>
+	</ul>
 	<div style="clear:both"></div>
 </div>
 
