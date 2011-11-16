@@ -137,12 +137,18 @@
 					overflow: visible;
 					background-repeat: no-repeat;
 				}
-				#mobile-image { background-image: url(mobile.png); }
+				#mobile-image { 
+					background-image: url(mobile.png);
+					right: 20px;
+					top: -20px;
+					width: 275px;
+					height: 374px;
+				}
 				#web-image { 
 					background-image: url(web.png); 
 					right: 20px;
 					top: -20px;
-					width: 275px;
+					width: 300px;
 					height: 374px;
 				}
 				#concept-image { 
