@@ -42,7 +42,7 @@
 			overflow:hidden;
 			.true {
 				img {
-					top:-50px;
+					background-position: 0px -50px;
 				}
 			}
 			img {
@@ -50,10 +50,11 @@
 			}
 			&:hover {
 				img {
-					top:-50px;
+					background-position: 0px -50px;
 				}
 			}
 			.home{
+				background-image: url(menu_home.png);
 				display: block;
 				width: 69px;
 			}
