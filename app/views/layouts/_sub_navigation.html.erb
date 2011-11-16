@@ -1,22 +1,19 @@
 <div id="categories-strip">
-	<nav id="categories-pictures-container">
+	<div id="categories-pictures-container">
 		<ul>
 		<li>
-			<%= link_to(products_webdevelopment_path, :class => action_active?('webdevelopment').to_s, :id => "web") do %>
-				<%= image_tag 'button_web.png' %>
+			<%= link_to(products_webdevelopment_path, :class => action_active?('webdevelopment').to_s, :class => "cat-web") do %>
 			<% end %>
 		</li>
 		<li>
-			<%= link_to(products_concept_development_path, :class => action_active?('concept_development').to_s) do %>
-				<%= image_tag 'button_concept.png' %>
+			<%= link_to(products_concept_development_path, :class => action_active?('concept_development').to_s, :class => "cat-concept") do %>
 			<% end %>
 		</li>
 		<li>
-			<%= link_to(products_mobile_path, :class => action_active?('mobile').to_s) do %>
-				<%= image_tag 'button_mobile.png' %>
+			<%= link_to(products_mobile_path, :class => action_active?('mobile').to_s, :class => "cat-mobile") do %>
 			<% end %>
 		</li>
 		</ul>
-	</nav>
+	</div>
 </div>
 <hr class="big-line">
