@@ -1,20 +1,40 @@
 <h3>Onze diensten</h3>
 <hr class="small-line">
-<%= manageable_layout_content_for :body %><br>
-<hr class="small-line">
-<%= manageable_layout_content_for :concept_excerpt %><br>
-<div class="bookman-link">
-	>> <%= link_to "Meer over onze concept development aanpak", products_concept_development_path %><br>
+<div id="products-maincontent">
+	<%= manageable_layout_content_for :body %><br>
 </div>
-<hr>
-<%= manageable_layout_content_for :web_excerpt %><br>
-<div class="bookman-link">
-	>> <%= link_to "Meer over onze webdevelopment aanpak", products_webdevelopment_path %><br>
+<!-- <hr class="small-line"> -->
+<div class="product-panel">
+	<div class="product-panel-image cogs">
+	<%= link_to "", products_concept_development_path %>
+	</div>
+	<div class="product-panel-content">
+		<h4><%= link_to "Concept" , products_concept_development_path %></h4>
+		<%= manageable_layout_content_for :concept_excerpt %>
+	</div>
+	<div style="clear:both"></div>
 </div>
-<hr>
-<%= manageable_layout_content_for :mobile_excerpt %><br>
-<div class="bookman-link">
-	>> <%= link_to "Meer over onze mobiele aanpak", products_mobile_path %><br>
+
+<div class="product-panel">
+	<div class="product-panel-image globe">
+		<%= link_to "" , products_webdevelopment_path %>
+	</div>
+	<div class="product-panel-content">
+		<h4><%= link_to "Web" , products_webdevelopment_path %></h4>
+		<%= manageable_layout_content_for :concept_excerpt %>
+	</div>
+	<div style="clear:both"></div>
+</div>
+
+<div class="product-panel">
+	<div class="product-panel-image phone">
+		<%= link_to "" , products_mobile_path %>
+	</div>
+	<div class="product-panel-content">
+		<h4><%= link_to "Mobiel" , products_mobile_path %></h4>
+		<%= manageable_layout_content_for :concept_excerpt %>
+	</div>
+	<div style="clear:both"></div>
 </div>
 <hr>
 <div class="bookman-link-float">

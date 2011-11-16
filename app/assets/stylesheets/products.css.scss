@@ -1,0 +1,45 @@
+@import "compass/css3";
+@import "compass/utilities/general/clearfix" ;
+@import "colors" ;
+
+#products-maincontent
+{
+	margin-bottom: 20px;
+}
+
+.product-panel{
+	margin-top: 35px;
+	margin-bottom: 35px;
+	.product-panel-image{
+		width: 70px;
+		height: 70px;
+		float: left;
+		a, a:link, a:hover, a:visited{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}	
+	.product-panel-content{
+		width: 560px;
+		float: right;
+	}
+	.cogs{
+		background-image: url(products_cog.png);	
+	}
+	.phone{
+		background-image: url(products_phone.png);	
+	}
+	.globe{
+		background-image: url(products_globe.png);	
+	}
+	h4{
+		a, a:link, a:visited{
+			color: black;
+			text-decoration: none;
+		}
+		a:hover{
+			color: $dyw-blue;
+		}
+	}
+}
