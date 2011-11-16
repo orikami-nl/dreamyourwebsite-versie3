@@ -55,7 +55,7 @@ hr {
 	border:none;
 	height:5px;
 	background-image: url(separator_small.png);	
-	margin-top: 0px;
+	margin-top: 5px;
 	margin-bottom: 20px;
 }
 
@@ -139,7 +139,7 @@ Typography presets
 
 .big, h4 {
    font-size: 26px;
-   line-height: 30px;
+   line-height: 28px;
    font-family: 'BebasNeueRegular', impact, sans-serif;
 } 
 
@@ -152,6 +152,11 @@ h5 {
 
 .small, small {
    font-size: 13px; line-height: 18px;
+}
+
+.medium{
+	font-size: 18px;
+	line-height: 20px;
 }
 
 .bookman{
