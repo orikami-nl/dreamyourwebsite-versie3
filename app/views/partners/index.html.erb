@@ -10,7 +10,7 @@
 		    <p><%= partner.description.html_safe %></p>
 		</div>
 		<div class="partner-button-container">
-		<ul class="bookman">
+		<ul class="bookman bookman-link blue">
 			<li> >> <%= link_to 'Bekijk blog', partner_posts_path(partner) %></li>
 		    <li> >> <%= link_to 'Lees bio', partner_path(partner) %></li>
 		    <li> >> <%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(partner.name)} %></li>

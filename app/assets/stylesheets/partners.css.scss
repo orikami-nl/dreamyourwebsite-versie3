@@ -16,6 +16,9 @@
 		width: 160px;
 		height: 159px;
 		background-image: url(partner_shadow.png);
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 15px;
 		img {
 			width: 150px;
 			height: 150px;
@@ -26,25 +29,15 @@
 	}
 
 	.partner-description{
-		position: absolute;
 		top: 0px;
-		left: 170px;
-		width:470px;
-		padding-left:5px;
-		padding-right: 5px;
+		/*width:470px;*/
 		h4{
 			margin-bottom: 10px;
 		}
 	}
 	
 	.partner-button-container{
-		position: absolute;
-		bottom: 5px;
-		left: 180px;
-		font-style: italic;
-		font-weight: bold;
-		font-size: 14px;
-		color: $dyw-blue;
+		margin-top: 10px;	
 		li{
 			display: inline;
 			margin-left: 5px;
