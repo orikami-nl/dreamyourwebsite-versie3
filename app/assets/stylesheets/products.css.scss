@@ -13,6 +13,7 @@
 	.product-panel-image{
 		width: 70px;
 		height: 70px;
+		margin-right: 10px;
 		float: left;
 		a, a:link, a:hover, a:visited{
 			display: block;
@@ -21,8 +22,7 @@
 		}
 	}	
 	.product-panel-content{
-		width: 560px;
-		float: right;
+
 	}
 	.cogs{
 		background-image: url(products_cog.png);	
@@ -41,5 +41,8 @@
 		a:hover{
 			color: $dyw-blue;
 		}
+	}
+	.lees-meer{
+		float:right;
 	}
 }

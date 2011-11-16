@@ -52,7 +52,7 @@ hr {
 } 
 
 .small-line{
-	border:none;
+	border: 0;
 	height:5px;
 	background-image: url(separator_small.png);	
 	margin-top: 5px;
@@ -204,16 +204,16 @@ h5 {
 #home-left {
 	/*padding-right:30px;*/
 	margin-left: 10px;
-	margin-right: 10px;
-	width: 670px - 20px;
+	margin-right: 15px;
+	width: 650px - 20px;
 	float: left;
 }
 
 #sidebar-right {
 	float: right;
-	margin-left: 10px;
+	margin-left: 15px;
 	margin-right: 10px;
-	width: 960px - 20px - 670px;
+	width: 960px - 30px - 650px;
 }
 
 .site-flash {
@@ -282,4 +282,11 @@ h5 {
 	position:absolute;
 	right:15px;
 	bottom:0;
+}
+
+#sidebar-right{
+	font-size: 11px;
+	p, a, span{
+		font-size: 11px;
+	}
 }
