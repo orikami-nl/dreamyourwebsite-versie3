@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	manageable_content_for :body, :title, :dreamteam, :layout => "home_layout"
+	manageable_content_for :body, :title, :dreamteam, :web_slide, :concept_slide, :mobile_slide, :layout => "home_layout"
 	layout "home_layout"
 
   def mobile_agent?
