@@ -69,4 +69,22 @@
 	}
 }
 
+#partner-photo{
+	background-image: url(polaroid.png);
+	margin: 0 auto;
+	width: 600px;
+	height: 619px;
+	img{
+		margin-left: 51px;
+		margin-top: 29px;
+	}
+}
+
+#partner-content{
+	.bookman-link:first-child{
+		float:left;
+		margin-right: 20px;
+	}
+}
+
 

@@ -1,21 +1,23 @@
 <div id="partner-story">
 	<div id="partner-photo">
-  	<%= image_tag @partner.avatar.to_s %>
+  	<%= image_tag @partner.avatar_url(:polaroid).to_s %>
 	</div>
 	<h3>Biografie van <%= @partner.name %></h3>
 	<%= @partner.biography.html_safe %>
 </div>
 
-<div class="black-button">
-  <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
+<div id="partner-content">
+	<div class="bookman-link blue">
+	  >> <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
+	</div>
+	<div class="bookman-link blue">
+		>> <%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)} %>
+	</div>
+	<div style="clear:both"></div>
 </div>
-<div class="black-button">
-	<%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)} %>
-</div>
-<div style="clear:both"></div>
 
 <% if admin_signed_in? %>
 	<br><%= link_to 'Edit Partner', edit_partner_path(@partner) %>
 <% end %>
 
-<%= link_to 'Back', partners_path %>
+<span class="blue"><<</span> <%= link_to 'Terug', partners_path, :class => "bookman-link" %>

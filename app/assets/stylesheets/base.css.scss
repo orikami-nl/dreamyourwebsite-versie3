@@ -32,7 +32,7 @@ body {
   margin-left: auto ;
   margin-right: auto ;
   position:relative;
-  margin-top: 10px;
+  margin-top: 30px;
 } 
 
 p, ol, ul, td {
@@ -71,9 +71,9 @@ pre {
   font-size: 11px; }
 
 a {
-  color: $dyw-box-blue;
+  color: $dyw-blue;
   &:visited {
-    color: $dyw-box-blue; }
+    color: $dyw-blue; }
   &:hover {
     color: $dyw-black;
   }
@@ -130,11 +130,11 @@ Typography presets
 } 
 
 .bigger, h3 {
-   font-size: 22px;
-   line-height: 24px;
-   font-family: 'BebasNeueRegular', impact, sans-serif;
-	 padding-top: 16px;
-	 color:$dyw-blue;
+   	font-size: 22px;
+   	line-height: 24px;
+   	font-family: 'BebasNeueRegular', impact, sans-serif;
+	color:$dyw-blue;
+	margin-bottom: 5px;
 } 
 
 .big, h4 {
@@ -161,7 +161,7 @@ h5 {
 
 .bookman{
 	font-family: 'Bookman Old Style', bookman, 'Times New Roman', serif;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 24px;
 }
 
@@ -169,10 +169,14 @@ h5 {
 	font-family: 'BebasNeueRegular', impact, sans-serif;
 }
 
+.bebas-link{
+	font-family: 'BebasNeueRegular', impact, sans-serif;
+}
+
 .bookman-link{
 	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
 	font-style: italic;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 24px;
 	font-weight: bold;
 	color: $dyw-blue;
@@ -182,7 +186,7 @@ h5 {
 	float:left;
 	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
 	font-style: italic;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 24px;
 	font-weight: bold;
 	color: $dyw-blue;
