@@ -1,12 +1,13 @@
-<div id="partner-story">
-	<div id="partner-photo">
-  	<%= image_tag @partner.avatar_url(:polaroid).to_s %>
-	</div>
-	<h3>Biografie van <%= @partner.name %></h3>
-	<%= @partner.biography.html_safe %>
-</div>
-
 <div id="partner-content">
+
+	<h3>Biografie van <%= @partner.name %></h3>
+	<hr class="small-line">
+	<div id="partner-photo">
+		<%= image_tag @partner.avatar_url(:polaroid).to_s %>
+	</div>
+
+	<%= @partner.biography.html_safe %>
+
 	<div class="bookman-link blue">
 	  >> <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
 	</div>
