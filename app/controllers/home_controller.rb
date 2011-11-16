@@ -34,7 +34,7 @@ class HomeController < ApplicationController
 	    @lasttweet = @lasttweet.strip.gsub(/(http:\/\/\S+)/) {|s| '<a href=' + s + '>' + s + '</a>'}
 	    @lasttweet = @lasttweet.strip.gsub(/(#\w+)/) {|s| '<a href=http://twitter.com/#!/search?q=%23' + s.gsub(/#/,"") + '>' + s + '</a>'}
 	    @lasttweet = @lasttweet.strip.gsub(/(@\w+)/) {|s| '<a href=http://twitter.com/#!/' + s.gsub(/@/,"") + '>' + s + '</a>'}
-		rescue OpenURI::HTTPError #twitter limiting
+		rescue Twitter::BadRequest #twitter limiting
 			@lasttweet = nil
 		end
     #@lasttweet = @lasttweet.html_safe
