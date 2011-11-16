@@ -3,47 +3,50 @@
 <footer>
 	<div id="footer-container">
 
-	<div id="footer-navigation">
-		<h2>NAVIGATIE</h2>
-		<nav>
-			<ul id="footer-nav">
-				<li><%= link_to "Home", home_path %></li>
-				<li><%= link_to "Portfolio", projects_path %></li>
-				<li><%= link_to "About", partners_path %></li>
-				<li><%= link_to "Blog", blog_path %></li>
-				<li><%= link_to "Contact", contact_path(:to => "info@dreamyourweb.nl") %></li>
-			</ul>
-		</nav>
-	</div>
+		<div id="footer-navigation">
+			<h2>NAVIGATIE</h2>
+			<nav>
+				<ul id="footer-nav">
+					<li><%= link_to "Home", home_path %></li>
+					<li><%= link_to "Portfolio", projects_path %></li>
+					<li><%= link_to "About", partners_path %></li>
+					<li><%= link_to "Blog", blog_path %></li>
+					<li><%= link_to "Contact", contact_path(:to => "info@dreamyourweb.nl") %></li>
+				</ul>
+			</nav>
+		</div>
 
-	<div id="footer-contact">
-		<h2>CONTACT</h2>
-		<p>
-			<b>dreamyourweb VOF</b><br>
-			Muntweg 512<br>
-			6532 TS Nijmegen<br>
-			Tel: +31 (0) 6 46 213 243<br>
-			E-mail: <a href="mailto:info@dreamyourweb.nl">info@dreamyourweb.nl</a><br>
-			KvK: 52749096<br>
-			BTW: 8505.80.626<br>
-		</p>
+		<div id="footer-contact">
+			<h2>CONTACT</h2>
+			<p>
+				<b>dreamyourweb VOF</b><br>
+				Muntweg 512<br>
+				6532 TS Nijmegen<br>
+				Tel: +31 (0) 6 46 213 243<br>
+				E-mail: <a href="mailto:info@dreamyourweb.nl">info@dreamyourweb.nl</a><br>
+				KvK: 52749096<br>
+				BTW: 8505.80.626<br>
+			</p>
 
-	</div>
+		</div>
 
-	<div id="footer-social">
-		<h2>SOCIAL</h2>
-		<ul id="social-list">
-				<li class="twitter"><a href="http://twitter.com/#!/dreamyourweb">Twitter</a></li>
-				<li class="facebook"><a href="http://www.facebook.com/pages/dreamyourweb/140587376041746">Facebook</a></li>
-				<li class="linkedin">Linkedin</li>
-				<li class="googleplus"><a href="https://plus.google.com/105460159085812301525">Google+</a></li>			
-			</ul>
-	</div>
-	<div id="footer-more">
-		<h2>MEER INFO</h2>
-			<span id="contact-button"><%= link_to "", contact_path(:to => "info@dreamyourweb.nl") %></span>
-	</div>
-	<div style="clear:both"></div>
+		<div id="footer-social">
+			<h2>SOCIAL</h2>
+			<ul id="social-list">
+					<li class="twitter"><a href="http://twitter.com/#!/dreamyourweb">Twitter</a></li>
+					<li class="facebook"><a href="http://www.facebook.com/pages/dreamyourweb/140587376041746">Facebook</a></li>
+					<li class="linkedin">Linkedin</li>
+					<li class="googleplus"><a href="https://plus.google.com/105460159085812301525">Google+</a></li>			
+				</ul>
+		</div>
+		<div id="footer-more">
+			<h2>MEER INFO</h2>
+				<span id="contact-button"><%= link_to "", contact_path(:to => "info@dreamyourweb.nl") %></span>
+		</div>
+		<div id="footer-info" class="small">
+			© 2011 dreamyourweb V.O.F. - Alle rechten voorbehouden - <a href="/disclaimer">Disclaimer</a> - <a href="/algemenevoorwaarden.pdf">Algemene Voorwaarden</a>
+		</div>
+		<div style="clear:both"></div>
 	</div>
 </footer>
 </div>
