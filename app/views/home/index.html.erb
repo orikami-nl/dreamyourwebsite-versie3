@@ -15,7 +15,7 @@
 	<h4>Featured project</h4>
 	<%= @project.excerpt.html_safe %>
 	</div>
-	<div class="read-more bookman blue">>> <%= link_to "Lees meer", path_to_category(@project) %></div>
+	<div class="read-more bookman blue">>> <%= link_to "Lees meer", project_path(@project) %></div>
 	</div>
 </div>
 <% end %>
