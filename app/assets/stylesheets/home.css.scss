@@ -215,8 +215,9 @@
 	height:210px;
 	.featured-image
 	{
-		position: relative;
 		float: left;
+		width: 282px;
+		heigth: 202px;
 	}
 	.excerpt-container{
 		position: relative;
@@ -235,10 +236,10 @@
 		}
 		.read-more
 		{
-		position: absolute;
-		bottom: 5px;
-		right: 15px;
-	}
+			position: absolute;
+			bottom: 5px;
+			right: 15px;
+		}
 	}
 
 	margin-top: 20px;
