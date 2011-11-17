@@ -4,7 +4,6 @@ manageable_content_for :title, :body, :sidebar, :webdevelopment, :concept_develo
 	layout "sidebar_layout"
 
 	def index
-		
 	end
 
 	def webdevelopment

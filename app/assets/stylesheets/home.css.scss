@@ -216,8 +216,10 @@
 	.featured-image
 	{
 		float: left;
-		width: 282px;
-		heigth: 202px;
+		img{
+			width: 280px;
+			heigth: 200px;
+		}
 	}
 	.excerpt-container{
 		position: relative;
