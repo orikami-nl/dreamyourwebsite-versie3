@@ -4,12 +4,16 @@
   <title>Dreamyourweb | Admin</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <link href="/wymeditor/wymcss.css" media="screen" rel="stylesheet" type="text/css">
   <%= csrf_meta_tags %>
 	<script type="text/javascript" src="/wymeditor/jquery.wymeditor.pack.js">
 	</script>
 	<script type="text/javascript">
 		jQuery(function() {
-	    	jQuery(".wymeditor").wymeditor();
+	    	jQuery(".wymeditor").wymeditor({
+	    		jQueryPath: "/assets/application.js",
+				stylesheet: "/wymeditor/wymcss.css"
+	    	});
 		});
 	</script>
 </head>

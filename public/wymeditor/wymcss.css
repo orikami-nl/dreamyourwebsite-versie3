@@ -1,0 +1,13 @@
+/* WYMeditor */
+
+/* PARA: Float Left */
+p.float-left, img.float-left{
+	float:left;
+}
+
+/* PARA: Float Right */
+p.float-right, img.float-right{
+	float:right;
+}
+
+/* /WYMeditor */
