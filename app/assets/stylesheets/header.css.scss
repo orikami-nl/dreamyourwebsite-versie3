@@ -114,6 +114,7 @@
 				height:87px;
 				overflow:hidden;
 				a {
+					display:block;
 					height:87px;
 					overflow:hidden;
 				}
@@ -123,6 +124,7 @@
 					}
 				}
 				img {
+					width:100%;
 					position:relative
 				}
 				&:hover {
