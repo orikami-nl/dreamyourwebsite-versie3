@@ -30,6 +30,7 @@ gem 'stringex'
 gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'kaminari'
 gem 'twitter'
+gem 'taps'
 
 group :test do
 	gem 'sqlite3'
