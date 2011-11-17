@@ -46,13 +46,13 @@
 			a {
 				height:50px;
 				overflow:hidden;
-				.true {
-					overflow:hidden;
-					background-position: 0px -50px;
-				}
 				&:hover {
 					background-position: 0px -50px;
 				}
+			}
+			.true {
+				overflow:hidden;
+				background-position: 0px -50px;
 			}
 			.home{
 				background-image: url(menu_home.png);
@@ -119,6 +119,10 @@
 					&:hover {
 						background-position: 0px -87px;
 					}
+				}
+				.true {
+					overflow:hidden;
+					background-position: 0px -87px;
 				}
 				.cat-web{
 					height:87px;
