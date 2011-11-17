@@ -132,6 +132,8 @@
 					}
 					p{
 						font-style: italic;
+						line-height: 24px;
+						font-size: 15px;
 					}
 				}
 				.banner-element-image{
@@ -308,11 +310,23 @@
   @include rounded(5px) ;
 }
 
-#last-tweet{
-	font-family: bookman-old-style, bookman, 'Times New Roman', serif;
-	color: #637579;
-	font-style: italic;
-	font-size: 18px;
+#tweet-panel{
+	#tweet-caption{
+		a:link, a, a:visited{
+			text-decoration: none;
+			font-size:inherit;
+		}
+		a:hover{
+			color: $dyw-black;
+			font-size:inherit;
+		}
+	}
+	#last-tweet{
+		color: #637579;
+		font-style: italic;
+		font-size: 16px;
+		font-weight: normal;
+	}
 }
 
 

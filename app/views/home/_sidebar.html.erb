@@ -19,10 +19,14 @@
 		<hr>
 	<% end %>
 <% end %>
-<% if !@lasttweet.nil? %>
-	<h3>Laatste tweet</h3>
-	<hr class="small-line">
-	<div id="last-tweet">
-		<%= @lasttweet %>
-	</div>
-<% end %>
+<div id="tweet-panel">
+	<% if !@lasttweet.nil? %>
+		<div id="tweet-caption">
+			<h3><a href="https://twitter.com/#!/dreamyourweb">Laatste tweet</a></h3>
+		</div>
+		<hr class="small-line">
+		<div id="last-tweet" class="bookman">
+			<%= @lasttweet %>
+		</div>
+	<% end %>
+</div>
