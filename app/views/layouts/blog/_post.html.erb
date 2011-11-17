@@ -6,11 +6,9 @@
 			</div>
 			<div id="post-info">
   	  			<h4><%= link_to(post.title, partner_post_path(post.partner, post), :class => "post-title")%></h4>
-				<p class="bebas"><%= post.partner.name %></p>
-				<p class="bebas"><%= post.updated_at.to_date.to_s %></p>
+				<p class="bookman">Geschreven door <%= link_to post.partner.name, partner_path(post.partner) %> op <%= post.updated_at.to_date.to_s %></p>
 			</div>
 		</div>
-		<div style="clear:both"></div>
 		<div id="post-excerpt">
 	  		<p><%= post.excerpt.html_safe %><br>
 				<span class="bookman-link">

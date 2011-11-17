@@ -36,7 +36,8 @@
 .post-blog-photo{
 	float: left;
 	margin-bottom: 10px;
-	margin-right:10px;
+	margin-right:20px;
+	clear:right;
 }
 
 #post-body{
@@ -50,7 +51,6 @@
 }
 
 #post-info{
-	float:left;
 	margin-right:10px;
 	margin-left:10px;
 	h4{
@@ -58,14 +58,15 @@
 	}
 	.bookman
 	{
-		font-size: 14px;
-		text-transform:uppercase;
-		margin-bottom: 5px;
+		font-size: 13px;
+		color: gray;
+		a{
+			text-decoration: none;
+		}
 	}
 	.bebas
 	{
 		font-size:16px;
-		margin-bottom: 10px;
 	}
 }
 
