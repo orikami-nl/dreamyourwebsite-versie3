@@ -12,7 +12,7 @@
   	<nav id="header-menu-nav">
   		<ul>
 		  	<li>
-				<%= link_to(home_path, :class => controller_active?('home').to_s + " home") do %>
+				<%= link_to(home_path, :class => controller_active?('home').to_s + " home", :id => "home") do %>
 						<%= image_tag("menu_home.png") %>
 				<% end %>
 			</li>

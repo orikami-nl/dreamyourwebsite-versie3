@@ -2,7 +2,7 @@
 	<nav id="categories-pictures-container">
 		<ul>
 		<li>
-			<%= link_to(products_webdevelopment_path, :class => action_active?('webdevelopment').to_s) do %>
+			<%= link_to(products_webdevelopment_path, :class => action_active?('webdevelopment').to_s, :id => "web") do %>
 				<%= image_tag 'button_web.png' %>
 			<% end %>
 		</li>
