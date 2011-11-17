@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
 	<% if !post.partner.nil? %>
 		<div class="sidebar-post">
-			<div class="sidebar-post-image-shadow">
+			<div class="sidebar-post-image inner-shadow lifted shadow-small">
 			<%= image_tag post.partner.avatar_url(:thumb).to_s %></div>
 			<div class="sidebar-post-header">
 				<h4><%= post.title %></h4>

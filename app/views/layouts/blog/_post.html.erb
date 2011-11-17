@@ -1,8 +1,8 @@
 	<% if !post.partner.nil? %>
 		<div class="post-container">
 			<div class="post-header">
-			<div class="post-blog-photo-shadow">
-					<%= link_to image_tag(post.partner.avatar_url.to_s, :alt => post.partner.name, :title => post.partner.name), partner_path(post.partner) %>
+			<div class="post-blog-photo">
+					<%= link_to image_tag(post.partner.avatar_url(:small).to_s, :alt => post.partner.name, :title => post.partner.name), partner_path(post.partner) %>
 			</div>
 			<div id="post-info">
   	  			<h4><%= link_to(post.title, partner_post_path(post.partner, post), :class => "post-title")%></h4>

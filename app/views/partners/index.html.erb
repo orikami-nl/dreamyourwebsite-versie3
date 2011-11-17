@@ -2,8 +2,8 @@
 <hr class="small-line">
 <% @partners.each do |partner| %>
 	<div class="partner-container">
-	   	<div class="partner-photo-shadow">
-				<%= image_tag partner.avatar_url.to_s %>
+	   	<div class="partner-photo-index inner-shadow lifted">
+				<%= image_tag partner.avatar_url(:medium).to_s %>
 		</div>
 		<div class="partner-description">
 			<h4><%= partner.name %></h4>

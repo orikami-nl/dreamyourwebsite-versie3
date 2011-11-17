@@ -11,60 +11,48 @@
 	margin-top: 15px;
 }
 
-.project_container {
+.project-container {
 	width:300px;
 	margin: 10px;
-	/*border: 1px solid $dyw-black;*/
 	float:left;
 	position:relative;
 	margin-top: 25px;
 	margin-bottom: 15px;
-	.image-shadow-container
+	.project-image
 	{
-		width: 296x;
-		height: 210px;
-		background-image: url(imageshadow-300x200.png);
-		background-repeat: no-repeat;
-	}
-	.image_container {
-		overflow:hidden;
-		padding-left: 8px;
-		padding-right: 8px;
-		padding-top: 2px;
-		width:280px;
-		height:200px;
-		a:hover + a{
+		width: 282px;
+		.image_container {
+			a:hover + a{
+				display: block;
+			}
+			img {
+				width:280px;
+				height: 200px;
+			}
+		}
+
+		a.image_overlay, a.image_overlay:link, a.image_overlay:visited{
+			display: none;		
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			width:280px;
+			height:200px;		
+			color: $dyw-blue;
+			text-decoration: none;
+			font-weight: bolder;
+			text-align: center;
+			font-size: 16px;
+			line-height: 200px;
+			background: rgb(0, 0, 0);
+			background: rgba(0, 0, 0, 0.6);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)";
+		}
+
+		a.image_overlay:hover{
 			display: block;
 		}
-		img {
-			width:280px;
-		}
-	}
-
-	a.image_overlay, a.image_overlay:link, a.image_overlay:visited{
-		display: none;		
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		margin-left: 8px;
-		margin-right: 8px;
-		margin-top: 2px;
-		width:280px;
-		height:200px;		
-		color: $dyw-blue;
-		text-decoration: none;
-		font-weight: bolder;
-		text-align: center;
-		font-size: 16px;
-		line-height: 200px;
-		background: rgb(0, 0, 0);
-		background: rgba(0, 0, 0, 0.6);
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)";
-	}
-
-	a.image_overlay:hover{
-		display: block;
 	}
 
 	h4 {

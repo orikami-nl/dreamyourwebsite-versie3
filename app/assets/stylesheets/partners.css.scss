@@ -12,20 +12,10 @@
 	position:relative;
 	min-height: 159px;
 
-	.partner-photo-shadow{
-		width: 160px;
-		height: 159px;
-		background-image: url(partner_shadow.png);
+	.partner-photo-index{
 		float: left;
 		margin-right: 20px;
 		margin-bottom: 15px;
-		img {
-			width: 150px;
-			height: 150px;
-			margin-top: 2px;
-			margin-left: 5px;
-			margin-right: 5px;
-		}
 	}
 
 	.partner-description{

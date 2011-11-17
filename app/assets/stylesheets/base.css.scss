@@ -144,9 +144,9 @@ Typography presets
 } 
 
 h5 {
-	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
-	font-size: 16px;
-	line-height: 24px;
+	font-family: 'BebasNeueRegular', impact, sans-serif;
+	font-size: 15px;
+	line-height: 18px;
 	font-weight: bold;
 }
 
@@ -316,4 +316,66 @@ input, textarea{
 
 .actions{
 	margin-top: 15px;	
+}
+
+.inner-shadow{
+	position: relative;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	background-color: white;
+		line-height: 0px;
+	a{
+		display: block;
+		line-height: 0px;
+	}
+	img{
+		margin: 1px;
+		line-height: 0px;
+	}
+}
+
+.inner-shadow::before, .inner-shadow::after {
+	content: "";
+	position: absolute;
+	z-index: -2;
+}
+
+.lifted::before, .lifted::after{
+	bottom: 15px;
+	left: 10px;
+	left: 4%;
+	width: 50%;
+	height: 20%;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+
+.lifted::after {
+	right: 10px;
+	right: 4%;
+	left: auto;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+.shadow-small::before, .shadow-small::after{
+	bottom: 5px;
+	left: 3px;
+	-webkit-box-shadow: 0 5px 3px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 5px 3px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 5px 3px rgba(0, 0, 0, 0.7);
+}
+
+.shadow-small::after{
+	right: 3px;
+	left: auto;
 }
