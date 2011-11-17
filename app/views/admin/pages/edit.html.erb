@@ -15,7 +15,7 @@
     <%= form.fields_for :page_contents do |content_form| %>
       <% if eligible_contents.include?(content_form.object.key.to_sym) %>
         <%= content_form.label :content, content_form.object.key %><br>
-       	<%= content_form.text_area :content %><br><hr>
+       	<%= content_form.text_area :content, :class => "wymeditor" %><br><hr>
       <% end %>
     <% end %>
   <% end %>

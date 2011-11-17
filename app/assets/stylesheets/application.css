@@ -13,6 +13,7 @@
  *= require "posts"
  *= require "footer"
  *= require "products"
+ *= require "admin"
  *= require "mobile"
 */
 
