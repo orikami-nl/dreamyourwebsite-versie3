@@ -1,9 +1,12 @@
-<p>Published at: <%= comment.created_at %></p> 
-<p>By: <%= comment.name %></p>
-<p><%= comment.body %></p>
-<% if admin_signed_in? %>
-	<p><%= comment.email %></p>
-	<p><%= link_to 'Edit comment', edit_partner_post_comment_path(@partner, @post, comment) %> |
-	<%= link_to 'Delete comment', partner_post_comment_path(@partner, @post, comment), confirm: "Are you sure?", method: :delete %></p>
-<% end %>	
-<hr>
+<div class="comment-container">
+	<div class="comment-head"><p>Door: <span class="bookman"><%= comment.name %></span> op <%= comment.created_at.to_date %></p> 
+	</div>
+	<div class="comment-body">
+		<p><%= comment.body %></p>
+	</div>
+	<% if admin_signed_in? %>
+		<p><%= comment.email %></p>
+		<p><%= link_to 'Edit comment', edit_partner_post_comment_path(@partner, @post, comment) %> |
+		<%= link_to 'Delete comment', partner_post_comment_path(@partner, @post, comment), confirm: "Are you sure?", method: :delete %></p>
+	<% end %>	
+</div>

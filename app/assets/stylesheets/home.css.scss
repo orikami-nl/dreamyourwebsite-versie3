@@ -137,14 +137,27 @@
 					overflow: visible;
 					background-repeat: no-repeat;
 				}
-			}
-			#banner-element-cocktails
-			{
-				right: 50px;
-				top: -20px;
-				width: 245px;
-				height: 374px;
-				background-image: url(drinks.png);
+				#mobile-image { 
+					background-image: url(mobile.png);
+					right: 20px;
+					top: -20px;
+					width: 220px;
+					height: 374px;
+				}
+				#web-image { 
+					background-image: url(web.png); 
+					right: -10px;
+					top: -20px;
+					width: 380px;
+					height: 374px;
+				}
+				#concept-image { 
+					background-image: url(concept.png); 
+					right: 20px;
+					top: -20px;
+					width: 320px;
+					height: 374px;
+				}
 			}
 		}
 	}

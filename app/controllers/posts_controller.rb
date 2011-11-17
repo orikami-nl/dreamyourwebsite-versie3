@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find_by_title_for_url(params[:id])
+    @comment = @post.comments.new
 		@comments = @post.comments.all.reverse
   end
 

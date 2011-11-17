@@ -14,14 +14,18 @@
 	</div>
 	<hr>
 	<h5>Datum</h5>
-	<p class="bookman"><%= @project.created_at.to_date.httpdate %></p>
+	<p class="bookman"><%= @project.created_at.to_date %></p>
 	<hr>
 	<h5>Type</h5>
-	<p class="bookman"><%= @project.category %></p>
+	<p class="bookman-link">
+		>> <%= link_to @project.category, path_to_category(@project) %>
+	</p>
 	<hr>
 	<p><%= @project.body %></p>
 	<hr>
-	<%= link_to ">> Ga terug naar overzicht", projects_path, :class => "bookman-link" %> 
+	<div class="bookman-link">
+		>> <%= link_to "Ga terug naar overzicht", projects_path %>
+	</div> 
 	<% if admin_signed_in? %>
 		<br><br>
 		<%= link_to "Edit Project", edit_project_path(@project) %>
