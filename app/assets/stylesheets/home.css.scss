@@ -172,12 +172,18 @@
 	{
 		height: 16px;
 		display: inline-block;
-		margin-left: 8px;
+		padding-left: 6px;
+		margin: 0 auto;
+		float:left;
+		left:50%;
 		z-index: 50;
 		position: relative;
 		top: -30px;
 		ul{
 			height: 16px;
+			float: left;
+			position: relative;
+			right: 50%;
 			li{
 				float: left;
 				width: 16px;

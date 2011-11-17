@@ -1,4 +1,5 @@
-<header id="header">
+<header>
+<div id="header">
 
 <div class="content">
 
@@ -12,33 +13,27 @@
   	<nav id="header-menu-nav">
   		<ul>
 		  	<li>
-				<%= link_to(home_path, :class => controller_active?('home').to_s + " home", :id => "home") do %>
-						<%= image_tag("menu_home.png") %>
+				<%= link_to(home_path, :class => controller_active?('home').to_s + " home") do %>
 				<% end %>
 			</li>
 		 	 <li>
 				<%= link_to(products_path, :class => controller_active?('products').to_s + " products") do %>
-						<%= image_tag("menu_products.png") %>
 				<% end %>
 			</li>
 		 	 <li>
 				<%= link_to(projects_path, :class => controller_active?('projects').to_s + " portfolio") do %>
-						<%= image_tag("menu_portfolio.png") %>
 				<% end %>
 			</li>
 		  	<li>
 				<%= link_to(partners_path, :class => controller_active?('partners').to_s + " about") do %>
-						<%= image_tag("menu_about.png") %>
 				<% end %>
 			</li>
 		 	 <li>
 				<%= link_to(blog_path, :class => controller_active?('blog').to_s + " blog") do %>
-						<%= image_tag("menu_blog.png") %>
 				<% end %>
 			</li>
 		 	 <li>
 				<%= link_to(contact_path, :class => controller_active?('contact').to_s + " contact") do %>
-						<%= image_tag("menu_contact.png") %>
 				<% end %>
 			</li>
  		</ul>
@@ -49,6 +44,7 @@
 
 </div>
 
+</div>
 </header>
 
 <% if admin_signed_in? %>

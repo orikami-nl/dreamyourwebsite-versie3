@@ -46,43 +46,41 @@
 			a {
 				height:50px;
 				overflow:hidden;
-			}
-			.true {
-				height:50px;
-				overflow:hidden;
-				img {
-					top:-50px;
+				.true {
+					overflow:hidden;
+					background-position: 0px -50px;
 				}
-			}
-			img {
-				position:relative;
-			}
-			&:hover {
-				img {
-					top:-50px;
+				&:hover {
+					background-position: 0px -50px;
 				}
 			}
 			.home{
+				background-image: url(menu_home.png);
 				display: block;
 				width: 69px;
 			}
 			.products{
+				background-image: url(menu_products.png);
 				display: block;
 				width: 122px;
 			}
 			.portfolio{
+				background-image: url(menu_portfolio.png);
 				display: block;
 				width: 126px;
 			}
 			.about{
+				background-image: url(menu_about.png);
 				display: block;
 				width: 78px;
 			}
 			.blog{
+				background-image: url(menu_blog.png);
 				display: block;
 				width: 60px;
 			}
 			.contact{
+				background-image: url(menu_contact.png);
 				display: block;
 				width: 106px;
 			}
@@ -107,6 +105,7 @@
 		margin: 0 auto;
 		padding-top: round(67px/2);	
 		ul {
+			height:87px;
 			@include horizontal-list ;
 			li{
 				margin: 0 0 0 0;
@@ -117,20 +116,27 @@
 					display:block;
 					height:87px;
 					overflow:hidden;
-				}
-				.true {
-					img {
-						height:87px;
+					&:hover {
+						background-position: 0px -87px;
 					}
 				}
-				img {
-					width:100%;
-					position:relative
+				.cat-web{
+					height:87px;
+					background-image: url(button_web.png);
+					display: block;
+					width: 216px;
 				}
-				&:hover {
-					img {
-						top:-87px;
-					}
+				.cat-concept{
+					height:87px;
+					background-image: url(button_concept.png);
+					display: block;
+					width: 358px;
+				}
+				.cat-mobile{
+					height:87px;
+					background-image: url(button_mobile.png);
+					display: block;
+					width: 283px;
 				}
 			}
 		}
@@ -147,6 +153,13 @@ header {
   background-color: black;
 	background-image: url(header_background.png);
 	height:112px;
+	@include clearfix ;
+}
+
+#header{
+	height:112px;
+  	background-color: black;
+	background-image: url(header_background.png);
 	@include clearfix ;
 }
 
