@@ -32,6 +32,9 @@
 	float: right ;
 	width: 690 ;
 	margin-top:30px;
+	#header-menu-nav {
+		overflow:hidden;
+	}
 	ul {
 		@include horizontal-list ;
 		li {
