@@ -43,13 +43,19 @@
 			padding: 0 15px 0 15px;
 			height:50px;
 			overflow:hidden;
+			a {
+				height:50px;
+				overflow:hidden;
+			}
 			.true {
+				height:50px;
+				overflow:hidden;
 				img {
 					top:-50px;
 				}
 			}
 			img {
-				position:relative
+				position:relative;
 			}
 			&:hover {
 				img {
@@ -107,9 +113,13 @@
 				padding: 0;
 				height:87px;
 				overflow:hidden;
+				a {
+					height:87px;
+					overflow:hidden;
+				}
 				.true {
 					img {
-						top:-87px;
+						height:87px;
 					}
 				}
 				img {
