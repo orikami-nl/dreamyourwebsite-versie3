@@ -176,16 +176,28 @@ h5 {
 .bookman-link{
 	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
 	font-style: italic;
-	font-size: 13px;
-	line-height: 20px;
+	font-size: 14px;
+	line-height: 21px;
 	font-weight: bold;
 	color: $dyw-blue;
+	padding-left: 13px; 
+	background-image: url(arrow.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-decoration: none;
+	a{
+		text-decoration: none;
+	}
+}
+.bookman-link:hover{
+	background-image: url(arrow_hover.png);
+	text-decoration: none;
 }
 
-.bookman-link::before{
+/*.bookman-link::before{
 	color: $dyw-blue;
 	content: ">> ";
-}
+}*/
 
 .blue{
 	color: $dyw-blue;	
@@ -383,8 +395,10 @@ input, textarea{
 
 .left{
 	float:left;
+	margin-right: 10px;
 }
 
 .right{
 	float:right;
+	margin-left: 10px;
 }
