@@ -42,7 +42,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
 
   version :portfolio_full do
-    process :resize_to_fill => [280, 200]
+    # process :resize_to_fill => [280, 200]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
