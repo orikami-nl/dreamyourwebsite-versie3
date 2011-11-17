@@ -30,18 +30,19 @@ gem 'stringex'
 gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'kaminari'
 gem 'twitter'
-gem 'taps'
 
 group :test do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
+	gem 'taps'
 end
 
 group :development do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
+	gem 'taps'
 end
 
 group :production do
