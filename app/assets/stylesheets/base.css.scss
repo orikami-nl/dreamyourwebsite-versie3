@@ -182,15 +182,9 @@ h5 {
 	color: $dyw-blue;
 }
 
-.bookman-link-float{
-	float:left;
-	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
-	font-style: italic;
-	font-size: 13px;
-	line-height: 20px;
-	font-weight: bold;
+.bookman-link::before{
 	color: $dyw-blue;
-	margin-right:15px;
+	content: ">> ";
 }
 
 .blue{
@@ -385,4 +379,12 @@ input, textarea{
 }
 .uppercase{
 	text-transform:uppercase;
+}
+
+.left{
+	float:left;
+}
+
+.right{
+	float:right;
 }

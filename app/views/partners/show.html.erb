@@ -10,13 +10,13 @@
 
 	<ul>
 		<li>
-			<div class="bookman-link blue">
-			  >> <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
+			<div class="bookman-link">
+			  <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
 			</div>
 		</li>
 		<li>
-			<div class="bookman-link blue">
-				>> <%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)} %>
+			<div class="bookman-link">
+				<%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)} %>
 			</div>
 		</li>
 	</ul>

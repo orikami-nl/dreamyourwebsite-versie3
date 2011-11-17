@@ -15,7 +15,7 @@
 	<h4>Featured project</h4>
 	<%= @project.excerpt.html_safe %>
 	</div>
-	<div class="read-more bookman blue">>> <%= link_to "Lees meer", project_path(@project) %></div>
+	<div class="read-more bookman-link"><%= link_to "Lees meer", project_path(@project) %></div>
 	</div>
 </div>
 <% end %>
@@ -32,7 +32,7 @@
 		<div class="excerpt"><h4>Het Dream Team</h4>
 			<%= manageable_layout_content_for :dreamteam %>
 		</div>
-		<div class="read-more bookman blue">>> <%= link_to "Lees meer", partners_path %></div>
+		<div class="read-more bookman-link"><%= link_to "Lees meer", partners_path %></div>
 	</div>
 
 </div>

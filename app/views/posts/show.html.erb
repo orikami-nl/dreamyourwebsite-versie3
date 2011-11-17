@@ -19,11 +19,11 @@
 </div>
 
 <hr>
-<div class="bookman-link-float blue">
-	>> <%= link_to 'Neem contact op met de auteur', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
+<div class="bookman-link left">
+	<%= link_to 'Neem contact op met de auteur', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title} %>
 </div> 
-<div class="bookman-link-float blue">
-	>> <%= link_to "Ga terug", :back %>
+<div class="bookman-link left">
+	<%= link_to "Ga terug", :back %>
 </div>
 <div style="clear:both"></div>
 <% if admin_signed_in? %>
