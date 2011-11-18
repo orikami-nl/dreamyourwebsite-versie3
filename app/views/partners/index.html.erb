@@ -2,15 +2,15 @@
 <hr class="small-line">
 <% @partners.each do |partner| %>
 	<div class="partner-container">
-	   	<div class="partner-photo-shadow">
-				<%= image_tag partner.avatar_url.to_s %>
+	   	<div class="partner-photo-index inner-shadow lifted">
+				<%= image_tag partner.avatar_url(:medium).to_s %>
 		</div>
 		<div class="partner-description">
 			<h4><%= partner.name %></h4>
 		    <p><%= partner.description.html_safe %></p>
 		</div>
 		<div class="partner-button-container">
-		<ul class="bookman">
+		<ul class="bookman bookman-link blue">
 			<li> >> <%= link_to 'Bekijk blog', partner_posts_path(partner) %></li>
 		    <li> >> <%= link_to 'Lees bio', partner_path(partner) %></li>
 		    <li> >> <%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(partner.name)} %></li>

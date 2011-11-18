@@ -165,6 +165,10 @@ header {
   	background-color: black;
 	background-image: url(header_background.png);
 	@include clearfix ;
+	#header-content{
+		width: 960px;
+		margin: 0 auto;
+	}
 }
 
 .strip-wide{

@@ -32,7 +32,7 @@ body {
   margin-left: auto ;
   margin-right: auto ;
   position:relative;
-  margin-top: 10px;
+  margin-top: 30px;
 } 
 
 p, ol, ul, td {
@@ -71,9 +71,9 @@ pre {
   font-size: 11px; }
 
 a {
-  color: $dyw-box-blue;
+  color: $dyw-blue;
   &:visited {
-    color: $dyw-box-blue; }
+    color: $dyw-blue; }
   &:hover {
     color: $dyw-black;
   }
@@ -130,11 +130,11 @@ Typography presets
 } 
 
 .bigger, h3 {
-   font-size: 22px;
-   line-height: 24px;
-   font-family: 'BebasNeueRegular', impact, sans-serif;
-	 padding-top: 16px;
-	 color:$dyw-blue;
+   	font-size: 22px;
+   	line-height: 24px;
+   	font-family: 'BebasNeueRegular', impact, sans-serif;
+	color:$dyw-blue;
+	margin-bottom: 5px;
 } 
 
 .big, h4 {
@@ -144,9 +144,9 @@ Typography presets
 } 
 
 h5 {
-	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
-	font-size: 16px;
-	line-height: 24px;
+	font-family: 'BebasNeueRegular', impact, sans-serif;
+	font-size: 15px;
+	line-height: 18px;
 	font-weight: bold;
 }
 
@@ -161,7 +161,7 @@ h5 {
 
 .bookman{
 	font-family: 'Bookman Old Style', bookman, 'Times New Roman', serif;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 24px;
 }
 
@@ -169,10 +169,14 @@ h5 {
 	font-family: 'BebasNeueRegular', impact, sans-serif;
 }
 
+.bebas-link{
+	font-family: 'BebasNeueRegular', impact, sans-serif;
+}
+
 .bookman-link{
 	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
 	font-style: italic;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 24px;
 	font-weight: bold;
 	color: $dyw-blue;
@@ -182,7 +186,7 @@ h5 {
 	float:left;
 	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
 	font-style: italic;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 24px;
 	font-weight: bold;
 	color: $dyw-blue;
@@ -289,4 +293,93 @@ h5 {
 	p, a, span{
 		font-size: 11px;
 	}
+}
+
+.field, .contact-field{
+	margin-top: 15px;
+	margin-bottom: 5px;
+	label{
+		margin-left: 3px;
+	}
+}
+
+input, textarea{
+	padding: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #bbb;
+	border-radius: 2px;
+	box-shadow: 0px 1px 5px #ccc;
+	-webkit-box-shadow: 0px 1px 5px #ccc;
+	-moz-box-shadow: 0px 1px 5px #ccc;
+}
+
+.actions{
+	margin-top: 15px;	
+}
+
+.inner-shadow{
+	position: relative;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	background-color: white;
+		line-height: 0px;
+	a{
+		display: block;
+		line-height: 0px;
+		img{
+			margin: 1px;
+			line-height: 0px;
+		}
+	}
+	img{
+		margin: 1px;
+		line-height: 0px;
+	}
+}
+
+.inner-shadow::before, .inner-shadow::after {
+	content: "";
+	position: absolute;
+	z-index: -2;
+}
+
+.lifted::before, .lifted::after{
+	bottom: 15px;
+	left: 10px;
+	left: 4%;
+	width: 50%;
+	height: 20%;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+
+.lifted::after {
+	right: 10px;
+	right: 4%;
+	left: auto;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+.shadow-small::before, .shadow-small::after{
+	bottom: 5px;
+	left: 3px;
+	-webkit-box-shadow: 0 5px 3px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 5px 3px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 5px 3px rgba(0, 0, 0, 0.7);
+}
+
+.shadow-small::after{
+	right: 3px;
+	left: auto;
 }
