@@ -31,7 +31,7 @@
 	<br><%= link_to 'Edit post', edit_partner_post_path(@partner, @post) %> | 
 	<%= link_to 'Delete post', partner_post_path(@partner, @post), confirm: "Are you sure?", method: :delete %><br>
 <% end %>
-<br><div class="fb-like" data-href=<%=partner_post_path(@partner, @post)%> data-send="true" data-width="450" data-show-faces="true", :data-href></div>
+<br><div class="fb-like" data-href=<%=partner_post_url(@partner, @post)%> data-send="true" data-width="450" data-show-faces="true", :data-href></div>
 
 <div id="comments-container">
 	<h4>Commentaar</h4>
