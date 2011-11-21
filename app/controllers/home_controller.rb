@@ -2,6 +2,8 @@ class HomeController < ApplicationController
 	manageable_content_for :body, :title, :dreamteam, :web_slide, :concept_slide, :mobile_slide, :layout => "home_layout"
 	layout "home_layout"
 
+  caches_page :index
+
 	def mobile_agent?
 	  request.user_agent =~ /Mobile|webOS/ and not request.user_agent =~ /iPad/
 	end

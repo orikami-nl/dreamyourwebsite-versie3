@@ -5,6 +5,9 @@ class PostsController < ApplicationController
 	before_filter :get_partner, :tag_cloud
 	layout "sidebar_layout"
 
+  caches_page :index, :show
+  cache_sweeper :post_sweeper
+
 	def get_partner
 		@partners = Partner.all
 		@partner = Partner.find_by_name_for_url(params[:partner_id])
