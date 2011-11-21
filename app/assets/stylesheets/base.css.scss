@@ -133,7 +133,8 @@ Typography presets
    	font-size: 22px;
    	line-height: 24px;
    	font-family: 'BebasNeueRegular', impact, sans-serif;
-	color:$dyw-blue;
+	/*color:$dyw-blue;*/
+	color: black;
 	margin-bottom: 5px;
 } 
 
@@ -141,6 +142,9 @@ Typography presets
    font-size: 26px;
    line-height: 28px;
    font-family: 'BebasNeueRegular', impact, sans-serif;
+   a, a:link, a:hover, a:visited{
+   		text-decoration: none;
+   }
 } 
 
 h5 {
@@ -186,10 +190,8 @@ h5 {
 	background-repeat: no-repeat;
 	background-position: 0px 3px;;
 	text-decoration: none;
-	a{
-		text-decoration: none;
-	}
 }
+
 .bookman-link:hover{
 	background-image: url(arrow_hover.png);
 	text-decoration: none;

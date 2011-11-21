@@ -9,25 +9,19 @@
 		<% end %>
 	</h4>
 	<hr class="small-line">
-	<div class="bookman-link">
-	<%= link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank" %>
-	</div>
+	<%= link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank", :class => "bookman-link" %>
 	<hr>
 	<h5>Datum</h5>
 	<p class="bookman"><%= @project.created_at.to_date %></p>
 	<hr>
 	<h5>Type</h5>
-	<p class="bookman-link">
-		<%= link_to @project.category, path_to_category(@project) %>
-	</p>
+		<%= link_to @project.category, path_to_category(@project), :class => "bookman-link" %>
 	<hr>
 	<p><%= @project.body %></p>
 	<hr>
-	<div class="bookman-link">
-		<%= link_to "Ga terug naar overzicht", projects_path %>
-	</div> 
+		<%= link_to "Ga terug naar overzicht", projects_path, :class => "bookman-link" %>
 	<% if admin_signed_in? %>
 		<br><br>
-		<%= link_to "Edit Project", edit_project_path(@project) %>
+		<%= link_to "Edit Project", edit_project_path(@project), :class => "bookman-link" %>
 	<% end %>
 </div>

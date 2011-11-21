@@ -10,21 +10,17 @@
 
 	<ul>
 		<li>
-			<div class="bookman-link">
-			  <%= link_to 'Bekijk blog', partner_posts_path(@partner) %>
-			</div>
+			  <%= link_to 'Bekijk blog', partner_posts_path(@partner), :class => "bookman-link" %>
 		</li>
 		<li>
-			<div class="bookman-link">
-				<%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)} %>
-			</div>
+				<%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)}, :class => "bookman-link" %>
 		</li>
 	</ul>
 	<div style="clear:both"></div>
 </div>
 
 <% if admin_signed_in? %>
-	<br><%= link_to 'Edit Partner', edit_partner_path(@partner) %>
+	<br><%= link_to 'Edit Partner', edit_partner_path(@partner), :class => "bookman-link" %>
 <% end %>
 
-<span class="blue"><<</span> <%= link_to 'Terug', partners_path, :class => "bookman-link" %>
+<%= link_to 'Terug', partners_path, :class => "bookman-link" %>

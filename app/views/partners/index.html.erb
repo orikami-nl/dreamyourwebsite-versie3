@@ -6,18 +6,18 @@
 				<%= image_tag partner.avatar_url(:medium).to_s %>
 		</div>
 		<div class="partner-description">
-			<h4><%= partner.name %></h4>
+			<h4><%= link_to partner.name, partner_path(partner) %></h4>
 		    <p><%= partner.description.html_safe %></p>
 		</div>
 		<div class="partner-button-container">
-		<ul class="bookman bookman-link">
-			<li> <%= link_to 'Bekijk blog', partner_posts_path(partner) %></li>
-		    <li> <%= link_to 'Lees bio', partner_path(partner) %></li>
-		    <li> <%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(partner.name)} %></li>
+		<ul>
+			<li> <%= link_to 'Bekijk blog', partner_posts_path(partner), :class => "bookman-link" %></li>
+		    <li> <%= link_to 'Lees bio', partner_path(partner), :class => "bookman-link" %></li>
+		    <li> <%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(partner.name)}, :class => "bookman-link" %></li>
 	    	<% if admin_signed_in? %>
 					<br>
-		   		<li> <%= link_to 'Edit', edit_partner_path(partner) %></li>
-		   		<li> <%= link_to 'Destroy', partner, confirm: 'Are you sure?', method: :delete %></li>
+		   		<li> <%= link_to 'Edit', edit_partner_path(partner), :class => "bookman-link" %></li>
+		   		<li> <%= link_to 'Destroy', partner, confirm: 'Are you sure?', method: :delete, :class => "bookman-link" %></li>
 			<% end %>
 		</ul>
 		</div>
@@ -26,5 +26,5 @@
 <% end %>
 
 <% if admin_signed_in? %>
-	<%= link_to 'New partner', new_partner_path %>
+	<%= link_to 'New partner', new_partner_path, :class => "bookman-link" %>
 <% end %>

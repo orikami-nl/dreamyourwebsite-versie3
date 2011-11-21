@@ -4,8 +4,6 @@
 	<%= manageable_layout_content_for :concept_development %>
 </div>
 <hr>
-<div class="bookman-link left">
-	<%= link_to "Contact", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Dreamyourweb concepten"} %>
-	<%= link_to "Terug naar diensten", products_path %>
-</div>
+	<%= link_to "Contact", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Dreamyourweb concepten"}, :class => "bookman-link left" %>
+	<%= link_to "Terug naar diensten", products_path, :class => "bookman-link left" %>
 
