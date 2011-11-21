@@ -12,7 +12,7 @@
 		<div id="post-excerpt">
 	  		<p><%= post.excerpt.html_safe %><br>
 				<span class="bookman-link">
-					>> <%= link_to "Lees verder", partner_post_path(post.partner, post) %>
+					<%= link_to "Lees verder", partner_post_path(post.partner, post) %>
 				</span></p>
 			<% if admin_signed_in? %>
   	  			<br><%= link_to 'Edit', edit_partner_post_path(post.partner, post) %> | 

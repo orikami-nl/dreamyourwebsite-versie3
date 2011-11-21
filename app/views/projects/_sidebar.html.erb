@@ -10,7 +10,7 @@
 	</h4>
 	<hr class="small-line">
 	<div class="bookman-link">
-	>> <%= link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank" %>
+	<%= link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank" %>
 	</div>
 	<hr>
 	<h5>Datum</h5>
@@ -18,13 +18,13 @@
 	<hr>
 	<h5>Type</h5>
 	<p class="bookman-link">
-		>> <%= link_to @project.category, path_to_category(@project) %>
+		<%= link_to @project.category, path_to_category(@project) %>
 	</p>
 	<hr>
 	<p><%= @project.body %></p>
 	<hr>
 	<div class="bookman-link">
-		>> <%= link_to "Ga terug naar overzicht", projects_path %>
+		<%= link_to "Ga terug naar overzicht", projects_path %>
 	</div> 
 	<% if admin_signed_in? %>
 		<br><br>
