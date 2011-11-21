@@ -175,15 +175,16 @@ h5 {
 
 .bookman-link{
 	font-family: 'Bookman Old Style', bookman,'Times New Roman', serif;
-	font-style: italic;
-	font-size: 14px;
+	font-family: 'BebasNeueRegular', impact, sans-serif;
+	font-style: regular;
+	font-size: 17px;
 	line-height: 21px;
-	font-weight: bold;
+	font-weight: normal;
 	color: $dyw-blue;
-	padding-left: 13px; 
+	padding-left: 15px; 
 	background-image: url(arrow.png);
 	background-repeat: no-repeat;
-	background-position: left center;
+	background-position: 0px 3px;;
 	text-decoration: none;
 	a{
 		text-decoration: none;
@@ -286,17 +287,17 @@ h5 {
 }
 
 .read-more{
-	font-family: "Bookman Old Style", bookman, 'Times New Roman', serif;
+	/*font-family: "Bookman Old Style", bookman, 'Times New Roman', serif;
 	font-style: italic;
-	font-weight: bold;
+	font-weight: bold;*/
 	position:absolute;
 	right:15px;
 	bottom:0;
 }
 
 #sidebar-right{
-	font-size: 11px;
-	p, a, span{
+	/*font-size: 11px;*/
+	p{
 		font-size: 11px;
 	}
 }

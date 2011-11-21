@@ -135,6 +135,10 @@
 						line-height: 24px;
 						font-size: 15px;
 					}
+					a:hover{
+						color: white;
+						background-image: url(arrow_hover_white.png);
+					}
 				}
 				.banner-element-image{
 					z-index:100;
@@ -282,16 +286,6 @@
 		}
 	}
 
-	.read-more
-	{
-		color: $dyw-blue;
-		font-weight: bolder;
-		a, a:link, a:hover, a:visited{
-			font-size: 14px;
-			font-weight: bolder;
-		}
-	}
-	
 	.sidebar-post-header{
 		margin-left: 70px;
 		h4{
