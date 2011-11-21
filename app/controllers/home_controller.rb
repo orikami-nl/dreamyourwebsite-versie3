@@ -2,10 +2,9 @@ class HomeController < ApplicationController
 	manageable_content_for :body, :title, :dreamteam, :web_slide, :concept_slide, :mobile_slide, :layout => "home_layout"
 	layout "home_layout"
 
-  def mobile_agent?
-    request.user_agent =~ /Mobile|webOS/
-    #false
-  end
+	def mobile_agent?
+	  request.user_agent =~ /Mobile|webOS/ and not request.user_agent =~ /iPad/
+	end
   
   def parse_boolean(value)    
      [true, 'true', 1, '1', 't'].include?(value.respond_to?(:downcase) ? value.downcase : value)  
