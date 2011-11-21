@@ -4,10 +4,8 @@
 			<div class ="banner-element-content">
 				<div class = "banner-element-text">
 					<h2>WEB DEVELOPMENT</h2>
-					<p class="bookman"><%= manageable_layout_content_for :web_slide %></p><br>
-					<div class="bookman-link">		
-						<%= link_to sub_menu_item('Lees meer', 'webdevelopment') , products_webdevelopment_path %>
-					</div>				
+					<p class="bookman"><%= manageable_layout_content_for :web_slide %></p>
+						<%= link_to sub_menu_item('Lees meer', 'webdevelopment'), products_webdevelopment_path, :class => "bookman-link" %>
 				</div>
 				<div id = "web-image" class = "banner-element-image"></div>
 			</div>
@@ -16,10 +14,8 @@
 			<div class ="banner-element-content">
 				<div class = "banner-element-text">
 					<h2>CONCEPT DEVELOPMENT</h2>
-					<p class="bookman"><%= manageable_layout_content_for :concept_slide %></p><br>
-					<div class="bookman-link">
-						<%= link_to sub_menu_item('Lees meer', 'concept_development') , products_concept_development_path %>
-					</div>
+					<p class="bookman"><%= manageable_layout_content_for :concept_slide %></p>
+						<%= link_to sub_menu_item('Lees meer', 'concept_development') , products_concept_development_path, :class => "bookman-link" %>
 				</div>
 				<div id = "concept-image" class = "banner-element-image"></div>
 			</div>
@@ -28,10 +24,8 @@
 			<div class ="banner-element-content">
 				<div class = "banner-element-text">
 					<h2>MOBILE DEVELOPMENT</h2>
-					<p class="bookman"><%= manageable_layout_content_for :mobile_slide %></p><br>
-					<div class="bookman-link">
-						<%= link_to sub_menu_item('Lees meer', 'mobile'), products_mobile_path %>
-					</div>
+					<p class="bookman"><%= manageable_layout_content_for :mobile_slide %></p>
+						<%= link_to sub_menu_item('Lees meer', 'mobile'), products_mobile_path, :class => "bookman-link" %>
 				</div>
 				<div id = "mobile-image" class = "banner-element-image"></div>
 			</div>	
@@ -41,9 +35,7 @@
 				<div class = "banner-element-text">
 					<h2>Invite 2 eat</h2>
 					<p class="bookman">In samenwerking met Invite2Eat ontwikkelden wij een website waarmee mensen zich kunnen inschrijven voor een culinaire netwerkavond. Wij hebben meegedacht over de ontwikkeling van de wesite en onder andere het betaalsysteem geimplementeerd. Zodat mensen niet alleen met een volle maag, maar ook vol goede ideeen het restaurant weer verlaten.</p>
-					<div class="bookman-link">
-						<a href="/projects/invite2eat">Lees meer</a>
-					</div>
+						<a href="/projects/invite2eat class=", class="bookman-link">Lees meer</a>
 				</div>
 				<div id = "invite2eat-image" class = "banner-element-image"></div>
 			</div>	

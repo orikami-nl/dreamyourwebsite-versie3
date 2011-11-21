@@ -134,6 +134,11 @@
 						font-style: italic;
 						line-height: 24px;
 						font-size: 15px;
+						margin-bottom: 20px;
+					}
+					a:hover{
+						color: white;
+						background-image: url(arrow_hover_white.png);
 					}
 				}
 				.banner-element-image{
@@ -282,16 +287,6 @@
 		}
 	}
 
-	.read-more
-	{
-		color: $dyw-blue;
-		font-weight: bolder;
-		a, a:link, a:hover, a:visited{
-			font-size: 14px;
-			font-weight: bolder;
-		}
-	}
-	
 	.sidebar-post-header{
 		margin-left: 70px;
 		h4{

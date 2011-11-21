@@ -12,8 +12,8 @@
 			</div>
 			<div style="clear:both"></div>
 			<%= post.excerpt.html_safe %><br><br>
-			<div class='read-more bookman-link'>
-				<%= link_to "Lees meer", partner_post_path(post.partner, post) %>
+			<div class='read-more'>
+				<%= link_to "Lees meer", partner_post_path(post.partner, post), :class => "bookman-link" %>
 			</div>
 		</div>
 		<hr>
