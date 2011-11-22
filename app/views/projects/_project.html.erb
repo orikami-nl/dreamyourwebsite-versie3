@@ -8,10 +8,10 @@
 	</div>
 	<div class="project-description">
 		<h4><%= link_to(project.title, project_path(project))%></h4>
-		<% if admin_signed_in? %>
-  	  <%= link_to 'Edit', edit_project_path(project) %> / 
-  	  <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br>
-		<% end %>
+		<% #if admin_signed_in? %>
+  	  <%= link_to 'Edit', edit_project_path(project), :class => 'admin' %> 
+  	  <%= link_to 'Destroy', project, :class => 'admin', confirm: 'Are you sure?', method: :delete %><br>
+		<% #end %>
 		<div class="excerpt-container bookman">
   		<%= project.excerpt.html_safe %>
 		</div><br>

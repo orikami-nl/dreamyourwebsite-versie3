@@ -20,6 +20,11 @@ class Admin::PagesController < Admin::ApplicationController
     end
   end
 
+  def clear
+    Rails.cache.clear
+    redirect_to admin_pages_path
+  end
+
   protected
 
   def pages

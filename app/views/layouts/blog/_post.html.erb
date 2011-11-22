@@ -13,10 +13,12 @@
 	  		<p><%= post.excerpt.html_safe %><br>
 					<%= link_to "Lees verder", partner_post_path(post.partner, post), :class => "bookman-link" %>
 			</p>
-			<% if admin_signed_in? %>
-  	  			<br><%= link_to 'Edit', edit_partner_post_path(post.partner, post), :class => "bookman-link" %> | 
+			<div class="admin">
+			<% #if admin_signed_in? %>
+  	  			<br><%= link_to 'Edit', edit_partner_post_path(post.partner, post), :class => "bookman-link" %>  
 				<%= link_to 'Destroy', partner_post_path(post.partner, post), confirm: 'Are you sure?', method: :delete, :class => "bookman-link" %>
-			<% end %>
+			<% #end %>
+			</div>
 		</div>			
 		</div>
 		<hr>
