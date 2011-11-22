@@ -15,8 +15,8 @@ class PartnerSweeper < ActionController::Caching::Sweeper
 
   private
   def expire_cache_for(partner)
-    expire_page(:controller => 'partners', :action => 'index')
-    expire_page(:controller => 'partners', :action => 'show',:id => partner)
+    expire_action(:controller => 'partners', :action => 'index')
+    expire_action(:controller => 'partners', :action => 'show',:id => partner)
   end
 
 end

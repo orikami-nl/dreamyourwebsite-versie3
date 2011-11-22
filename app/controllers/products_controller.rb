@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
 manageable_content_for :title, :body, :sidebar, :webdevelopment, :concept_development, :mobile, :web_excerpt, :concept_excerpt, :mobile_excerpt, :layout => "sidebar_layout"
 	layout "sidebar_layout"
-	caches_page :index, :webdevelopment, :concept_development, :mobile
+	caches_action :index, :webdevelopment, :concept_development, :mobile
 
 	before_filter :parse
 

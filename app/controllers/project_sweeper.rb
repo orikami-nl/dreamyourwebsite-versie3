@@ -15,8 +15,8 @@ class ProjectSweeper < ActionController::Caching::Sweeper
 
   private
   def expire_cache_for(project)
-    expire_page(:controller => 'projects', :action => 'index')
-    expire_page(:controller => 'projects', :action => 'show',:id => project)
+    expire_action(:controller => 'projects', :action => 'index')
+    expire_action(:controller => 'projects', :action => 'show',:id => project)
   end
 
 end

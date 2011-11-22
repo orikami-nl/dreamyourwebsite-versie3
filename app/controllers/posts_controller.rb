@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 	before_filter :get_partner, :tag_cloud
 	layout "sidebar_layout"
 
-  caches_page :index, :show
+  caches_action :index, :show
   cache_sweeper :post_sweeper
 
 	def get_partner

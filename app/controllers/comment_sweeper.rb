@@ -16,7 +16,7 @@ class CommentSweeper < ActionController::Caching::Sweeper
   private
   def expire_cache_for(comment)
     @post = Post.find_by_title_for_url(params[:post_id])
-    expire_page(:controller => 'posts', :action => 'show',:id => params[:post_id])
+    expire_action(:controller => 'posts', :action => 'show',:id => params[:post_id])
     logger.debug "Post hash: #{@post.id}"
   end
 
