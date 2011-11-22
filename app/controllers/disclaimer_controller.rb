@@ -1,7 +1,8 @@
 class DisclaimerController < ApplicationController
 	manageable_content_for :body, :title
-
-  def index
-  end
+	caches_page :index
+	
+  	def index
+  	end
 
 end

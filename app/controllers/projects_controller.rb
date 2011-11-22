@@ -3,6 +3,8 @@ class ProjectsController < ApplicationController
 
 	before_filter :authenticate_admin!, :except => [:show, :index] 
 	layout 'application', :except => [:index, :show]
+  caches_page :index, :show
+  cache_sweeper :project_sweeper
 
   # GET /projects
   # GET /projects.json

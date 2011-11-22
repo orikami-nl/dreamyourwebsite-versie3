@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dreamyourweb | </title>
+  <title>Dreamyourweb | Neem contact op</title>
 	<link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
 <script src="/assets/application.js" type="text/javascript"></script>
 <meta name="description" content="Webdesign, concept development en mobiele applicaties op maat.">
@@ -68,10 +68,10 @@
 				<a href="/partners" class="false about">
 </a>			</li>
 		 	 <li>
-				<a href="/blog" class="true blog">
+				<a href="/blog" class="false blog">
 </a>			</li>
 		 	 <li>
-				<a href="/contact" class="false contact">
+				<a href="/contact" class="true contact">
 </a>			</li>
  		</ul>
 	</nav>
@@ -97,67 +97,61 @@
 
 	<div style="clear:both"></div>
 
- 		<div class="site-flash notice">Post was successfully updated.</div>
 	
-	<div id="strip-blog-sides" class="strip-wide">
-	<div id="strip-blog-center" class="strip-center"></div>
+	<div id="strip-contact-sides" class="strip-wide">
+	<div id="strip-contact-center" class="strip-center"></div>
 </div>
-
 
 
 	<div class='content'>
 		<div id='home-left'>
 			<div id="main-container">
-				<h3>Overzicht posts</h3>
+				<h3>Contactformulier</h3>
 <hr class="small-line">
-		<div class="post-container">
-			<div class="post-header">
-			<div class="post-blog-photo inner-shadow lifted">
-					<a href="/partners/andres-lamont"><img alt="Andres Lamont" src="/uploads/partner/avatar/1/small_andres.jpg" title="Andres Lamont" /></a>
-			</div>
-			<div id="post-info">
-  	  			<h4><a href="/partners/andres-lamont/blog/test" class="post-title">Test</a></h4>
-				<p class="bookman">Geschreven door <a href="/partners/andres-lamont">Andres Lamont</a> op 2011-11-22</p>
-			</div>
-		</div>
-		<div id="post-excerpt">
-	  		<p><p>Ideeën BLA komen altijd op de momenten dat er geen pen te bekennen is. Als ik net in bed lig bijvoorbeeld. Dan heb ik net de oplossing voor het wereldvoedselprobleem bedacht, maar heb ik tegelijkertijd echt geen zin om weer op te staan en het op te schrijven. Dan denk ik het wel te onthouden. Maar elke ochtend kom ik weer bedrogen uit.</p><br>
-					<a href="/partners/andres-lamont/blog/test" class="bookman-link">Lees verder</a>
-			</p>
-  	  			<br><a href="/partners/andres-lamont/blog/test/edit" class="bookman-link">Edit</a> | 
-				<a href="/partners/andres-lamont/blog/test" class="bookman-link" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a>
-		</div>			
-		</div>
-		<hr>
+<form accept-charset="UTF-8" action="/contact" class="new_contact_form" id="new_contact_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="r0ZK8mhAxGInc9C6frr8FNGTKMyueMZaP274Iaq3fUc=" /></div>
+  <div class='contactform'>
+	<div class="contact-field">
+		<label for="contact_form_Aan:">Aan:</label><br />    
+		<select id="contact_form_to" name="contact_form[to]"><option value="info@dreamyourweb.nl">info@dreamyourweb.nl</option>
+<option value="andres@dreamyourweb.nl">andres@dreamyourweb.nl</option></select>
+ 	</div>
+	<div class="contact-field">
+		<label for="contact_form_Onderwerp:">Onderwerp:</label><br />    
+		<input id="contact_form_subject" name="contact_form[subject]" size="30" style="width: 600px;" type="text" />
+ 	</div>
+	<div class="contact-field">
+		<label for="contact_form_Uw bericht:">Uw bericht:</label><br />    
+		<textarea cols="40" id="contact_form_message" name="contact_form[message]" rows="10" style="width: 600px;"></textarea>
+ 	</div>
+ 	<div class="contact-field">
+   	<label for="contact_form_Uw e-mail adres of telefoonnummer:">Uw e-mail adres of telefoonnummer:</label><br />
+   	<input id="contact_form_info" name="contact_form[info]" size="30" style="width: 600px;" type="text" />
+ 	</div>
+ 	<div class="sweetness">
+   	<input id="its_so_sweet_email" name="its_so_sweet[email]" tabindex="900" type="text" value="john@doe.com" />
+   	<input id="its_so_sweet_name" name="its_so_sweet[name]" tabindex="901" type="text" value="" />
+   	<input id="its_so_sweet_agree" name="its_so_sweet[agree]" tabindex="902" type="checkbox" value="1" />
+ 	</div>  
+	<div class="actions">
+   	<input name="commit" type="submit" value="Verzenden" />
+ 	</div>
+  </div>
+</form>
 
 
-<br />
 
-	<a href="/partners/andres-lamont/blog/new">New Post</a>
 
 			</div>
 		</div>
 		<div id="sidebar-right">
-			<h3>Filter</h3>
+			<h3>Info</h3>
 <hr class="small-line">
-<p><a href="/blog" class="bookman-link">Geef alle artikelen weer</a></p>
-<hr>
-<h5>Selecteer op medewerker:</h5>
-<div id="partner-selection">
-		<div class="selection-picture inner-shadow lifted shadow-small">
-			<a href="/partners/andres-lamont/blog"><img alt="Andres Lamont" src="/uploads/partner/avatar/1/thumb_andres.jpg" title="Andres Lamont" /></a> 
-		</div>
-</div>
-<div style="clear:both"></div>
-<hr>
-<h5>Selecteer op onderwerp:</h5>
-<div id="tagcloud">
-	  <a href="/blog?tag=balba" class="css4">balba</a>
-	<div style="clear:both"></div>
-</div>
-<hr>
-
-
+Neemt u hier contact met ons op. Of u nou informatie wilt over een project, een vraag heeft over onze werkwijze of meer wilt weten over ons bedrijf, wij zullen zo snel mogelijk reageren. Met die formulier kunt u ook direct contact opnemen met iemand uit ons team.<br><br>
+Uiteraard zijn wij ook telefonisch bereikbaar en kunt u ons post sturen. 
+<br><br>dreamyourweb VOF<br>
+Muntweg 512<br>
+6532 TS Nijmegen<br>
+Tel: +31 (0) 6 46 213 243
 
 		</div>
 	</div>

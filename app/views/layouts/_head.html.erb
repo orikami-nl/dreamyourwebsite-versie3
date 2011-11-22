@@ -5,3 +5,16 @@
 <meta name="keywords" content="webdesign, website, marketing, SEO, design, ontwerp, concept">
 <meta name="language" content="nl">
 
+<link href="/wymeditor/wymcss.css" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/wymeditor/jquery.wymeditor.pack.js"></script>
+<script type="text/javascript">
+	jQuery(function() {
+    	jQuery(".wymeditor").wymeditor({
+    		jQueryPath: "/assets/application.js",
+			stylesheet: "/wymeditor/wymcss.css"
+    	});
+	});
+</script>
+<script src="/adminbuttons/show.js" type="text/javascript"></script>
+	<%= csrf_meta_tags %>
+	<%= favicon_link_tag %>	

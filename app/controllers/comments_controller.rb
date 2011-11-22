@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
 	layout "sidebar_layout"
 	manageable_content_for :body, :title, :layout => "sidebar_layout"
 
+  cache_sweeper :comment_sweeper
+
   def check_honeypots
     return true if honeypot_untouched?
     flash[:notice] = 'U bent een spambot, of gebruikt een vreemd script. (Zo niet, dan heb ik overdreven gereageerd. Probeer het alstublieft nog eens.)'
@@ -22,6 +24,7 @@ class CommentsController < ApplicationController
 		@post = Post.find_by_title_for_url(params[:post_id])
 		@partner = Partner.find_by_name_for_url(params[:partner_id])
 		@partners = Partner.all
+    # logger.debug "Post hash: #{@post.id}"
 	end
 
 	def tag_cloud

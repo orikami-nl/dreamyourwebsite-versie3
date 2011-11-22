@@ -21,13 +21,13 @@
   </div>
   <div class="field">
     <%= f.label "Biografie voor in profiel" %><br />
-    <%= f.text_area :biography, :class => "input" %>
+    <%= f.text_area :biography, :class => "input wymeditor" %>
   </div>
   <div class="field">
     <%= f.label "Korte beschrijving voor in overzicht" %><br />
-    <%= f.text_area :description, :class => "input" %>
+    <%= f.text_area :description, :class => "input wymeditor" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :class => "wymupdate" %>
   </div>
 <% end %>

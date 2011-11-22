@@ -12,6 +12,7 @@ Dywsite2::Application.routes.draw do
 	get "/products/mobile", :to => "products#mobile"
 	get "/products/webdevelopment", :to => "products#webdevelopment"
 	get "/products/concept_development", :to => "products#concept_development"
+  get "/adminbuttons/show.js", :to => "adminbuttons#show"
 
   match 'mobile', :to => 'mobile#index'
   match 'full', :to => 'home#full'

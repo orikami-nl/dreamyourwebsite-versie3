@@ -3,6 +3,7 @@ class BlogController < ApplicationController
 
 	layout "sidebar_layout"
 	before_filter :tag_cloud
+	caches_page :index
 
 	def tag_cloud
 		@tags = Post.tag_counts_on(:tags)

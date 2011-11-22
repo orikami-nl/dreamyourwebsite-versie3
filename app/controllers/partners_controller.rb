@@ -2,6 +2,8 @@ class PartnersController < ApplicationController
 	manageable_content_for :body, :title, :sidebar
 
 	before_filter :authenticate_admin!, :except => [:show, :index]
+  caches_page :index, :show
+  cache_sweeper :partner_sweeper
 	layout "sidebar_layout"
 
   # GET /partners

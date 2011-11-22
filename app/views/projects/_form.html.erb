@@ -33,13 +33,13 @@
   </div>
   <div class="field">
     <%= f.label :excerpt %><br />
-    <%= f.text_area :excerpt%>
+    <%= f.text_area :excerpt ,:class => "wymeditor"%>
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body, :class => "input"%>
+    <%= f.text_area :body, :class => "input wymeditor"%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :class => "wymupdate" %>
   </div>
 <% end %>
