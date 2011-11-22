@@ -15,10 +15,13 @@ class PageSweeper <  ActionController::Caching::Sweeper
 
   private
   def expire_cache_for(page)
-    ApplicationController::expire_page "/" + page.key
-    ApplicationController::expire_page "/" + page.key + "/show"
-    ApplicationController::expire_page "/" + page.key + "/webdevelopment"
-    ApplicationController::expire_page "/" + page.key + "/concept_development"
+    begin
+      expire_action(:controller => "/" + page.key, :action => "index")
+      expire_action(:controller => "/" + page.key, :action => "show")
+      expire_action(:controller => "/" + page.key, :action => "webdevelopment")
+      expire_action(:controller => "/" + page.key, :action => "concept_development")
+    rescue
+    end
     Rails.logger.info "PAGEPAGEPAGE: " + page.inspect
     Rails.logger.info "PAGEPAGEPAGE: "+page.key
 
