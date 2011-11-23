@@ -15,10 +15,10 @@ class Project < ActiveRecord::Base
 	end
 
 	def previous_project
-	  self.class.first(:conditions => ["id > ?", id])
+	  self.class.last(:conditions => ["id < ?", id])
 	end
 
 	def next_project
-	  self.class.first(:conditions => ["id < ?", id])
+	  self.class.first(:conditions => ["id > ?", id])
 	end
 end
