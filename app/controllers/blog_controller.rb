@@ -23,9 +23,9 @@ class BlogController < ApplicationController
 
   def index_cache_path
   	if admin_signed_in?
-  		'/admin/blog'
+  		'admin/blog'
   	else
-  		'/public/blog'
+  		'public/blog'
   	end
   end
 end
