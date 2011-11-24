@@ -1,4 +1,7 @@
 <h3>Overzicht posts</h3>
 <hr class="small-line">
+<% if admin_signed_in? %>
+	ADMIN
+<% end %>
 <%= render :partial => "layouts/blog/post", :collection => @posts%>
 <%= paginate @posts %>
