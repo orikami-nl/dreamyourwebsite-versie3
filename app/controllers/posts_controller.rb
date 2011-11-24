@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 	before_filter :get_partner, :tag_cloud
 	layout "sidebar_layout"
 
-  caches_action :index, :show
+  caches_action :index, :show, :unless => :admin?
   cache_sweeper :post_sweeper
 
 	def get_partner
@@ -89,5 +89,9 @@ class PostsController < ApplicationController
       format.html { redirect_to partner_posts_url(@partner) }
       format.json { head :ok }
     end
+  end
+
+  def admin?
+    admin_signed_in?
   end
 end

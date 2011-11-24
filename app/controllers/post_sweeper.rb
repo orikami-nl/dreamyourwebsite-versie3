@@ -18,11 +18,6 @@ class PostSweeper < ActionController::Caching::Sweeper
     expire_action(:controller => 'home', :action => 'index')
     expire_action(:controller => 'blog', :action => 'index')
     
-    expire_fragment 'admin/blog'
-    expire_fragment 'public/blog'
-    # expire_action '/index.html'
-
-
     expire_action(:controller => 'posts', :action => 'index')
     expire_action(:controller => 'posts', :action => 'show',:id => post)
   end
