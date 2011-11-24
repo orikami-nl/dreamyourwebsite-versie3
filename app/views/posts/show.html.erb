@@ -23,8 +23,8 @@
 	<%= link_to "Ga terug", :back, :class => "bookman-link left" %>
 <div style="clear:both"></div>
 <% #if admin_signed_in? %>
-	<br><%= link_to 'Edit post', edit_partner_post_path(@partner, @post), :class => "admin"%>
-	<%= link_to 'Delete post', partner_post_path(@partner, @post), :class => "admin", confirm: "Are you sure?", method: :delete %><br>
+	<br><%= link_to 'Edit post', edit_partner_post_path(@partner, @post), :class => "bookman-link admin"%>
+	<%= link_to 'Delete post', partner_post_path(@partner, @post), :class => "bookman-link admin", confirm: "Are you sure?", method: :delete %><br>
 <% #end %>
 <br><div class="fb-like" data-href=<%=partner_post_url(@partner, @post)%> data-send="true" data-width="450" data-show-faces="true", :data-href></div>
 

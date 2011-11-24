@@ -20,13 +20,21 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = @partner.posts.page(params[:page]).per(6)
+    if admin_signed_in?
+      @posts = @partner.posts.page(params[:page]).per(6)
+    else
+      @posts = @partner.posts.where(:draft => false).page(params[:page]).per(6)
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find_by_title_for_url(params[:id])
+    if admin_signed_in?
+      @post = Post.find_by_title_for_url(params[:id])
+    else
+      @post = Post.where(:draft => false).find_by_title_for_url(params[:id])
+    end
     @comment = @post.comments.new
 		@comments = @post.comments.all.reverse
   end

@@ -1,5 +1,5 @@
 	<% if !post.partner.nil? %>
-		<div class="post-container">
+		<div class="post-container <% if post.draft? %>draft<% end %>">
 			<div class="post-header">
 			<div class="post-blog-photo inner-shadow lifted">
 					<%= link_to image_tag(post.partner.avatar_url(:small).to_s, :alt => post.partner.name, :title => post.partner.name), partner_path(post.partner) %>
