@@ -38,7 +38,7 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  @include rounded('.5em');
+  @include rounded(.5em);
   // this determines Mozilla to show the padding
   border: solid 1px #ccc;
   @include shadow;
@@ -227,7 +227,7 @@
 		float: left;
 		img{
 			width: 280px;
-			heigth: 200px;
+			height: 200px;
 		}
 	}
 	.excerpt-container{
@@ -248,7 +248,7 @@
 		.read-more
 		{
 			position: absolute;
-			bottom: 5px;
+			bottom: 3px;
 			right: 15px;
 		}
 	}
@@ -302,6 +302,12 @@
 			margin: 0px;
 		}
 	}
+
+	.read-more
+	{
+		float: right;
+		right: 15px;
+	}
 }
 
 .button {
@@ -311,6 +317,7 @@
 }
 
 #tweet-panel{
+	margin-top: 15px;
 	#tweet-caption{
 		a:link, a, a:visited{
 			text-decoration: none;

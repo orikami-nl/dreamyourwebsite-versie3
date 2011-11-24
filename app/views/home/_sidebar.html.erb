@@ -12,12 +12,15 @@
 					<h5 class="bebas"><%= post.updated_at.to_date.to_s %></h5>
 				</div>
 				<div style="clear:both"></div>
-				<%= post.excerpt.html_safe %><br><br>
+				<%= post.excerpt.html_safe %>
 				<div class='read-more'>
 					<%= link_to "Lees meer", partner_post_path(post.partner, post), :class => "bookman-link" %>
 				</div>
+				<div style="clear:both"></div>
 			</div>
-			<hr>
+			<% if !(@posts.last == post) %>
+				<hr>
+			<% end %>
 		<% end %>
 	<% end %>
 <% end %>	
