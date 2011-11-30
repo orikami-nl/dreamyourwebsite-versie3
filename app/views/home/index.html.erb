@@ -24,9 +24,9 @@
 
 <div class="featured">
 	<% if !@project.nil? %>
-		<!-- <div class="feature-shadow dreamteam-img">
-			< # = link_to image_tag(@project.picture_url.to_s), path_to_category(@project) %>
-		</div> -->
+		<div class="dreamteam-img inner-shadow lifted">
+			<%= link_to image_tag("dywgroup.jpg"), path_to_category(@project) %>
+		</div>
 	<% end %>
 	<div class="excerpt-container dreamteam">
 		<div class="excerpt"><h4><%= link_to "Het Dream Team", partners_path%></h4>
