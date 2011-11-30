@@ -17,9 +17,7 @@ class PostSweeper < ActionController::Caching::Sweeper
   def expire_cache_for(post)
     expire_action(:controller => 'home', :action => 'index')
     expire_action(:controller => 'blog', :action => 'index')
-    # expire_action '/index.html'
-
-
+    
     expire_action(:controller => 'posts', :action => 'index')
     expire_action(:controller => 'posts', :action => 'show',:id => post)
   end

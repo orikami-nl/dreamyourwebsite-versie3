@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 	before_filter :get_partner, :tag_cloud
 	layout "sidebar_layout"
 
-  caches_action :index, :show
+  caches_action :index, :show, :unless => :admin?
   cache_sweeper :post_sweeper
 
 	def get_partner
@@ -20,13 +20,21 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = @partner.posts.page(params[:page]).per(6)
+    if admin_signed_in?
+      @posts = @partner.posts.page(params[:page]).per(6)
+    else
+      @posts = @partner.posts.where(:draft => false).page(params[:page]).per(6)
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find_by_title_for_url(params[:id])
+    if admin_signed_in?
+      @post = Post.find_by_title_for_url(params[:id])
+    else
+      @post = Post.where(:draft => false).find_by_title_for_url(params[:id])
+    end
     @comment = @post.comments.new
 		@comments = @post.comments.all.reverse
   end
@@ -89,5 +97,9 @@ class PostsController < ApplicationController
       format.html { redirect_to partner_posts_url(@partner) }
       format.json { head :ok }
     end
+  end
+
+  def admin?
+    admin_signed_in?
   end
 end

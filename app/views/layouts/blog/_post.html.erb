@@ -1,5 +1,5 @@
 	<% if !post.partner.nil? %>
-		<div class="post-container">
+		<div class="post-container <% if post.draft? %>draft<% end %>">
 			<div class="post-header">
 			<div class="post-blog-photo inner-shadow lifted">
 					<%= link_to image_tag(post.partner.avatar_url(:small).to_s, :alt => post.partner.name, :title => post.partner.name), partner_path(post.partner) %>
@@ -15,8 +15,8 @@
 			</p>
 			<div class="admin">
 			<% #if admin_signed_in? %>
-  	  			<br><%= link_to 'Edit', edit_partner_post_path(post.partner, post), :class => "bookman-link" %>  
-				<%= link_to 'Destroy', partner_post_path(post.partner, post), confirm: 'Are you sure?', method: :delete, :class => "bookman-link" %>
+  	  			<br class="admin"><%= link_to 'Edit', edit_partner_post_path(post.partner, post), :class => "bookman-link admin" %>  
+				<%= link_to 'Destroy', partner_post_path(post.partner, post), confirm: 'Are you sure?', method: :delete, :class => "bookman-link admin" %>
 			<% #end %>
 			</div>
 		</div>			
