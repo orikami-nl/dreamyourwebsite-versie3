@@ -30,7 +30,6 @@ class HomeController < ApplicationController
     end
     @posts = Post.last(2)
     @project = Project.last
-
   end
 
   def full

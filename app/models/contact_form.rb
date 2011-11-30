@@ -16,7 +16,7 @@ class ContactForm < MailForm::Base
     {
       :subject => %(<#{subject}>),
 			:to => %(#{to}),
-      :from => %(<#{info}>)
+      :from => "info@dreamyourweb.nl"
     }
   end
 end
