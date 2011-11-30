@@ -25,13 +25,10 @@
 	<% end %>
 <% end %>	
 <div id="tweet-panel">
-	<% if !@lasttweet.nil? %>
-		<div id="tweet-caption">
-			<h3><a href="https://twitter.com/#!/dreamyourweb">Laatste tweet</a></h3>
-		</div>
-		<hr class="small-line">
-		<div id="last-tweet" class="bookman">
-			<%= @lasttweet %>
-		</div>
-	<% end %>
+	<div id="tweet-caption">
+		<h3><a href="https://twitter.com/#!/dreamyourweb">Laatste tweets</a></h3>
+	</div>
+	<hr class="small-line">
+	<div class="bookman tweet">
+	</div>
 </div>
