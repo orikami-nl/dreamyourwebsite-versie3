@@ -30,17 +30,17 @@ class HomeController < ApplicationController
     end
     @posts = Post.last(2)
     @project = Project.last
-		#begin
-	  #  @lasttweet = Twitter.user_timeline("dreamyourweb").first.text  
-	  #  @lasttweet = @lasttweet.strip.gsub(/(http:\/\/\S+)/) {|s| '<a href=' + s + '>' + s + '</a>'}
-	  #  @lasttweet = @lasttweet.strip.gsub(/(#\w+)/) {|s| '<a href=http://twitter.com/#!/search?q=%23' + s.gsub(/#/,"") + '>' + s + '</a>'}
-	  #  @lasttweet = @lasttweet.strip.gsub(/(@\w+)/) {|s| '<a href=http://twitter.com/#!/' + s.gsub(/@/,"") + '>' + s + '</a>'}
-		#rescue Twitter::BadRequest #twitter limiting
-		#	@lasttweet = nil
-		#end
+		begin
+	    @lasttweet = Twitter.user_timeline("dreamyourweb").first.text  
+	    @lasttweet = @lasttweet.strip.gsub(/(http:\/\/\S+)/) {|s| '<a href=' + s + '>' + s + '</a>'}
+	    @lasttweet = @lasttweet.strip.gsub(/(#\w+)/) {|s| '<a href=http://twitter.com/#!/search?q=%23' + s.gsub(/#/,"") + '>' + s + '</a>'}
+	    @lasttweet = @lasttweet.strip.gsub(/(@\w+)/) {|s| '<a href=http://twitter.com/#!/' + s.gsub(/@/,"") + '>' + s + '</a>'}
+		rescue Twitter::BadRequest #twitter limiting
+			@lasttweet = nil
+		end
 
 		#Added on twitter error
-		@lasttweel = nil    
+		#@lasttweel = nil    
   end
 
   def full
