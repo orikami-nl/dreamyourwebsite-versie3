@@ -328,11 +328,13 @@
 			font-size:inherit;
 		}
 	}
-	#last-tweet{
+	.tweet, .tweet_first, .tweet_odd, .tweet_text{
 		color: #637579;
 		font-style: italic;
 		font-size: 16px;
 		font-weight: normal;
+		font-family: 'Bookman Old Style', bookman, 'Times New Roman', serif;
+		margin-bottom: 10px;
 	}
 }
 
