@@ -28,7 +28,7 @@ class HomeController < ApplicationController
     if mobile?
       redirect_to mobile_path
     end
-    @posts = Post.first(2)
+    @posts = Post.find(:all, :order => "created_at desc").first(2)
     @project = Project.last
   end
 
