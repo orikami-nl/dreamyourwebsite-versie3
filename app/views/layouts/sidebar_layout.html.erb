@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dreamyourweb | <%= manageable_layout_content_for :title %></title>
+	<% if controller_name == 'posts' and action_name == 'show' %>
+	  <title>Dreamyourweb | <%= @post.title %></title>
+	<% else %>
+	  <title>Dreamyourweb | <%= manageable_layout_content_for :title %></title>
+	<% end %>
 	<%= render 'layouts/head' %>
 	<%= render 'layouts/analytics' %>
 </head>

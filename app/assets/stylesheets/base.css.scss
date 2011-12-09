@@ -120,15 +120,17 @@ Typography presets
 } 
 
 .huge, h1 {
-   font-size: 68px;
-   line-height: 72px;
-   letter-spacing: -1px;
+   font-size: 26px;
+   line-height: 28px;
    font-family: 'BebasNeueRegular', impact, sans-serif;
+   a, a:link, a:hover, a:visited{
+   		text-decoration: none;
+   }
 }
 
 .large, h2 {
-   font-size: 42px;
-   line-height: 48px;
+   font-size: 22px;
+   line-height: 24px;
    font-family: 'BebasNeueRegular', impact, sans-serif;
 } 
 
