@@ -17,10 +17,10 @@
 	
     jQuery(function($){
         $(".tweet").tweet({
-            username: "dreamyourweb",
-            count: 3,
-            loading_text: "Tweets laden...",
-			template: "{text}, {retweet_action}"
+						avatar_size: 48,
+            username: ["thijsvdlaar", "bramdenteuling", "dreamyourweb", "lvandewall", "jelmerwolterink"],
+            count: 1,
+            loading_text: "Tweets laden..."
         });
     }).bind("loaded", function(){
         $(this).find("a.tweet_action").click(function(ev) {
