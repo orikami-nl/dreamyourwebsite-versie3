@@ -32,11 +32,15 @@ gem 'kaminari'
 gem 'twitter'
 gem 'sanitize'
 
+gem 'ZenTest'
+
 group :test do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
 	gem 'taps'
+	gem 'autotest-rails'
+	gem 'autotest-growl'
 end
 
 group :development do
