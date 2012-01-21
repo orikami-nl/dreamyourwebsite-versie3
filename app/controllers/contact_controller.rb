@@ -1,5 +1,6 @@
 class ContactController < ApplicationController
 	before_filter :check_honeypots, :only => [:create]
+	before_filter :get_email_addresses, :only => [:index, :create] 
 	layout "sidebar_layout", :except => "completed"
 	manageable_content_for :body, :title, :side, :layout => "sidebar_layout" 
 
@@ -18,13 +19,16 @@ class ContactController < ApplicationController
     submitted['email'] == 'john@doe.com' && submitted['name'] == '' && submitted['agree'].blank?
 	end
 
-	def index
-		@contact_form = ContactForm.new
-		@partners = Partner.all
+	def get_email_addresses
+		@partners = Partner.where(:active => true)
 		@addresses = ["info@dreamyourweb.nl"]
 		@partners.each do |partner|
 			@addresses = @addresses << (partner.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl")
 		end
+	end
+
+	def index
+		@contact_form = ContactForm.new
 	end
 
 	def completed

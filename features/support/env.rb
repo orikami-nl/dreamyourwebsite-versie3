@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require 'email_spec/cucumber'
 # require '#{Rails.root}/spec/factories'
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In

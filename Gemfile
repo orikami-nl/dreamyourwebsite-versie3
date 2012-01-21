@@ -44,6 +44,7 @@ group :test do
 	gem 'autotest-rails'
 	gem 'autotest-growl'
 	gem 'spork'
+	gem 'email_spec'
 end
 
 group :development do

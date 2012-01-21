@@ -19,7 +19,7 @@
 </div>
 
 <hr>
-	<%= link_to 'Neem contact op met de auteur', {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name), :subject => @post.title}, :class => "bookman-link left" %>
+	<%= link_to 'Neem contact op met de auteur', {:action => "index", :controller => "contact", :aan => build_mail_address(@partner.name), :subject => @post.title}, :class => "bookman-link left" %>
 	<%= link_to "Ga terug", :back, :class => "bookman-link left" %>
 <div style="clear:both"></div>
 <% #if admin_signed_in? %>
