@@ -31,11 +31,13 @@ gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'kaminari'
 gem 'twitter'
 gem 'sanitize'
+gem 'factory_girl_rails', '>=1.0'
 
 group :test do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
+  gem "database_cleaner"
 	gem 'taps'
 end
 
