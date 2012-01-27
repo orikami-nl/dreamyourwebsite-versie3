@@ -9,7 +9,11 @@
 		<% end %>
 	</h4>
 	<hr class="small-line">
-	<%= link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank", :class => "bookman-link" %>
+	<% if !@project.external_url.empty? %>
+		<%= link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank", :class => "bookman-link" %>
+	<% else %>
+		<p>Deze website is momenteel nog in ontwikkeling en dus nog niet publiekelijk toegankelijk.<p>
+	<% end %>
 	<hr>
 	<h5>Datum</h5>
 	<p class="bookman"><%= @project.created_at.to_date %></p>
