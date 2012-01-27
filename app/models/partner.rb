@@ -1,6 +1,6 @@
 class Partner < ActiveRecord::Base
 	has_many :posts
-	attr_accessible :name, :avatar, :biography, :description, :name_for_url
+	attr_accessible :name, :avatar, :biography, :description, :name_for_url, :active
 	validates_presence_of :name
 	mount_uploader :avatar, PictureUploader
 	before_save :build_url

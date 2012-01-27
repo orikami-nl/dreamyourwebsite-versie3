@@ -9,7 +9,11 @@ class PartnersController < ApplicationController
   # GET /partners
   # GET /partners.json
   def index
-    @partners = Partner.all
+		if admin_signed_in?
+    	@partners = Partner.all
+		else
+    	@partners = Partner.where(:active => true)
+		end
   end
 
   # GET /partners/1
