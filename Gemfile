@@ -43,6 +43,7 @@ group :test do
 	gem 'taps'
 	gem 'autotest-rails'
 	gem 'autotest-growl'
+	gem 'spork'
 end
 
 group :development do

@@ -211,6 +211,7 @@ GEM
     simple_oauth (0.1.5)
     sinatra (1.0)
       rack (>= 1.0)
+    spork (0.9.0.rc9)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -278,6 +279,7 @@ DEPENDENCIES
   sanitize
   sass-rails (~> 3.1.0)
   simple_form
+  spork
   sqlite3
   stringex
   taps
