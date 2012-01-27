@@ -5,7 +5,8 @@ class PostsController < ApplicationController
 	before_filter :get_partner, :tag_cloud
 	layout "sidebar_layout"
 
-  caches_action :index, :show, :unless => :admin?
+#  caches_action :index, :show, :unless => :admin?
+  caches_action :show, :unless => :admin?
   cache_sweeper :post_sweeper
 
 	def get_partner
@@ -21,9 +22,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if admin_signed_in?
-      @posts = @partner.posts.page(params[:page]).per(6)
+      @posts = @partner.posts.page(params[:page]).per(5)
     else
-      @posts = @partner.posts.where(:draft => false).page(params[:page]).per(6)
+      @posts = @partner.posts.where(:draft => false).page(params[:page]).per(5)
     end
   end
 

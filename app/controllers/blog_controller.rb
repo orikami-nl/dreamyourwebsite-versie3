@@ -3,8 +3,8 @@ class BlogController < ApplicationController
 
   layout "sidebar_layout"
   before_filter :tag_cloud  
-  caches_action :index, :unless => :admin?
-  cache_sweeper :post_sweeper
+  #caches_action :index, :unless => :admin?
+  #cache_sweeper :post_sweeper
 
   def tag_cloud
   	@tags = Post.tag_counts_on(:tags)
