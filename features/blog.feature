@@ -14,6 +14,7 @@ Feature: blog
 
 	Scenario: Visitor writes a comment
 		When I go to the blog page
+		And show me the page
 		And I follow "Post9"
 		And I post a comment "Goed Man"
 		And I press "Plaats Bericht"
