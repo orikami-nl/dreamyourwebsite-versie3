@@ -5,22 +5,28 @@ Feature: blog
 
 	Background:
 		Given the following partner records
-		| name       | id |
-		| Pietje Puk | 1  |
+		| name       |
+		| Pietje Puk |
 		Given the following post records
-		| title				      | partner_id |
-		| Eerste post				| 1					 |
-		| Tweede post				| 1					 |
-		| Derde post				| 1					 |
-		| Vierde post				| 1					 |
-		| Vijfde post				| 1					 |
-		| Zesde post				| 1					 |
-		| Zevende post			| 1					 |
-		| Achtste post			| 1					 |
-		| Negende post			| 1					 |
-		| Tiende post				| 1					 |
+		| title				      |
+		| Eerste post				|
+		| Tweede post				|
+		| Derde post				|
+		| Vierde post				|
+		| Vijfde post				|
+		| Zesde post				|
+		| Zevende post			|
+		| Achtste post			|
+		| Negende post			|
+		| Tiende post				|
 
-	Scenario: User goes to next blog page
+	Scenario: Visitor goes to next blog page
 		When I go to the blog page
 		Then show me the page
 		And I should see "Eerste post"
+
+	Scenario: Visitor writes a comment
+		When I go to the eerste post page
+		And I fill in "comment_body" with "Mijn commentaar"
+		And I fill in "comment_name" with "Hassan"
+		And I fill in "comment_email" with "hassan@jassan.nl"
