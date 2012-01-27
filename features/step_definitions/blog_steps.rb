@@ -1,14 +1,13 @@
-Given /^the following partner records$/ do |table|
+Given /^the following (.+) records?$/ do |factory, table|
   # table is a Cucumber::Ast::Table
 	table.hashes.each do |hash|  
-	  Factory(:partner, hash)  
+	  Factory(factory, hash)  
 	end
 end
 
-Given /^the following post records$/ do |table|
-  # table is a Cucumber::Ast::Table
-  table.hashes.each do |hash|  
-    Factory(:post, hash)  
-  end
+When /^I post a comment "([^"]*)"$/ do |comment|
+	fill_in "comment_body", :with => comment
+	fill_in "comment_name", :with => "Hassan"
+	fill_in "comment_email", :with => "hassan@jassan.nl"
 end
 

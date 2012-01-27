@@ -27,6 +27,6 @@ Feature: blog
 
 	Scenario: Visitor writes a comment
 		When I go to the eerste post page
-		And I fill in "comment_body" with "Mijn commentaar"
-		And I fill in "comment_name" with "Hassan"
-		And I fill in "comment_email" with "hassan@jassan.nl"
+		And I post a comment "Goed Man"
+		And I press "Plaats Bericht"
+		Then I should see "Goed Man"
