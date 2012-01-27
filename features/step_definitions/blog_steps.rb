@@ -6,6 +6,8 @@ Given /^the following (.+) records?$/ do |factory, table|
 end
 
 Given /^I have (\d+) post records by "([^"]*)"$/ do |number, name|
+	FactoryGirl.factories.clear
+	FactoryGirl.find_definitions
 	partner = Factory(:partner, :name => name)
 	number.to_i.times do
 		Factory(:post, :partner_id => partner.id)

@@ -9,13 +9,14 @@ Feature: blog
 	Scenario: Visitor goes to next blog page
 		When I go to the blog page
 		And I follow "Next"
-		Then I should see "Post1"
-		And I should not see "Post9"
+		And show me the page
+		Then I should see "Post1th"
+		And I should not see "Post9th"
 
 	Scenario: Visitor writes a comment
 		When I go to the blog page
 		And show me the page
-		And I follow "Post9"
+		And I follow "Post9th"
 		And I post a comment "Goed Man"
 		And I press "Plaats Bericht"
 		Then I should see "Goed Man"

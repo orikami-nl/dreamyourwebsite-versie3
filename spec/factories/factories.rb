@@ -1,5 +1,5 @@
 Factory.define :post do |u|
-	u.sequence(:title) { |n| "Post#{n}" }
+	u.sequence(:title) { |n| "Post#{n}th" }
 	u.draft false
 	u.excerpt "Samenvatting"
 	u.body "Wat een verhaal"
