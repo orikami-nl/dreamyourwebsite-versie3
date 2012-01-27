@@ -6,8 +6,7 @@ class PostsController < ApplicationController
 	layout "sidebar_layout"
 
 #  caches_action :index, :show, :unless => :admin?
-  caches_action :show, :unless => :admin?
-  cache_sweeper :post_sweeper
+#  cache_sweeper :post_sweeper
 
 	def get_partner
 		@partners = Partner.all

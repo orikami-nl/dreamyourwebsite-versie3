@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 	layout "sidebar_layout"
 	manageable_content_for :body, :title, :layout => "sidebar_layout"
 
-  cache_sweeper :comment_sweeper
+  #cache_sweeper :comment_sweeper
 
   def check_honeypots
     return true if honeypot_untouched?
