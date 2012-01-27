@@ -4,29 +4,17 @@ Feature: blog
 	I want to be able to interact with the blog page
 
 	Background:
-		Given the following partner records
-		| name       |
-		| Pietje Puk |
-		Given the following post records
-		| title				      |
-		| Eerste post				|
-		| Tweede post				|
-		| Derde post				|
-		| Vierde post				|
-		| Vijfde post				|
-		| Zesde post				|
-		| Zevende post			|
-		| Achtste post			|
-		| Negende post			|
-		| Tiende post				|
+	Given I have 10 post records by "Pietje Puk"
 
+	@wip
 	Scenario: Visitor goes to next blog page
 		When I go to the blog page
 		Then show me the page
-		And I should see "Eerste post"
+		And I should see "Post1"
 
 	Scenario: Visitor writes a comment
-		When I go to the eerste post page
+		When I go to the blog page
+		And I follow "Post1"
 		And I post a comment "Goed Man"
 		And I press "Plaats Bericht"
 		Then I should see "Goed Man"
