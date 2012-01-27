@@ -33,12 +33,16 @@ gem 'twitter'
 gem 'sanitize'
 gem 'factory_girl_rails', '>=1.0'
 
+gem 'ZenTest'
+
 group :test do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
   gem "database_cleaner"
 	gem 'taps'
+	gem 'autotest-rails'
+	gem 'autotest-growl'
 end
 
 group :development do
