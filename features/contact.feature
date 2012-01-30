@@ -11,4 +11,11 @@ Feature: Contact
 		And I fill in my contact details
 		And I press "Verzenden"
 		Then "info@dreamyourweb.nl" should receive an email
-		
+
+	Scenario: Do not send contact without contact details
+		Given I am on the contact page
+		And no emails have been sent
+		When I fill in the subject
+		And I fill in the message
+		And I press "Verzenden"
+		Then I should see "Uw bericht kan niet verzonden worden om de volgende reden"
