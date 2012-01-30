@@ -11,7 +11,7 @@
 					<li><%= link_to "Portfolio", projects_path %></li>
 					<li><%= link_to "About", partners_path %></li>
 					<li><%= link_to "Blog", blog_path %></li>
-					<li><%= link_to "Contact", contact_path(:to => "info@dreamyourweb.nl") %></li>
+					<li><%= link_to "Contact", contact_path(:aan => "info@dreamyourweb.nl") %></li>
 				</ul>
 			</nav>
 		</div>
@@ -41,7 +41,7 @@
 		</div>
 		<div id="footer-more">
 			<h2>MEER INFO</h2>
-				<span id="contact-button"><%= link_to "", contact_path(:to => "info@dreamyourweb.nl") %></span>
+				<span id="contact-button"><%= link_to "", contact_path(:aan => "info@dreamyourweb.nl") %></span>
 		</div>
 		<div id="footer-info" class="small">
 			© 2011 dreamyourweb V.O.F. - Alle rechten voorbehouden - <a href="/disclaimer">Disclaimer</a> - <%= link_to "Algemene Voorwaarden", terms_and_conditions_path %>

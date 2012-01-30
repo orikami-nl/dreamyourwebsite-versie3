@@ -13,7 +13,7 @@
 			  <%= link_to 'Bekijk blog', partner_posts_path(@partner), :class => "bookman-link" %>
 		</li>
 		<li>
-				<%= link_to "Contact", {:action => "index", :controller => "contact", :to => build_mail_address(@partner.name)}, :class => "bookman-link" %>
+				<%= link_to "Contact", {:action => "index", :controller => "contact", :aan => build_mail_address(@partner.name)}, :class => "bookman-link" %>
 		</li>
 	</ul>
 	<div style="clear:both"></div>

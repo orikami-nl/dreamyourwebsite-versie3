@@ -13,7 +13,7 @@
 		<ul>
 			<li> <%= link_to 'Bekijk blog', partner_posts_path(partner), :class => "bookman-link" %></li>
 		    <li> <%= link_to 'Lees bio', partner_path(partner), :class => "bookman-link" %></li>
-		    <li> <%= link_to 'Contact', {:action => "index", :controller => "contact", :to => build_mail_address(partner.name)}, :class => "bookman-link" %></li>
+		    <li> <%= link_to 'Contact', {:action => "index", :controller => "contact", :aan => build_mail_address(partner.name)}, :class => "bookman-link" %></li>
 	    	<% #if admin_signed_in? %>
 					<br class="admin">
 		   		<li class="admin"> <%= link_to 'Edit', edit_partner_path(partner), :class => "bookman-link admin" %></li>
