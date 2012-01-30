@@ -7,4 +7,7 @@ Factory.define :post do |u|
 end
 
 Factory.define :partner do |u|
+	u.active true
+	u.biography "bio"
+	u.description "describe"
 end
