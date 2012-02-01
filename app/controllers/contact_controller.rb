@@ -4,7 +4,7 @@ class ContactController < ApplicationController
 	layout "sidebar_layout", :except => "completed"
 	manageable_content_for :body, :title, :side, :layout => "sidebar_layout" 
 
-  caches_action :index
+  #caches_action :index
   
   def check_honeypots
     return true if honeypot_untouched?
