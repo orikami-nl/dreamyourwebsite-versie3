@@ -1,13 +1,14 @@
 class ApplicationController < ActionController::Base
 	include ManageableContent::Controllers::Dsl
   protect_from_forgery
-  before_filter :kiss_id
+  before_filter :kiss
 
 
-    def kiss_id
+    def kiss
 	  	if admin_signed_in?
 	  		kiss_identify current_admin.email
 	  	end
+	  	kiss_record "Visited site"
   	end
 
   private
