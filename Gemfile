@@ -32,6 +32,7 @@ gem 'kaminari'
 gem 'twitter'
 gem 'sanitize'
 gem 'factory_girl_rails', '>=1.0'
+gem 'lascivious'
 
 gem 'ZenTest'
 

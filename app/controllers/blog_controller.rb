@@ -11,6 +11,7 @@ class BlogController < ApplicationController
   end
 
   def index
+    kiss_record "View blog"
   	if !params[:tag].nil?
       if admin_signed_in?
         @posts = Post.tagged_with(params[:tag]).page(params[:page]).per(5)
