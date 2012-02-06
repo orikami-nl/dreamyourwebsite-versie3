@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
 	  	if admin_signed_in?
 	  		kiss_identify current_admin.email
 	  	end
-	  	kiss_record "Visited site"
   	end
 
   private
