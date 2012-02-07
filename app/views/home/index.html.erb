@@ -1,9 +1,11 @@
+<%= #render :partial => ab_test("landing_page", "original", "new_copy") 
+%>
+
 <div id="home-content">
 	<h3>Wij zijn dreamyourweb</h3>
 	<hr class="small-line">
 	<%= manageable_layout_content_for :body %>
 </div>
-
 <% if !@project.nil? %>
 <hr>
 <div class="featured">

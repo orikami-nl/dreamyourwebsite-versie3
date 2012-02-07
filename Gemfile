@@ -33,6 +33,7 @@ gem 'twitter'
 gem 'sanitize'
 gem 'factory_girl_rails', '>=1.0'
 gem 'lascivious'
+gem 'split'
 
 gem 'ZenTest'
 
@@ -40,8 +41,8 @@ group :test do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
-  gem "database_cleaner"
-	gem 'taps'
+ 	gem "database_cleaner"
+#	gem 'taps'
 	gem 'autotest-rails'
 	gem 'autotest-growl'
 	gem 'spork'
@@ -52,7 +53,7 @@ group :development do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
-	gem 'taps'
+#	gem 'taps'
 end
 
 group :production do

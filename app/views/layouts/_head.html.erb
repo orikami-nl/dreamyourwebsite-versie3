@@ -31,6 +31,10 @@
           ev.preventDefault();
         });
 	});
+
+  <% Split::Experiment.all.each do |experiment| %>
+    _kmq.push(['set', { '<%= experiment.name %>': '<%= ab_test(experiment.name, *experiment.alternative_names) %>' }]);
+  <% end %>
 </script>
 <script src="/adminbuttons/show.js" type="text/javascript"></script>
 <script src="/tweet/jquery.tweet.js" type="text/javascript"></script>
