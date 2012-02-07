@@ -1,28 +1,23 @@
 <h3>Laatste blogposts</h3>
 <hr class="small-line">
-<% if !@posts.nil? %>
-	<% @posts.each do |post| %>
-		<% if !post.partner.nil? %>
+<% if !@post.nil? %>
+		<% if !@post.partner.nil? %>
 			<div class="sidebar-post">
 				<div class="sidebar-post-image inner-shadow lifted shadow-small">
-				<%= image_tag post.partner.avatar_url(:small).to_s %></div>
+				<%= image_tag @post.partner.avatar_url(:small).to_s %></div>
 				<div class="sidebar-post-header">
-					<h4><%= post.title %></h4>
-					<h5 class="bookman"><%= post.partner.name %></h5>
-					<h5 class="bebas"><%= post.updated_at.to_date.to_s %></h5>
+					<h4><%= @post.title %></h4>
+					<h5 class="bookman"><%= @post.partner.name %></h5>
+					<h5 class="bebas"><%= @post.updated_at.to_date.to_s %></h5>
 				</div>
 				<div style="clear:both"></div>
-				<%= post.excerpt.html_safe %>
+				<%= @post.excerpt.html_safe %>
 				<div class='read-more'>
-					<%= link_to "Lees meer", partner_post_path(post.partner, post), :class => "bookman-link" %>
+					<%= link_to "Lees meer", partner_post_path(@post.partner, @post), :class => "bookman-link" %>
 				</div>
 				<div style="clear:both"></div>
 			</div>
-			<% if !(@posts.last == post) %>
-				<hr>
-			<% end %>
 		<% end %>
-	<% end %>
 <% end %>	
 <div id="tweet-panel">
 	<div id="tweet-caption">
