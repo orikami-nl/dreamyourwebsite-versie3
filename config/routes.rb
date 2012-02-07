@@ -23,6 +23,10 @@ Dywsite2::Application.routes.draw do
 		get "logout", :to=> "devise/sessions#destroy"
   end
 
+  authenticate(:admin) do 
+    mount Split::Dashboard, :at => 'split'
+  end
+
   resources :projects
 	#scope '/admin' do
 	resources :partners do
