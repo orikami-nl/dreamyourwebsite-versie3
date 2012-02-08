@@ -14,7 +14,7 @@ group :assets do
   gem 'compass', '~> 0.12.alpha'
 end
 
-
+gem 'highrise'
 gem 'mail_form'
 gem 'simple_form'
 gem 'jquery-rails'
