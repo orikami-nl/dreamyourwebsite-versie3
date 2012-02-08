@@ -1,14 +1,4 @@
 module ApplicationHelper
-	#Obsolete for Andres design
-	def sub_menu_item(text, action)
-		if action_active?(action)
-			'>> ' + text
-		else
-			text
-		end
-
-	end
-	
 	def action_active?(action)
 		if request.path_parameters[:action] == action
 			true
@@ -24,16 +14,6 @@ module ApplicationHelper
 			true
 		else
 			false
-		end
-	end
-
-	def path_to_category(project)
-		if project.category == "Webdevelopment"
-			"/products/webdevelopment"
-		elsif project.category == "Concept development"
-			"/products/concept_development"
-		else
-			"/products/mobile"
 		end
 	end
 
