@@ -30,7 +30,7 @@ $(document).ready(function(){
   //   .prepend('<a href="#" class="control" id="left">Move left</a>')
   //   .append('<a href="#" class="control" id="right">Move right</a>');
 
-  $(document).everyTime(5000,'bannertimer',function(i) {
+  $(document).everyTime(10000,'bannertimer',function(i) {
 		  currentPosition = currentPosition + 1;
 					// Move slideInner using margin-left
       $('#slideInner').animate({
