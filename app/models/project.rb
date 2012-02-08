@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-	attr_accessible :title, :picture, :excerpt, :category, :title_for_url, :external_url, :body, :full_picture
+	attr_accessible :title, :picture, :excerpt, :title_for_url, :external_url, :body, :full_picture
 	validates_presence_of :title
 	mount_uploader :picture, PictureUploader
 	mount_uploader :full_picture, FullPictureUploader

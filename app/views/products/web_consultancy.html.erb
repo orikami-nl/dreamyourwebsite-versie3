@@ -1,0 +1,9 @@
+<h3>Web advies</h3>
+<hr class="small-line">
+<div class="category-explanation">
+	<%= manageable_layout_content_for :web_consultancy %>
+</div>
+<hr>
+	<%= link_to "Contact", {:action => "index", :controller => "contact", :aan => "info@dreamyourweb.nl", :subject => "Dreamyourweb advies"}, :class => "bookman-link left" %>
+	<%= link_to "Terug naar diensten", products_path, :class => "bookman-link left" %>
+

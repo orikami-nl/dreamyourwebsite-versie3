@@ -9,9 +9,9 @@ Dywsite2::Application.routes.draw do
   get "/home", :to => "home#index"
 	get "/blog", :to => "blog#index"
   get "/products", :to => "products#index"
-	get "/products/mobile", :to => "products#mobile"
-	get "/products/webdevelopment", :to => "products#webdevelopment"
-	get "/products/concept_development", :to => "products#concept_development"
+	get "/products/web-consultancy", :to => "products#web_consultancy", :as => "web_consultancy"
+	get "/products/web-development", :to => "products#web_development", :as => "web_development"
+	get "/products/optimization", :to => "products#optimization", :as => "optimization"
   get "/adminbuttons/show.js", :to => "adminbuttons#show"
   get "/admin/clear", :to => "admin/pages#clear"
 

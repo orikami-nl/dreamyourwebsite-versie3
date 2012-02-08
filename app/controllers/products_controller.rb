@@ -1,24 +1,18 @@
 class ProductsController < ApplicationController
 
-manageable_content_for :title, :body, :sidebar, :webdevelopment, :concept_development, :mobile, :web_excerpt, :concept_excerpt, :mobile_excerpt, :layout => "sidebar_layout"
+manageable_content_for :title, :body, :sidebar, :web_development, :web_consultancy, :optimization, :layout => "sidebar_layout"
 	layout "sidebar_layout"
-	caches_action :index, :webdevelopment, :concept_development, :mobile
-
-	before_filter :parse
-
-	def parse
-		# @bla = manageable_layout_content_for :sidebar
-	end
+	caches_action :index, :web_development, :web_consultancy, :optimization
 
 	def index
 	end
 
-	def webdevelopment
+	def web_development
 	end
 
-	def concept_development
+	def web_consultancy
 	end
 
-	def mobile
+	def optimization
 	end
 end
