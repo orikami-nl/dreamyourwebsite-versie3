@@ -28,7 +28,7 @@ class HomeController < ApplicationController
     if mobile?
       redirect_to mobile_path
     end
-    @posts = Post.first(2)
+    @post = Post.first
     @project = Project.last
   end
 

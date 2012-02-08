@@ -11,7 +11,7 @@ group :assets do
   gem 'sass-rails', '~> 3.1.0'
   gem 'coffee-rails', '~> 3.1.0'
   gem 'uglifier'
-  gem 'compass', '~> 0.12.alpha'
+  gem 'compass-rails'
 end
 
 gem 'highrise'
@@ -32,6 +32,8 @@ gem 'kaminari'
 gem 'twitter'
 gem 'sanitize'
 gem 'factory_girl_rails', '>=1.0'
+gem 'lascivious'
+gem 'split', :require => 'split/dashboard'
 
 gem 'ZenTest'
 
@@ -39,8 +41,8 @@ group :test do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
-  gem "database_cleaner"
-	gem 'taps'
+ 	gem "database_cleaner"
+#	gem 'taps'
 	gem 'autotest-rails'
 	gem 'autotest-growl'
 	gem 'spork'
@@ -51,7 +53,7 @@ group :development do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
-	gem 'taps'
+#	gem 'taps'
 end
 
 group :production do

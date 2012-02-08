@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    kiss_record "View blog"
     if admin_signed_in?
       @posts = @partner.posts.page(params[:page]).per(5)
     else
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    kiss_record "View blog"
     if admin_signed_in?
       @post = Post.find_by_title_for_url(params[:id])
     else

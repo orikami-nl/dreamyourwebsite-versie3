@@ -42,6 +42,8 @@ class ContactController < ApplicationController
         format.html { redirect_to contact_completed_path}
         format.js {render}
 			end
+		kiss_identify @contact_form.info
+		kiss_record "Send contact mail"
     else
       render :action => :index
     end
