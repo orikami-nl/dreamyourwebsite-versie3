@@ -18,9 +18,6 @@
 	<h5>Datum</h5>
 	<p class="bookman"><%= @project.created_at.to_date %></p>
 	<hr>
-	<h5>Type</h5>
-		<%= link_to @project.category, path_to_category(@project), :class => "bookman-link" %>
-	<hr>
 	<p><%= @project.body %></p>
 	<hr>
 		<%= link_to "Ga terug naar overzicht", projects_path, :class => "bookman-link" %>

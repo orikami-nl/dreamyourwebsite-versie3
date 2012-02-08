@@ -3,47 +3,29 @@
 <div id="products-maincontent">
 	<%= manageable_layout_content_for :body %><br>
 </div>
-<!-- <hr class="small-line"> -->
-<div class="product-panel">
-	<div class="product-panel-image cogs">
-	<%= link_to "", products_concept_development_path %>
-	</div>
-	<div class="product-panel-content">
-		<h4><%= link_to "Concept" , products_concept_development_path %></h4>
-		<p><%= manageable_layout_content_for :concept_excerpt %></p>
-		<div class="lees-meer">
-			<%= link_to "Lees meer", products_concept_development_path, :class => "bookman-link" %>
-		</div>
-	</div>
-	<div style="clear:both"></div>
-</div>
 
-<div class="product-panel">
-	<div class="product-panel-image globe">
-		<%= link_to "" , products_webdevelopment_path %>
-	</div>
-	<div class="product-panel-content">
-		<h4><%= link_to "Web" , products_webdevelopment_path %></h4>
-		<p><%= manageable_layout_content_for :web_excerpt %></p>
-		<div class="lees-meer">
-			<%= link_to "Lees meer", products_webdevelopment_path, :class => "bookman-link" %>
+<div class="product-sub-nav">
+	<div class="product-panel">
+		<div class="product-panel-image globe">
+		<%= link_to "", web_consultancy_path %>
 		</div>
+		<%= link_to "Advies", web_consultancy_path, :class => "bookman-link" %>
 	</div>
-	<div style="clear:both"></div>
-</div>
 
-<div class="product-panel">
-	<div class="product-panel-image phone">
-		<%= link_to "" , products_mobile_path %>
-	</div>
-	<div class="product-panel-content">
-		<h4><%= link_to "Mobiel" , products_mobile_path %></h4>
-		<p><%= manageable_layout_content_for :mobile_excerpt %></p>
-		<div class="lees-meer">
-			<%= link_to "Lees meer", products_mobile_path, :class => "bookman-link" %>
+	<div class="product-panel">
+		<div class="product-panel-image cogs">
+			<%= link_to "" , web_development_path %>
 		</div>
+		<%= link_to "Ontwikkeling", web_development_path, :class => "bookman-link" %>
 	</div>
-	<div style="clear:both"></div>
+
+	<div class="product-panel">
+		<div class="product-panel-image phone">
+			<%= link_to "" , optimization_path %>
+		</div>
+		<%= link_to "Optimalisatie", optimization_path, :class => "bookman-link" %>
+	</div>
 </div>
+<div style="clear:both"></div>
 <hr>
 	<%= link_to "Contact", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Diensten dreamyourweb"}, :class => "bookman-link left" %>

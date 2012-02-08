@@ -7,14 +7,23 @@
 	margin-bottom: 20px;
 }
 
+.product-sub-nav {
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:20px;
+	width:450px;
+	height:110px;
+	border:1px dotted black;
+}
 .product-panel{
-	margin-top: 35px;
-	margin-bottom: 35px;
+	float:left;
+	text-align:center;
+	width:150px;
 	.product-panel-image{
+		margin-left:auto;
+		margin-right:auto;
 		width: 70px;
 		height: 70px;
-		margin-right: 10px;
-		float: left;
 		a, a:link, a:hover, a:visited{
 			display: block;
 			width: 100%;

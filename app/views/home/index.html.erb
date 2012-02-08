@@ -10,11 +10,11 @@
 <hr>
 <div class="featured">
 <div class="featured-image inner-shadow lifted">
-	<%= link_to image_tag(@project.picture_url.to_s), path_to_category(@project) %>
+	<%= link_to image_tag(@project.picture_url.to_s), project_path(@project) %>
 </div>
 <div class="excerpt-container">
 	<div class="excerpt">
-	<h4><%= link_to "Featured project", project_path(@project)%></h4>
+	<h4><%= link_to "Ons laatste project", project_path(@project)%></h4>
 	<%= @project.excerpt.html_safe %>
 	</div>
 	<div class="read-more"><%= link_to "Lees meer", project_path(@project), :class => "bookman-link" %></div>
@@ -27,7 +27,7 @@
 <div class="featured">
 	<% if !@project.nil? %>
 		<div class="dreamteam-img inner-shadow lifted">
-			<%= link_to image_tag("dywgroup.jpg"), path_to_category(@project) %>
+			<%= link_to image_tag("dywgroup.jpg"), partners_path %>
 		</div>
 	<% end %>
 	<div class="excerpt-container dreamteam">
