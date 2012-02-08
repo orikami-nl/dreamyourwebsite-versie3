@@ -11,6 +11,9 @@ Feature: Contact
 		And I fill in my contact details
 		And I press "Verzenden"
 		Then "info@dreamyourweb.nl" should receive an email
+		And KISSmetrics receives an event with the following properties:
+    		| property     | value             	  |
+    		| email        | info@dreamyourweb.nl |
 
 	Scenario: Do not send contact without contact details
 		Given I am on the contact page
@@ -19,3 +22,4 @@ Feature: Contact
 		And I fill in the message
 		And I press "Verzenden"
 		Then I should see "Uw bericht kan niet verzonden worden om de volgende reden"
+		
