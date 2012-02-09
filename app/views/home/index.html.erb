@@ -9,15 +9,17 @@
 <% if !@project.nil? %>
 <hr>
 <div class="featured">
-<div class="featured-image inner-shadow lifted">
-	<%= link_to image_tag(@project.picture_url.to_s), project_path(@project) %>
-</div>
-<div class="excerpt-container">
-	<div class="excerpt">
-	<h4><%= link_to "Ons laatste project", project_path(@project)%></h4>
-	<%= @project.excerpt.html_safe %>
+	<div>
+		<div class="featured-image inner-shadow lifted">
+			<%= link_to image_tag(@project.picture_url.to_s), project_path(@project) %>
+		</div>
+		<div class="read-more-left"><%= link_to "Lees meer", project_path(@project), :class => "bookman-link" %></div>
 	</div>
-	<div class="read-more"><%= link_to "Lees meer", project_path(@project), :class => "bookman-link" %></div>
+	<div class="excerpt-container">
+		<div class="excerpt">
+			<h4><%= link_to "Ons laatste project", project_path(@project)%></h4>
+			<%= @project.excerpt.html_safe %>
+		</div>
 	</div>
 </div>
 <% end %>
@@ -25,16 +27,16 @@
 <hr>
 
 <div class="featured">
-	<% if !@project.nil? %>
-		<div class="dreamteam-img inner-shadow lifted">
-			<%= link_to image_tag("dywgroup.jpg"), partners_path %>
-		</div>
-	<% end %>
 	<div class="excerpt-container dreamteam">
 		<div class="excerpt"><h4><%= link_to "Onze overtuiging", partners_path%></h4>
 			<%= manageable_layout_content_for :dreamteam %>
 		</div>
-		<div class="read-more"><%= link_to "Lees meer", partners_path, :class => "bookman-link" %></div>
+	</div>
+	<div>
+		<div class="dreamteam-img inner-shadow lifted">
+			<%= link_to image_tag("dywgroup.jpg"), partners_path %>
+		</div>
+		<div class="read-more-right"><%= link_to "Lees meer", partners_path, :class => "bookman-link" %></div>
 	</div>
 
 </div>
