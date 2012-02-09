@@ -280,16 +280,17 @@
 	float:left;
 }
 
-.read-more-right
+.read-more-bottom
 {
 	margin-top:10px;
 	float:right;
 }
 
-.read-more-left
+.read-more-top
 {
-	margin-top:10px;
-	float:left;
+	position:absolute;
+	bottom:0px;
+	right:15px;
 }
 
 .featured {

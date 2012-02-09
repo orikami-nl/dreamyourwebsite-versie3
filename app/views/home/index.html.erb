@@ -9,17 +9,15 @@
 <% if !@project.nil? %>
 <hr>
 <div class="featured">
-	<div>
-		<div class="featured-image inner-shadow lifted">
-			<%= link_to image_tag(@project.picture_url.to_s), project_path(@project) %>
-		</div>
-		<div class="read-more-left"><%= link_to "Lees meer", project_path(@project), :class => "bookman-link" %></div>
+	<div class="featured-image inner-shadow lifted">
+		<%= link_to image_tag(@project.picture_url.to_s), project_path(@project) %>
 	</div>
 	<div class="excerpt-container">
 		<div class="excerpt">
 			<h4><%= link_to "Ons laatste project", project_path(@project)%></h4>
 			<%= @project.excerpt.html_safe %>
 		</div>
+		<div class="read-more-top"><%= link_to "Lees meer", project_path(@project), :class => "bookman-link" %></div>
 	</div>
 </div>
 <% end %>
@@ -36,7 +34,7 @@
 		<div class="dreamteam-img inner-shadow lifted">
 			<%= link_to image_tag("dywgroup.jpg"), partners_path %>
 		</div>
-		<div class="read-more-right"><%= link_to "Lees meer", partners_path, :class => "bookman-link" %></div>
+		<div class="read-more-bottom"><%= link_to "Lees meer", partners_path, :class => "bookman-link" %></div>
 	</div>
 
 </div>
