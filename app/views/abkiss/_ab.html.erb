@@ -5,3 +5,7 @@
 		_kmq.push(['set', { '<%= experiment.name %>': '<%= ab_test(experiment.name, *experiment.alternative_names) %>' }]);
 	<% end %>
 </script>
+
+<!-- tracking code voor google analytics -->
+<%= tracking_code(:account => 'UA-25194573-2') %>
+
