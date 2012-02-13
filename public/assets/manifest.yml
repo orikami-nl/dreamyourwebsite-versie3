@@ -64,7 +64,7 @@ iphonelayer.png: iphonelayer-24e10f3810ceaf61c6d36b6111ee2c92.png
 jelmer.png: jelmer-b025d58459351ccafdc3543a5f92974e.png
 jquery.png: jquery-32570cddfee7b60c9b81e881be2dae19.png
 logo.png: logo-420edd119b32e0c40320343e325e7c53.png
-logo_smaller.png: logo_smaller-93ea9b006e337c72c4597a48cd5bc918.png
+logo_smaller.png: logo_smaller-7e6102e84a3fef40df9123dde4c25cc2.png
 luc.png: luc-ede69a395e5161400777667d0e1578d1.png
 menu_about.png: menu_about-da9e7ff1a16e8c04dbe05210505de010.png
 menu_blog.png: menu_blog-a23168e9f1fb48fd5e107a02e94507d1.png
@@ -102,5 +102,5 @@ jquery.jparallax.js: jquery.jparallax-f67f902abb1ec71bd5b3167b41d24403.js
 jquery.timers.js: jquery.timers-2694197a873681caba3e298b5e447456.js
 jquery-ui.min.js: jquery-ui.min-ce42ed3e061c2d10b583c46776448412.js
 jquery.min.js: jquery.min-6ef71ffc4a8a7ec7e77913bbf97360f9.js
-application.js: application-04941c0de52b6918c73632316a022c8d.js
-application.css: application-604bda0a109892fa71fe0cd633fa740a.css
+application.js: application-1e7b43cf1b5c1403092d329646c96664.js
+application.css: application-fe1e600936840b408682b5dec4ae586d.css

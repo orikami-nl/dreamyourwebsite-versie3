@@ -43,7 +43,37 @@ class ContactController < ApplicationController
         format.js {render}
 			end
 		kiss_identify @contact_form.info
-		kiss_record "Send contact mail"
+		kiss_record "Send contact mail", {"email" => @contact_form.to}
+		messages = flash[:kiss_metrics]
+		logger.info "INFO: " + messages.to_s	
+		messages.each do |msg|
+			logger.info "INFO: " + msg.to_s
+		end
+
+
+
+
+    unless messages.blank? || messages.empty?
+      messages.each do |mhash|
+        if mhash.first[0] == :record
+          recordstr = ""
+          mhash.each do |msg|
+            if msg.first == :record
+              recordstr = %Q{'#{msg.first.to_s}', '#{msg.last.to_s}'}
+            end
+            if msg.first == "props"
+              opts = msg.last.to_s.gsub("=>", ":")
+              logger.info %Q{_kmq.push([#{recordstr}, #{opts}]);} 
+            end
+          end
+        end     
+      end
+    end
+
+
+
+
+
     else
       render :action => :index
     end

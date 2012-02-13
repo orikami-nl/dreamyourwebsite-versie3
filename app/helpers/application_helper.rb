@@ -33,4 +33,8 @@ module ApplicationHelper
 	project_title.match(/\w+/).to_s.downcase
   end
 
+  def abkiss(experiment, *alternatives)
+  	render :partial => ab_test(experiment, *alternatives), :locals => {:currentexperiment => experiment} 
+  end
+
 end

@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:dreamyourweb/lascivious.git
+  revision: c88a83e12b174b331a3a80ec31b6b98d2547a3e1
+  specs:
+    lascivious (0.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -111,7 +117,7 @@ GEM
       ruby-hmac
     formatador (0.2.1)
     fssm (0.2.8.1)
-    gherkin (2.7.6)
+    gherkin (2.7.7)
       json (>= 1.4.6)
     heroku (2.19.2)
       launchy (>= 0.3.2)
@@ -130,7 +136,6 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
-    lascivious (0.1.0)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     libv8 (3.3.10.4)
@@ -226,6 +231,8 @@ GEM
       redis (~> 2.1)
       redis-namespace (~> 1.0.3)
       sinatra (>= 1.2.6)
+    split-analytics (0.3.0)
+      split (~> 0.3)
     spork (0.9.0)
     sprockets (2.0.3)
       hike (~> 1.2)
@@ -277,7 +284,7 @@ DEPENDENCIES
   highrise
   jquery-rails
   kaminari
-  lascivious
+  lascivious!
   mail_form
   manageable_content
   pg
@@ -288,6 +295,7 @@ DEPENDENCIES
   sass-rails (~> 3.1.0)
   simple_form
   split
+  split-analytics
   spork
   sqlite3
   stringex
