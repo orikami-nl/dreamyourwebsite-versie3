@@ -1,10 +1,8 @@
-<%= #render :partial => ab_test("landing_page", "original", "new_copy") 
-%>
+
 
 <div id="home-content">
-	<h3>Het complete pakket van advies, ontwikkeling en optimalisatie</h3>
-	<hr class="small-line">
-	<%= manageable_layout_content_for :body %>
+  <%= render :partial => ab_test("landing_page", "original", "new_copy") 
+  %>
 </div>
 <% if !@project.nil? %>
 <hr>
