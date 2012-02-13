@@ -5,30 +5,11 @@
 </div>
 
 <div class="product-sub-nav">
-	<div class="product-panel">
-		<div class="product-panel-image globe">
-		<%= link_to "", web_consultancy_path %>
-		</div>
-		<%= link_to "Advies", web_consultancy_path, :class => "bookman-link" %>
-	</div>
-
-	<div class="product-arrow">></div>
-
-	<div class="product-panel">
-		<div class="product-panel-image cogs">
-			<%= link_to "" , web_development_path %>
-		</div>
-		<%= link_to "Ontwikkeling", web_development_path, :class => "bookman-link" %>
-	</div>
-
-	<div class="product-arrow">></div>
-
-	<div class="product-panel">
-		<div class="product-panel-image phone">
-			<%= link_to "" , optimization_path %>
-		</div>
-		<%= link_to "Optimalisatie", optimization_path, :class => "bookman-link" %>
-	</div>
+	<%= link_to "Advies", web_consultancy_path, :class => "bookman-link product-panel-image puzzle" %>
+	<span class="product-arrow"></span>
+	<%= link_to "Ontwikkeling", web_development_path, :class => "bookman-link product-panel-image cog" %>
+	<span class="product-arrow"></span>
+	<%= link_to "Optimalisatie", optimization_path, :class => "bookman-link product-panel-image pie" %>
 </div>
 <div style="clear:both"></div>
 <hr>
