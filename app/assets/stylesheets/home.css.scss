@@ -280,8 +280,21 @@
 	float:left;
 }
 
+.read-more-bottom
+{
+	margin-top:10px;
+	float:right;
+}
+
+.read-more-top
+{
+	position:absolute;
+	bottom:0px;
+	right:15px;
+}
+
 .featured {
-	height:210px;
+	height:230px;
 	.featured-image
 	{
 		float: left;
@@ -293,7 +306,7 @@
 	.excerpt-container{
 		position: relative;
 		width: 330px;
-		height: 210px;
+		height: 230px;
 		float:right;
 		.excerpt{
 			h4{
@@ -303,13 +316,7 @@
 			overflow-y:hidden;
 			position:relative;
 			width:100%;
-			height:170px;
-		}
-		.read-more
-		{
-			position: absolute;
-			bottom: 3px;
-			right: 15px;
+			height:240px;
 		}
 	}
 
