@@ -34,6 +34,7 @@ module ApplicationHelper
   end
 
   def abkiss(experiment, *alternatives)
+  	@currentexperiment = experiment
   	render :partial => ab_test(experiment, *alternatives), :locals => {:currentexperiment => experiment} 
   end
 

@@ -1,6 +1,6 @@
 <script type="text/javascript">
-	<% 	if defined? currentexperiment
-		experiment = Split::Experiment.find(currentexperiment) 
+	<% 	if defined? @currentexperiment
+		experiment = Split::Experiment.find(@currentexperiment) 
 	%>
 		_kmq.push(['set', { '<%= experiment.name %>': '<%= ab_test(experiment.name, *experiment.alternative_names) %>' }]);
 	<% end %>
