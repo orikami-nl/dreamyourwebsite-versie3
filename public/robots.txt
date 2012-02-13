@@ -3,3 +3,5 @@
 User-Agent: *
 Disallow: /login
 Disallow: /admins/
+Disallow: /disclaimer
+Disallow: /terms_and_conditions
