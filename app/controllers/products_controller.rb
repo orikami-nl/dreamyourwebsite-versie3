@@ -5,6 +5,7 @@ manageable_content_for :title, :body, :sidebar, :web_development, :web_consultan
 	caches_action :index, :web_development, :web_consultancy, :optimization
 
 	def index
+		finished("landing_page")
 	end
 
 	def web_development
