@@ -147,33 +147,33 @@
 					overflow: visible;
 					background-repeat: no-repeat;
 				}
-				#mobile-image { 
-					background-image: url(mobile.png);
-					right: 20px;
-					top: -20px;
-					width: 220px;
-					height: 374px;
-				}
-				#web-image { 
-					background-image: url(web.png); 
+				#relax-image { 
+					background-image: url(relax.png); 
 					right: -10px;
-					top: -20px;
-					width: 380px;
-					height: 374px;
+					top: -15px;
+					width: 365px;
+					height: 380px;
 				}
-				#concept-image { 
+				#partner-image { 
+					background-image: url(handshake.png); 
+					right: 0px;
+					top: -40px;
+					width: 400px;
+					height: 380px;
+				}
+				#data-image { 
+					background-image: url(datadriven.png); 
+					right: -90px;
+					top: -15px;
+					width: 480px;
+					height: 480px;
+				}
+				#active-image { 
 					background-image: url(concept.png); 
 					right: 20px;
 					top: -20px;
 					width: 320px;
 					height: 374px;
-				}
-				#invite2eat-image { 
-					background-image: url(invite2eat3d.png); 
-					right: -75px;
-					top: 20px;
-					width: 475px;
-					height: 332px;
 				}
 			}
 		}

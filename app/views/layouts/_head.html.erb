@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag    "application" %>
 <%= javascript_include_tag "application" %>
 <%= kiss_metrics_tag %>
+<%= render :partial => "abkiss/ab" %>
 <meta name="description" content="Webdesign, concept development en mobiele applicaties op maat.">
 <meta name="author" content="Dreamyourweb">
 <meta name="keywords" content="webdesign, website, marketing, SEO, design, ontwerp, concept">
@@ -18,9 +19,9 @@
 	
     jQuery(function($){
         $(".tweet").tweet({
-			avatar_size: 48,
+						avatar_size: 48,
             // username: ["thijsvdlaar", "bramdenteuling", "dreamyourweb", "lvandewall", "jelmerwolterink", "logmaor"],
-            query: "(from:drewamyourweb) OR (@dreamyourweb from:thijsvdlaar) OR (@dreamyourweb from:bramdenteuling) OR (@dreamyourweb from:lvandewall) OR (@dreamyourweb from:jelmerwolterink) OR (@dreamyourweb from:logmaor)",
+            query: "(from:dreamyourweb) OR (@dreamyourweb from:thijsvdlaar) OR (@dreamyourweb from:bramdenteuling) OR (@dreamyourweb from:lvandewall) OR (@dreamyourweb from:jelmerwolterink) OR (@dreamyourweb from:logmaor)",
             count: 2,
             loading_text: "Tweets laden..."
         });
@@ -36,7 +37,8 @@
 <script src="/adminbuttons/show.js" type="text/javascript"></script>
 <script src="/tweet/jquery.tweet.js" type="text/javascript"></script>
 
-	<%= csrf_meta_tags %>
-	<%= favicon_link_tag %>	
-    <%= render :partial => "abkiss/ab" %>
+<%= csrf_meta_tags %>
 
+<%= favicon_link_tag %>	
+<%= tracking_code(:account => 'UA-25194573-2') %>
+<%= render :partial => "abkiss/ab" %>
