@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all.reverse
+    @projects = Project.order("created_at DESC").all
 		render :layout => 'portfolio_layout'
   end
 
