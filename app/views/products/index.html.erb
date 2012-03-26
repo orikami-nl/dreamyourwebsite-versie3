@@ -1,16 +1,6 @@
 <h3>Onze diensten</h3>
 <hr class="small-line">
-<div id="products-maincontent">
-	<%= manageable_layout_content_for :body %><br>
-</div>
-
-<div class="product-sub-nav">
-	<%= link_to "Advies", web_consultancy_path, :class => "bookman-link product-panel-image puzzle" %>
-	<span class="product-arrow"></span>
-	<%= link_to "Ontwikkeling", web_development_path, :class => "bookman-link product-panel-image cog" %>
-	<span class="product-arrow"></span>
-	<%= link_to "Optimalisatie", optimization_path, :class => "bookman-link product-panel-image pie" %>
-</div>
+<%= abkiss("products", "ab_products_original", "ab_products_onepage") %>
 <div style="clear:both"></div>
 <hr>
 	<%= link_to "Contact", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Diensten dreamyourweb"}, :class => "bookman-link left" %>

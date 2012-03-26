@@ -11,7 +11,7 @@
 	margin: 0 auto;
 	margin-top:20px;
 	/*width:540px;*/
-	height:110px;
+	// height:110px;
 	/*border:1px dotted #CCCCCC;*/
 
 
@@ -38,8 +38,13 @@
 		vertical-align: bottom;
 	}
 
+	h4{
+		margin-left: 170px;
+		color: #309AB5;
+	}
 	.product-panel-content{
-
+		margin-left: 170px;
+		margin-bottom: 20px;
 	}
 	.puzzle{
 	}
@@ -47,7 +52,6 @@
 		background-position: -150px 0;
 	}
 	.pie{
-		margin-left: 25px;
 		background-position: -300px 0;
 	}
 	/*h4{

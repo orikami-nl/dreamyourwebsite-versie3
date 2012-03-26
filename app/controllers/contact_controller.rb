@@ -29,6 +29,7 @@ class ContactController < ApplicationController
 
 	def index
 		@contact_form = ContactForm.new
+    finished("products")
 	end
 
 	def completed
