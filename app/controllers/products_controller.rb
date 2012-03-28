@@ -16,4 +16,9 @@ manageable_content_for :title, :body, :sidebar, :web_development, :web_consultan
 
 	def optimization
 	end
+
+	def tech
+		render :layout => "application"
+	end
+
 end
