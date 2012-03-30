@@ -38,7 +38,7 @@ gem 'split-analytics', :require => 'split/analytics'
 
 gem 'coderay'
 
-gem 'ZenTest'
+gem "ZenTest", "4.6.0"
 
 gem 'mercury-rails'
 
