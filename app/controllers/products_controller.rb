@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
 
 	layout "sidebar_layout"
-	caches_action :index, :web_development, :web_consultancy, :optimization
 
 	def index
 		finished("landing_page")

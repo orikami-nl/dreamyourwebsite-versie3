@@ -1,8 +1,6 @@
 class PartnersController < ApplicationController
 
 	before_filter :authenticate_admin!, :except => [:show, :index]
-  caches_action :index, :show
-  cache_sweeper :partner_sweeper
 	layout "sidebar_layout"
 
   # GET /partners
