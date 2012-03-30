@@ -40,19 +40,23 @@ module ApplicationHelper
 
   def content_for(key)
  	page =  Page.find_by_key(controller.controller_name)
-
+ 	p "KEY: " + key.to_s
  	if page != nil
 		pagecontents = page.page_contents.find_by_key(key)  
 		if pagecontents == nil
-			page = 
-		end	
+			p "NEW PAGECONTENT"
+			pagecontents = page.page_contents.new(:content => "")
+			pagecontents.key = key
+			pagecontents.save
+			page.save
+		end
   		pagecontent = pagecontents.content.html_safe
-  		contenttag = content_tag(:div,pagecontent,:class => "mercury-region", "data-type" => "editable", :id => Page.find_by_key(controller.controller_name).id.to_s + ":" + page.id.to_s)
+  		contenttag = content_tag(:div,pagecontent,:class => "mercury-region", "data-type" => "editable", :id =>page.id.to_s + ":" + pagecontents.id.to_s)
   	else
   		return "UNDEFINED!"
   	end
 
-  	if pagecontent == nil || pagecontent == ""
+  	if pagecontent == nil
   		return "UNDEFINED!"
   	else
   		return contenttag
