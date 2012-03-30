@@ -1,5 +1,4 @@
 class BlogController < ApplicationController
-  manageable_content_for :body, :title, :layout => "sidebar_layout"
 
   layout "sidebar_layout"
   before_filter :tag_cloud  

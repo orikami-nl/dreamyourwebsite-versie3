@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-	manageable_content_for :body, :title, :layout => "sidebar_layout"
 
 	before_filter :authenticate_admin!, :except => [:show, :index, :index_tagged_posts] 
 	before_filter :get_partner, :tag_cloud

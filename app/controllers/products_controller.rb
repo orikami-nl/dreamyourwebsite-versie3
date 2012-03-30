@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
 
-manageable_content_for :title, :body, :sidebar, :web_development, :web_consultancy, :optimization, :layout => "sidebar_layout"
 	layout "sidebar_layout"
 	caches_action :index, :web_development, :web_consultancy, :optimization
 

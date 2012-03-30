@@ -8,13 +8,16 @@
 <meta name="language" content="nl">
 
 <link href="/wymeditor/wymcss.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/code-prettify/prettify.css" media="screen" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/wymeditor/jquery.wymeditor.pack.js"></script>
+<script type="text/javascript" src="/code-prettify/prettify.js"></script>
 <script type="text/javascript">
 	jQuery(function() {
     	jQuery(".wymeditor").wymeditor({
     		jQueryPath: "/assets/application.js",
 			stylesheet: "/wymeditor/wymcss.css"
     	});
+        prettyPrint();
 	});
 	
     jQuery(function($){

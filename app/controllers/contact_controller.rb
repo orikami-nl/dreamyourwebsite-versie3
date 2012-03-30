@@ -2,7 +2,6 @@ class ContactController < ApplicationController
 	before_filter :check_honeypots, :only => [:create]
 	before_filter :get_email_addresses, :only => [:index, :create] 
 	layout "sidebar_layout", :except => "completed"
-	manageable_content_for :body, :title, :side, :layout => "sidebar_layout" 
 
   #caches_action :index
   

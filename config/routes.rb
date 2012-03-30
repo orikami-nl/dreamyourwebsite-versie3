@@ -12,7 +12,7 @@ Dywsite2::Application.routes.draw do
 	get "/products/web-consultancy", :to => "products#web_consultancy", :as => "web_consultancy"
 	get "/products/web-development", :to => "products#web_development", :as => "web_development"
 	get "/products/optimization", :to => "products#optimization", :as => "optimization"
-  get "/products/tech", :to => "products#tech", :as => "tech"
+  get "/products/tech", :to => "products#tech", :as => "optimization"
   get "/adminbuttons/show.js", :to => "adminbuttons#show"
   get "/admin/clear", :to => "admin/pages#clear"
 

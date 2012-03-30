@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120208123818) do
+ActiveRecord::Schema.define(:version => 20120329112947) do
 
   create_table "admins", :force => true do |t|
     t.string    "email",                                 :default => "", :null => false
@@ -60,6 +60,26 @@ ActiveRecord::Schema.define(:version => 20120208123818) do
 
   add_index "manageable_content_pages", ["key", "locale"], :name => "index_manageable_content_pages_on_key_and_locale", :unique => true
 
+  create_table "page_contents", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "key"
+    t.boolean  "short",      :default => false
+    t.text     "content"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "page_contents", ["page_id", "key"], :name => "index_page_contents_on_page_id_and_key", :unique => true
+
+  create_table "pages", :force => true do |t|
+    t.string   "key"
+    t.string   "locale"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "pages", ["key", "locale"], :name => "index_pages_on_key_and_locale", :unique => true
+
   create_table "partners", :force => true do |t|
     t.string    "name"
     t.string    "avatar"
@@ -85,15 +105,15 @@ ActiveRecord::Schema.define(:version => 20120208123818) do
   end
 
   create_table "projects", :force => true do |t|
-    t.string   "title"
-    t.string   "picture"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "excerpt"
-    t.string   "title_for_url"
-    t.string   "external_url"
-    t.string   "full_picture"
-    t.text     "body"
+    t.string    "title"
+    t.string    "picture"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.text      "excerpt"
+    t.string    "title_for_url"
+    t.string    "external_url"
+    t.string    "full_picture"
+    t.text      "body"
   end
 
   create_table "taggings", :force => true do |t|

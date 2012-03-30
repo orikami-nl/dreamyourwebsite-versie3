@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-	manageable_content_for :title, :body, :layout => "portfolio_layout"	
 
 	before_filter :authenticate_admin!, :except => [:show, :index] 
 	layout 'application', :except => [:index, :show]

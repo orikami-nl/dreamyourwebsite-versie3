@@ -38,4 +38,13 @@ module ApplicationHelper
   	render :partial => ab_test(experiment, *alternatives), :locals => {:currentexperiment => experiment} 
   end
 
+  def content_for(content)
+  	pagecontent = Page.find_by_key(controller.controller_name).page_contents.find_by_key(content).content.html_safe
+  	if pagecontent == nil || pagecontent == ""
+  		return "UNDEFINED!"
+  	else
+  		return pagecontent
+  	end
+  end
+
 end

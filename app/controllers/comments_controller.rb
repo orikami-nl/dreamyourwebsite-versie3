@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
 	before_filter :get_post_and_partner, :tag_cloud
 	before_filter :check_honeypots, :only => [:create]
 	layout "sidebar_layout"
-	manageable_content_for :body, :title, :layout => "sidebar_layout"
 
   #cache_sweeper :comment_sweeper
 

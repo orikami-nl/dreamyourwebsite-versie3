@@ -1,5 +1,4 @@
 class PartnersController < ApplicationController
-	manageable_content_for :body, :title, :sidebar
 
 	before_filter :authenticate_admin!, :except => [:show, :index]
   caches_action :index, :show
