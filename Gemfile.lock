@@ -7,7 +7,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    ZenTest (4.7.0)
+    ZenTest (4.6.0)
     actionmailer (3.2.2)
       actionpack (= 3.2.2)
       mail (~> 2.4.0)
@@ -264,7 +264,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ZenTest
+  ZenTest (= 4.6.0)
   acts-as-taggable-on (~> 2.1.0)
   autotest-growl
   autotest-rails
