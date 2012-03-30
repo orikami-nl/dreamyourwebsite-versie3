@@ -21,8 +21,8 @@
 	<p><%= @project.body %></p>
 	<hr>
 		<%= link_to "Ga terug naar overzicht", projects_path, :class => "bookman-link" %>
-	<% #if admin_signed_in? %>
+	<% if admin_signed_in? %>
 		<span class="admin"><br><br></span>
 		<%= link_to "Edit Project", edit_project_path(@project), :class => "bookman-link admin" %>
-	<% #end %>
+	<% end %>
 </div>

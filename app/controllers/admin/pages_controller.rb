@@ -1,6 +1,5 @@
 class Admin::PagesController < Admin::ApplicationController
   before_filter :authenticate_admin!
-  cache_sweeper :page_sweeper
 
   def index
     @pages = pages.order('key ASC, locale ASC')

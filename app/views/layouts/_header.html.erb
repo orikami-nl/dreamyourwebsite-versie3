@@ -47,13 +47,12 @@
 </div>
 </header>
 
-<div class="admin">
-<% #if admin_signed_in? %>
+<% if admin_signed_in? %>
 	<div id="admin-nav">
 		<h3>
-  	<%= link_to 'Admin', admin_pages_path %> /
-  	<%= link_to 'Logout', logout_path %>
+  			<%= link_to 'Admin', admin_pages_path %> /
+		  	<%= link_to 'Logout', logout_path %>
 		</h3>
+		<%= link_to "Edit", "/editor" + request.path %>
 	</div>
-<% #end %>
-</div>
+<% end %>

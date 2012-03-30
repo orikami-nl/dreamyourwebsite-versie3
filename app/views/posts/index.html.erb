@@ -4,6 +4,6 @@
 <%= paginate @posts %>
 <br />
 
-<% #if admin_signed_in? %>
-	<%= link_to 'New Post', new_partner_post_path(@partner), :class => "admin" %>
-<% #end %>
+<% if admin_signed_in? %>
+	<%= link_to 'New Post', new_partner_post_path(@partner)%>
+<% end %>

@@ -40,6 +40,8 @@ gem 'coderay'
 
 gem 'ZenTest'
 
+gem 'mercury-rails'
+
 group :test do
 	gem 'sqlite3'
 	gem "rspec-rails"

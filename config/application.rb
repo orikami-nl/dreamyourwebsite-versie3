@@ -49,6 +49,5 @@ module Dywsite2
 
     # To get Compass to work
 
-
   end
 end

@@ -38,12 +38,21 @@ module ApplicationHelper
   	render :partial => ab_test(experiment, *alternatives), :locals => {:currentexperiment => experiment} 
   end
 
-  def content_for(content)
-  	pagecontent = Page.find_by_key(controller.controller_name).page_contents.find_by_key(content).content.html_safe
+  def content_for(key)
+ 	page =  Page.find_by_key(controller.controller_name)
+
+ 	if page != nil
+		page = page.page_contents.find_by_key(key)  	
+  		pagecontent = page.content.html_safe
+  		contenttag = content_tag(:div,pagecontent,:class => "mercury-region", "data-type" => "editable", :id => Page.find_by_key(controller.controller_name).id.to_s + ":" + page.id.to_s)
+  	else
+  		return "UNDEFINED!"
+  	end
+
   	if pagecontent == nil || pagecontent == ""
   		return "UNDEFINED!"
   	else
-  		return pagecontent
+  		return contenttag
   	end
   end
 

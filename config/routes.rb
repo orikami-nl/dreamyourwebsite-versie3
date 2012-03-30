@@ -1,4 +1,6 @@
 Dywsite2::Application.routes.draw do
+  Mercury::Engine.routes
+
   get "/terms_and_conditions", :to => "terms_and_conditions#index"
 
   get "/disclaimer", :to => "disclaimer#index"
@@ -29,6 +31,9 @@ Dywsite2::Application.routes.draw do
   end
 
   resources :projects
+
+  # resources :content
+  post "/content", :to => "content#update"
 
 	#scope '/admin' do
 	resources :partners do
