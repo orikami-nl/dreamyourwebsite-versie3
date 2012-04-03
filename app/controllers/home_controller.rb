@@ -28,7 +28,11 @@ class HomeController < ApplicationController
     if mobile?
       redirect_to mobile_path
     end
-    @post = Post.first
+    if admin_signed_in?
+      @post = Post.first
+    else
+      @post = Post.where(:draft => false).first
+    end
     @project = Project.last
   end
 
