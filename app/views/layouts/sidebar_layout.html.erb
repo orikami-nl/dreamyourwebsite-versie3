@@ -4,7 +4,7 @@
 	<% if controller_name == 'posts' and action_name == 'show' %>
 	  <title>Dreamyourweb | <%= @post.title %></title>
 	<% else %>
-	  <title>Dreamyourweb | <%= content_for :title %></title>
+		<%= render 'layouts/title' %>
 	<% end %>
 	<%= render 'layouts/head' %>
 	<%= render 'layouts/analytics' %>
