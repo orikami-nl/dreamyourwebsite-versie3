@@ -104,3 +104,124 @@
 .arrow {
 	text-decoration:none;
 }
+
+[class*="span"] {
+  float: left;
+  margin-left: 20px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span1 {
+  width: 60px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span2 {
+  width: 140px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span3 {
+  width: 220px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span4 {
+  width: 300px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span5 {
+  width: 380px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span6 {
+  width: 460px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span7 {
+  width: 540px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span8 {
+  width: 620px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span9 {
+  width: 700px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span10 {
+  width: 780px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span11 {
+  width: 860px; }
+
+/* line 507, ../sass/bootstrap/_mixins.scss */
+.span12 {
+  width: 940px; }
+
+  .row {
+  margin-left: -20px;
+  *zoom: 1; }
+  /* line 15, ../sass/bootstrap/_mixins.scss */
+  .row:before, .row:after {
+    display: table;
+    content: ""; }
+  /* line 19, ../sass/bootstrap/_mixins.scss */
+  .row:after {
+    clear: both; }
+
+   /* line 519, ../sass/bootstrap/_mixins.scss */
+.container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+  width: 940px; }
+
+  /* line 8, ../sass/bootstrap/_layouts.scss */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  *zoom: 1; }
+  /* line 15, ../sass/bootstrap/_mixins.scss */
+  .container:before, .container:after {
+    display: table;
+    content: ""; }
+  /* line 19, ../sass/bootstrap/_mixins.scss */
+  .container:after {
+    clear: both; }
+
+/* line 13, ../sass/bootstrap/_layouts.scss */
+.container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
+  *zoom: 1; }
+  /* line 15, ../sass/bootstrap/_mixins.scss */
+  .container-fluid:before, .container-fluid:after {
+    display: table;
+    content: ""; }
+  /* line 19, ../sass/bootstrap/_mixins.scss */
+  .container-fluid:after {
+    clear: both; }
+
+#jmpress {
+	width: auto;
+    min-width: 600px;
+    min-height: 440px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    border: 10px solid #fff;
+    border: 10px solid rgba(255, 255, 255, 0.9);
+    outline: none;
+    transition: background-color 1s linear;
+}
+
+.StoryTextArea {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: whiteSmoke;
+  border: 1px solid #EEE;
+  background-color: #EEE;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }

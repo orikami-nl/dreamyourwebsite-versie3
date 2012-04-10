@@ -18,7 +18,7 @@
 	<h5>Datum</h5>
 	<p class="bookman"><%= @project.created_at.to_date %></p>
 	<hr>
-	<p><%= @project.body %></p>
+	<p><%= @project.body.html_safe %></p>
 	<hr>
 		<%= link_to "Ga terug naar overzicht", projects_path, :class => "bookman-link" %>
 	<% if admin_signed_in? %>
