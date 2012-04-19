@@ -46,8 +46,10 @@
 #post-body{
 	padding-top:10px;
 	padding-bottom:10px;
-	p:first-child{
-		font-weight: bold;
+	.mercury-region.bold{
+		p:first-child{
+			font-weight: bold;
+		}
 	}
 }
 

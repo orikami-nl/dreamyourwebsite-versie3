@@ -12,19 +12,37 @@ class ContentController < ApplicationController
 
 		regions.each do |region|
 			idarr = region.split(':')
-			page_id = idarr[0]
-			page_content_id = idarr[1]
-			contentvalue = content[region]["value"]
+			if idarr[0] == "page"
+				page_id = idarr[1]
+				page_content_id = idarr[2]
+				contentvalue = content[region]["value"]
 
-  			@item = Page.find(page_id).page_contents.find(page_content_id)
-			@item.content = contentvalue
-			if @item.save
-				savesuccess = 1
+	  			@item = Page.find(page_id).page_contents.find(page_content_id)
+				@item.content = contentvalue
+				if @item.save
+					savesuccess = 1
+				end
+			elsif idarr[0] == "post"
+				post_id = idarr[1]
+				part = idarr[2]
+
+				p @post = Post.find(post_id)
+
+				if part == "excerpt"
+					@post.excerpt = content[region]["value"]
+				elsif part == "body"
+					@post.body = content[region]["value"]
+				end				
+
+				if @post.save
+					savesuccess = savesuccess + 1
+				end
 			end
+				
 		end
 
 		respond_to do |format|
-			if savesuccess
+			if savesuccess == regions.count
 				format.html  { redirect_to('/home', :notice => 'Success.') }
 	      		format.json  { render :json => {}, :status => :ok }
 	      	else

@@ -14,8 +14,9 @@
 <div style="clear:both"></div>
 
 <div id="post-body">
-	<%= @post.excerpt.html_safe %>
-	<%= @post.body.html_safe %>
+	<%#= @post.excerpt.html_safe %>
+	<%#= @post.body.html_safe %>
+	<%= blogpost_for(@post) %>
 </div>
 
 <hr>

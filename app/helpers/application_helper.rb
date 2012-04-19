@@ -51,7 +51,7 @@ module ApplicationHelper
 			page.save
 		end
   		pagecontent = pagecontents.content.html_safe
-  		contenttag = content_tag(:div,pagecontent,:class => "mercury-region", "data-type" => "editable", :id =>page.id.to_s + ":" + pagecontents.id.to_s)
+  		contenttag = content_tag(:div,pagecontent,:class => "mercury-region", "data-type" => "editable", :id =>"page:"+page.id.to_s + ":" + pagecontents.id.to_s)
   	else
   		return "UNDEFINED!"
   	end
@@ -61,6 +61,21 @@ module ApplicationHelper
   	else
   		return contenttag
   	end
+  end
+
+  def blogpost_for(post)
+ 	if post != nil
+		contenttag = content_tag(:div,post.excerpt.html_safe,:class => "mercury-region bold", "data-type" => "editable", :id => "post:" + post.id.to_s + ":excerpt") +
+					 content_tag(:div,post.body.html_safe,:class => "mercury-region", "data-type" => "editable", :id => "post:" + post.id.to_s + ":body")
+  	else
+  		return "UNDEFINED!"
+  	end
+
+  	# if pagecontent == nil
+  	# 	return "UNDEFINED!"
+  	# else
+  	# 	return contenttag
+  	# end
   end
 
 end
