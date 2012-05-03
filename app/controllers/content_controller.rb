@@ -4,39 +4,25 @@ class ContentController < ApplicationController
 
 	def update
 
-		content = JSON.parse(params["content"])
-		regions = content.keys
+		mercurycontent = JSON.parse(params["content"])
+		regions = mercurycontent.keys
 		p "REGIONS: " + regions.to_s
 
 		savesuccess = 0
 
 		regions.each do |region|
 			idarr = region.split(':')
-			if idarr[0] == "page"
-				page_id = idarr[1]
-				page_content_id = idarr[2]
-				contentvalue = content[region]["value"]
 
-	  			@item = Page.find(page_id).page_contents.find(page_content_id)
-				@item.content = contentvalue
-				if @item.save
-					savesuccess = 1
-				end
-			elsif idarr[0] == "post"
-				post_id = idarr[1]
-				part = idarr[2]
+			model = idarr[0]
+			model_id = idarr[1]
+			model_field = idarr[2]
+			content = mercurycontent[region]["value"]
+			model[0] = model[0].capitalize
+			@item = model.constantize.find(model_id).page_contents.find(model_field)
+			@item.update_attribute("content", content)
 
-				p @post = Post.find(post_id)
-
-				if part == "excerpt"
-					@post.excerpt = content[region]["value"]
-				elsif part == "body"
-					@post.body = content[region]["value"]
-				end				
-
-				if @post.save
-					savesuccess = savesuccess + 1
-				end
+			if @item.save
+				savesuccess = savesuccess + 1
 			end
 				
 		end
