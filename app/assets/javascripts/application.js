@@ -5,6 +5,8 @@
 // the compiled file.
 //= require jquery
 //= require jquery_ujs
+//= require shCore.js
+//= require shBrushRuby.js
 //= require_tree .
 
 

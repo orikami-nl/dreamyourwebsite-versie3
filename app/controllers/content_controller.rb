@@ -18,8 +18,13 @@ class ContentController < ApplicationController
 			model_field = idarr[2]
 			content = mercurycontent[region]["value"]
 			model[0] = model[0].capitalize
-			@item = model.constantize.find(model_id).page_contents.find(model_field)
-			@item.update_attribute("content", content)
+			if model == "page"
+				@item = model.constantize.find(model_id).page_contents.find(model_field)
+				@item.update_attribute("content", content)
+			else
+				@item = model.constantize.find(model_id)
+				@item.update_attribute(model_field, content)
+			end
 
 			if @item.save
 				savesuccess = savesuccess + 1
