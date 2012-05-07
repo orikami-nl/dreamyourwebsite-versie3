@@ -9,6 +9,10 @@ Dywsite2::Application.routes.draw do
 	get "/contact/completed", :to => "contact#completed"
 	post "/contact", :to => "contact#create"
   get "/home", :to => "home#index"
+
+	#Uitnodiging voor 1-jarig bestaan
+  get "/uitnodiging", :to => "home#invitation"
+
 	get "/blog", :to => "blog#index"
   get "/products", :to => "products#index"
 	get "/products/web-consultancy", :to => "products#web_consultancy", :as => "web_consultancy"

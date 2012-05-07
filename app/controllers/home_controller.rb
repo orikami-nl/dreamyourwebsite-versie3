@@ -41,4 +41,8 @@ class HomeController < ApplicationController
     redirect_to root_path
   end
 
+	#Uitnodiging voor 1-jarig bestaan
+	def invitation
+		render :layout => false
+	end
 end
