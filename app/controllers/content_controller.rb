@@ -18,7 +18,7 @@ class ContentController < ApplicationController
 			model_field = idarr[2]
 			content = mercurycontent[region]["value"]
 			model[0] = model[0].capitalize
-			if model == "page"
+			if model == "Page"
 				@item = model.constantize.find(model_id).page_contents.find(model_field)
 				@item.update_attribute("content", content)
 			else
