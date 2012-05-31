@@ -110,6 +110,18 @@
 		#slideInner{
 			position:relative;		
 		}
+		.uvp{
+			h2{
+				margin-bottom: 20px;
+				font-size: 48px;
+				line-height: 64px;
+				text-align: center;
+			}
+			p{
+				padding-right: 100px;
+				padding-left: 100px;
+			}
+		}
 		.home-banner-element
 		{
 			background-image: url(glasspanel.png);
@@ -141,6 +153,10 @@
 						background-image: url(arrow_hover_white.png);
 					}
 				}
+				.wide {
+					width: 848px;
+				}
+
 				.banner-element-image{
 					z-index:100;
 					position: absolute;
@@ -177,6 +193,9 @@
 				}
 			}
 		}
+	}
+	uvp{
+
 	}
 	a.control, a.control:link, a.control:hover, a.control:visited{
 		color: white;
