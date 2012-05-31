@@ -50,6 +50,22 @@
 </div>
 
 <div class="tech-container">
+	<div class="tech-image ">
+		<div class="image_container">
+	 		<%= link_to image_tag("tech/ios5.png"), "http://www.apple.com/nl/ios/" %>
+	 		<%#= link_to "LEES MEER", "", :class => "image_overlay bookman" %>
+		</div>
+
+	</div>
+	<div class="tech-description">
+		<h4><%= link_to("iOS 5", "http://www.apple.com/nl/ios/")%></h4>
+		<div class="excerpt-container bookman">
+			<%= content_for(:ios5) %>
+		</div>
+	</div> 
+</div>
+
+<div class="tech-container">
 	<div class="tech-image">
 		<div class="image_container">
 	 		<%= link_to image_tag("tech/jquery.png"), "http://jquery.com/" %>
@@ -61,6 +77,22 @@
 		<h4><%= link_to("jQuery", "http://jquery.com/")%></h4>
 		<div class="excerpt-container bookman">
 			<%= content_for(:jquery) %>
+		</div>
+	</div> 
+</div>
+
+<div class="tech-container">
+	<div class="tech-image">
+		<div class="image_container">
+	 		<%= link_to image_tag("tech/mailchimp.png"), "http://mailchimp.com" %>
+	 		<%#= link_to "LEES MEER", "", :class => "image_overlay bookman" %>
+		</div>
+
+	</div>
+	<div class="tech-description">
+		<h4><%= link_to("MailChimp", "http://mailchimp.com")%></h4>
+		<div class="excerpt-container bookman">
+			<%= content_for(:mailchimp) %>
 		</div>
 	</div> 
 </div>
@@ -157,6 +189,22 @@
 		<h4><%= link_to("Railsonfire", "http://www.railsonfire.com/") %></h4>
 		<div class="excerpt-container bookman">
 			<%= content_for(:railsonfire) %>
+		</div>
+	</div> 
+</div>
+
+<div class="tech-container">
+	<div class="tech-image">
+		<div class="image_container">
+	 		<%= link_to image_tag("tech/facebook.png"), "http://developers.facebook.com/" %>
+	 		<%#= link_to "LEES MEER", "", :class => "image_overlay bookman" %>
+		</div>
+
+	</div>
+	<div class="tech-description">
+		<h4><%= link_to("Facebook applicaties", "http://developers.facebook.com/") %></h4>
+		<div class="excerpt-container bookman">
+			<%= content_for(:facebook) %>
 		</div>
 	</div> 
 </div>
