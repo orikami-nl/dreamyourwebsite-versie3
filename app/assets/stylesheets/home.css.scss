@@ -150,6 +150,7 @@
 					position: absolute;
 					overflow: visible;
 					background-repeat: no-repeat;
+					pointer-events: none;
 				}
 				#uvp-image { 
 					background-image: url(uvpbox.png); 
