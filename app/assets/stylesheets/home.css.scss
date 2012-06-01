@@ -110,18 +110,6 @@
 		#slideInner{
 			position:relative;		
 		}
-		.uvp{
-			h2{
-				margin-bottom: 20px;
-				font-size: 48px;
-				line-height: 64px;
-				text-align: center;
-			}
-			p{
-				padding-right: 100px;
-				padding-left: 100px;
-			}
-		}
 		.home-banner-element
 		{
 			background-image: url(glasspanel.png);
@@ -136,11 +124,11 @@
 				position: relative;
 				vertical-align: top;
 				.banner-element-text{
-					margin: 40px;
+					margin: 50px;
 					width: 500px;
 					position: absolute;
 					h2{
-						margin-bottom: 15px;
+						margin-bottom: 25px;
 					}
 					p{
 						font-style: italic;
@@ -162,6 +150,13 @@
 					position: absolute;
 					overflow: visible;
 					background-repeat: no-repeat;
+				}
+				#uvp-image { 
+					background-image: url(uvpbox.png); 
+					right: -80px;
+					top: -30px;
+					width: 525px;
+					height: 380px;
 				}
 				#relax-image { 
 					background-image: url(relax.png); 
@@ -193,10 +188,21 @@
 				}
 			}
 		}
+		.uvp{
+			h2{
+				margin-bottom: 25px !important;
+				margin-top: 10px;
+				font-size: 48px;
+				line-height: 64px;
+				text-align: center;
+			}
+			p{
+				padding-right: 60px;
+				padding-left: 60px;
+			}
+		}
 	}
-	uvp{
 
-	}
 	a.control, a.control:link, a.control:hover, a.control:visited{
 		color: white;
 		text-decoration: none;
