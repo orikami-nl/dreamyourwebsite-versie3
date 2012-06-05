@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 	before_filter :authenticate_admin!, :only => :destroy
-	before_filter :get_post_and_partner, :tag_cloud
+	before_filter :get_post_and_associate, :tag_cloud
 	before_filter :check_honeypots, :only => [:create]
 	layout "sidebar_layout"
 
@@ -19,10 +19,10 @@ class CommentsController < ApplicationController
     submitted['email'] == 'john@doe.com' && submitted['name'] == '' && submitted['agree'].blank?
 	end
 
-	def get_post_and_partner
+	def get_post_and_associate
 		@post = Post.find_by_title_for_url(params[:post_id])
-		@partner = Partner.find_by_name_for_url(params[:partner_id])
-		@partners = Partner.all
+		@associate = Associate.find_by_name_for_url(params[:associate_id])
+		@associates = Associate.all
     # logger.debug "Post hash: #{@post.id}"
 	end
 
@@ -42,11 +42,11 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-		    CommentMail.new(:body => @comment.body, :name => @comment.name, :email => @comment.email, :partner_email => (@post.partner.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"), :post_title => @post.title).deliver
-        format.html { redirect_to partner_post_path(@partner, @post), notice: 'Uw commentaar is geplaatst.' }
+		    CommentMail.new(:body => @comment.body, :name => @comment.name, :email => @comment.email, :associate_email => (@post.associate.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"), :post_title => @post.title).deliver
+        format.html { redirect_to associate_post_path(@associate, @post), notice: 'Uw commentaar is geplaatst.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { redirect_to partner_post_path(@partner, @post), notice: 'Uw commentaar kon niet geplaatst worden.' }
+        format.html { redirect_to associate_post_path(@associate, @post), notice: 'Uw commentaar kon niet geplaatst worden.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -59,7 +59,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to partner_post_path(@partner, @post), notice: 'Comment was successfully updated.' }
+        format.html { redirect_to associate_post_path(@associate, @post), notice: 'Comment was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -75,7 +75,7 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to partner_post_url(@partner, @post) }
+      format.html { redirect_to associate_post_url(@associate, @post) }
       format.json { head :ok }
     end
   end

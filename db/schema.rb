@@ -11,102 +11,89 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330102833) do
+ActiveRecord::Schema.define(:version => 20120605091244) do
 
   create_table "admins", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                            :null => false
-    t.datetime "updated_at",                                            :null => false
+    t.string    "email",                                 :default => "", :null => false
+    t.string    "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string    "reset_password_token"
+    t.timestamp "reset_password_sent_at"
+    t.timestamp "remember_created_at"
+    t.integer   "sign_in_count",                         :default => 0
+    t.timestamp "current_sign_in_at"
+    t.timestamp "last_sign_in_at"
+    t.string    "current_sign_in_ip"
+    t.string    "last_sign_in_ip"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "associates", :force => true do |t|
+    t.string    "name"
+    t.string    "avatar"
+    t.text      "biography"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "name_for_url"
+    t.boolean   "active",       :default => true
+  end
+
   create_table "comments", :force => true do |t|
-    t.text     "body"
-    t.string   "name",       :default => "Anonymous", :null => false
-    t.string   "email"
-    t.integer  "post_id"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.text      "body"
+    t.string    "name",       :default => "Anonymous", :null => false
+    t.string    "email"
+    t.integer   "post_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "manageable_content_page_contents", :force => true do |t|
-    t.integer  "page_id"
-    t.string   "key"
-    t.boolean  "short",      :default => false
-    t.text     "content"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.integer   "page_id"
+    t.string    "key"
+    t.boolean   "short",      :default => false
+    t.text      "content"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "manageable_content_page_contents", ["page_id", "key"], :name => "index_manageable_content_page_contents_on_page_id_and_key", :unique => true
 
   create_table "manageable_content_pages", :force => true do |t|
-    t.string   "key"
-    t.string   "locale"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "key"
+    t.string    "locale"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "manageable_content_pages", ["key", "locale"], :name => "index_manageable_content_pages_on_key_and_locale", :unique => true
 
-  create_table "mercury_images", :force => true do |t|
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
   create_table "page_contents", :force => true do |t|
-    t.integer  "page_id"
-    t.string   "key"
-    t.boolean  "short",      :default => false
-    t.text     "content"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.integer   "page_id"
+    t.string    "key"
+    t.boolean   "short"
+    t.text      "content"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
-
-  add_index "page_contents", ["page_id", "key"], :name => "index_page_contents_on_page_id_and_key", :unique => true
 
   create_table "pages", :force => true do |t|
-    t.string   "key"
-    t.string   "locale"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "pages", ["key", "locale"], :name => "index_pages_on_key_and_locale", :unique => true
-
-  create_table "partners", :force => true do |t|
-    t.string   "name"
-    t.string   "avatar"
-    t.text     "biography"
-    t.text     "description"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.string   "name_for_url"
-    t.boolean  "active",       :default => true
+    t.string    "key"
+    t.string    "locale"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "posts", :force => true do |t|
-    t.integer  "partner_id"
+    t.integer  "associate_id"
     t.datetime "published_at"
     t.text     "excerpt"
     t.text     "body"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "title"
     t.string   "category"
     t.string   "title_for_url"
@@ -114,25 +101,25 @@ ActiveRecord::Schema.define(:version => 20120330102833) do
   end
 
   create_table "projects", :force => true do |t|
-    t.string   "title"
-    t.string   "picture"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.text     "excerpt"
-    t.string   "title_for_url"
-    t.string   "external_url"
-    t.string   "full_picture"
-    t.text     "body"
+    t.string    "title"
+    t.string    "picture"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.text      "excerpt"
+    t.string    "title_for_url"
+    t.string    "external_url"
+    t.string    "full_picture"
+    t.text      "body"
   end
 
   create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context"
-    t.datetime "created_at"
+    t.integer   "tag_id"
+    t.integer   "taggable_id"
+    t.string    "taggable_type"
+    t.integer   "tagger_id"
+    t.string    "tagger_type"
+    t.string    "context"
+    t.timestamp "created_at"
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"

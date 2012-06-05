@@ -86,11 +86,11 @@
 	<div data-role="content">	
     	<div class="content-intro"><h2>Over ons</h2></div>
 		<ul data-role="listview">
-			<% @partners.each do |partner| %>
-				<li><a href='<%= partner_mobile_path(partner.name) %>' data-rel="dialog" data-transition="flip">
-					<%= image_tag partner.avatar_url.to_s %>
-					<h3><%= partner.name %></h3>
-					<p><%= build_mail_address(partner.name) %></p>
+			<% @associates.each do |associate| %>
+				<li><a href='<%= associate_mobile_path(associate.name) %>' data-rel="dialog" data-transition="flip">
+					<%= image_tag associate.avatar_url.to_s %>
+					<h3><%= associate.name %></h3>
+					<p><%= build_mail_address(associate.name) %></p>
 
 				</a></li>
 			<% end %>
@@ -100,17 +100,17 @@
 <%= render 'footer' %>
 </div><!-- /about -->
 
-<% @partners.each do |partner| %>
-<div data-role="page" id="<%= first_name(partner.name) %>" class="project">
+<% @associates.each do |associate| %>
+<div data-role="page" id="<%= first_name(associate.name) %>" class="project">
 	<div data-role="header" data-theme="a">
-		<h1><%= partner.name %></h1>
+		<h1><%= associate.name %></h1>
 	</div><!-- /header -->
 
 	<div data-role="content" data-theme="d">	
 		<p><a href="#about" data-rel="back" data-role="button" data-inline="true" data-icon="back">Terug</a></p>	
-		<%= image_tag partner.avatar_url.to_s %>		   
- 		<p><%= partner.description.html_safe %></p>
-		<%= build_mail_address(partner.name) %>
+		<%= image_tag associate.avatar_url.to_s %>		   
+ 		<p><%= associate.description.html_safe %></p>
+		<%= build_mail_address(associate.name) %>
 	</div>
 
 </div><!-- /page popup -->

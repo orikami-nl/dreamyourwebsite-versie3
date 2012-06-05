@@ -17,16 +17,16 @@ module ApplicationHelper
 		end
 	end
 
-  def build_mail_address(partner_name)
-		partner_name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"
+  def build_mail_address(associate_name)
+		associate_name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"
 	end
 
-  def partner_mobile_path(partner_name)
-		"#" + first_name(partner_name)
+  def associate_mobile_path(associate_name)
+		"#" + first_name(associate_name)
 	end
 
-  def first_name(partner_name)
-		partner_name.match(/\w+/).to_s.downcase 
+  def first_name(associate_name)
+		associate_name.match(/\w+/).to_s.downcase 
 	end
 
   def project_short(project_title)
@@ -40,6 +40,7 @@ module ApplicationHelper
 
   def content_for(key)
  	page =  Page.find_by_key(controller.controller_name)
+ 	p "CONTROLLER: " + controller.controller_name.to_s
  	p "KEY: " + key.to_s
  	if page != nil
 		pagecontents = page.page_contents.find_by_key(key)  

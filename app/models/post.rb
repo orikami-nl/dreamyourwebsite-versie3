@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 	acts_as_taggable
 
-	belongs_to :partner
+	belongs_to :associate
 	has_many :comments, :dependent => :destroy
 	attr_accessible :published_at, :excerpt, :body, :title, :title_for_url, :tag_list, :draft
 	validates_presence_of :title

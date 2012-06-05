@@ -1,0 +1,34 @@
+<h1>You dream it, together we realize it!</h1>
+<hr class="big-line">
+<%= content_for :body %>
+
+<h3>Onze mensen</h3>
+<hr class="small-line">
+<% @associates.each do |associate| %>
+	<div class="associate-container">
+	   	<div class="associate-photo-index inner-shadow lifted">
+				<%= image_tag associate.avatar_url(:medium).to_s %>
+		</div>
+		<div class="associate-description">
+			<h4><%= link_to associate.name, associate_path(associate) %></h4>
+		    <p><%= associate.description.html_safe %></p>
+		</div>
+		<div class="associate-button-container">
+		<ul>
+			<li> <%= link_to 'Bekijk blog', associate_posts_path(associate), :class => "bookman-link" %></li>
+		    <li> <%= link_to 'Lees bio', associate_path(associate), :class => "bookman-link" %></li>
+		    <li> <%= link_to 'Contact', {:action => "index", :controller => "contact", :aan => build_mail_address(associate.name)}, :class => "bookman-link" %></li>
+	    	<% if admin_signed_in? %>
+					<br class="admin">
+		   		<li class="admin"> <%= link_to 'Edit', edit_associate_path(associate), :class => "bookman-link admin" %></li>
+		   		<li class="admin"> <%= link_to 'Destroy', associate, confirm: 'Weet je het zeker? Het is namelijk ook mogelijk om deze associates op non-actief te zetten via edit. Op deze manier blijven zijn blogposts wel bestaan.', method: :delete, :class => "bookman-link admin" %></li>
+			<% end %>
+		</ul>
+		</div>
+	</div>
+	<div style="clear:both"><hr></div>
+<% end %>
+
+<% if admin_signed_in? %>
+	<%= link_to 'New associates', new_associate_path, :class => "bookman-link admin" %>
+<% end %>

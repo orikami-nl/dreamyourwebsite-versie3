@@ -19,10 +19,10 @@ class ContactController < ApplicationController
 	end
 
 	def get_email_addresses
-		@partners = Partner.where(:active => true)
+		@associates = Associate.where(:active => true)
 		@addresses = ["info@dreamyourweb.nl"]
-		@partners.each do |partner|
-			@addresses = @addresses << (partner.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl")
+		@associates.each do |associate|
+			@addresses = @addresses << (associate.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl")
 		end
 	end
 

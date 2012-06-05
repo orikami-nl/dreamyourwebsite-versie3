@@ -40,7 +40,8 @@ Dywsite2::Application.routes.draw do
   post "/content", :to => "content#update"
 
 	#scope '/admin' do
-	resources :partners do
+  get "/about", :to => "associates#index"
+	resources :associates do
 		resources :posts, :path => "blog" do
 			resources :comments, :except => [:new]
 		end

@@ -1,15 +1,15 @@
 class PostsController < ApplicationController
 
 	before_filter :authenticate_admin!, :except => [:show, :index, :index_tagged_posts] 
-	before_filter :get_partner, :tag_cloud
+	before_filter :get_associate, :tag_cloud
 	layout "sidebar_layout"
 
 #  caches_action :index, :show, :unless => :admin?
 #  cache_sweeper :post_sweeper
 
-	def get_partner
-		@partners = Partner.all
-		@partner = Partner.find_by_name_for_url(params[:partner_id])
+	def get_associate
+		@associates = Associate.all
+		@associate = Associate.find_by_name_for_url(params[:associate_id])
 	end
 
 	def tag_cloud
@@ -21,9 +21,9 @@ class PostsController < ApplicationController
   def index
     kiss_record "View blog"
     if admin_signed_in?
-      @posts = @partner.posts.page(params[:page]).per(5)
+      @posts = @associate.posts.page(params[:page]).per(5)
     else
-      @posts = @partner.posts.where(:draft => false).page(params[:page]).per(5)
+      @posts = @associate.posts.where(:draft => false).page(params[:page]).per(5)
     end
   end
 
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    @post = @partner.posts.new
+    @post = @associate.posts.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -59,11 +59,11 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = @partner.posts.new(params[:post])
+    @post = @associate.posts.new(params[:post])
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to partner_posts_path(@partner), notice: 'Post was successfully created.' }
+        format.html { redirect_to associate_posts_path(@associate), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -79,7 +79,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to partner_posts_path(@partner), notice: 'Post was successfully updated.' }
+        format.html { redirect_to associate_posts_path(@associate), notice: 'Post was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -95,7 +95,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to partner_posts_url(@partner) }
+      format.html { redirect_to associate_posts_url(@associate) }
       format.json { head :ok }
     end
   end

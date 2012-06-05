@@ -2,7 +2,7 @@ class CommentMail < MailForm::Base
   attribute :body  
   attribute :name
   attribute :email
-  attribute :partner_email
+  attribute :associate_email
 	attribute :post_title
 
   # Declare the e-mail headers. It accepts anything the mail method
@@ -10,7 +10,7 @@ class CommentMail < MailForm::Base
   def headers
     {
       :subject => "Nieuwe reactie op blogpost",
-			:to => %(#{partner_email}),
+			:to => %(#{associate_email}),
       :from => %(<#{email}>)
     }
   end

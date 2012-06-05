@@ -1,0 +1,70 @@
+// Place all the styles related to the associates controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass/css3";
+@import "compass/utilities/general/clearfix" ;
+@import "colors" ;
+
+.associate-container{
+	margin-bottom:20px;
+	margin-top:20px;
+	position:relative;
+	min-height: 159px;
+
+	.associate-photo-index{
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 15px;
+	}
+
+	.associate-description{
+		top: 0px;
+		/*width:470px;*/
+		h4{
+			margin-bottom: 10px;
+		}
+	}
+	
+	.associate-button-container{
+		margin-top: 10px;	
+		li{
+			display: inline;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	}
+}
+
+.technique-container{
+	padding-top:5px;
+	.technique-image{
+		float:left;
+		width:50px;
+		height:50px;
+		margin:5px;
+		img{
+			width:100%;
+		}
+	}
+}
+
+#associate-photo{
+	background-image: url(polaroid.png);
+	margin: 0 auto;
+	width: 600px;
+	height: 619px;
+	img{
+		margin-left: 51px;
+		margin-top: 29px;
+	}
+}
+
+#associate-content{
+	ul li{
+		float:left;
+		margin-right: 20px;
+	}
+}
+
+

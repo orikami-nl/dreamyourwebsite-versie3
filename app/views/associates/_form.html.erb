@@ -1,0 +1,37 @@
+<%= form_for @associate, :html => {:multipart => true} do |f| %>
+  <% if @associate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@associate.errors.count, "error") %> prohibited this associate from being saved:</h2>
+
+      <ul>
+      <% @associate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Actief binnen dyw" %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+    <%= f.label "Biografie voor in profiel" %><br />
+    <%= f.text_area :biography, :class => "input wymeditor" %>
+  </div>
+  <div class="field">
+    <%= f.label "Korte beschrijving voor in overzicht" %><br />
+    <%= f.text_area :description, :class => "input wymeditor" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", :class => "wymupdate" %>
+  </div>
+<% end %>

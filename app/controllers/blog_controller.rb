@@ -24,7 +24,7 @@ class BlogController < ApplicationController
         @posts = Post.where(:draft => false).page(params[:page]).per(5)
       end
   	end
-  	@partners = Partner.all
+  	@associates = Associate.all
   end
 
   private

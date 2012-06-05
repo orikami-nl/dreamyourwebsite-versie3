@@ -7,8 +7,8 @@
 	<% if admin_signed_in? %>
 	<div class="admin">
 		<p><%= raw Sanitize.clean(comment.email) %></p>
-		<p><%= link_to 'Edit comment', edit_partner_post_comment_path(@partner, @post, comment) %> |
-		<%= link_to 'Delete comment', partner_post_comment_path(@partner, @post, comment), confirm: "Are you sure?", method: :delete %></p>
+		<p><%= link_to 'Edit comment', edit_associate_post_comment_path(@associate, @post, comment) %> |
+		<%= link_to 'Delete comment', associate_post_comment_path(@associate, @post, comment), confirm: "Are you sure?", method: :delete %></p>
 	</div>
 	<% end %>	
 </div>

@@ -18,7 +18,7 @@ end
 
 def index
     session[:mobile] = true    
-    @partners = Partner.all
+    @associates = Associate.all
     @projects = Project.all
     @addresses = ["info@dreamyourweb.nl"]
     @contact_form = ContactForm.new
