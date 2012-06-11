@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 	validates_presence_of :title
 	validates_uniqueness_of :title_for_url
 	before_save :build_url
-	default_scope order("created_at DESC")
+	default_scope order("published_at DESC")
 
 	def build_url
 		self.title_for_url = self.title.to_url

@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    kiss_record "View blog"
+    kiss_record "View blog post"
     if admin_signed_in?
       @post = Post.find_by_title_for_url(params[:id])
     else
