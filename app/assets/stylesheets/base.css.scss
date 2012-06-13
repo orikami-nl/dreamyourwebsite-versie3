@@ -40,9 +40,11 @@ strong, b {
   font-weight: 800;
 }
 
-ol, ul {
-  margin-left: 15px;
-  list-style-type:square;
+p{
+	ol, ul {
+  	margin-left: 15px;
+  	list-style-type:square;
+  }
 }
 
 p, ol, ul, td {
