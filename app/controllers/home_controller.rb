@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   caches_action :index
 
 	def mobile_agent?
-	  request.user_agent =~ /Mobile|webOS/ and not request.user_agent =~ /iPad/
+		request.user_agent =~ /Mobile|webOS/ and not request.user_agent =~ /iPad/
 	end
   
   def parse_boolean(value)    
@@ -13,14 +13,17 @@ class HomeController < ApplicationController
   end 
 
   def mobile?
-    case
-    when !params[:mobile].nil?
-      parse_boolean(params[:mobile])
-    when !session[:mobile].nil?
-      session[:mobile]
-    else
-      mobile_agent?
-    end 
+		false 
+		#--- <mobile layout detection turned off> ---   
+		#case
+    #when !params[:mobile].nil?
+    #  parse_boolean(params[:mobile])
+    #when !session[:mobile].nil?
+    #  session[:mobile]
+    #else
+    #  mobile_agent?
+    #end
+		#--- </mobile layout detection turned off> ---
   end
 
   def index
