@@ -1,0 +1,76 @@
+@mixin inner-shadow{
+	position: relative;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	background-color: white;
+		line-height: 0px;
+	a{
+		display: block;
+		line-height: 0px;
+		img{
+			margin: 1px;
+			line-height: 0px;
+		}
+	}
+	img{
+		margin: 1px;
+		line-height: 0px;
+	}
+}
+
+
+
+
+table.nicetable{
+	@include inner-shadow;
+	width: 630px;
+	padding: 0;
+	td{
+		//border: 1px solid;
+		padding: 10px;
+
+	}
+	p{
+		margin-bottom: 0px;
+	}
+	tr:nth-child(even) {
+	    background: #f5f5f5;
+	    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+	    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+	    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+	}
+	tr:hover
+	{
+	  background: #cfe1e6;
+	  -o-transition: all 0.1s ease-in-out;
+	  -webkit-transition: all 0.1s ease-in-out;
+	  -moz-transition: all 0.1s ease-in-out;
+	  -ms-transition: all 0.1s ease-in-out;
+	  transition: all 0.1s ease-in-out;
+	}
+	tr:first-child{
+		background-color: #bfdee6;
+		p{
+			font-weight: bold;
+			color: #309ab5;
+		}
+	}
+	tr:first-child:hover{
+		background-color: #bfdee6;
+	}
+	td:first-child p, td:first-child{
+		font-weight: bold;
+	}
+}
+
+table.small-text td, table.small-text td p{
+	font-size: 10px;
+	line-height: 12px;
+}
+
+table.small-text tr:first-child{
+	p{
+		font-size: 11px;
+		line-height: 13px;
+	}
+}
