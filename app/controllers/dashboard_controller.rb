@@ -11,7 +11,7 @@ class DashboardController < ApplicationController
 		duration_outside = 0
 		@users.each do |user|
 			api_token = user["api_token"]
-			data = @toggl.get_time_entries(api_token, {}, Time.now.months_ago(1), Time.now)
+			data = @toggl.get_time_entries(api_token, {}, Time.now.months_ago(1).at_beginning_of_month, Time.now.months_ago(1).at_end_of_month)
 			data.each do |entry|
 				duration += entry["duration"]
 				if entry["project"].nil? || @outside_project_names.include?(entry["project"]["name"])
