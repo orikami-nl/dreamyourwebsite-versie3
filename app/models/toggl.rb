@@ -9,17 +9,15 @@ class Toggl
   format :json
   headers  "Content-Type" => "application/json"
 
-	def initialize(token, password)
-		@auth = {:username => token, :password => password}
+	def get_users(query={})
+		auth = {:username => ENV["TOGGL_API_TOKEN"], :password => "api_token"}
+    response = self.class.get("/api/v6/workspaces/138404/users.json", :basic_auth => auth, :query => query)
+		response['data']
 	end
 
-	def get_paid_project_hours(data={})
-    response = self.class.get("/api/v6/me.json", :basic_auth => @auth, :query => data)
-    response['data'].nil? ? response : response['data']		
-	end
-
-	def get_unpaid_project_hours(data={})
-    response = self.class.get("/api/v6/me.json", :basic_auth => @auth, :query => data)
-    response['data'].nil? ? response : response['data']		
+	def get_time_entries(token, query={}, start_date=Time.now.months_ago(1), end_date=Time.now)
+		auth = {:username => token, :password => "api_token"}
+    response = self.class.get("/api/v6/time_entries.json?start_date=#{start_date.iso8601}&end_date=#{end_date.iso8601}", :basic_auth => auth, :query => query)
+		response['data']
 	end
 end
