@@ -1,4 +1,5 @@
 Dywsite2::Application.routes.draw do
+
   Mercury::Engine.routes
 
   get "/terms_and_conditions", :to => "terms_and_conditions#index"
@@ -29,6 +30,8 @@ Dywsite2::Application.routes.draw do
 		get "login", :to => "devise/sessions#new"
 		get "logout", :to=> "devise/sessions#destroy"
   end
+
+  get "dashboard", :to => "dashboard#index"
 
   authenticate(:admin) do 
     mount Split::Dashboard, :at => 'split'
