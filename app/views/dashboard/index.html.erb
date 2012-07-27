@@ -1,26 +1,26 @@
-<h1>KPI Dashboard - Afgelopen maand</h1>
-<table class="kpi-table">
-<tr>
-	<td id="cash">
-		<h3>Cash</h3>
-	</td>
-	<td id="balans">
-		<h3>Balans</h3>
-	</td>
-	<td id="omzet">
-		<h3>Omzet</h3>
-	</td>
-</tr>
-<tr>
-	<td id="bsc">
-		<h3>Balanced score card</h3>
-	</td>
-	<td id="perc_binnen_projecten">
-		<h3>% Binnen projecten</h3>
-		<%= @percentage %>
-	</td>
-	<td id="velocity">
-		<h3>Velocity</h3>
-	</td>
-</tr>
-</table>
+<h2>KPI Dashboard - Afgelopen maand</h1>
+
+<div class="kpi">
+	<h4>Cash</h4>
+	<div class="kpi-value">...</div>
+</div>
+<div class="kpi">
+	<h4>Balans</h4>
+	<div class="kpi-value"><%= @balance %></div>
+</div>
+<div class="kpi">
+	<h4>Omzet</h4>
+	<div class="kpi-value"><%= @revenue %></div>
+</div>
+<div class="kpi">
+	<h4>Balanced Score Card</h4>
+	<div class="kpi-value"><%= @bsc %></div>
+</div>
+<div class="kpi">
+	<h4>Uren Binnen Projecten</h4>
+	<div class="kpi-value"><%#= @percentage %></div>
+</div>
+<div class="kpi">
+	<h4>Velocity</h4>
+	<div class="kpi-value">...</div>
+</div>

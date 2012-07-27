@@ -6,25 +6,23 @@
  *= require_tree
 */
 
-@mixin inner-shadow{
-	position: relative;
-	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	background-color: white;
-		line-height: 0px;
-	a{
-		display: block;
-		line-height: 0px;
-		img{
-			margin: 1px;
-			line-height: 0px;
-		}
-	}
-	img{
-		margin: 1px;
-		line-height: 0px;
-	}
-}
-
-
+// @mixin inner-shadow{
+// 	position: relative;
+// 	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+// 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+// 	background-color: white;
+// 		line-height: 0px;
+// 	a{
+// 		display: block;
+// 		line-height: 0px;
+// 		img{
+// 			margin: 1px;
+// 			line-height: 0px;
+// 		}
+// 	}
+// 	img{
+// 		margin: 1px;
+// 		line-height: 0px;
+// 	}
+// }
 

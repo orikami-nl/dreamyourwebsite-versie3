@@ -1,0 +1,10 @@
+@mixin inner-shadow{
+	position: relative;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	background-color: white;
+}
+
+@mixin text-shadow-inset($shadow-color){
+	text-shadow: 0px -1px 0px $shadow-color;
+}
