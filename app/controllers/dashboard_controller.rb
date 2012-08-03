@@ -3,7 +3,7 @@ require 'csv'
 class DashboardController < ApplicationController
 	include ActionView::Helpers::NumberHelper
 	
-	before_filter :authenticate_admin!#, :get_statements
+	before_filter :authenticate_admin!, :get_transactions #, :get_statements
 	layout "sidebar_layout"
 
 	@@agent = Mechanize.new
@@ -11,9 +11,11 @@ class DashboardController < ApplicationController
 	def index
 
 		@percentage = ""#percentage
-		@cash = ing
-		@ing = download_mt940
+		@cash = get_cash
+		
+		download_statements
 		@revenue = revenue
+		@profit = profit
 		@bsc = balanced_score_card
 
 		render :layout => "application"
@@ -21,30 +23,32 @@ class DashboardController < ApplicationController
 
 	private
 
-	def revenue(last_n_months=1)
+	def get_transactions(last_n_months=1)
+		@transactions = Dashboard::Transaction.find(:all, :conditions => {:date => Date.today.prev_month(last_n_months)..Date.today})
+	end
+
+	def revenue
 		revenue = 0
 		
-		@transfers = MT940::Base.transactions("/tmp/bankstatement.940")
-
-		transfers_last_month = @transfers.select {|transfer| (transfer.date <=> Date.today.prev_month(2)) == 1}
-		transfers_last_month_in = transfers_last_month.select {|transfer| transfer.amount > 0}
-
-		transfers_last_month_in.each do |transfer|
-			revenue = revenue + transfer.amount
+		@transactions.each do |transaction|
+			if transaction.amount > 0
+				revenue = revenue + transaction.amount
+			end
 		end
 
 		return number_to_currency(revenue, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
 	end
 
-	def balance
-		drive = GoogleDrive.login("andres@dreamyourweb.nl","ilmul4t3!")
-		balance = 0
-
-		@transfers.each do |transfer|
-			balance = balance + transfer.amount
+	def profit
+		profit = 0
+		@transactions.each do |transaction|
+			p number_to_currency(transaction.amount)
+			if not (transaction.description.downcase.index('winstopname') || transaction.description.downcase.index('inkomsten') || transaction.description.downcase.index('winstdeling') )
+				profit = profit + transaction.amount
+			end
 		end
+		return number_to_currency(profit, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
 
-		return number_to_currency(balance, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
 	end
 
 	def get_statements
@@ -95,7 +99,7 @@ class DashboardController < ApplicationController
 
 	end
 
-	def ing
+	def get_cash
 		# agent = Mechanize.new
 		page = @@agent.get("https://mijnzakelijk.ing.nl/internetbankieren/SesamLoginServlet")
 		form = page.form_with :name => "login"
@@ -119,20 +123,24 @@ class DashboardController < ApplicationController
 
 		value = page.at("#giro_0").at("[@align='right']").content.to_s
 		value = value.gsub(".","").gsub(",",".").to_d
-		p "AEKTBNAERBAER"
 		return number_to_currency(value, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
 
 	end
 
-	def download_mt940
+	def download_statements
+		if Dashboard::Transaction.order(:date).last != nil
+			last_downloaded_statement_date = Dashboard::Transaction.order(:date).last.date
+		else
+			last_downloaded_statement_date = Date.today.prev_year(5)
+		end
 		page = @@agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/downloadperiodeselecteren.do")
 		form = page.form_with :name => "form1"
-		from_date = form.field_with(:name => "datumvan").value = "01-01-2011"
-		to_date = form.field_with(:name => "datumtot").value = "25-07-2012"
+		from_date = form.field_with(:name => "datumvan").value = last_downloaded_statement_date.strftime("%d-%m-%Y")
+		to_date = form.field_with(:name => "datumtot").value = Date.today.strftime("%d-%m-%Y")
 		format = form.field_with(:name => "formaat").options.third.tick
 		@@agent.submit form
 
-		response = @@agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/download.do?datumvan=" + "01-01-2011" + "&datumtot=" + "25-07-2012" + "&formaat=kommacsv")
+		response = @@agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/download.do?datumvan=" + last_downloaded_statement_date.strftime("%d-%m-%Y") + "&datumtot=" + Date.today.strftime("%d-%m-%Y") + "&formaat=kommacsv")
 
 		file = File.new("/tmp/bankstatement.csv", "w")
 		file.write(response.content.to_s)
@@ -152,7 +160,12 @@ class DashboardController < ApplicationController
 
 	 	csv[1...csv.length].each do |row|
 	 		if not Dashboard::Transaction.where(:description => row[8], :date => Date.parse(row[0])).first
-	 			Dashboard::Transaction.create!(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :contra_account => row[3], :code => row[4], :amount => row[6], :transfer_type => row[7], :description => row[8])
+				if row[5].index "Af"
+					amount = -(row[6].to_d.abs)
+				else
+					amount = row[6].to_d.abs
+				end
+	 			Dashboard::Transaction.create!(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :contra_account => row[3], :code => row[4], :amount => amount, :transfer_type => row[7], :description => row[8])
 	 		end
 	 	end
 
