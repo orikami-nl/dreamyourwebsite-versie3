@@ -1,13 +1,18 @@
+require 'csv'
+
 class DashboardController < ApplicationController
 	include ActionView::Helpers::NumberHelper
 	
-	before_filter :authenticate_admin!, :get_statements
+	before_filter :authenticate_admin!#, :get_statements
 	layout "sidebar_layout"
+
+	@@agent = Mechanize.new
 
 	def index
 
-		# @percentage = percentage
-		@balance = balance
+		@percentage = ""#percentage
+		@cash = ing
+		@ing = download_mt940
 		@revenue = revenue
 		@bsc = balanced_score_card
 
@@ -19,6 +24,8 @@ class DashboardController < ApplicationController
 	def revenue(last_n_months=1)
 		revenue = 0
 		
+		@transfers = MT940::Base.transactions("/tmp/bankstatement.940")
+
 		transfers_last_month = @transfers.select {|transfer| (transfer.date <=> Date.today.prev_month(2)) == 1}
 		transfers_last_month_in = transfers_last_month.select {|transfer| transfer.amount > 0}
 
@@ -26,8 +33,7 @@ class DashboardController < ApplicationController
 			revenue = revenue + transfer.amount
 		end
 
-		return  number_to_currency(revenue, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
-
+		return number_to_currency(revenue, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
 	end
 
 	def balance
@@ -86,6 +92,69 @@ class DashboardController < ApplicationController
 		end
 
 		return (number_to_currency(total, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;") + " " + number_to_currency(total_weighted, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")).html_safe
+
+	end
+
+	def ing
+		# agent = Mechanize.new
+		page = @@agent.get("https://mijnzakelijk.ing.nl/internetbankieren/SesamLoginServlet")
+		form = page.form_with :name => "login"
+		username_field = form.fields.first.name
+		password_field = form.fields.second.name
+		remember_field = form.checkboxes.first.name
+
+		form.field_with(:name => username_field).value = "ftk6p7h7"
+		form.field_with(:name => password_field).value = "Andres314"
+
+		results = @@agent.submit form
+
+		urls = Array["https://mijnzakelijk.ing.nl/internetbankieren/jsp/IndexLogon.jsp",
+					 "https://mijnzakelijk.ing.nl/internetbankieren/jsp/sesam_cockpit.jsp",
+					 "https://mijnzakelijk.ing.nl/mpz/startframes.do",
+					 "https://mijnzakelijk.ing.nl/mpz/startpagina.do",
+					 "https://mijnzakelijk.ing.nl/mpz/startpaginarekeninginfo.do"]
+		urls.each do |url|
+			page = @@agent.get(url)
+		end
+
+		value = page.at("#giro_0").at("[@align='right']").content.to_s
+		value = value.gsub(".","").gsub(",",".").to_d
+		p "AEKTBNAERBAER"
+		return number_to_currency(value, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
+
+	end
+
+	def download_mt940
+		page = @@agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/downloadperiodeselecteren.do")
+		form = page.form_with :name => "form1"
+		from_date = form.field_with(:name => "datumvan").value = "01-01-2011"
+		to_date = form.field_with(:name => "datumtot").value = "25-07-2012"
+		format = form.field_with(:name => "formaat").options.third.tick
+		@@agent.submit form
+
+		response = @@agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/download.do?datumvan=" + "01-01-2011" + "&datumtot=" + "25-07-2012" + "&formaat=kommacsv")
+
+		file = File.new("/tmp/bankstatement.csv", "w")
+		file.write(response.content.to_s)
+		file.close
+
+ 		import_csv(response.content.to_s)
+
+	end
+
+	def import_csv(csv)
+
+		if csv.kind_of?(String)
+			csv = CSV.parse(csv)
+	  	elsif not csv.kind_of?(Array)
+	  		raise "Not an Array or String."
+	  	end
+
+	 	csv[1...csv.length].each do |row|
+	 		if not Dashboard::Transaction.where(:description => row[8], :date => Date.parse(row[0])).first
+	 			Dashboard::Transaction.create!(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :contra_account => row[3], :code => row[4], :amount => row[6], :transfer_type => row[7], :description => row[8])
+	 		end
+	 	end
 
 	end
 

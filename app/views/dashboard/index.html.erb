@@ -2,11 +2,11 @@
 
 <div class="kpi">
 	<h4>Cash</h4>
-	<div class="kpi-value">...</div>
+	<div class="kpi-value"><%= @cash %></div>
 </div>
 <div class="kpi">
 	<h4>Balans</h4>
-	<div class="kpi-value"><%= @balance %></div>
+	<div class="kpi-value">...</div>
 </div>
 <div class="kpi">
 	<h4>Omzet</h4>
@@ -18,9 +18,11 @@
 </div>
 <div class="kpi">
 	<h4>Uren Binnen Projecten</h4>
-	<div class="kpi-value"><%#= @percentage %></div>
+	<div class="kpi-value"><%= @percentage %></div>
 </div>
 <div class="kpi">
 	<h4>Velocity</h4>
 	<div class="kpi-value">...</div>
 </div>
+
+<%= @ing %>

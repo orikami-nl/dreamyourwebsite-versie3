@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605091244) do
+ActiveRecord::Schema.define(:version => 20120803143934) do
 
   create_table "admins", :force => true do |t|
     t.string    "email",                                 :default => "", :null => false
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(:version => 20120605091244) do
     t.integer   "post_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "dashboard_transactions", :force => true do |t|
+    t.date     "date"
+    t.string   "name"
+    t.integer  "account"
+    t.integer  "contra_account"
+    t.string   "code"
+    t.decimal  "amount"
+    t.string   "transfer_type"
+    t.text     "description"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "manageable_content_page_contents", :force => true do |t|

@@ -14,6 +14,7 @@ group :assets do
   gem 'compass-rails'
 end
 
+gem 'mechanize'
 gem "google_drive"
 gem "mt940"
 gem 'highrise'
