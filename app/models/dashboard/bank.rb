@@ -43,7 +43,7 @@ class Dashboard::Bank < ActiveRecord::Base
 		if last_update != nil
 			last_downloaded_statement_date = last_update.to_date
 		else
-			last_downloaded_statement_date = Date.today.prev_year(5)
+			last_downloaded_statement_date = Date.parse("20110830")
 		end
 		page = agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/downloadperiodeselecteren.do")
 		form = page.form_with :name => "form1"
@@ -53,27 +53,26 @@ class Dashboard::Bank < ActiveRecord::Base
 		agent.submit form
 
 		response = agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/download.do?datumvan=" + last_downloaded_statement_date.strftime("%d-%m-%Y") + "&datumtot=" + Date.today.strftime("%d-%m-%Y") + "&formaat=kommacsv")
-
 			# import_csv(response.content.to_s)
 
 		csv = CSV.parse(response.content.to_s)
 
 	 	csv[1...csv.length].each do |row|
 			
-		if row[5].index "Af"
-			amount = -(row[6].to_d.abs)
-		else
-			amount = row[6].to_d.abs
-		end
+			if row[5].index "Af"
+				amount = -(row[6].gsub(",",".").to_d.abs)
+			else
+				amount = row[6].gsub(",",".").to_d.abs
+			end
 
- 		if not self.transactions.where(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :amount => amount).first
- 			self.transactions.create!(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :contra_account => row[3], :code => row[4], :amount => amount, :transfer_type => row[7], :description => row[8])
+	 		if not self.transactions.where(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :amount => amount).first
+	 			self.transactions.create!(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :contra_account => row[3], :code => row[4], :amount => amount, :transfer_type => row[7], :description => row[8])
+	 		end
+
  		end
 
- 		return true
- 	end
-
- 	self.last_update = DateTime.now
+ 		self.last_update = DateTime.now
+		return true
   end
 
   def current_balance
@@ -107,6 +106,27 @@ class Dashboard::Bank < ActiveRecord::Base
 	
 		# return number_to_currency(profit, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
 		return profit
+	end
+
+	def extract_balance_from_transactions
+		balance = 0;
+		last_date = nil;
+		self.transactions.find(:all).sort_by(&:date).each do |transaction|
+			balance = balance + transaction.amount
+			if !(self.bank_balances.find(:all, :conditions => {:datetime => last_date}).first) && !(last_date === transaction.date.to_datetime)
+				self.bank_balances.create!(:datetime => transaction.date.to_datetime, :value => balance)
+				last_date = transaction.date.to_datetime
+			end
+		end
+		return true
+	end
+
+	def balances_array
+		balances = Array.new
+		self.bank_balances.sort_by(&:datetime).each do |balance|
+			balances << balance.value
+		end
+		return balances
 	end
 
 end
