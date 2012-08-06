@@ -2,7 +2,7 @@
 
 <div class="kpi">
 	<h4>Cash</h4>
-	<div class="kpi-value"><%= @cash %></div>
+	<div class="kpi-value"><%= number_to_euro @bank.current_balance %></div>
 </div>
 <div class="kpi">
 	<h4>Balans</h4>
@@ -10,11 +10,11 @@
 </div>
 <div class="kpi">
 	<h4>Omzet</h4>
-	<div class="kpi-value"><%= @revenue %> <%= @profit %></div>
+	<div class="kpi-value"><%= number_to_euro @bank.revenue %> <%= number_to_euro @bank.profit %></div>
 </div>
 <div class="kpi">
 	<h4>Balanced Score Card</h4>
-	<div class="kpi-value"><%= @bsc %></div>
+	<div class="kpi-value"><%= number_to_euro @bsc %></div>
 </div>
 <div class="kpi">
 	<h4>Uren Binnen Projecten</h4>
@@ -24,5 +24,3 @@
 	<h4>Velocity</h4>
 	<div class="kpi-value">...</div>
 </div>
-
-<%= @ing %>

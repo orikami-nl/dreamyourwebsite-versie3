@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803143934) do
+ActiveRecord::Schema.define(:version => 20120806145948) do
 
   create_table "admins", :force => true do |t|
     t.string    "email",                                 :default => "", :null => false
@@ -51,6 +51,22 @@ ActiveRecord::Schema.define(:version => 20120803143934) do
     t.timestamp "updated_at"
   end
 
+  create_table "dashboard_bank_balances", :force => true do |t|
+    t.string   "bank_id"
+    t.datetime "datetime"
+    t.decimal  "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dashboard_banks", :force => true do |t|
+    t.string   "name"
+    t.datetime "last_update"
+    t.decimal  "current_balance"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "dashboard_transactions", :force => true do |t|
     t.date     "date"
     t.string   "name"
@@ -62,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20120803143934) do
     t.text     "description"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "bank_id"
   end
 
   create_table "manageable_content_page_contents", :force => true do |t|
@@ -83,6 +100,15 @@ ActiveRecord::Schema.define(:version => 20120803143934) do
   end
 
   add_index "manageable_content_pages", ["key", "locale"], :name => "index_manageable_content_pages_on_key_and_locale", :unique => true
+
+  create_table "mercury_images", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "page_contents", :force => true do |t|
     t.integer   "page_id"
