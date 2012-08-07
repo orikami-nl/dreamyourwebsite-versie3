@@ -8,10 +8,11 @@ class Dashboard::Bank < ActiveRecord::Base
   end
 
   def update_data
-  	if self.last_update == nil || !(self.last_update.to_date === Date.today)
+  	if self.last_update == nil || ((self.last_update.to_date <=> Date.today.prev_day) < 0)
   		self.download_data
   	end
   end
+
 
   def download_data
 		agent = Mechanize.new
@@ -52,9 +53,10 @@ class Dashboard::Bank < ActiveRecord::Base
 		format = form.field_with(:name => "formaat").options.third.tick
 		agent.submit form
 
+		p "https://mijnzakelijk.ing.nl/mpz/girordpl/download.do?datumvan=" + last_downloaded_statement_date.strftime("%d-%m-%Y") + "&datumtot=" + Date.today.strftime("%d-%m-%Y") + "&formaat=kommacsv"
 		response = agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/download.do?datumvan=" + last_downloaded_statement_date.strftime("%d-%m-%Y") + "&datumtot=" + Date.today.strftime("%d-%m-%Y") + "&formaat=kommacsv")
 			# import_csv(response.content.to_s)
-
+		p response.content.to_s
 		csv = CSV.parse(response.content.to_s)
 
 	 	csv[1...csv.length].each do |row|
