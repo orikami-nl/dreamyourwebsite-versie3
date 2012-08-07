@@ -1,6 +1,6 @@
 <h2>KPI Dashboard - Afgelopen maand</h1>
 
-<div class="kpi">
+<div class="kpi cash">
 	<h4>Cash</h4>
 	<div class="kpi-value"><%= number_to_euro @bank.current_balance %></div>
 </div>
@@ -14,7 +14,7 @@
 </div>
 <div class="kpi">
 	<h4>Balanced Score Card</h4>
-	<div class="kpi-value"><%= number_to_euro @bsc %></div>
+	<div class="kpi-value"><%= @bsc %></div>
 </div>
 <div class="kpi">
 	<h4>Uren Binnen Projecten</h4>
@@ -24,3 +24,44 @@
 	<h4>Velocity</h4>
 	<div class="kpi-value">...</div>
 </div>
+
+<script>
+	var w = 260;
+	var h = 100;
+	var spark = d3.select(".cash").append("svg:svg").attr("class","spark");
+	var g = spark.append("svg:g").attr("transform", "translate(0, 120)");
+	var data = <%= @bank.balances_array %>;
+	var margin_y = 0;
+	var margin_x = 10;
+
+	y = d3.scale.linear().domain([0, d3.max(data)]).range([0 + margin_y, h - margin_y]);
+	x = d3.scale.linear().domain([0, data.length]).range([0 + margin_x, w - margin_x]);
+
+	var line = d3.svg.line().x(function(d,i) {return x(i);})
+							.y(function(d) {return -y(d);})
+
+	g.append("svg:path").attr("d",line(data));
+
+	g.selectAll("circle").data(data).enter().append('svg:circle')
+				.attr('class', 'data-point')
+				.attr('cx', function(d,i) { return x(i) })
+				.attr('cy', function(d) { return -y(d) })
+				.attr('r', 4)
+				.on("mouseover", function(d,i){
+					g.append("text")
+					.attr('id',"popup")
+					.attr('x', x(i)-10)
+					.attr('y', -y(d)-10)
+					.text("€" + d);
+				})
+				.on("mouseout", function(){
+					g.selectAll("#popup").remove();
+				});
+
+	// var x = d3.scale.linear().range([0, w]),
+    // y = d3.scale.linear().range([h, 0]);
+
+	// var line = d3.svg.line()
+    // .x(function(d) { return x(d.x); })
+    // .y(function(d) { return y(d.y); });
+</script>

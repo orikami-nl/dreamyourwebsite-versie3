@@ -124,7 +124,7 @@ class Dashboard::Bank < ActiveRecord::Base
 	def balances_array
 		balances = Array.new
 		self.bank_balances.sort_by(&:datetime).each do |balance|
-			balances << balance.value
+			balances << balance.value.to_i
 		end
 		return balances
 	end
