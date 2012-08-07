@@ -116,7 +116,7 @@ class Dashboard::Bank < ActiveRecord::Base
 		last_date = nil;
 		self.transactions.find(:all).sort_by(&:date).each do |transaction|
 			balance = balance + transaction.amount
-			if !(self.bank_balances.find(:all, :conditions => {:datetime => last_date}).first) && !(last_date === transaction.date.to_datetime)
+			if (self.bank_balances.find(:all, :conditions => {:datetime => last_date}).count > 0) && !(last_date === transaction.date.to_datetime)
 				self.bank_balances.create!(:datetime => transaction.date.to_datetime, :value => balance)
 				last_date = transaction.date.to_datetime
 			end
