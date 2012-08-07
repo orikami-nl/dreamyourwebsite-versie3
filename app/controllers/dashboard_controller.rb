@@ -59,11 +59,13 @@ class DashboardController < ApplicationController
 	def balanced_score_card
 		total = 0
 		total_weighted = 0
-		response = Solve360::Bsc.find("",{:start => Date.today, :end => Date.today.next_month})
+		response = Solve360::Bsc.find("")
 		opportunities = response.attributes[:opportunities]
-		opportunities.each do |opportunity|
-			total = total + opportunity.attributes[:valueunit].to_i
-			total_weighted = total_weighted + opportunity.attributes[:valueunit].to_i * opportunity.attributes[:probability].to_i/100
+		opportunities.each do |opportunity|	
+			if (opportunity.closingdate != "") && Date.parse(opportunity.closingdate) <=> Date.today.next_month
+				total = total + opportunity.attributes[:valueunit].to_i
+				total_weighted = total_weighted + opportunity.attributes[:valueunit].to_i * opportunity.attributes[:probability].to_i/100
+			end
 		end
 
 		return (number_to_currency(total, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;") + " " + number_to_currency(total_weighted, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")).html_safe

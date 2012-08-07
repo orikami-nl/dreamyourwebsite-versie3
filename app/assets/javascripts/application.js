@@ -7,6 +7,7 @@
 //= require jquery_ujs
 //= require shCore.js
 //= require shBrushRuby.js
+//= require rickshaw
 //= require_tree .
 
 
