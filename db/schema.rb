@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806145948) do
+ActiveRecord::Schema.define(:version => 20120807114442) do
 
   create_table "admins", :force => true do |t|
     t.string    "email",                                 :default => "", :null => false
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(:version => 20120806145948) do
   end
 
   create_table "dashboard_bank_balances", :force => true do |t|
-    t.string   "bank_id"
+    t.integer  "bank_id",    :limit => 255
     t.datetime "datetime"
     t.decimal  "value"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "dashboard_banks", :force => true do |t|
