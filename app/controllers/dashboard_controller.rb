@@ -19,6 +19,10 @@ class DashboardController < ApplicationController
 
 	def get_bank
 		@bank = Dashboard::Bank.first
+		if @bank == nil
+			@bank = Dashboard::Bank.create!(:name => "ING")
+		end
+		@bank.update_data
 	end
 
 
