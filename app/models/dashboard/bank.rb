@@ -10,6 +10,7 @@ class Dashboard::Bank < ActiveRecord::Base
   def update_data
   	if self.last_update == nil || ((self.last_update.to_date <=> Date.today.prev_day) < 0)
   		self.download_data
+  		self.save
   	end
   end
 
