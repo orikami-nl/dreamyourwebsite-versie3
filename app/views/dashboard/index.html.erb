@@ -7,7 +7,11 @@
 </div>
 <div class="kpi">
 	<h4>Balans</h4>
-	<div class="kpi-value">...</div>
+	<div class="kpi-value"><%= number_to_euro (controller.total_unpaid_invoices - controller.total_unpaid_incoming_invoices) %></div>
+	<div class="kpi-title">Open inkomende facturen:</div>
+	<div class="kpi-value small"><%= number_to_euro controller.total_unpaid_incoming_invoices %></div>
+	<div class="kpi-title">Open uitgaande facturen:</div>
+	<div class="kpi-value small"><%= number_to_euro controller.total_unpaid_invoices %></div>
 </div>
 <div class="kpi">
 	<h4>Omzet</h4>
@@ -32,7 +36,7 @@
 	var graph = new Rickshaw.Graph( {
 	        element: document.querySelector("#chart"),
 	        width: 260,
-	        height: 120,
+	        height: 160,
 	        series: [ {
 	                color: 'steelblue',
 	                name: "Cash",

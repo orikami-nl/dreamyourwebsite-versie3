@@ -28,6 +28,8 @@ Dywsite2::Application.configure do
   # Do not compress assets
   config.assets.compress = false
 
+  ActiveResource::Base.logger = ActiveRecord::Base.logger
+
 	#Devise mailer	
 	#config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

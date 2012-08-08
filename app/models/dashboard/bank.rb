@@ -58,24 +58,28 @@ class Dashboard::Bank < ActiveRecord::Base
 		response = agent.get("https://mijnzakelijk.ing.nl/mpz/girordpl/download.do?datumvan=" + last_downloaded_statement_date.strftime("%d-%m-%Y") + "&datumtot=" + Date.today.strftime("%d-%m-%Y") + "&formaat=kommacsv")
 			# import_csv(response.content.to_s)
 		p response.content.to_s
-		csv = CSV.parse(response.content.to_s)
 
-	 	csv[1...csv.length].each do |row|
-			
-			if row[5].index "Af"
-				amount = -(row[6].gsub(",",".").to_d.abs)
-			else
-				amount = row[6].gsub(",",".").to_d.abs
-			end
+		begin
+			csv = CSV.parse(response.content.to_s)
 
-	 		if not self.transactions.where(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :amount => amount).first
-	 			self.transactions.create!(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :contra_account => row[3], :code => row[4], :amount => amount, :transfer_type => row[7], :description => row[8])
+		 	csv[1...csv.length].each do |row|
+				
+				if row[5].index "Af"
+					amount = -(row[6].gsub(",",".").to_d.abs)
+				else
+					amount = row[6].gsub(",",".").to_d.abs
+				end
+
+		 		if not self.transactions.where(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :amount => amount).first
+		 			self.transactions.create!(:date => Date.parse(row[0]), :name => row[1], :account => row[2], :contra_account => row[3], :code => row[4], :amount => amount, :transfer_type => row[7], :description => row[8])
+		 		end
+
 	 		end
-
- 		end
-
- 		self.last_update = DateTime.now
-		return true
+	 	rescue CSV::MalformedCSVError
+ 			self.last_update = DateTime.now
+			return true
+		end
+		return false
   end
 
   def current_balance

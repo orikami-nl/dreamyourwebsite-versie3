@@ -15,6 +15,22 @@ class DashboardController < ApplicationController
 		render :layout => "application"
 	end
 
+	def total_unpaid_invoices
+		total = 0
+		Moneybird::Invoice.filter(:open).each do |invoice|
+			total = total + invoice["total_unpaid"].to_i
+		end
+		return total
+	end
+
+	def total_unpaid_incoming_invoices
+		total = 0
+		Moneybird::IncomingInvoice.filter(:open).each do |invoice|
+			total = total + invoice["total_unpaid"].to_i
+		end
+		return total
+	end
+
 	private
 
 	def get_bank
