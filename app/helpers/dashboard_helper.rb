@@ -4,11 +4,11 @@ module DashboardHelper
 		number_to_currency(number, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")
 	end
 
-	def balances_to_js_data(data)
+	def data_to_js(data)
 		str = "["
-		data.each do |balance|
-			str = str + "{ x: " + balance.datetime.strftime("%s") + ", y: " + balance.value.to_s + "}"
-			if balance != data.last
+		data.each do |d|
+			str = str + "{ x: " + d.datetime.strftime("%s") + ", y: " + d.value.to_s + "}"
+			if d != data.last
 				str = str + ","
 			end
 		end

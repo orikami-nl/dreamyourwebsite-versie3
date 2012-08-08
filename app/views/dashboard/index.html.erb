@@ -3,7 +3,7 @@
 <div class="kpi cash">
 	<h4>Cash</h4>
 	<div class="kpi-value"><%= number_to_euro @bank.current_balance %></div>
-    <div id="chart"></div>
+    <div class="chart"></div>
 </div>
 <div class="kpi">
 	<h4>Balans</h4>
@@ -23,27 +23,57 @@
 	<h4>Balanced Score Card</h4>
 	<div class="kpi-value"><%= number_to_euro @bsc_probable %></div>
 	<div class="kpi-title">Maximaal: </div>
-	<div class="kpi-value small"><%= number_to_euro @bsc_total %></div>
+	<div class="kpi-value small"><%= number_to_euro 	@bsc_total %></div>
 </div>
-<div class="kpi">
+<div class="kpi toggl">
 	<h4>Uren Binnen Projecten</h4>
 	<div class="kpi-value"><%= number_to_percentage(@billable_hours*100, :precision => 1) %></div>
+	<div class="chart"></div>
 </div>
 <div class="kpi">
 	<h4>Velocity</h4>
 	<div class="kpi-value">...</div>
 </div>
+<svg class = "hidden-svg">
+	<defs>
+	    <pattern id="chart_pattern" patternUnits="userSpaceOnUse" width="1067" height="194">
+	        <image xlink:href="/assets/footer_backgroundshadow.png" x="-300" y="-20" width="1067" height="194" />
+	    </pattern>
+	</defs>
+</svg>
 
 <script>
-	var data = <%= balances_to_js_data(@bank.balances_array) %>;
+	var data = <%= data_to_js(@bank.balances_array) %>;
 
 	var graph = new Rickshaw.Graph( {
-	        element: document.querySelector("#chart"),
+	        element: document.querySelector(".cash .chart"),
 	        width: 260,
 	        height: 160,
 	        series: [ {
-	                color: 'steelblue',
+	                color: 'url(#chart_pattern)',
 	                name: "Cash",
+	                data: data
+	        } ]
+	} );
+
+	// var axes = new Rickshaw.Graph.Axis.Time( { graph: graph } );
+
+	graph.render();
+
+	var hoverDetail = new Rickshaw.Graph.HoverDetail( { 
+	graph: graph
+	} );
+
+	
+	var data = <%= data_to_js(@billable_hours_array) %>;
+
+	var graph = new Rickshaw.Graph( {
+	        element: document.querySelector(".toggl .chart"),
+	        width: 260,
+	        height: 160,
+	        series: [ {
+	                color: 'url(#chart_pattern)',
+	                name: "Tijd projecten:",
 	                data: data
 	        } ]
 	} );

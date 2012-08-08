@@ -40,7 +40,7 @@ namespace :dashboard do
       duration_outside = 0
       users.each do |user|
         api_token = user["api_token"]
-        data = toggl.get_time_entries(api_token, {}, Time.now.months_ago(1).at_beginning_of_month, Time.now.months_ago(1).at_end_of_month)
+        data = toggl.get_time_entries(api_token, {}, DateTime.now.prev_month, DateTime.now)        
         data.each do |entry|
           duration += entry["duration"]
           if entry["project"].nil? || outside_project_names.include?(entry["project"]["name"])
@@ -49,6 +49,32 @@ namespace :dashboard do
         end     
       end     
       Dashboard::BillableHours.create!(:value => (duration.to_f - duration_outside.to_f)/duration.to_f, :datetime => DateTime.now)
+      p "Billabe hours imported from Toggl"
+    end
+
+    desc "Import billabe hours from Toggl"
+    task :billable_hours_extract => :environment do
+      toggl = Toggl.new
+      users = toggl.get_users
+      outside_project_names = ["General stuff", "No project", "Zelfstudie", "DYWorld", "DreamYourWeb website", "Netwerken", "Representatief"]
+      
+
+      (0..90).each do |days_back|
+        duration = 0
+        duration_outside = 0
+        users.each do |user|
+          api_token = user["api_token"]
+          data = toggl.get_time_entries(api_token, {}, DateTime.now.prev_month.prev_day(days_back), DateTime.now.prev_day(days_back))
+          data.each do |entry|
+            duration += entry["duration"]
+            if entry["project"].nil? || outside_project_names.include?(entry["project"]["name"])
+              duration_outside += entry["duration"]
+            end
+          end     
+        end     
+        Dashboard::BillableHours.create!(:value => (duration.to_f - duration_outside.to_f)/duration.to_f, :datetime => DateTime.now.prev_day(days_back))
+        p "Imported billable hours for " + DateTime.now.prev_day(days_back).to_s
+      end
       p "Billabe hours imported from Toggl"
     end
 

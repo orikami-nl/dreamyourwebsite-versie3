@@ -15,7 +15,8 @@ class DashboardController < ApplicationController
 		@total_unpaid_invoices = total_unpaid_invoices
 		@total_unpaid_incoming_invoices = total_unpaid_incoming_invoices
 		@balans = @total_unpaid_invoices - @total_unpaid_incoming_invoices
-		@billable_hours = Dashboard::BillableHours.find(:all).sort_by(&:datetime).first.value
+		@billable_hours = Dashboard::BillableHours.find(:all).sort_by(&:datetime).last.value
+		@billable_hours_array = billable_hours_array
 
 		render :layout => "application"
 	end
@@ -38,6 +39,13 @@ class DashboardController < ApplicationController
 			end
 		end
 		return total
+	end
+
+	def billable_hours_array
+		billable_hours = Array.new
+		Dashboard::BillableHours.find(:all).sort_by(&:datetime).each do |bh|
+			billable_hours << bh
+		end
 	end
 
 
