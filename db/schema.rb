@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807142844) do
+ActiveRecord::Schema.define(:version => 20120808140700) do
 
   create_table "admins", :force => true do |t|
     t.string    "email",                                 :default => "", :null => false
@@ -65,6 +65,35 @@ ActiveRecord::Schema.define(:version => 20120807142844) do
     t.decimal  "current_balance"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "dashboard_billable_hours", :force => true do |t|
+    t.datetime "datetime"
+    t.float    "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dashboard_incoming_invoices", :force => true do |t|
+    t.string   "currency"
+    t.integer  "invoice_id"
+    t.decimal  "total_paid"
+    t.decimal  "total_unpaid"
+    t.string   "state"
+    t.date     "date"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "dashboard_invoices", :force => true do |t|
+    t.string   "currency"
+    t.decimal  "total_paid"
+    t.decimal  "total_price_excl_tax"
+    t.decimal  "total_price_incl_tax"
+    t.decimal  "total_unpaid"
+    t.string   "state"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "dashboard_transactions", :force => true do |t|

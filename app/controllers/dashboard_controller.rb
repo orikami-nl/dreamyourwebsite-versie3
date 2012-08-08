@@ -3,44 +3,45 @@ require 'csv'
 class DashboardController < ApplicationController
 	include ActionView::Helpers::NumberHelper
 	
-	before_filter :authenticate_admin!, :get_bank #, :get_statements
+	before_filter :authenticate_admin!
 	layout "sidebar_layout"
 
 	@@agent = Mechanize.new
 
 	def index
 
-		# @percentage = ""#percentage
-		@bsc = balanced_score_card
+		@bank = Dashboard::Bank.first
+		balanced_score_card
+		@total_unpaid_invoices = total_unpaid_invoices
+		@total_unpaid_incoming_invoices = total_unpaid_incoming_invoices
+		@balans = @total_unpaid_invoices - @total_unpaid_incoming_invoices
+		@billable_hours = Dashboard::BillableHours.find(:all).sort_by(&:datetime).first.value
+
 		render :layout => "application"
 	end
 
 	def total_unpaid_invoices
 		total = 0
-		Moneybird::Invoice.filter(:open).each do |invoice|
-			total = total + invoice["total_unpaid"].to_i
+		Dashboard::Invoice.find(:all).each do |invoice|
+			# if invoice.state == "open"
+				total = total + invoice["total_unpaid"].to_i
+			# end
 		end
 		return total
 	end
 
 	def total_unpaid_incoming_invoices
 		total = 0
-		Moneybird::IncomingInvoice.filter(:open).each do |invoice|
-			total = total + invoice["total_unpaid"].to_i
+		Dashboard::IncomingInvoice.find(:all).each do |invoice|
+			if invoice.state == "open"
+				total = total + invoice["total_unpaid"].to_i
+			end
 		end
 		return total
 	end
 
+
 	private
-
-	def get_bank
-		@bank = Dashboard::Bank.first
-		if @bank == nil
-			@bank = Dashboard::Bank.create!(:name => "ING")
-		end
-		@bank.update_data
-	end
-
 
 	# def get_statements
 
@@ -56,25 +57,6 @@ class DashboardController < ApplicationController
 	# 	@transfers.sort! { |a,b| a.date <=> b.date}
 	# end
 
-	def percentage
-		toggl = Toggl.new
-		users = toggl.get_users
-		outside_project_names = ["General stuff", "No project", "Zelfstudie", "DYWorld", "DreamYourWeb website", "Netwerken", "Representatief"]
-		
-		duration = 0
-		duration_outside = 0
-		users.each do |user|
-			api_token = user["api_token"]
-			data = toggl.get_time_entries(api_token, {}, Time.now.months_ago(1).at_beginning_of_month, Time.now.months_ago(1).at_end_of_month)
-			data.each do |entry|
-				duration += entry["duration"]
-				if entry["project"].nil? || outside_project_names.include?(entry["project"]["name"])
-					duration_outside += entry["duration"]
-				end
-			end			
-		end			
-		return number_to_percentage((duration.to_f - duration_outside.to_f)/duration.to_f*100, :precision => 1)
-	end
 
 	def balanced_score_card
 		total = 0
@@ -88,8 +70,10 @@ class DashboardController < ApplicationController
 			end
 		end
 
-		return (number_to_currency(total, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;") + " " + number_to_currency(total_weighted, :unit => "&euro;", :precision => 0, :delimiter => "&thinsp;")).html_safe
+		@bsc_total = total
+		@bsc_probable = total_weighted
 
 	end
+
 
 end
