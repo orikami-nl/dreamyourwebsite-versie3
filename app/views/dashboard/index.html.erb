@@ -21,9 +21,9 @@
 </div>
 <div class="kpi">
 	<h4>Balanced Score Card</h4>
-	<div class="kpi-value"><%= @bsc_probable %></div>
+	<div class="kpi-value"><%= number_to_euro @bsc_probable %></div>
 	<div class="kpi-title">Maximaal: </div>
-	<div class="kpi-value small"><%= @bsc_total %></div>
+	<div class="kpi-value small"><%= number_to_euro @bsc_total %></div>
 </div>
 <div class="kpi">
 	<h4>Uren Binnen Projecten</h4>
