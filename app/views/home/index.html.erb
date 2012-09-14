@@ -43,6 +43,8 @@
 <div class="partner-logos">
 	<h3>Onze partners</h3>
 	<ul>
-		<%= render :partial => 'partner_logo', :collection => @partners, :as => :partner %>
+		<% if !@partners.nil? %>
+			<%= render :partial => 'partner_logo', :collection => @partners, :as => :partner %>
+		<% end %>
 	</ul>
 </div>
