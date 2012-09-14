@@ -70,6 +70,7 @@ group :production do
 	gem 'pg'
 end
 
+gem 'thin'
 # Use unicorn as the web server
 # gem 'unicorn'
 
