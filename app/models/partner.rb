@@ -1,5 +1,5 @@
 class Partner < ActiveRecord::Base
-  attr_accesible :name, :website, :logo
+  attr_accessible :name, :website, :logo
   mount_uploader :logo, FullPictureUploader
 
   def self.get_random(n)
