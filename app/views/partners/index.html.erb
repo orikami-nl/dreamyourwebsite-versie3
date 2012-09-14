@@ -1,0 +1,14 @@
+<h3>Partners</h3>
+<hr class="small-line">
+
+<ul>
+	<% @partners.each do |partner| %>
+		<li>
+			<h4><%= link_to partner.name, partner_path(partner), :class => "bookman-link admin" %></h4>
+			<%= image_tag partner.logo_url.to_s %>
+			<br><%= link_to 'Edit partner', edit_partner_path(partner) %>
+		</li>
+	<% end %>
+</ul>
+
+<%= link_to "New partner", new_partner_path, :class => "bookman-link admin" %>

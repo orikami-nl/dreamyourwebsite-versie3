@@ -38,6 +38,7 @@ Dywsite2::Application.routes.draw do
   end
 
   resources :projects
+  resources :partners
 
   # resources :content
   post "/content", :to => "content#update"

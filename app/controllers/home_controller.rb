@@ -37,6 +37,7 @@ class HomeController < ApplicationController
       @post = Post.where(:draft => false).first
     end
     @project = Project.last
+    @partners = Partner.get_random(4)
   end
 
   def full

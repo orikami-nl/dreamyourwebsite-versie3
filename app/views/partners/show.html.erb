@@ -1,0 +1,8 @@
+<h3><%= @partner.name %></h3>
+<hr class="small-line">
+<%= image_tag @partner.logo_url.to_s %>
+
+<%#if admin_signed_in? %>
+	<br><%= link_to 'Edit partner', edit_partner_path(@partner), :class => "bookman-link admin" %>
+<%# end %>
+
