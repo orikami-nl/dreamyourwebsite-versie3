@@ -129,4 +129,14 @@
 	}
 }
 
+#wbso-stamp{
+	display: block;
+	background-image: url(wbso-stamp.png);
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	z-index: 100;
+	right: -30px;
+}
+
 

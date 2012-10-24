@@ -9,3 +9,4 @@ public/uploads
 config/heroku_env.rb
 Vagrantfile
 .vagrant
+Thumbs.db
