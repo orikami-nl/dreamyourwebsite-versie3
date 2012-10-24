@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:dreamyourweb/lascivious.git
+  remote: https://github.com/dreamyourweb/lascivious.git
   revision: c88a83e12b174b331a3a80ec31b6b98d2547a3e1
   specs:
     lascivious (0.1.0)
