@@ -12,6 +12,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'compass-rails'
+  gem 'haml-rails'
 end
 
 gem 'mechanize'
@@ -70,9 +71,9 @@ group :production do
 	gem 'pg'
 end
 
-gem 'thin'
+# gem 'thin'
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'

@@ -92,7 +92,6 @@ GEM
       capybara (>= 1.1.2)
       cucumber (>= 1.1.8)
       nokogiri (>= 1.5.0)
-    daemons (1.1.9)
     database_cleaner (0.8.0)
     devise (2.1.0)
       bcrypt-ruby (~> 3.0)
@@ -106,7 +105,6 @@ GEM
       mail (~> 2.2)
       rspec (~> 2.0)
     erubis (2.7.0)
-    eventmachine (1.0.0)
     excon (0.13.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -136,6 +134,12 @@ GEM
       nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
       oauth (>= 0.3.6)
       oauth2 (>= 0.5.0)
+    haml (3.1.7)
+    haml-rails (0.3.5)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (~> 3.1)
+      railties (>= 3.1, < 4.1)
     heroku (2.26.3)
       heroku-api (~> 0.2.1)
       launchy (>= 0.3.2)
@@ -162,6 +166,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+    kgio (2.7.4)
     launchy (2.1.0)
       addressable (~> 2.2.6)
     libv8 (3.3.10.4)
@@ -232,6 +237,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
+    raindrops (0.10.0)
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
@@ -292,10 +298,6 @@ GEM
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
     therubyracer-heroku (0.8.1.pre3)
-    thin (1.4.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
     thor (0.15.2)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -308,6 +310,13 @@ GEM
     unf (0.0.5)
       unf_ext
     unf_ext (0.0.5)
+    unicorn (4.4.0)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+    unicorn-rails (0.0.1)
+      rack
+      unicorn
     warden (1.1.1)
       rack (>= 1.0)
     webrobots (0.0.13)
@@ -333,6 +342,7 @@ DEPENDENCIES
   factory_girl_rails (>= 1.0)
   fog
   google_drive
+  haml-rails
   heroku
   highrise
   httparty
@@ -357,5 +367,5 @@ DEPENDENCIES
   stringex
   therubyracer
   therubyracer-heroku
-  thin
   uglifier
+  unicorn-rails

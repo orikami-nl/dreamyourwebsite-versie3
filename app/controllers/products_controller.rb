@@ -6,6 +6,10 @@ class ProductsController < ApplicationController
 		finished("landing_page")
 	end
 
+	def flow
+		render :layout => "application"
+	end
+
 	def web_development
 	end
 
