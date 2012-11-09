@@ -17,6 +17,14 @@ module ApplicationHelper
 		end
 	end
 
+  def path_active?(path)
+    if request.path == path
+      return true
+    else
+      return false
+    end
+  end
+
   def build_mail_address(associate_name)
 		associate_name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"
 	end
