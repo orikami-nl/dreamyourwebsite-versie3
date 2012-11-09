@@ -46,7 +46,7 @@ module ApplicationHelper
   	render :partial => ab_test(experiment, *alternatives), :locals => {:currentexperiment => experiment} 
   end
 
-  def content_for(key)
+  def mercury_content_for(key)
  	page =  Page.find_by_key(controller.controller_name)
  	p "CONTROLLER: " + controller.controller_name.to_s
  	p "KEY: " + key.to_s

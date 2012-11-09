@@ -15,14 +15,10 @@
  		<%= content_tag(:div, value, :class => "site-flash #{key}") %>
 	<% end %>
 	
-	<%#= render "strip" %>
+	<%= yield(:strip) %>
 
 	<div class="content">
-		<div id="admin-content">
-			<div id="admin-container">
-				<%= yield %>
-			</div>
-		</div>
+		<%= yield %>
 	</div>
 
 	<div style="clear:both"></div>

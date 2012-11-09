@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	# manageable_content_for :body, :title, :dreamteam, :layout => "home_layout"
+	# manageable_mercury_content_for :body, :title, :dreamteam, :layout => "home_layout"
 	layout "home_layout"
 
   caches_action :index
