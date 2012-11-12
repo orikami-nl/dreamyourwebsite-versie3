@@ -56,7 +56,7 @@ p, ol, ul, td {
 }
 
 hr {
-	border-top:1px;
+	border-top:0px;
 	border-bottom: 0;
 	border-left:0;
 	border-right:0;
@@ -426,4 +426,31 @@ input, textarea{
 
 .kiss_metrics{
 	display: none;
+}
+
+.button-clean, .button-clean:visited{
+	display:block;
+	float: left;
+	border: none;
+	background-color: $dyw-your;
+	padding: 15px 20px 15px 20px;
+	color: black;
+	font-size: 20px;
+	text-decoration: none;
+	margin-bottom: 10px;
+	font-family: BebasNeueRegular;
+
+	transition-property: background-color, color;
+	transition-duration: 0.1s;
+	transition-timing-function: linear;
+
+	-moz-transition: background-color 0.1s linear;
+	-webkit-transition: background-color 0.1s linear;
+	-webkit-transition: color 0.1s linear;
+
+}
+
+.button-clean:hover{
+	background-color: $dyw-your-dark;
+	color: white;
 }
