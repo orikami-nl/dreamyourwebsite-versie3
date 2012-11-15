@@ -143,12 +143,16 @@
 	h3{margin-bottom: 20px;}
 
 	.service-image{
-		width: 200px;
-		height: 200px;
-		margin-right: 30px;
-		float: left;
-		margin-bottom: 60px;
+		h2{
+			line-height: 60px;
+		}
+		background-size: 60px;
+		background-position: left-center;
+		padding-left: 80px;
+		background-repeat: no-repeat;
 	}
+
+	.service-text {float:right;}
 
 	.service-image.right{
 		float: right;
@@ -173,10 +177,6 @@
 	}
 	.service-image.innovation{
 		background-image: url(service-innovation.png);
-	}
-
-	.product-contact{
-		margin-left: 230px;
 	}
 
 }
