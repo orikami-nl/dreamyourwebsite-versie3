@@ -1,0 +1,69 @@
+
+/ #home-left
+/   #home-content
+/     = abkiss("landing_page", "original", "new_copy")
+/   - if !@project.nil?
+/     %hr
+/       .featured
+/         .featured-image.inner-shadow.lifted
+/           = link_to image_tag(@project.picture_url.to_s), project_path(@project)
+/         .excerpt-container
+/           .excerpt
+/             %h4= link_to "Ons laatste project", project_path(@project)
+/             = @project.excerpt.html_safe
+/           .read-more-top= link_to "Lees meer", project_path(@project), :class => "bookman-link"
+/   %hr
+/     .featured
+/       .excerpt-container.dreamteam
+/         .excerpt
+/           %h4= link_to "Onze overtuiging", associates_path
+/           = mercury_content_for :dreamteam
+/       %div
+/         .dreamteam-img.inner-shadow.lifted
+/           = link_to image_tag("dreamteam.png"), associates_path
+/         .read-more-bottom= link_to "Lees meer", associates_path, :class => "bookman-link"
+/     %hr
+/ #sidebar-right
+/   = render "sidebar"
+/ %div{:style => "clear:both"}
+.partner-logos
+  %h3 Onze partners
+  %ul
+    - if !@partners.nil?
+      = render :partial => 'partner_logo', :collection => @partners, :as => :partner
+
+- content_for(:full) do
+  #dreamteam-header
+    .container
+      .row
+        %h1
+          %span.big-ass Wij bouwen
+          %span.big-ass.move-dpwn slimme applicaties
+        %h1
+          %span.subheader Dreamyourweb is een webbedrijf dat alleen bouwt waarvoor
+          %span.subheader bewijs is dat het nodig is, in plaats van alles te bouwen wat er
+          %span.subheader gevraagd wordt. Zo zorgen we als zowel meedenkende als
+          %span.subheader uitvoerende partij voor effiente en effectieve ontwikkeling om
+          %span.subheader.fluid zo snel mogelijk resultaat te boeken.
+  #we-do-this
+    .container
+      .row
+        %h2 Wat wij voor je
+        %h2 kunnen betekenen
+        .columns4
+          .product.innovation
+            = link_to products_path(:anchor => "innovation") do
+              = image_tag("service-innovation.png")
+              %h3 Innovatie consultancy
+        .columns4
+          .product.development
+            = link_to products_path(:anchor => "development") do
+              = image_tag("service-development.png")
+              %h3 Software ontwikkeling
+        .columns4.last
+          .product.workshop
+            = link_to products_path(:anchor => "workshop") do
+              = image_tag("service-workshop.png")
+              %h3 Lean innovatie workshops
+
+

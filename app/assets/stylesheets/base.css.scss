@@ -35,6 +35,17 @@ body {
   margin-top: 60px;
 } 
 
+.container{
+  width: 960px;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.row {
+  margin-left: 10px;
+  margin-right: 10px;
+  clear: both;
+}
 
 strong, b {
   font-weight: 800;
@@ -453,4 +464,15 @@ input, textarea{
 .button-clean:hover{
 	background-color: $dyw-your-dark;
 	color: white;
+}
+
+.columns4{
+	float: left;
+	width: 306px;
+	margin: 0;
+	margin-right: 11px;
+}
+
+.columns4.last{
+	margin-right: 0;
 }
