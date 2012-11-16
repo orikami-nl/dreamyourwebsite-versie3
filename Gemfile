@@ -24,7 +24,6 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'fog'
 gem "therubyracer"
-gem 'heroku'
 gem 'carrierwave'
 gem 'mail_form'
 gem 'devise'
