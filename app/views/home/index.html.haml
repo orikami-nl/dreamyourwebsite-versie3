@@ -45,9 +45,9 @@
   .container
     .row
       %h2 Een greep uit onze partners
-      %ul
-        - if !@partners.nil?
-          = render :partial => 'partner_logo', :collection => @partners, :as => :partner
+  %ul
+    - if !@partners.nil?
+      = render :partial => 'partner_logo', :collection => @partners, :as => :partner
 
 - content_for(:full) do
   #dreamteam-header
