@@ -31,11 +31,23 @@
     .row
       %h2 Waar zijn we mee bezig zijn geweest
   = render :partial => "project", :collection => @projects
-.partner-logos
-  %h2 Een greep uit onze partners
-  %ul
-    - if !@partners.nil?
-      = render :partial => 'partner_logo', :collection => @partners, :as => :partner
+#manifesto
+  .container
+    .row
+      .columns8
+        %h2 You dream it, together we realize it!
+        %p dreamyourweb is ontstaan uit een passie om mooie producten te bouwen. Dit zijn producten die de wereld veranderen en die er toe doen. Wij zijn 5 wetenschappers met verschillende disciplines, brede interesses en een passie voor mooie dingen maken!
+        = link_to "Lees meer over ons", associates_path, :class => "button-clean"
+      .columns4.last
+        = image_tag "dywmoon_200x200.png", class: "dyw-moon"
+
+#partner-logos
+  .container
+    .row
+      %h2 Een greep uit onze partners
+      %ul
+        - if !@partners.nil?
+          = render :partial => 'partner_logo', :collection => @partners, :as => :partner
 
 - content_for(:full) do
   #dreamteam-header

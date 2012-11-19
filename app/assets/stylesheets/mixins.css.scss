@@ -8,3 +8,11 @@
 @mixin text-shadow-inset($shadow-color){
 	text-shadow: 0px -1px 0px $shadow-color;
 }
+
+@mixin border-bottom{
+	padding-bottom: 40px;
+	border-bottom-color: transparentize($dyw-light-blue,0.5);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	margin-bottom: 40px;
+}

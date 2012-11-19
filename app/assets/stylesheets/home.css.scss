@@ -6,6 +6,7 @@
 @import "compass/css3/opacity";
 @import "compass/css3/border-radius" ; 
 @import "colors" ;
+@import "mixins" ;
 
 /* Button shizzle */
 @mixin rounded($border)
@@ -443,8 +444,8 @@
 	}
 }
 
-div.partner-logos{
-	margin-top: -30px;
+#partner-logos{
+	margin-top: 30px;
 	h3{
 		color: #c4cccf;
 		padding-left: 10px;
@@ -534,16 +535,32 @@ h1{
 	}
 }
 
-.project-container{
-	h5{
-		margin-left: 10px;
-		margin-bottom: 5px;
-	}
-}
-
 #projects-container{
 	h2{
 		font-size: 50px;
 		line-height: 40px;
+	}
+	@include border-bottom();
+
+	.project-container{
+		h5{
+			margin-left: 10px;
+			margin-bottom: 5px;
+		}
+		margin-bottom: 0;
+		h4{
+			padding-bottom: 0;
+		}
+	}
+
+}
+
+#manifesto{
+	@include border-bottom();
+	.button-clean{
+		margin-bottom: 0;
+	}
+	.dyw-moon{
+		margin-left: 50px;
 	}
 }

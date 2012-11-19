@@ -6,7 +6,6 @@
       = link_to "LEES MEER", project_path(project), :class => "image_overlay bookman"
   .project-description
     %h4= link_to(project.title, project_path(project))
-    %br
 - if (project_counter + 1) % 3 == 0
   %div{:style => "clear:both"}
     %hr/

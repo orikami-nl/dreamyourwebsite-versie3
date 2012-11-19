@@ -482,6 +482,14 @@ input, textarea{
 	margin-right: 11px;
 }
 
-.columns4.last{
+.columns8{
+	float: left;
+	width: 623px;
+	margin: 0;
+	margin-right: 11px;
+}
+
+
+.columns4.last, .columns8.last{
 	margin-right: 0;
 }
