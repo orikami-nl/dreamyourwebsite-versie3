@@ -26,8 +26,13 @@
 / #sidebar-right
 /   = render "sidebar"
 / %div{:style => "clear:both"}
+#projects-container
+  .container
+    .row
+      %h2 Waar zijn we mee bezig zijn geweest
+  = render :partial => "project", :collection => @projects
 .partner-logos
-  %h3 Onze partners
+  %h2 Een greep uit onze partners
   %ul
     - if !@partners.nil?
       = render :partial => 'partner_logo', :collection => @partners, :as => :partner
@@ -40,30 +45,31 @@
           %span.big-ass Wij bouwen
           %span.big-ass.move-dpwn slimme applicaties
         %h1
-          %span.subheader dreamyourweb bouwt niet wat er gevraagd wordt, 
+          %span.subheader dreamyourweb bouwt niet wat er gevraagd wordt,
           %span.subheader maar alleen datgene waarvan bewezen is dat het werkt.
           %span.subheader Doordat we zowel meedenken als uitvoeren 
           %span.subheader verloopt het ontwikkeltraject effectief en efficïent.
-          %span.subheader.fluid We boeken zo snel mogelijk resultaat.
   #we-do-this
     .container
       .row
-        %h2 Wat wij voor je
-        %h2 kunnen betekenen
+        %h2 Wat wij voor je kunnen betekenen
         .columns4
           .product.innovation
             = link_to products_path(:anchor => "innovation") do
               = image_tag("service-innovation.png")
               %h3 Innovatie consultancy
+            %p Wij ondersteunen je in het innovatie traject
         .columns4
           .product.development
             = link_to products_path(:anchor => "development") do
               = image_tag("service-development.png")
               %h3 Software ontwikkeling
+            %p Maatwerk web-apps en mobiele-apps
         .columns4.last
           .product.workshop
             = link_to products_path(:anchor => "workshop") do
               = image_tag("service-workshop.png")
               %h3 Lean innovatie workshops
+            %p Leer om lean een succesvol product te ontwikkelen
 
 

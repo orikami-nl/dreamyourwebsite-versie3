@@ -156,6 +156,7 @@ Typography presets
    font-size: 30px;
    line-height: 34px;
    font-family: 'BebasNeueRegular', impact, sans-serif;
+   margin-bottom: 10px;
 } 
 
 .bigger, h3 {
@@ -463,6 +464,14 @@ input, textarea{
 
 .button-clean:hover{
 	background-color: $dyw-your-dark;
+	color: white;
+}
+
+.button-clean.button-big{
+	font-size: 30px;
+}
+
+.button-clean.button-white{
 	color: white;
 }
 

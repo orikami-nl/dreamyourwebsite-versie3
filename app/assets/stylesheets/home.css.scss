@@ -474,8 +474,8 @@ div.partner-logos{
 	width: 100%;
 	height: 400px;
 	h2{
-		font-size: 60px;
-		line-height: 50px;
+		font-size: 50px;
+		line-height: 40px;
 		color: $dyw-black;
 	}
 	.columns4{
@@ -492,6 +492,12 @@ div.partner-logos{
 	a:hover{
 		color: $dyw-your;
 	};
+
+	.product{
+		p{
+			text-align: center;
+		}
+	}
 }
 
 h1{
@@ -511,7 +517,7 @@ h1{
 	}
 
 	span.subheader{
-		font-family: OpenSansLight;
+		font-family: OpenSansBold;
 		color: $dyw-very-light-blue;
 		background-color: transparentize($dyw-black, 0.1);
 		font-size: 18px;
@@ -519,16 +525,25 @@ h1{
 		padding: 8px 10px 10px 10px;
 		display: inline-block;
 		clear:both;
-		width: 505px;
+		// width: 505px;
 		float: left;
 	}
 
 	span.fluid{
 		width: auto;
 	}
+}
 
-	.product{
-		height: 300px;
+.project-container{
+	h5{
+		margin-left: 10px;
+		margin-bottom: 5px;
 	}
 }
 
+#projects-container{
+	h2{
+		font-size: 50px;
+		line-height: 40px;
+	}
+}

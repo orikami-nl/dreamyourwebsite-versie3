@@ -38,6 +38,7 @@ class HomeController < ApplicationController
     end
     @project = Project.last
     @partners = Partner.get_random(4)
+    @projects = Project.order("created_at DESC").limit(3)
   end
 
   def full
