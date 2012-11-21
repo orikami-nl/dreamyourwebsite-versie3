@@ -1,0 +1,17 @@
+#products-content
+  #innovation.service-text
+    .service-image.innovation
+      %h2= mercury_content_for :innovation_header, :simple
+    = mercury_content_for :innovation_body
+  %div{:style => "clear:both"}
+  #development.service-text
+    .service-image.development
+      %h2= mercury_content_for :development_body_header, :simple
+    = mercury_content_for :development_body
+  %div{:style => "clear:both"}
+  #workshop.service-text
+    .service-image.workshop
+      %h2= mercury_content_for :workshop_header, :simple
+    = mercury_content_for :workshop_body
+  %div{:style => "clear:both"}
+  = link_to "Neem contact op", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Diensten dreamyourweb"}, :class => "button-clean"

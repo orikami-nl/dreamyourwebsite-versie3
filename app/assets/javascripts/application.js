@@ -5,9 +5,16 @@
 // the compiled file.
 //= require jquery
 //= require jquery_ujs
+//= require modernizr.foundation
+//= require jquery.foundation.tooltips
 //= require shCore.js
 //= require shBrushRuby.js
 //= require rickshaw
-//= require_tree .
+//= require facebook
+//= require mercury
+//= require outerHTML
+//= require projects
+//= require home
+//= require_self
 
 

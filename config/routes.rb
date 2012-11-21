@@ -1,5 +1,9 @@
 Dywsite2::Application.routes.draw do
 
+  mount Mercury::Engine => '/'
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   Mercury::Engine.routes
 
   get "/terms_and_conditions", :to => "terms_and_conditions#index"

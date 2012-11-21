@@ -7,4 +7,16 @@ class PageContent < ActiveRecord::Base
   validates :key,     :presence => true
 
   default_scope order("#{ActiveRecord::Base.connection.quote_column_name('short')} DESC, #{ActiveRecord::Base.connection.quote_column_name('key')} ASC")
+
+
+  rails_admin do 
+    object_label_method do
+      :rails_admin_label
+    end
+  end 
+
+  def rails_admin_label
+    ActiveSupport::Inflector.humanize(self.key)
+  end
+
 end

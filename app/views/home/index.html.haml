@@ -29,14 +29,14 @@
 #projects-container
   .container
     .row
-      %h2 Waar zijn we mee bezig zijn geweest
+      %h2= mercury_content_for :portfolio_header, :simple
   = render :partial => "project", :collection => @projects
 #manifesto
   .container
     .row
       .columns8
-        %h2 You dream it, together we realize it!
-        %p dreamyourweb is ontstaan uit een passie om mooie producten te bouwen. Dit zijn producten die de wereld veranderen en die er toe doen. Wij zijn 5 wetenschappers met verschillende disciplines, brede interesses en een passie voor mooie dingen maken!
+        %h2= mercury_content_for :manifesto_header, :simple
+        = mercury_content_for :manifesto_body
         = link_to "Lees meer over ons", associates_path, :class => "button-clean"
       .columns4.last
         = image_tag "dywmoon_200x200.png", class: "dyw-moon"
@@ -44,27 +44,29 @@
 #partner-logos
   .container
     .row
-      %h2 Een greep uit onze partners
+      %h2= mercury_content_for :partners_header, :simple
   %ul
     - if !@partners.nil?
       = render :partial => 'partner_logo', :collection => @partners, :as => :partner
+%span.has-tip{"data-width" => "210", :title => "Bottom and the default position."}
 
 - content_for(:full) do
   #dreamteam-header
     .container
       .row
         %h1
-          %span.big-ass Wij bouwen
-          %span.big-ass.move-dpwn slimme applicaties
+          %span.big-ass= mercury_content_for :UVP_line_1, :simple
+          %span.big-ass.move-dpwn= mercury_content_for :UVP_line_2, :simple
         %h1
-          %span.subheader dreamyourweb bouwt niet wat er gevraagd wordt,
-          %span.subheader maar alleen datgene waarvan bewezen is dat het werkt.
-          %span.subheader Doordat we zowel meedenken als uitvoeren 
-          %span.subheader verloopt het ontwikkeltraject effectief en efficïent.
+          %span.subheader= mercury_content_for :sub_UVP_line_1, :simple
+          %span.subheader= mercury_content_for :sub_UVP_line_2, :simple
+          %span.subheader= mercury_content_for :sub_UVP_line_3, :simple
+          %span.subheader= mercury_content_for :sub_UVP_line_4, :simple
+
   #we-do-this
     .container
       .row
-        %h2 Wat wij voor je kunnen betekenen
+        %h2= mercury_content_for :products_header, :simple
         .columns4
           .product.innovation
             = link_to products_path(:anchor => "innovation") do

@@ -18,4 +18,15 @@ validates :locale, :presence => true
   def content(key)
     page_content(key).try(:content)
   end
+
+  rails_admin do 
+    object_label_method do
+      :rails_admin_label
+    end
+  end 
+
+  def rails_admin_label
+    ActiveSupport::Inflector.humanize(self.key)
+  end
+
 end

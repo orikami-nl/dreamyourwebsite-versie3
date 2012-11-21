@@ -1,3 +1,4 @@
 <li>
-	<%= link_to image_tag(partner.logo_url.to_s), partner.website %>
+	<%= link_to image_tag(partner.logo_url.to_s), partner.website, class: "has-tip", title: partner.name, "data-width" => "210"  %>
+
 </li>

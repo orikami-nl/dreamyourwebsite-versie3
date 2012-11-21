@@ -46,30 +46,28 @@ module ApplicationHelper
   	render :partial => ab_test(experiment, *alternatives), :locals => {:currentexperiment => experiment} 
   end
 
-  def mercury_content_for(key)
- 	page =  Page.find_by_key(controller.controller_name)
- 	p "CONTROLLER: " + controller.controller_name.to_s
- 	p "KEY: " + key.to_s
- 	if page != nil
-		pagecontents = page.page_contents.find_by_key(key)  
-		if pagecontents == nil
-			p "NEW PAGECONTENT"
-			pagecontents = page.page_contents.new(:content => "")
-			pagecontents.key = key
-			pagecontents.save
-			page.save
-		end
-  		pagecontent = pagecontents.content.html_safe
-  		contenttag = content_tag(:div,pagecontent,:class => "mercury-region", "data-type" => "editable", :id =>"page:"+page.id.to_s + ":" + pagecontents.id.to_s)
-  	else
-  		return "UNDEFINED!"
-  	end
+  def mercury_content_for(key, region_type="full")
+ 	  page =  Page.find_by_key(controller.controller_name)
+   	# p "CONTROLLER: " + controller.controller_name.to_s
+   	# p "KEY: " + key.to_s
+   	if !page.nil?
+  		pagecontents = page.page_contents.find_by_key(key)  
+  		if pagecontents.nil?
+  			# p "NEW PAGECONTENT"
+  			pagecontents = page.page_contents.new(:content => "")
+  			pagecontents.key = key
+  			pagecontents.save
+  			page.save
+  		end
+    		pagecontent = pagecontents.content.html_safe
+        pagecontent = "CHANGE ME!" if pagecontent==""
+    		contenttag = content_tag(:div,pagecontent,:class => "mercury-region", "data-mercury" => region_type, "data-mercury-data" =>"page:"+page.id.to_s + ":" + pagecontents.id.to_s)
+    else
+      return "UNDEFINED!"
+    end
 
-  	if pagecontent == nil
-  		return "UNDEFINED!"
-  	else
-  		return contenttag
-  	end
+ 		return contenttag
+
   end
 
   def blogpost_for(post)

@@ -40,11 +40,13 @@ gem 'lascivious', :git => 'https://github.com/dreamyourweb/lascivious.git'
 gem 'split', :require => 'split/dashboard'
 gem 'split-analytics', :require => 'split/analytics'
 
+gem 'rails_admin'
+
 gem 'coderay'
 
 gem "ZenTest", "4.6.0"
 
-gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: '6d9c99fe20958ed87e4f1a05e9de19825af702ef'
+gem 'mercury-rails'
 
 group :test do
 	gem 'sqlite3'

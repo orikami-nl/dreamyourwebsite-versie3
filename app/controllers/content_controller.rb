@@ -4,11 +4,13 @@ class ContentController < ApplicationController
 
 	def update
 
-		mercurycontent = JSON.parse(params["content"])
+		mercurycontent = params["content"]
 		regions = mercurycontent.keys
 		p "REGIONS: " + regions.to_s
 
 		savesuccess = 0
+
+		p "REGOIONS COUNT: " + regions.count.to_s
 
 		regions.each do |region|
 			idarr = region.split(':')
