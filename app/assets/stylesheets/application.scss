@@ -1,4 +1,16 @@
 @import "foundation_and_overrides";
 
 @import "fonts";
+@import "colors";
+@import "fc-webicons";
 @import "nav";
+@import "mercury";
+@import "footer";
+
+html,body{
+	background-color: $dyw-very-light-blue;
+}
+
+.row.main-container{
+	margin-bottom: 20px;
+}

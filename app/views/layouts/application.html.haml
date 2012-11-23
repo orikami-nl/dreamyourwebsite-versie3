@@ -25,13 +25,13 @@
       %header
         = yield(:header)
     - if content_for?(:sidebar)
-      .row
+      .row.main-container
         %section.eight.columns
           = yield
         %aside.four.columns
           = yield(:sidebar)
     - else
-      .row
+      .row.main-container
         %section.twelve.columns
           = yield
 

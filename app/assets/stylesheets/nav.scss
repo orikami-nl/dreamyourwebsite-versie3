@@ -3,110 +3,119 @@
 	background-image: url(header_background.png);
 }
 
-nav.top-bar.dyw-nav{
-	background-color: transparent;
-	height:112px;
-	ul.right {
-		margin-top: 30px;
-		li {
-			border-right: 1px solid #666666;
-			margin: 0;
-			padding: 0 15px 0 15px;
-			background-size: 100% auto;
-			a {
-				font-family: BebasNeueRegular;
-				font-size: 22px;
-				line-height: 50px;
-				font-weight: 100;
-				text-indent: -9999px;
-				height:50px;
-				overflow:hidden;
-				&:hover {
+@media only screen and (min-width: 750px) {
+
+	nav.top-bar.dyw-nav{
+		background-color: transparent;
+		height:112px;
+		ul.right {
+			margin-top: 30px;
+			li {
+				border-right: 1px solid #666666;
+				margin: 0;
+				padding: 0 15px 0 15px;
+				background-size: 100% auto;
+				a {
+					font-family: BebasNeueRegular;
+					font-size: 22px;
+					line-height: 50px;
+					font-weight: 100;
+					text-indent: -9999px;
+					height:50px;
+					overflow:hidden;
+					&:hover {
+						background-position: 0px -50px;
+					}
+				}
+				.true {
+					overflow:hidden;
 					background-position: 0px -50px;
 				}
+				.home{
+					background-image: url(menu_home.png);
+					display: block;
+					width: 69px;
+				}
+				.flow{
+					background-image: url(menu_proces.png);
+					display: block;
+					width: 90px;
+				}
+				.products{
+					background-image: url(menu_diensten.png);
+					display: block;
+					width: 114px;
+				}
+				.portfolio{
+					background-image: url(menu_portfolio.png);
+					display: block;
+					width: 126px;
+				}
+				.about{
+					background-image: url(menu_about.png);
+					display: block;
+					width: 78px;
+				}
+				.blog{
+					background-image: url(menu_blog.png);
+					display: block;
+					width: 60px;
+				}
+				.contact{
+					background-image: url(menu_contact.png);
+					display: block;
+					width: 106px;
+				}
 			}
-			.true {
-				overflow:hidden;
-				background-position: 0px -50px;
-			}
-			.home{
-				background-image: url(menu_home.png);
-				display: block;
-				width: 69px;
-			}
-			.flow{
-				background-image: url(menu_proces.png);
-				display: block;
-				width: 90px;
-			}
-			.products{
-				background-image: url(menu_diensten.png);
-				display: block;
-				width: 114px;
-			}
-			.portfolio{
-				background-image: url(menu_portfolio.png);
-				display: block;
-				width: 126px;
-			}
-			.about{
-				background-image: url(menu_about.png);
-				display: block;
-				width: 78px;
-			}
-			.blog{
-				background-image: url(menu_blog.png);
-				display: block;
-				width: 60px;
-			}
-			.contact{
-				background-image: url(menu_contact.png);
-				display: block;
-				width: 106px;
+			li:last-child{
+				border: none;
 			}
 		}
-		li:last-child{
-			border: none;
-		}
+
+		li.name {
+			background: url(logo_smaller.png) no-repeat scroll 0 0 transparent;
+			margin: 20px 0 0 20px;
+		  	display: block;
+		  	text-indent: -9999px;
+			width:201px;
+			height:64px;
+			float:left;
+			display: block;
+		}	
 	}
 
-	li.name {
-		background: url(logo_smaller.png) no-repeat scroll 0 0 transparent;
-		margin: 20px 0 0 20px;
-	  	display: block;
-	  	text-indent: -9999px;
-		width:201px;
-		height:64px;
-		float:left;
-		display: block;
-	}	
+	@media only screen and (max-width: 960px) {
+	  	nav.top-bar.dyw-nav{
+	  		height: 45px;
+			ul.right {
+			margin-top: 0;
+				li {
+					border: none;
+					margin: 0;
+					padding: 0;
+					a {
+						text-indent: 0;
+						height: 50px;
+						width: auto !important;
+						background: none !important;
+					}
+				}
+			}
+	  	}
+
+	}
 }
 
-@media only screen and (max-width: 941px) {
+@media only screen and (max-width: 960px) {
   	nav.top-bar.dyw-nav{
-  		height: 50px;
+  		background-image: url(header_background.png);
   		li.name {
 			background: url(logo_smallest.png) no-repeat scroll 0 0 transparent;
 			width:210px;
-			height:50px;
+			height:100%;
 			margin: 0;
+			text-indent: -9999px;
+			background-position: auto -5px;
 		}
-
-		ul.right {
-		margin-top: 0;
-			li {
-				border: none;
-				margin: 0;
-				padding: 0;
-				a {
-					text-indent: 0;
-					height: 50px;
-					width: auto !important;
-					background: none !important;
-				}
-			}
-		}
-  	}
-
+	}
 }
-
