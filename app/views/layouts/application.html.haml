@@ -21,4 +21,19 @@
     = render :partial => "abkiss/ab"
   %body
     = render 'layouts/nav'
-    = yield
+    - if content_for?(:header)
+      %header
+        = yield(:header)
+    - if content_for?(:sidebar)
+      .row
+        %section.eight.columns
+          = yield
+        %aside.four.columns
+          = yield(:sidebar)
+    - else
+      .row
+        %section.twelve.columns
+          = yield
+
+    %footer
+      = render 'layouts/footer'

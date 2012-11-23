@@ -15,3 +15,6 @@
     = mercury_content_for :workshop_body
   %div{:style => "clear:both"}
   = link_to "Neem contact op", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Diensten dreamyourweb"}, :class => "button-clean"
+
+- content_for :sidebar do
+  = render 'sidebar'

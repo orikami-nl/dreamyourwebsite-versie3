@@ -1,7 +1,5 @@
 class ProductsController < ApplicationController
 
-	layout "sidebar_layout"
-
 	def index
 		finished("landing_page")
 	end

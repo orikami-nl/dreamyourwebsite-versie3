@@ -12,7 +12,13 @@ require "active_resource/railtie"
 # If you have a Gemfile, require the default gems, the ones in the
 # current environment and also include :assets gems if in development
 # or test environments.
-Bundler.require *Rails.groups(:assets) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  # Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # If you want your assets lazily compiled in production, use this line
+  Bundler.require(:default, :assets, Rails.env)
+end
+
 
 module Dywsite2
   class Application < Rails::Application
@@ -45,6 +51,7 @@ module Dywsite2
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
+    config.assets.initialize_on_precompile = false
     config.assets.enabled = true
 
     # To get Compass to work

@@ -5,6 +5,7 @@
 // the compiled file.
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require modernizr.foundation
 //= require jquery.foundation.tooltips
 //= require shCore.js
@@ -14,7 +15,6 @@
 //= require jquery.tweet
 //= require mercury
 //= require outerHTML
-//= require projects
 //= require home
 //= require jwplayer
 //= require analytics
