@@ -11,8 +11,10 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'compass-rails'
   gem 'haml-rails'
+
+  gem 'compass-rails'
+  gem 'zurb-foundation', '~> 3.2'
 end
 
 gem 'mechanize'
@@ -27,13 +29,11 @@ gem "therubyracer"
 gem 'carrierwave'
 gem 'mail_form'
 gem 'devise'
-# gem 'manageable_content'
 gem 'rmagick'
 gem 'stringex'
 gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'kaminari'
 gem 'httparty'
-# gem 'twitter'
 gem 'sanitize'
 gem 'factory_girl_rails', '>=1.0'
 gem 'lascivious', :git => 'https://github.com/dreamyourweb/lascivious.git'
@@ -53,9 +53,6 @@ group :test do
 	gem "rspec-rails"
 	gem "cucumber-rails"
  	gem "database_cleaner"
-#	gem 'taps'
-	gem 'autotest-rails'
-	gem 'autotest-growl'
 	gem 'spork'
 	gem 'email_spec'
 end
@@ -64,7 +61,6 @@ group :development do
 	gem 'sqlite3'
 	gem "rspec-rails"
 	gem "cucumber-rails"
-#	gem 'taps'
 end
 
 group :production do

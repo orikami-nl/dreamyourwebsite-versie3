@@ -1,0 +1,22 @@
+%nav.top-bar
+  %ul
+    %li
+      %h1#header-logo
+        = link_to('dreamyourweb', root_path, :id => "header-logo-link")
+  %section
+    %ul.left
+      %li
+        = link_to(home_path, :class => controller_active?('home').to_s + " home")
+      %li
+        = link_to(flow_path, :class => path_active?(flow_path).to_s + " flow")
+      %li
+        = link_to(products_path, :class => path_active?(products_path).to_s + " products")
+      %li
+        = link_to(projects_path, :class => controller_active?('projects').to_s + " portfolio")
+      %li
+        = link_to(about_path, :class => controller_active?('about').to_s + " about")
+      %li
+        = link_to(blog_path, :class => controller_active?('blog').to_s + " blog")
+
+
+

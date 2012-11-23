@@ -11,10 +11,14 @@
 //= require shBrushRuby.js
 //= require rickshaw
 //= require facebook
+//= require jquery.tweet
 //= require mercury
 //= require outerHTML
 //= require projects
 //= require home
+//= require jwplayer
+//= require analytics
+//= require bugherd
 //= require_self
 
 

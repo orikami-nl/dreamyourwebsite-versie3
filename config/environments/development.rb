@@ -12,7 +12,6 @@ Dywsite2::Application.configure do
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-  config.cache_store = :memory_store
   # config.action_controller.cache_store = :file_store, Rails.root.to_s+"/tmp/cache"
   # config.action_controller.page_cache_directory = Rails.root.to_s+"/public/cache"
 
@@ -27,6 +26,8 @@ Dywsite2::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+
+  config.assets.debug = true
 
   ActiveResource::Base.logger = ActiveRecord::Base.logger
 
