@@ -1,4 +1,3 @@
-<li>
+<li class="<%= (partner_counter>2) ? "hide-for-small" : "" %>" >
 	<%= link_to image_tag(partner.logo_url.to_s), partner.website, class: "has-tip", title: partner.name, "data-width" => "210"  %>
-
 </li>
