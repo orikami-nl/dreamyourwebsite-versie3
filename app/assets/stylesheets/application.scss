@@ -19,3 +19,37 @@ html,body{
 .row.main-container{
 	margin-bottom: 20px;
 }
+
+.container{
+	@include clearfix();
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+}
+
+.container.shadow{
+	padding-bottom: 42px;
+	margin-bottom: 60px;
+	background-image: url(big_shadow.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+.container.shadow-after{
+	position: relative;
+	display: block;
+	&::after{
+		position: absolute;
+		bottom: -42px;
+		content: "";
+		display: block;
+		height: 42px;
+		width: 100%;
+		background-image: url(big_shadow.png);
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-color: transparent;
+		z-index: 20;
+	}
+}

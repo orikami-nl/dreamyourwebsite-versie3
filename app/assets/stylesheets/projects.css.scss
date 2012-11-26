@@ -1,3 +1,11 @@
+.project-container{
+    margin: 0 auto;
+    max-width: 280px;
+    h5{
+      padding-left: 2px;
+    }
+}
+
 .project-image
 {
   padding: 1px;
@@ -46,6 +54,7 @@
 }
 
 .project-description{
+  max-width: 280px;
   text-align: center;
 }
 

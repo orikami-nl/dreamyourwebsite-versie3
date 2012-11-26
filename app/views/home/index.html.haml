@@ -1,5 +1,5 @@
 - content_for(:header) do
-  .container#dreamteam-header
+  .container.shadow-after#dreamteam-header
     .row
       .twelve.columns
         %h1.super
@@ -12,7 +12,7 @@
           %span.sub-uvp= mercury_content_for :sub_UVP_line_4, :simple
 
 - content_for(:full) do
-  .container#we-do-this
+  .container.shadow-after#we-do-this
     .row
       .eight.columns
         %h2= mercury_content_for :products_header, :simple
@@ -35,7 +35,7 @@
               %h3 Lean innovatie workshops
             %p Leer om lean een succesvol product te ontwikkelen
 
-.container#projects-container
+.container.shadow-after#projects-container
   .row
     .eight.columns
       %h2= mercury_content_for :portfolio_header, :simple
@@ -45,15 +45,14 @@
         = render :partial => "project", :collection => @projects
 
 
-#manifesto
-  .container
-    .row
-      .columns8
-        %h2= mercury_content_for :manifesto_header, :simple
-        = mercury_content_for :manifesto_body
-        = link_to "Lees meer over ons", associates_path, :class => "button-clean"
-      .columns4.last
-        = image_tag "dywmoon_200x200.png", class: "dyw-moon"
+.container.shadow-after#manifesto
+  .row
+    .eight.columns
+      %h2= mercury_content_for :manifesto_header, :simple
+      = mercury_content_for :manifesto_body
+      = link_to "Lees meer over ons", associates_path, :class => "button-clean"
+    .four.columns
+      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
 
 #partner-logos
   .container

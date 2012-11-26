@@ -1,11 +1,9 @@
-%li.project-container
-  %h5= project.project_type
-  .project-image
-    = link_to project_path(project) do
-      = image_tag(project.picture_url(:portfolio_full).to_s)
-      .image_overlay Lees Meer
-  .project-description
-    %h3= link_to(project.title, project_path(project))
-- if (project_counter + 1) % 3 == 0
-  %div{:style => "clear:both"}
-    %hr/
+%li
+  .project-container
+    %h5= project.project_type
+    .project-image
+      = link_to project_path(project) do
+        = image_tag(project.picture_url(:portfolio_full).to_s)
+        .image_overlay Lees Meer
+    .project-description
+      %h3= link_to(project.title, project_path(project))
