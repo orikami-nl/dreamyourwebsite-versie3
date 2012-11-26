@@ -47,12 +47,12 @@
 
 .container.shadow-after#manifesto
   .row
-    .eight.columns
+    .four.columns.push-eight
+      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
+    .eight.columns.pull-four
       %h2= mercury_content_for :manifesto_header, :simple
       = mercury_content_for :manifesto_body
       = link_to "Lees meer over ons", associates_path, :class => "button-clean"
-    .four.columns
-      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
 
 .container.last#partner-logos
   .row
