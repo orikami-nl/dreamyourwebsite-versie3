@@ -1,8 +1,20 @@
 @mixin inner-shadow{
+	display: block;
 	position: relative;
 	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	background-color: white;
+	line-height: 0px;
+	*{z-index: 1;}
+
+	padding: 1px;
+	line-height: 0px;
+
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		z-index: 0;
+	}
 }
 
 @mixin text-shadow-inset($shadow-color){
@@ -15,4 +27,35 @@
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	margin-bottom: 40px;
+}
+
+@mixin lifted-shadow{
+	display: block;
+	position: relative;
+	&::before, &::after{
+		bottom: 15px;
+		left: 10px;
+		left: 4%;
+		width: 50%;
+		height: 20%;
+		-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+		-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+		box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+		-webkit-transform: rotate(-3deg);
+		-moz-transform: rotate(-3deg);
+		-ms-transform: rotate(-3deg);
+		-o-transform: rotate(-3deg);
+		transform: rotate(-3deg);
+	}
+
+	&::after {
+		right: 10px;
+		right: 4%;
+		left: auto;
+		-webkit-transform: rotate(3deg);
+		-moz-transform: rotate(3deg);
+		-ms-transform: rotate(3deg);
+		-o-transform: rotate(3deg);
+		transform: rotate(3deg);
+	}
 }

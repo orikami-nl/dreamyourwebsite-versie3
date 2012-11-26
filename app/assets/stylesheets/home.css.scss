@@ -1,449 +1,3 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@import "compass/css3";
-@import "compass/utilities/general/clearfix" ;
-@import "compass/css3/opacity";
-@import "compass/css3/border-radius" ; 
-@import "colors" ;
-@import "mixins" ;
-
-/* Button shizzle */
-@mixin rounded($border)
-{
-  -webkit-border-radius: $border ;
-  -moz-border-radius: $border ;
-  border-radius: $border ;
-}
-
-@mixin shadow
-{
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2) ;
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2) ;
-  box-shadow: 0 1px 2px rgba(0,0,0,.2) ;
-}
-
-@mixin gradient($top, $bottom)
-{
-  background-color: $bottom;
-  background: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
-  background: -moz-linear-gradient(top, $top,  $bottom);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr:'#{$top}', endColorstr:'#{$bottom}');
-}
-
-@mixin button
-{
-  display: inline-block;
-  padding: .5em 2em .55em;
-  outline: none;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  @include rounded(.5em);
-  // this determines Mozilla to show the padding
-  border: solid 1px #ccc;
-  @include shadow;
-  text-shadow: 0 1px 1px rgba(0,0,0,.3);
-  &:hover
-  {
-    text-decoration: none;
-  }
-  &:active
-  {
-    position: relative;
-    top: 1px;
-  }
-}
-
-@mixin color($background)
-{
-  border: solid 1px darken($background, 3%) ;
-  @include gradient(lighten($background, 13%), $background);
-  color: mix(#fff, $background, 90%);
-  &:hover
-  {
-    @include gradient(lighten($background, 10%), darken($background, 5%));
-  }
-  &:active
-  {
-    @include gradient($background, lighten($background, 10%));
-    color: mix(#fff, $background, 70%);
-  }
-}
-
-#home-left {
-	/*padding-right:30px;*/
-}
-
-#home-strip {
-	width: 100% ;
-	height: 398px ;
-	background-color: $dyw-black ;
-	background-image: url(splash.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	color: white;
-	overflow: hidden;
-	position: relative;
-	text-align: center;	
-	#left{
-		position: absolute;
-		top: 150px;
-		left: 0px;
-		float:left;
-		z-index: 5;
-	}
-	#right{
-		position: absolute;
-		top: 150px;
-		right: 0px;
-		float:left;
-		z-index: 5;
-	}
-	#home-banner-container{
-		text-align: left;	
-		height: 368px;
-		/*width: 100%px;*/
-		overflow: auto;
-		position:relative;
-		margin:0 auto;
-		padding-top: 30px;
-		#slideInner{
-			position:relative;		
-		}
-		.home-banner-element
-		{
-			background-image: url(glasspanel.png);
-			background-repeat: no-repeat;
-			background-position: center top;
-			height:332px;
-			margin: 0 auto;
-			.banner-element-content{
-				height:332px;
-				width:928px;
-				margin: 0 auto;
-				position: relative;
-				vertical-align: top;
-				.banner-element-text{
-					margin: 50px;
-					width: 500px;
-					position: absolute;
-					h2{
-						margin-bottom: 25px;
-					}
-					p{
-						font-style: italic;
-						line-height: 24px;
-						font-size: 15px;
-						margin-bottom: 20px;
-					}
-					a:hover{
-						color: white;
-						background-image: url(arrow_hover_white.png);
-					}
-				}
-				.wide {
-					width: 848px;
-				}
-
-				.banner-element-image{
-					z-index:100;
-					position: absolute;
-					overflow: visible;
-					background-repeat: no-repeat;
-					pointer-events: none;
-				}
-				#uvp-image { 
-					background-image: url(uvpbox.png); 
-					right: -80px;
-					top: -30px;
-					width: 525px;
-					height: 380px;
-				}
-				#relax-image { 
-					background-image: url(relax.png); 
-					right: -10px;
-					top: -15px;
-					width: 365px;
-					height: 380px;
-				}
-				#associate-image { 
-					background-image: url(handshake.png); 
-					right: 0px;
-					top: -40px;
-					width: 400px;
-					height: 380px;
-				}
-				#data-image { 
-					background-image: url(datadriven.png); 
-					right: -90px;
-					top: -15px;
-					width: 480px;
-					height: 480px;
-				}
-				#active-image { 
-					background-image: url(concept.png); 
-					right: 20px;
-					top: -20px;
-					width: 320px;
-					height: 374px;
-				}
-				#flexible-image { 
-					background-image: url(lamb.png); 
-					right: 20px;
-					top: -20px;
-					width: 320px;
-					height: 374px;
-				}
-			}
-		}
-		.uvp{
-			h2{
-				margin-bottom: 25px !important;
-				margin-top: 10px;
-				font-size: 48px;
-				line-height: 64px;
-				text-align: center;
-			}
-			p{
-				padding-right: 60px;
-				padding-left: 60px;
-			}
-		}
-	}
-
-	a.control, a.control:link, a.control:hover, a.control:visited{
-		color: white;
-		text-decoration: none;
-	}
-	#home-banner-bullets
-	{
-		height: 16px;
-		display: inline-block;
-		padding-left: 6px;
-		margin: 0 auto;
-		float:left;
-		left:50%;
-		z-index: 50;
-		position: relative;
-		top: -30px;
-		ul{
-			height: 16px;
-			float: left;
-			position: relative;
-			right: 50%;
-			list-style-type: none;
-			li{
-				float: left;
-				width: 16px;
-				height: 16px;
-				background-image: url(splash_bullets.png);
-				background-position: 0 16px;
-				cursor: pointer;
-			}
-			.active-bullet{
-				background-position: 0 0;
-			}
-		}
-	}
-}
-
-
-#categories-strip {
-	width:100%;
-	height:154px;
-	background-image: url(bluegradient_blue.png);
-	background-repeat: repeat-x;
-	background-position: center top;
-
-	#categories-pictures-container{		
-		width: 960px;
-		height: 154px;
-		margin: 0 auto;
-		background-image: url(strip-buttons.jpg);
-		ul {
-			margin: 0;
-			padding: 0;
-			height: 154px;
-			li{
-				float: left;
-				margin: 0;
-				padding: 0;
-				height: 154px;
-				overflow:hidden;
-				a {
-					display:block;
-					height:154px;
-					overflow:hidden;
-				}
-				.true {
-					overflow:hidden;
-					background-position: 0px -154px;
-				}
-				.cat-web{
-					height: 154px;
-					background-image: url(strip-buttons.jpg);
-					display: block;
-					width: 320px;
-					background-position: 0px -154px;
-					opacity: 0;
-				}
-				.cat-concept{
-					height: 154px;
-					background-image: url(strip-buttons.jpg);
-					background-position: -320px -154px;
-					opacity: 0;
-					display: block;
-					width: 320px;
-				}
-				.cat-mobile{
-					height: 154px;
-					background-image: url(strip-buttons.jpg);
-					background-position: -640px -154px;
-					opacity: 0;
-					display: block;
-					width: 320px;
-				}
-			}
-		}
-	}
-}
-#home-banner{
-}
-
-#project-picture{
-	float:left;
-}
-
-.read-more-bottom
-{
-	margin-top:10px;
-	float:right;
-}
-
-.read-more-top
-{
-	position:absolute;
-	bottom:0px;
-	right:15px;
-}
-
-.featured {
-	height:230px;
-	.featured-image
-	{
-		float: left;
-		img{
-			width: 280px;
-			height: 200px;
-		}
-	}
-	.excerpt-container{
-		position: relative;
-		width: 330px;
-		height: 230px;
-		float:right;
-		.excerpt{
-			h4{
-				margin-bottom: 5px;
-			}
-			@include clearfix;
-			overflow-y:hidden;
-			position:relative;
-			width:100%;
-			height:240px;
-		}
-	}
-
-	margin-top: 20px;
-	margin-bottom: 20px;
-
-	.dreamteam
-	{
-		float: left;
-	}
-
-	.dreamteam-img
-	{
-		float: right;
-	}
-}
-
-.sidebar-post{
-	position:relative;
-	margin-bottom: 10px;
-	margin-top: 10px;
-
-	.sidebar-post-image{
-		margin-right: 10px;
-		margin-bottom: 10px;
-		float: left;
-		img{
-			width: 60px;
-			height: 60px;
-		}
-	}
-
-	.sidebar-post-header{
-		margin-left: 70px;
-		h4{
-			line-height: 26px;
-		}
-		.bookman{
-			font-size: 13px;
-			line-height: 15px;
-			text-transform: uppercase;
-			margin-bottom: 3px;
-		}
-		.bebas{
-			font-size: 13px;
-			line-height: 20px;
-			text-transform: uppercase;
-		}
-		p{
-			margin: 0px;
-		}
-	}
-
-	.read-more
-	{
-		float: right;
-		right: 15px;
-	}
-}
-
-.button {
-  @include button;
-  @include color($dyw-black);
-  @include rounded(5px) ;
-}
-
-#tweet-panel{
-	margin-top: 15px;
-	#tweet-caption{
-		a:link, a, a:visited{
-			text-decoration: none;
-			font-size:inherit;
-		}
-		a:hover{
-			color: $dyw-black;
-			font-size:inherit;
-		}
-	}
-	.tweet, .tweet_first, .tweet_odd, .tweet_text{
-		color: #637579;
-		font-style: italic;
-		font-size: 16px;
-		font-weight: normal;
-		font-family: 'Bookman Old Style', bookman, 'Times New Roman', serif;
-		margin-bottom: 10px;
-	}
-	.tweet_avatar {
-		float:left;
-		margin-right:5px;
-	}
-}
-
 #partner-logos{
 	margin-top: 30px;
 	h3{
@@ -462,48 +16,51 @@
 
 #dreamteam-header{
 	background-image: url(dreamteam-home.jpg);
-	height: 490px;
-	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-color: black;
+	background-size: auto 100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	@media only screen and (max-width: 700px){
+		background-size: auto 120%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
 
 #we-do-this{
 	padding-top: 40px;
+	padding-bottom: 30px;
 	background-color: #BCE4EE;
-	width: 100%;
-	height: 400px;
-	h2{
-		font-size: 50px;
-		line-height: 40px;
-		color: $dyw-black;
-	}
-	.columns4{
-		margin-top: 40px;	
+	li{
+		text-align: center;
 	}
 	a:link, a:hover{
 		text-decoration: none;
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-		width: 200px;
+		h3{
+			@include respondTo(smallScreen){
+				font-size: ms(2);
+			}
+		}
 	}
 	a:hover{
 		color: $dyw-your;
 	};
-
-	.product{
-		p{
-			text-align: center;
-		}
+	img{
+		display: block;
+		margin: 0 auto 20px auto;
+		height: auto;
+		max-width: 100%;
 	}
 }
 
-h1{
-	margin-top: 30px;
+h1.super{
+	@include clearfix();
 	span.big-ass{
+		clear: both;
+		float: left;
 		font-size: 120px;
 		line-height: 96px;
 		background-color: transparentize($dyw-your, 0.1);
@@ -512,12 +69,24 @@ h1{
 		padding-bottom: 0;
 		margin: 0;
 		color: $dyw-very-light-blue;
+
+		@media only screen and (max-width: 850px) and (min-width: 700px) {
+			font-size: 100px;
+			line-height: 80px;
+		}
+
+		@media only screen and (max-width: 700px){
+			font-size: 50px;
+			line-height: 40px;
+			padding: 8px;
+		}
 	}
 	span.move-up{
 		margin-top: -15px;
 	}
 
-	span.subheader{
+	span.sub-uvp{
+		clear: both;
 		font-family: OpenSansBold;
 		color: $dyw-very-light-blue;
 		background-color: transparentize($dyw-black, 0.1);
@@ -525,9 +94,13 @@ h1{
 		line-height: 16px;
 		padding: 8px 10px 10px 10px;
 		display: inline-block;
-		clear:both;
-		// width: 505px;
 		float: left;
+
+		@media only screen and (max-width: 700px){
+			font-size: 14px;
+			line-height: 20px;
+			padding: 0px 4px 0px 4px;
+		}
 	}
 
 	span.fluid{
@@ -535,28 +108,24 @@ h1{
 	}
 }
 
-#projects-container{
-	h2{
-		font-size: 50px;
-		line-height: 40px;
-	}
-	@include border-bottom();
 
+
+#projects-container{
 	.project-container{
 		h5{
-			margin-left: 10px;
 			margin-bottom: 5px;
 		}
 		margin-bottom: 0;
-		h4{
-			padding-bottom: 0;
+		h3{
+			@include respondTo(smallScreen){
+				font-size: ms(2);
+			}
 		}
 	}
 
 }
 
 #manifesto{
-	@include border-bottom();
 	.button-clean{
 		margin-bottom: 0;
 	}

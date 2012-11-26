@@ -24,6 +24,7 @@
     - if content_for?(:header)
       %header
         = yield(:header)
+    = yield(:full)
     - if content_for?(:sidebar)
       .row.main-container
         %section.eight.columns

@@ -1,10 +1,15 @@
 @import "foundation_and_overrides";
 
+@import "mixins";
+
 @import "fonts";
 @import "colors";
 @import "fc-webicons";
-@import "nav";
 @import "mercury";
+
+@import "nav";
+@import "home";
+@import "projects";
 @import "footer";
 
 html,body{
