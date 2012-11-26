@@ -1,8 +1,9 @@
 %li.project-container
   %h5= project.project_type
   .project-image
-    = link_to image_tag(project.picture_url(:portfolio_full).to_s), project_path(project)
-    = link_to "LEES MEER", project_path(project), :class => "image_overlay bookman"
+    = link_to project_path(project) do
+      = image_tag(project.picture_url(:portfolio_full).to_s)
+      .image_overlay Lees Meer
   .project-description
     %h3= link_to(project.title, project_path(project))
 - if (project_counter + 1) % 3 == 0
