@@ -1,6 +1,6 @@
 %li
   .project-container
-    %h5 #{project.project_type} bla
+    %h5 #{project.project_type}
     .project-image
       = link_to project_path(project) do
         = image_tag(project.picture_url(:portfolio_full).to_s)

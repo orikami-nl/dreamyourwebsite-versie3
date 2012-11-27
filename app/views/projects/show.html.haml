@@ -1,0 +1,30 @@
+.container#project-show
+  .row
+    .eight.columns
+      #huge-project-image
+      = image_tag @project.full_picture.to_s
+    .four.columns
+      %h4
+        - if !@previous_project.nil?
+          = link_to "<< ", project_path(@previous_project), :class => "arrow"
+        = @project.title
+        - if !@next_project.nil?
+          = link_to " >>", project_path(@next_project), :class => "arrow"
+
+      - if !@project.external_url.empty?
+        = link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank", :class => "bookman-link"
+      - else
+        %p
+          Deze website is momenteel nog in ontwikkeling en dus nog niet publiekelijk toegankelijk.
+
+      %h5 Datum
+      = @project.created_at.to_date
+      
+      %h5 Beschrijving
+      %p= @project.body.html_safe
+      = link_to "Ga terug naar overzicht", projects_path, :class => "bookman-link"
+      - if admin_signed_in?
+        %span.admin
+          %br
+            %br/
+        = link_to "Edit Project", edit_project_path(@project), :class => "bookman-link admin"
