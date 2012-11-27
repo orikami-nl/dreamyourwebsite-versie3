@@ -85,4 +85,8 @@ module ApplicationHelper
   	# end
   end
 
+  def header_for(title)
+    render partial: "/shared/header", locals: {title: title}
+  end
+
 end

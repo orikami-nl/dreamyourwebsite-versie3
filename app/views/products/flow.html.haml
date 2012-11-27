@@ -1,24 +1,23 @@
-- content_for :strip do
-  #strip-contact-sides.strip-wide
-    #strip-proces-center.strip-center
+= header_for :diensten
 
-#flow
+.container#flow
   .row#clouds
-    %h1
-      het dream<span class="blue">your</span>web proces
+    .twelve.columns
+      %h1
+        het dream<span class="blue">your</span>web proces
 
   .row
-    .left
+    .six.columns
       %h2
         %span.blue Jouw
         Idee
       = mercury_content_for :flow_jouw_idee_body
-    .right#idea
+    .six.columns#idea
   .row.arrows
 
   .row
-    .left#core-idea
-    .right
+    .six.columns#core-idea
+    .six.columns
       %h2
         Kern van het
         %span.blue Idee
@@ -26,24 +25,24 @@
   .row.arrows
 
   .row
-    .right#validation
-    .left
+    .six.columns#validation
+    .six.columns
       %h2 Validatie
       = mercury_content_for :flow_validatie_body
   .row.arrows
 
   .row
-    .right
+    .six.columns
       %h2
         Kern
         %span.blue Product
       = mercury_content_for :flow_kern_product_body
-    .left#core-product
+    .six.columns#core-product
   .row.arrows
 
   .row.bottom-row
-    .right#optimalization
-    .left
+    .six.columns#optimalization
+    .six.columns
       %h2
         Optimalisatie
       = mercury_content_for :flow_optimlisatie_body

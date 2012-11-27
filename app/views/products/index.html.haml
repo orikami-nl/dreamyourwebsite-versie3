@@ -1,20 +1,24 @@
-#products-content
-  #innovation.service-text
-    .service-image.innovation
-      %h3= mercury_content_for :innovation_header, :simple
-    = mercury_content_for :innovation_body
-  %div{:style => "clear:both"}
-  #development.service-text
-    .service-image.development
-      %h3= mercury_content_for :development_body_header, :simple
-    = mercury_content_for :development_body
-  %div{:style => "clear:both"}
-  #workshop.service-text
-    .service-image.workshop
-      %h3= mercury_content_for :workshop_header, :simple
-    = mercury_content_for :workshop_body
-  %div{:style => "clear:both"}
-  = link_to "Neem contact op", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Diensten dreamyourweb"}, :class => "button-clean"
+= header_for :diensten
+
+.container#products-content
+  .row
+    .twelve.columns
+      #innovation.service-text
+        .service-image.innovation
+          %h3= mercury_content_for :innovation_header, :simple
+        = mercury_content_for :innovation_body
+      %div{:style => "clear:both"}
+      #development.service-text
+        .service-image.development
+          %h3= mercury_content_for :development_body_header, :simple
+        = mercury_content_for :development_body
+      %div{:style => "clear:both"}
+      #workshop.service-text
+        .service-image.workshop
+          %h3= mercury_content_for :workshop_header, :simple
+        = mercury_content_for :workshop_body
+      %div{:style => "clear:both"}
+      = link_to "Neem contact op", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Diensten dreamyourweb"}, :class => "button-clean"
 
 - content_for :sidebar do
   = render 'sidebar'

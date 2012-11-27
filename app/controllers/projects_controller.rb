@@ -1,13 +1,11 @@
 class ProjectsController < ApplicationController
 
 	before_filter :authenticate_admin!, :except => [:show, :index] 
-	layout 'application', :except => [:index, :show]
 
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.order("created_at DESC").all
-		render :layout => 'portfolio_layout'
   end
 
   # GET /projects/1
@@ -16,7 +14,6 @@ class ProjectsController < ApplicationController
 		@project = Project.find_by_title_for_url(params[:id])
 		@previous_project = @project.previous_project
 		@next_project = @project.next_project
-		render :layout => 'sidebar_layout'
   end
 
   # GET /projects/new

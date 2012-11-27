@@ -35,17 +35,17 @@
               %h3 Lean innovatie workshops
             %p Leer om lean een succesvol product te ontwikkelen
 
-.container.shadow-after#projects-container
-  .row
-    .eight.columns
-      %h2= mercury_content_for :portfolio_header, :simple
-  .row
-    .twelve.columns
-      %ul.block-grid.three-up.mobile-three-up
-        = render :partial => "project", :collection => @projects
+  .container.shadow-after#projects-container
+    .row
+      .eight.columns
+        %h2= mercury_content_for :portfolio_header, :simple
+    .row
+      .twelve.columns
+        %ul.block-grid.three-up.mobile-three-up
+          = render :partial => "project", :collection => @projects
 
 
-.container.shadow-after#manifesto
+.container.small-shadow-after#manifesto
   .row
     .four.columns.push-eight
       = image_tag "dywmoon_200x200.png", class: "dyw-moon"

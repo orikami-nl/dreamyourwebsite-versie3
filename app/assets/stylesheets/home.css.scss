@@ -12,6 +12,7 @@
 	background-color: black;
 	background-size: auto 100%;
 	padding-top: 30px;
+	margin-top: -$nav-margin;
 
 	@media only screen and (max-width: 700px){
 		background-size: auto 120%;
@@ -24,6 +25,7 @@
 
 #we-do-this{
 	padding-top: 30px;
+	margin-bottom: 0;
 	background-color: #BCE4EE;
 	li{
 		text-align: center;
@@ -98,12 +100,20 @@ h1.super{
 
 
 #projects-container{
+	padding-top: 30px;
+	background-color: $dyw-blue;
 	.project-container{
 		h5{
 			margin-bottom: 5px;
 		}
 		margin-bottom: 0;
 		h3{
+			a{
+				color: $dyw-black;
+				&:hover{
+					color: $dyw-very-light-blue;
+				}
+			}
 			@include respondTo(smallScreen){
 				font-size: ms(2);
 			}

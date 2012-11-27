@@ -1,139 +1,41 @@
-@import "compass/css3";
-@import "compass/typography/lists/horizontal-list";
-@import "compass/css3/border-radius" ;
-@import "compass/utilities/general/clearfix" ;
-@import "colors" ;
-@import "fonts";
-
-#header-logo {
-	background: url(logo_smaller.png) no-repeat scroll 0 0 transparent;
-	margin: 20px 0 0 0;
-  	display: block;
-  	text-indent: -9999px;
-	width:201px;
-	height:64px;
-	float:left;
-	display: block;
-}
-
-#header-logo-link{
-	width:201px;
-	height:64px;
-	display: block;
-}
-
-#menu-nav-item{
-  height: 100px;
-	overflow:hidden
-}
-
-#header-menu {
-	@include clearfix ;
-	float: right ;
-	width: 690 ;
-	margin-top:30px;
-	#header-menu-nav {
-		overflow:hidden;
-	}
-	ul {
-		@include horizontal-list ;
-		li {
-			border-right: 1px solid #666666;
-			margin: 0;
-			padding: 0 15px 0 15px;
-			height:50px;
-			overflow:hidden;
-			a {
-				height:50px;
-				overflow:hidden;
-				&:hover {
-					background-position: 0px -50px;
-				}
-			}
-			.true {
-				overflow:hidden;
-				background-position: 0px -50px;
-			}
-			.home{
-				background-image: url(menu_home.png);
-				display: block;
-				width: 69px;
-			}
-			.flow{
-				background-image: url(menu_proces.png);
-				display: block;
-				width: 90px;
-			}
-			.products{
-				background-image: url(menu_diensten.png);
-				display: block;
-				width: 114px;
-			}
-			.portfolio{
-				background-image: url(menu_portfolio.png);
-				display: block;
-				width: 126px;
-			}
-			.about{
-				background-image: url(menu_about.png);
-				display: block;
-				width: 78px;
-			}
-			.blog{
-				background-image: url(menu_blog.png);
-				display: block;
-				width: 60px;
-			}
-			.contact{
-				background-image: url(menu_contact.png);
-				display: block;
-				width: 106px;
-			}
-		}
-		li:last-child{
-			border: none;
+header{
+	margin-top: -$nav-margin;
+	margin-bottom: $nav-margin;
+	h1{
+		position: relative;
+		font-size: ms(10);
+		line-height: ms(10);
+		opacity: 0.7;
+		// position: absolute;
+		top: 54px;
+		@include respondTo(smallScreen){
+			font-size: ms(8);
+			line-height: ms(8);
+			top: 25px;
 		}
 	}
-	a {
-		text-decoration: none ;
+
+	> div{
+		@include respondTo(smallScreen){
+			height: 100px;
+			background-size: auto 100%;
+		}
+		height: 175px;
+		overflow: hidden;
+		background-color: $dyw-black;
+		background-position: center top;
+		background-repeat: no-repeat;
 	}
-}
 
-#strip-content{
-	float:left;
-	width:775px;
-	margin-right:25px;
-}
-
-header {
-  background-color: black;
-	background-image: url(header_background.png);
-	height:112px;
-	@include clearfix ;
-}
-
-#header{
-	height:112px;
-  	background-color: black;
-	background-image: url(header_background.png);
-	@include clearfix ;
-	#header-content{
-		width: 960px;
-		margin: 0 auto;
+	.diensten{
+		background-color: #01288d;
+		background-image: url(header_products.jpg);
 	}
-}
 
-.strip-wide{
-	width: 100%;
-	height: 175px;
-}
-
-.strip-center{
-	max-width: 1280px;
-	height: 175px;
-	margin: 0 auto;
-	background-repeat: no-repeat;
-	background-position: center bottom;
+	.portfolio{
+		background-color: #75a557;
+		background-image: url(header_portfolio.jpg);
+	}
 }
 
 #strip-portfolio-sides{
