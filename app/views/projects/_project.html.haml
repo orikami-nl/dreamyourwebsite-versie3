@@ -1,0 +1,14 @@
+%li
+  .project-container
+    %h5 #{project.project_type} bla
+    .project-image
+      = link_to project_path(project) do
+        = image_tag(project.picture_url(:portfolio_full).to_s)
+        .image_overlay Lees Meer
+    .project-description
+      %h3= link_to(project.title, project_path(project))
+      - if admin_signed_in?
+        = link_to 'Edit', edit_project_path(project), :class => 'admin'
+        = link_to 'Destroy', project, :class => 'admin', confirm: 'Are you sure?', method: :delete
+      .excerpt-container
+        #{project.excerpt.html_safe}

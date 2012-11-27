@@ -14,7 +14,7 @@ group :assets do
   gem 'haml-rails'
 
   gem 'compass-rails'
-  gem 'zurb-foundation', '~> 3.2'
+  gem 'zurb-foundation', :git => 'git://github.com/zurb/foundation.git', :branch => 'master'
 end
 
 gem 'mechanize'

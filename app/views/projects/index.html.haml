@@ -1,0 +1,14 @@
+.container#projects
+  .row
+    .ten.columns.push-two
+      %ul.block-grid.three-up.mobile-two-up
+        = render :partial => "project", :collection => @projects
+    .two.columns.pull-ten
+      %h4 Alle projecten
+      %ul.twelve.side-nav
+        - @projects.each do |project|
+          %li
+            = link_to project.title, project_path(project)
+
+      - if admin_signed_in?
+        = link_to 'New Project', new_project_path, :class => "admin"

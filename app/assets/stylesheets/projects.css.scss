@@ -1,3 +1,37 @@
+.container#projects{
+
+  @media only screen and (min-width: 1441px) {
+    .block-grid.three-up > li:nth-child(3n+1) {
+      clear: both;
+    }
+  }
+
+  @media only screen and (max-width: 1279px) and (min-width: 768px) {
+    .block-grid.three-up > li:nth-child(3n+1) {
+      clear: both;
+    }
+  }
+
+  @include respondTo(smallScreen){
+    .block-grid.mobile-two-up > li:nth-child(2n+1) {
+      clear: both;
+    }
+  }
+
+}
+
+.project-container{
+  h5{
+    margin-bottom: 5px;
+  }
+  margin-bottom: 0;
+  h3{
+    @include respondTo(smallScreen){
+      font-size: ms(2);
+    }
+  }
+}
+
 .project-container{
     margin: 0 auto;
     max-width: 280px;
@@ -56,229 +90,8 @@
 .project-description{
   max-width: 280px;
   text-align: center;
+  .excerpt-container, p{
+    text-align: left;
+    font-size: 12px;
+  }
 }
-
-
-// #projects-container
-// {
-//  margin-top: 15px;
-// }
-
-// #portfolio-wip {
-//  width:640px;
-// }
-
-// .project-container {
-//  width:300px;
-//  margin: 10px;
-//  float:left;
-//  position:relative;
-//  margin-top: 25px;
-//  margin-bottom: 15px;
-//  .project-image
-//  {
-//    margin: 0 auto;
-//    width: 282px;
-//    .image_container {
-//      a:hover + a{
-//        display: block;
-//      }
-//      img {
-//        width:280px;
-//        height: 200px;
-//      }
-//    }
-
-//    a.image_overlay, a.image_overlay:link, a.image_overlay:visited{
-//      display: none;    
-//      position: absolute;
-//      top: 1px;
-//      left: 1px;
-//      width:280px;
-//      height:200px;   
-//      color: $dyw-blue;
-//      text-decoration: none;
-//      font-weight: bolder;
-//      text-align: center;
-//      font-size: 16px;
-//      line-height: 200px;
-//      background: rgb(0, 0, 0);
-//      background: rgba(0, 0, 0, 0.6);
-//      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
-//      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)";
-//    }
-
-//    a.image_overlay:hover{
-//      display: block;
-//    }
-//  }
-
-//  h4 {
-//    text-align:center;
-//    padding:10px 0 5px 0;
-//    a:link{
-//      text-decoration: none;
-//    }
-//  }
-//  .excerpt-container{
-//    /*font-size: 14px;*/
-//    font-style: italic;
-//    height:160px;
-//    /*overflow-y:auto;*/
-//    overflow: hidden;
-//    margin-left: 15px;
-//    margin-right: 15px;
-//  }
-// }
-
-// .read-more-portfolio {
-//  font-size: 16px;
-//  font-style: italic;
-//  a, a:link, a:hover, a:active{
-//    font-weight: bold;
-//  }
-//  position:absolute;
-//  right:20px;
-//  bottom:0;
-// }
-// #categories-navigation {
-//  font-size:1.5em;
-//  a {
-//    text-decoration:none;
-//  }
-// }
-
-// #huge-project-image {
-//  margin-top:25px;
-//  margin-bottom: 30px;
-//  width:602px;
-// }
-
-// #portfolio-sidebar{
-//  margin-top:25px;
-// }
-
-// .arrow {
-//  text-decoration:none;
-// }
-
-// [class*="span"] {
-//   float: left;
-//   margin-left: 20px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span1 {
-//   width: 60px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span2 {
-//   width: 140px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span3 {
-//   width: 220px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span4 {
-//   width: 300px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span5 {
-//   width: 380px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span6 {
-//   width: 460px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span7 {
-//   width: 540px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span8 {
-//   width: 620px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span9 {
-//   width: 700px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span10 {
-//   width: 780px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span11 {
-//   width: 860px; }
-
-// /* line 507, ../sass/bootstrap/_mixins.scss */
-// .span12 {
-//   width: 940px; }
-
-//   .proeject-row {
-//   margin-left: -20px;
-//   *zoom: 1; }
-//   /* line 15, ../sass/bootstrap/_mixins.scss */
-//   .row:before, .row:after {
-//     display: table;
-//     content: ""; }
-//   /* line 19, ../sass/bootstrap/_mixins.scss */
-//   .row:after {
-//     clear: both; }
-
-//    /* line 519, ../sass/bootstrap/_mixins.scss */
-// .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-//   width: 960px; }
-
-//   /* line 8, ../sass/bootstrap/_layouts.scss */
-// .container {
-//   margin-left: auto;
-//   margin-right: auto;
-//   *zoom: 1; }
-//   /* line 15, ../sass/bootstrap/_mixins.scss */
-//   .container:before, .container:after {
-//     display: table;
-//     content: ""; }
-//   /* line 19, ../sass/bootstrap/_mixins.scss */
-//   .container:after {
-//     clear: both; }
-
-// /* line 13, ../sass/bootstrap/_layouts.scss */
-// .container-fluid {
-//   padding-left: 20px;
-//   padding-right: 20px;
-//   *zoom: 1; }
-//   /* line 15, ../sass/bootstrap/_mixins.scss */
-//   .container-fluid:before, .container-fluid:after {
-//     display: table;
-//     content: ""; }
-//   /* line 19, ../sass/bootstrap/_mixins.scss */
-//   .container-fluid:after {
-//     clear: both; }
-
-// #jmpress {
-//  width: auto;
-//     min-width: 600px;
-//     min-height: 440px;
-//     background-color: #fff;
-//     box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
-//     -webkit-background-clip: padding;
-//     -moz-background-clip: padding;
-//     background-clip: padding-box;
-//     border: 10px solid #fff;
-//     border: 10px solid rgba(255, 255, 255, 0.9);
-//     outline: none;
-//     transition: background-color 1s linear;
-// }
-
-// .StoryTextArea {
-//   min-height: 20px;
-//   padding: 19px;
-//   margin-bottom: 20px;
-//   background-color: whiteSmoke;
-//   border: 1px solid #EEE;
-//   background-color: #EEE;
-//   -webkit-border-radius: 10px;
-//   -moz-border-radius: 10px;
-//   -ms-border-radius: 10px;
-//   -o-border-radius: 10px;
-//   border-radius: 10px; }
