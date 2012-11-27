@@ -27,14 +27,19 @@ header{
 			}
 		}
 
-		.diensten{
+		&.diensten{
 			background-color: #01288d;
 			background-image: url(header_products.jpg);
 		}
 
-		.portfolio{
+		&.portfolio{
 			background-color: #75a557;
 			background-image: url(header_portfolio.jpg);
+		}
+
+		&.about{
+			background-color: #316497;
+			background-image: url(header_about.jpg);
 		}
 	}
 

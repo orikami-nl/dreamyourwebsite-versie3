@@ -1,7 +1,6 @@
 class AssociatesController < ApplicationController
 
 	before_filter :authenticate_admin!, :except => [:show, :index]
-	layout "sidebar_layout"
 
   # GET /associates
   # GET /associates.json

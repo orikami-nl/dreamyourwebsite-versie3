@@ -1,0 +1,35 @@
+= header_for :about
+
+.container#associates
+  .row
+    .eight.columns
+
+      %h2 You dream it, together we realize it!
+      = mercury_content_for :body
+
+      %h3 Onze mensen
+    
+      - @associates.each do |associate|
+        .associate-container
+          .row
+            .twelve.columns
+              %h4= link_to associate.name, associate_path(associate)
+          .row
+            .associate-photo-index.three.columns
+              = image_tag associate.avatar_url(:medium).to_s
+            .associate-description.nine.columns
+              = associate.description.html_safe
+              %dl.sub-nav
+                %dd= link_to 'Bekijk blog', associate_posts_path(associate), :class => "bookman-link"
+                %dd= link_to 'Lees bio', associate_path(associate), :class => "bookman-link"
+                %dd= link_to 'Contact', {:action => "index", :controller => "contact", :aan => build_mail_address(associate.name)}, :class => "bookman-link"
+                - if admin_signed_in?
+                  %dd= link_to 'Edit', edit_associate_path(associate), :class => "bookman-link admin"
+                  %dd= link_to 'Destroy', associate, confirm: 'Weet je het zeker? Het is namelijk ook mogelijk om deze associates op non-actief te zetten via edit. Op deze manier blijven zijn blogposts wel bestaan.', method: :delete, :class => "bookman-link admin"              
+
+      - if admin_signed_in?
+        = link_to 'New associates', new_associate_path, :class => "bookman-link admin"
+
+    .four.columns
+      %h3 Onze kernwaarden
+      = mercury_content_for :sidebar
