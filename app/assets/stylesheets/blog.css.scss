@@ -1,12 +1,17 @@
-.pomodoro {
-  height: 170px;
-  width: 240px;
-  float: right;
-  background-image: url(blog/pomodoro.png);
-}
+#blog{
+	h1, h2, a h1, a h2, h2 a{
+		color: $dyw-purple;
+	}
 
-.pomodoropapier {
-  height: 400px;
-  width: 600px;
-  background-image: url(blog/Pomodoro-Sheet.png);
+	h2{
+		margin-bottom: 0;
+		font-family: OpenSansBold;
+	}
+	h4.subheader{
+		margin-top: 0;
+		time{
+			font-family: OpenSansBold;
+			text-transform: uppercase;
+		}
+	}
 }

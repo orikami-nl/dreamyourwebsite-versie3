@@ -48,6 +48,9 @@ gem "ZenTest", "4.6.0"
 
 gem 'mercury-rails'
 
+gem 'rails-i18n'
+
+
 group :test do
 	gem 'sqlite3'
 	gem "rspec-rails"

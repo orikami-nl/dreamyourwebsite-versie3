@@ -53,8 +53,9 @@ module Dywsite2
     # Enable the asset pipeline
     config.assets.initialize_on_precompile = false
     config.assets.enabled = true
-
     # To get Compass to work
+
+    config.i18n.available_locales = :nl
 
   end
 end

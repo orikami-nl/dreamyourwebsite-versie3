@@ -62,6 +62,12 @@ header{
 			h1{background-color: transparentize($dyw-red, 0.1)};
 		}
 
+		&.purple{
+			border-color: $dyw-purple;
+			background-image: url(header_blog.jpg);
+			h1{background-color: transparentize($dyw-purple, 0.1)};
+		}
+
 		h1.subheader{
 			margin-top: 0;
 			background-color: transparentize($dyw-black, 0.1);	

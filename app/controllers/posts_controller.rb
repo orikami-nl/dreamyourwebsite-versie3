@@ -2,7 +2,6 @@ class PostsController < ApplicationController
 
 	before_filter :authenticate_admin!, :except => [:show, :index, :index_tagged_posts] 
 	before_filter :get_associate, :tag_cloud
-	layout "sidebar_layout"
 
 #  caches_action :index, :show, :unless => :admin?
 #  cache_sweeper :post_sweeper
