@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 
 	def get_associate
 		@associates = Associate.all
-		@associate = Associate.find_by_name_for_url(params[:associate_id])
 	end
 
 	def tag_cloud
@@ -18,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    @associate = Associate.find_by_name_for_url(params[:associate_id])
     kiss_record "View blog"
     if admin_signed_in?
       @posts = @associate.posts.page(params[:page]).per(5)
@@ -42,6 +42,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
+    @associate = Associate.find_by_name_for_url(params[:associate_id])
     @post = @associate.posts.new
 
     respond_to do |format|
@@ -58,6 +59,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    @associate = Associate.find_by_name_for_url(params[:associate_id])
     @post = @associate.posts.new(params[:post])
 
     respond_to do |format|
@@ -74,6 +76,7 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
+    @associate = Associate.find_by_name_for_url(params[:associate_id])
     @post = Post.find_by_title_for_url(params[:id])
 
     respond_to do |format|
@@ -90,6 +93,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @associate = Associate.find_by_name_for_url(params[:associate_id])
     @post = Post.find_by_title_for_url(params[:id])
     @post.destroy
 

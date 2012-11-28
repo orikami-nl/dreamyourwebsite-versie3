@@ -44,16 +44,15 @@ Dywsite2::Application.routes.draw do
 
   resources :projects
   resources :partners
+  resources :associates
 
   # resources :content
   post "/content", :to => "content#update"
 
 	#scope '/admin' do
   get "/about", :to => "associates#index"
-	resources :associates do
-		resources :posts, :path => "blog" do
-			resources :comments, :except => [:new]
-		end
+	resources :posts, :path => "blog" do
+		resources :comments, :except => [:new]
 	end
 	#end
 

@@ -1,14 +1,14 @@
 .post-container.border-bottom.if{:class => "<haml:silent> post.draft? </haml:silent><haml:block>draft</haml:block>"}
   .post-header
     #post-info
-      %h2= link_to(post.title, associate_post_path(post.associate, post), :class => "post-title")
+      %h2= link_to(post.title, post_path(post), :class => "post-title")
       %h4.subheader
-        %small #{time_tag(post.updated_at.to_date)} door #{link_to post.associate.name, associate_path(post.associate)}
+        %small #{time_tag(post.updated_at.to_date)} door #{post.associate.name}
   #post-excerpt
     %p= post.excerpt.html_safe
     %p= post.body.html_safe
     .admin
       - if admin_signed_in?
         %br.admin
-          = link_to 'Edit', edit_associate_post_path(post.associate, post), :class => "bookman-link admin"
-          = link_to 'Destroy', associate_post_path(post.associate, post), confirm: 'Are you sure?', method: :delete, :class => "bookman-link admin"
+          = link_to 'Edit', edit_post_path(post), :class => "bookman-link admin"
+          = link_to 'Destroy', post_path(post), confirm: 'Are you sure?', method: :delete, :class => "bookman-link admin"

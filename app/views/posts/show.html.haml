@@ -1,0 +1,15 @@
+= header_for "dreamyourweblog", "Waar we het hebben over alles wat on interesseert", "purple"
+
+.container#blog
+  .row
+    .eight.columns
+      = render :partial => "blog/post", :collection => [@post]
+      <div class="fb-like" data-href=#{post_url(@post)} data-send="true" data-width="450" data-show-faces="true", :data-href></div>
+      #comments-container
+        = render :partial => "comment", :collection => @comments, :spacer_template => "commentspacer"
+      #postcomment-container
+        = render 'comments/form'
+
+
+    .four.columns
+      = render :partial => "shared/blog_sidebar"
