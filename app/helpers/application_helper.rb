@@ -9,19 +9,19 @@ module ApplicationHelper
 
 	def controller_active?(controller)
 		if request.path_parameters[:controller] == controller
-			true
+			"active"
 		elsif request.path.include?(controller) && controller == "blog"
-			true
+			"active"
 		else
-			false
+			""
 		end
 	end
 
   def path_active?(path)
     if request.path == path
-      return true
+      return "active"
     else
-      return false
+      return ""
     end
   end
 

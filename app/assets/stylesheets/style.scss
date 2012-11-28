@@ -67,3 +67,21 @@ small{
 	font-family: OpenSansLight;
 	font-weight: 50;
 }
+
+@media only screen and (min-width: 768px) {
+	.block-grid.two-up > li:nth-child(2n+1),
+	.block-grid.three-up > li:nth-child(3n+1),
+	.block-grid.four-up > li:nth-child(4n+1),
+	.block-grid.five-up > li:nth-child(5n+1) {
+	    clear: both;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.block-grid.mobile-two-up > li:nth-child(2n+1),
+	.block-grid.mobile-three-up > li:nth-child(3n+1),
+	.block-grid.mobile-four-up > li:nth-child(4n+1),
+	.block-grid.mobile-five-up > li:nth-child(5n+1) {
+	    clear: both;
+	}
+}
