@@ -1,9 +1,6 @@
 class ContactController < ApplicationController
 	before_filter :check_honeypots, :only => [:create]
 	before_filter :get_email_addresses, :only => [:index, :create] 
-	layout "sidebar_layout", :except => "completed"
-
-  #caches_action :index
   
   def check_honeypots
     return true if honeypot_untouched?

@@ -68,6 +68,12 @@ header{
 			h1{background-color: transparentize($dyw-purple, 0.1)};
 		}
 
+		&.pink{
+			border-color: $dyw-pink;
+			background-image: url(header_contact.jpg);
+			h1{background-color: transparentize($dyw-pink, 0.1)};
+		}
+
 		h1.subheader{
 			margin-top: 0;
 			background-color: transparentize($dyw-black, 0.1);	
