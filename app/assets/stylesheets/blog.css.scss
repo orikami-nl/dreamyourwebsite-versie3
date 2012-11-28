@@ -14,4 +14,13 @@
 			text-transform: uppercase;
 		}
 	}
+
+	.tag-cloud{
+		a{
+			color: $dyw-purple;
+		}
+		a:hover{
+			color: darken($dyw-purple, 20%);
+		}
+	}
 }

@@ -11,14 +11,16 @@
       %hr
         %h5 Selecteer op schrijver:
         #associate-selection
-          - @associates.each do |associate|
-            .selection-picture.inner-shadow.lifted.shadow-small
-              = link_to image_tag(associate.avatar_url(:thumb).to_s, :alt => associate.name, :title => associate.name), associate_posts_path(associate)
+          %ul.block-grid.five-up
+            - @associates.each do |associate|
+              %li
+                .selection-picture.inner-shadow.lifted.shadow-small
+                  = link_to image_tag(associate.avatar_url(:thumb).to_s, :alt => associate.name, :title => associate.name), associate_posts_path(associate)
         %div{:style => "clear:both"}
         %hr
           %h5 Selecteer op onderwerp:
-          #tagcloud
-            - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+          .tag-cloud
+            - tag_cloud(@tags, %w(css1 css2 css3 css4 css5 css6)) do |tag, css_class|
               = link_to tag.name, {:controller => :blog, :action => :index, :tag => tag.name }, :class => css_class
             %div{:style => "clear:both"}
           %hr
