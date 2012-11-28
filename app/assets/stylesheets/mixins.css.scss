@@ -22,11 +22,11 @@
 }
 
 @mixin border-bottom{
-	// padding-bottom: 40px;
-	border-bottom-color: transparentize($dyw-light-blue,0.5);
+	padding-bottom: 20px;
+	border-bottom-color: #ddd;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
-	// margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 @mixin lifted-shadow{

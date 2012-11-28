@@ -1,24 +1,126 @@
-= header_for :diensten
+= header_for "We bouwen toffe shit", "We doen dit en dat", "green"
 
-.container#products-content
+.container#products
   .row
-    .twelve.columns
-      #innovation.service-text
-        .service-image.innovation
-          %h3= mercury_content_for :innovation_header, :simple
-        = mercury_content_for :innovation_body
-      %div{:style => "clear:both"}
-      #development.service-text
-        .service-image.development
-          %h3= mercury_content_for :development_body_header, :simple
-        = mercury_content_for :development_body
-      %div{:style => "clear:both"}
-      #workshop.service-text
-        .service-image.workshop
-          %h3= mercury_content_for :workshop_header, :simple
-        = mercury_content_for :workshop_body
-      %div{:style => "clear:both"}
-      = link_to "Neem contact op", {:action => "index", :controller => "contact", :to => "info@dreamyourweb.nl", :subject => "Diensten dreamyourweb"}, :class => "button"
+    .two.columns.hide-for-small#barServices
+      .sticky-side-nav{"data-magellan-expedition"=>'fixed'}
+        %h5 Diensten
+        %ul.side-nav
 
-- content_for :sidebar do
-  = render 'sidebar'
+          %li{'data-magellan-arrival'=>'a'}= link_to "Ons kunnen", "#a"
+          %li{'data-magellan-arrival'=>'b'}= link_to "Het proces", "#b"
+          %li{'data-magellan-arrival'=>'c'}= link_to "Lean", "#c"
+          %li{'data-magellan-arrival'=>'d'}= link_to "Jouw project", "#d"
+          %li{'data-magellan-arrival'=>'e'}= link_to "De technieken", "#e"
+
+    .ten.columns
+
+      #a.border-bottom{'data-magellan-destination'=>'a'}
+        .row
+          .twelve.columns
+            %h2 Ons kunnen
+            %h2.subheader
+              %small We bieden drie lean producten die je droom helpen waarmaken.
+        .row
+          #innovation.service-text.four.columns
+            .service-image.innovation
+              %h4= mercury_content_for :innovation_header, :simple
+            = mercury_content_for :innovation_body
+          #development.service-text.four.columns
+            .service-image.development
+              %h4= mercury_content_for :development_body_header, :simple
+            = mercury_content_for :development_body
+          #workshop.service-text.four.columns
+            .service-image.workshop
+              %h4= mercury_content_for :workshop_header, :simple
+            = mercury_content_for :workshop_body
+
+      #b.border-bottom{'data-magellan-destination'=>'b'}
+        .row
+          .twelve.columns
+            %h2 Ons gestroomlijnde proces
+            %h2.subheader
+              %small Als onze projecten worden lean en agile aangepakt.
+        .row
+          .twelve.columns
+            %ul.block-grid.five-up.mobile-three-up.flow-circles
+              %li
+                =image_tag("flow-circle-1.png")
+                %p Jouw idee
+              %li
+                =image_tag("flow-circle-2.png")
+                %p Kern van het idee
+              %li
+                =image_tag("flow-circle-3.png")
+                %p Validatie
+              %li
+                =image_tag("flow-circle-4.png")
+                %p Kern product
+              %li
+                =image_tag("flow-circle-5.png")
+                %p Optimalisatie
+
+      #c.border-bottom.section-lean{'data-magellan-destination'=>'c'}
+        .row
+          .twelve.columns
+            %h2 Wat is lean innovation
+            %h2.subheader
+              %small De laatste lean-principes rechtstreeks uit Silicon Valley.
+
+        .row
+          .four.columns
+            =image_tag("lean-development.png")
+            %h3
+              Lean software development
+            %h3.subheader
+              %small is a translation of lean manufacturing and lean IT principles and practices to the software development domain.Adapted from the Toyota Production System, a pro-lean subculture is emerging from within the Agile community.
+          .eight.columns
+            %i.foundicon-tools
+              %h4 Eliminate waste
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            %i.foundicon-idea
+              %h4 Amplify learning
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            %i.foundicon-clock
+              %h4 Decide as late as possible
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            %i.foundicon-flag
+              %h4 Deliver as fast as possible
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            %i.foundicon-star
+              %h4 Empower the team
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            %i.foundicon-lock
+              %h4 Build integrity in
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            %i.foundicon-globe
+              %h4 See the whole
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      #d.border-bottom{'data-magellan-destination'=>'d'}
+        .row
+          .twelve.columns
+            %h2 Jouw project
+            %h2.subheader
+              %small Zo pakken we jouw project aan om een geweldig product neer te zetten.
+
+
+      #e{'data-magellan-destination'=>'e'}
+        .row
+          .twelve.columns
+            %h2 De technieken die we beheersen
+            %h2.subheader
+              %small Onze wizards zijn bekend met alle hippe technieken.
+        .row
+          .four.columns
+            %a{:href => "/products/tech"}
+              %img{:src => "/assets/tech/techthumb.png"}/
+          .eight.columns
+            %p Bij dreamyourweb streven we er naar om het best mogelijke product voor onze klanten neer te zetten. Om dit mogelijk te maken, maken we gebruik van de krachtigste en modernste technieken. Zo leveren wij u een online applicatie die schaalbaar is naar uw behoeften. Als uw bedrijf groeit, groeit uw applicatie&nbsp;met u mee.
+            %p Bekijk onze technologie pagina voor een overzicht van de technologien die wij gebruiken.
+            =link_to "Technologie", "/products/tech", class: "button"

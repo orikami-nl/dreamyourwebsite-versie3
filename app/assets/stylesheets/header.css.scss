@@ -1,31 +1,42 @@
 header{
-	margin-top: -$nav-margin;
 	margin-bottom: $nav-margin;
 
 	.header-container{
-		@include respondTo(smallScreen){
-			height: 100px;
-			background-size: auto 100%;
-		}
-		height: 175px;
-		overflow: hidden;
+		border-top-style: solid;
+		border-top-width: 3px;
+		border-top-color: $dyw-your;
+		background-size: auto 100%;
+		min-height: 175px;
 		background-color: $dyw-black;
 		background-position: center top;
 		background-repeat: no-repeat;
+		background-size: auto 100%;
 
 		h1{
-			position: relative;
-			font-size: ms(10);
-			line-height: ms(10);
-			opacity: 0.7;
-			// position: absolute;
-			top: 54px;
+			background-color: transparentize(green, 0.1);
+			display: inline-block;
+			padding: 3px 10px 10px 10px;
+			margin-top: 20px;
+			color: $dyw-very-light-blue;
 			@include respondTo(smallScreen){
-				font-size: ms(8);
-				line-height: ms(8);
-				top: 25px;
+				// font-size: ms(8);
+				// line-height: ms(8);
+			}
+			float: left;
+			clear: both;
+		}
+		h1.subheader{
+			margin-top: 0;
+			background-color: transparentize($dyw-black, 0.1);	
+			padding: 0;
+			small{
+				padding: 0 6px 6px 6px;
+				line-height: 60%;
+				color: $white;
 			}
 		}
+
+		background-image: url(header_portfolio.jpg);
 
 		&.diensten{
 			background-color: #01288d;
@@ -40,6 +51,12 @@ header{
 		&.about{
 			background-color: #316497;
 			background-image: url(header_about.jpg);
+		}
+
+		&.green{
+			background-color: #75a557;
+			border-color: $dyw-green;
+			background-image: url(header_portfolio.jpg);
 		}
 	}
 

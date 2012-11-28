@@ -60,7 +60,11 @@
 	}
 }
 
-#products-content{
+#products{	
+
+	h1, h2, a h1, a h2{
+		color: $dyw-green;
+	}
 
 	.service-image{
 		h3{
@@ -71,9 +75,6 @@
 		padding-left: 80px;
 		background-repeat: no-repeat;
 	}
-
-	.service-text {float:right;
-		width: 100%;}
 
 	.service-image.right{
 		float: right;
@@ -100,4 +101,25 @@
 		background-image: url(service-innovation.png);
 	}
 
+}
+
+.flow-circles{
+	p{
+		text-align: center;
+		font-weight: bold;
+	}
+	&.block-grid.five-up > li{
+		padding: 0 20px 0 20px;
+	}
+}
+
+.section-lean{
+	i{
+		font-size: ms(2);
+		> h4{
+			position: relative;
+			top: -4px;
+			display: inline;
+		}
+	}
 }

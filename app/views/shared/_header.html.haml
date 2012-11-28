@@ -1,6 +1,7 @@
 - content_for :header do
-  .header-container{class: title}
+  .header-container{class: color_class}
     .row
       .twelve.columns
         %h1 #{title}
-        
+        %h1.subheader 
+          %small #{subheader}

@@ -6,6 +6,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.foundation.magellan
 //= require modernizr.foundation
 //= require jquery.foundation.tooltips
 //= require shCore.js

@@ -1,3 +1,9 @@
+.container.home{
+	h1, h2, a h1, a h2{
+		color: $dyw-your;
+	}
+}
+
 #partner-logos{
 	.has-tip{
 		border: none;
@@ -6,13 +12,15 @@
 }
 
 #dreamteam-header{
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: $dyw-your;
 	background-image: url(dreamteam-home.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-color: black;
 	background-size: auto 100%;
 	padding-top: 30px;
-	margin-top: -$nav-margin;
 	margin-bottom: 0;
 
 	@media only screen and (max-width: 700px){
@@ -25,10 +33,10 @@
 }
 
 #we-do-this{
+	@include border-bottom();
 	margin-top: -$nav-margin;
 	padding-top: 30px;
 	margin-bottom: 0;
-	background-color: #BCE4EE;
 	li{
 		text-align: center;
 		p{margin: 0;}
@@ -59,12 +67,11 @@ h1.super{
 	span.big-ass{
 		clear: both;
 		float: left;
-		font-size: 120px;
-		line-height: 96px;
+		font-size: 100px;
+		line-height: 100px;
 		background-color: transparentize($dyw-your, 0.1);
 		display: inline-block;
-		padding: 15px;
-		padding-bottom: 0;
+		padding: 5px 15px 15px 15px;
 		margin: 0;
 		color: $dyw-very-light-blue;
 
@@ -102,8 +109,8 @@ h1.super{
 
 
 #projects-container-home{
+	@include border-bottom();
 	padding-top: 30px;
-	background-color: $dyw-blue;
 	.project-container{
 		h3{
 	   		a{
@@ -117,10 +124,16 @@ h1.super{
 }
 
 #manifesto{
+	@include border-bottom();
 	.button-clean{
 		margin-bottom: 0;
 	}
 	.dyw-moon{
 		margin-left: 50px;
 	}
+}
+
+#barServices{
+	position: relative;
+	font-weight: 300;
 }

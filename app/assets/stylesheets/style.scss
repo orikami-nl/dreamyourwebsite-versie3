@@ -1,6 +1,5 @@
 html,body{
-	background-color: $dyw-very-light-blue;
-  font-family: OpenSansRegular, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	background-color: white;
 }
 
 .row.main-container{
@@ -41,4 +40,30 @@ html,body{
 			bottom: -13px;
 		}
 	}
+}
+
+.sticky-side-nav{
+	h5{
+		color: #888;
+		padding-bottom: 5px;
+		margin-bottom: 0;
+		text-transform:uppercase;
+		font-size: 90%;
+		border-bottom-style: solid;
+		border-bottom-color: black;
+		border-bottom-width: 1px;
+	}
+}
+
+.border-bottom{
+	@include border-bottom();
+}
+
+h2 + h2.subheader{
+	margin-top: -15px;
+}
+
+small{
+	font-family: OpenSansLight;
+	font-weight: 50;
 }
