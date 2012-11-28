@@ -21,4 +21,8 @@ class Project < ActiveRecord::Base
 	def next_project
 	  self.class.first(:conditions => ["id > ?", id])
 	end
+
+	def self.get_random(n=1)
+		return self.find(:all).sample(n)
+	end
 end

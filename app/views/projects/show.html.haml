@@ -1,32 +1,43 @@
-= header_for :portfolio
+= header_for @project.title, "Project subheader", "orange"
 
-.container#project-show
+.container#projects
   .row
-    .eight.columns
-      #huge-project-image
-      = image_tag @project.full_picture.to_s
-    .four.columns
-      %h4
-        - if !@previous_project.nil?
-          = link_to "<< ", project_path(@previous_project), :class => "arrow"
-        = @project.title
-        - if !@next_project.nil?
-          = link_to " >>", project_path(@next_project), :class => "arrow"
+    .three.columns.fixed-side-nav
+      %h5 Andere projecten
+      %ul.side-nav
+        - @projects.each do |project|
+          %li= link_to project.title, project_path(project)
+      .panel.project-info
+        %h5 
+          Type project
+        %ul
+          %li= @project.project_type
+        %h5 Diensten
+        %ul
+          %li Dienst 1
+          %li Dienst 2
+        %h5 Technieken
+        %ul
+          %li Techniek 1
+          %li Techniek 2
+          %li Techniek 3
+          %li Techniek 4
+          %li Techniek 5
+          %li Techniek 6
+    .nine.columns
+      .row
+        .twelve.columns
+          %h2 Value proposition
+          %h4.subheader
+            %small= @project.body.html_safe
+      .row
+        .eight.columns
+          #huge-project-image
+            = image_tag @project.full_picture.to_s
+        .four.columns          
+          %h5 Beschrijving
+          %p= @project.body.html_safe
+          - if admin_signed_in?
+            = link_to "Edit Project", edit_project_path(@project), :class => "bookman-link admin"
 
-      - if !@project.external_url.empty?
-        = link_to "Bekijk de website", "http://" + @project.external_url.to_s, :target => "_blank", :class => "bookman-link"
-      - else
-        %p
-          Deze website is momenteel nog in ontwikkeling en dus nog niet publiekelijk toegankelijk.
 
-      %h5 Datum
-      = @project.created_at.to_date
-      
-      %h5 Beschrijving
-      %p= @project.body.html_safe
-      = link_to "Ga terug naar overzicht", projects_path, :class => "bookman-link"
-      - if admin_signed_in?
-        %span.admin
-          %br
-            %br/
-        = link_to "Edit Project", edit_project_path(@project), :class => "bookman-link admin"

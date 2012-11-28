@@ -42,7 +42,7 @@ html,body{
 	}
 }
 
-.sticky-side-nav{
+.sticky-side-nav, .fixed-side-nav, .panel{
 	h5{
 		color: #888;
 		padding-bottom: 5px;
@@ -53,6 +53,23 @@ html,body{
 		border-bottom-color: black;
 		border-bottom-width: 1px;
 	}
+}
+
+.panel {
+	h5{
+		border-bottom-color: #aaa;
+		margin-bottom: 5px;
+	}
+
+	ul, ul li{
+    	list-style: none
+  	}
+  	ul{
+  		margin-bottom: 20px;
+  	}
+  	li{
+  		padding-bottom:6px;
+  	}
 }
 
 .border-bottom{

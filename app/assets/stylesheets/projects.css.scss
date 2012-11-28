@@ -1,4 +1,13 @@
-.container#projects{
+.container#projects, #project{
+
+  h1, h2, a h1, a h2, h3 a{
+    color: $dyw-orange;
+  }
+
+  h4.subheader, h4.subheader small{
+    color: #777;
+    font-family: OpenSansRegular
+  }
 
   @media only screen and (min-width: 1441px) {
     .block-grid.three-up > li:nth-child(3n+1) {
@@ -25,7 +34,7 @@
     margin-bottom: 5px;
   }
   margin-bottom: 0;
-  h3{
+  h4{
     @include respondTo(smallScreen){
       font-size: ms(2);
     }
@@ -35,8 +44,11 @@
 .project-container{
     margin: 0 auto;
     max-width: 280px;
-    h5{
+    h6{
       padding-left: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-family: OpenSansBold;
     }
 }
 
@@ -74,14 +86,13 @@
     max-width: 280px;
     padding-top: 33%;
     height: 100%;   
-    color: $dyw-your;
+    color: $dyw-orange;
     text-decoration: none;
     text-align: center;
     vertical-align: text-bottom;
     font-size: ms(3);
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.6);
-    font-family: BebasNeueRegular;
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)";
   }

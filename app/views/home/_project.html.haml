@@ -1,9 +1,9 @@
 %li
   .project-container
-    %h5= project.project_type
+    %h6= project.project_type
     .project-image
       = link_to project_path(project) do
         = image_tag(project.picture_url(:portfolio_full).to_s)
         .image_overlay Lees Meer
     .project-description
-      %h3= link_to(project.title, project_path(project))
+      %h4= link_to(project.title, project_path(project))

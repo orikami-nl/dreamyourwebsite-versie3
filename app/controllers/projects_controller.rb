@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @projects = Project.get_random(4)
 		@project = Project.find_by_title_for_url(params[:id])
 		@previous_project = @project.previous_project
 		@next_project = @project.next_project
