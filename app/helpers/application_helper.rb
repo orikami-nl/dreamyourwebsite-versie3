@@ -86,7 +86,7 @@ module ApplicationHelper
   end
 
   def header_for(header, subheader=nil, color_class=nil, background=nil)
-    render partial: "/shared/header", locals: {title: header, subheader: subheader, color_class: color_class}
+    render partial: "/shared/header", locals: {title: header, subheader: subheader, color_class: color_class, background: background}
   end
 
 end

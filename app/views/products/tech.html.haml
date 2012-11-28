@@ -6,81 +6,81 @@
       .sticky-side-nav{"data-magellan-expedition"=>'fixed'}
         %h5 Technologien
         %ul.side-nav
-          %li{'data-magellan-arrival'=>'a'}= link_to "Ruby on Rails", "#a"
-          %li{'data-magellan-arrival'=>'b'}= link_to "HTML5", "#b"
-          %li{'data-magellan-arrival'=>'c'}= link_to "CSS3", "#c"
-          %li{'data-magellan-arrival'=>'d'}= link_to "iOS 6", "#d"
-          %li{'data-magellan-arrival'=>'e'}= link_to "jQuery", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "MailChimp", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "Mercury editor", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "Scalable vector graphics", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "Heroku", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "Amazon web services", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "Cucumber", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "Railsonfire", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "Facebook applicaties", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "node.js", "#e"
-          %li{'data-magellan-arrival'=>'e'}= link_to "d3.js", "#e"
+          %li{'data-magellan-arrival'=>'ror'}= link_to "Ruby on Rails", "#ror"
+          %li{'data-magellan-arrival'=>'html5'}= link_to "HTML5", "#html5"
+          %li{'data-magellan-arrival'=>'css3'}= link_to "CSS3", "#css3"
+          %li{'data-magellan-arrival'=>'ios'}= link_to "iOS 6", "#ios"
+          %li{'data-magellan-arrival'=>'jquery'}= link_to "jQuery", "#jquery"
+          %li{'data-magellan-arrival'=>'mailchimp'}= link_to "MailChimp", "#mailchimp"
+          %li{'data-magellan-arrival'=>'mercury'}= link_to "Mercury editor", "#mercury"
+          %li{'data-magellan-arrival'=>'svg'}= link_to "Scalable vector graphics", "#svg"
+          %li{'data-magellan-arrival'=>'heroku'}= link_to "Heroku", "#heroku"
+          %li{'data-magellan-arrival'=>'aws'}= link_to "Amazon web services", "#aws"
+          %li{'data-magellan-arrival'=>'cucumber'}= link_to "Cucumber", "#cucumber"
+          %li{'data-magellan-arrival'=>'rof'}= link_to "Railsonfire", "#rof"
+          %li{'data-magellan-arrival'=>'facebook'}= link_to "Facebook applicaties", "#facebook"
+          %li{'data-magellan-arrival'=>'nodejs'}= link_to "node.js", "#nodejs"
+          %li{'data-magellan-arrival'=>'d3js'}= link_to "d3.js", "#d3js"
 
     .ten.columns
       %ul.block-grid.three-up.mobile-two-up
-        %li.tech-container
+        %li.tech-container#ror{'data-magellan-destination'=>'ror'}
           = link_to image_tag("tech/RoR.png"), "http://rubyonrails.org/"
           %h4= link_to("Ruby on Rails", "http://rubyonrails.org/")
           %p= mercury_content_for(:ror)
-        %li.tech-container
+        %li.tech-container#html5{'data-magellan-destination'=>'html5'}
           = link_to image_tag("tech/html5.png"), "http://www.w3.org/TR/html5/"
           %h4= link_to("HTML5", "http://www.w3.org/TR/html5/")
           %p= mercury_content_for(:html5)
-        %li.tech-container
+        %li.tech-container#ccs3{'data-magellan-destination'=>'ccs3'}
           = link_to image_tag("tech/css3.png"), "http://www.w3.org/TR/CSS/"
           %h4= link_to("CSS3", "http://www.w3.org/TR/CSS/")
           %p= mercury_content_for(:css3)
-        %li.tech-container
+        %li.tech-container#ios{'data-magellan-destination'=>'ios'}
           = link_to image_tag("tech/ios5.png"), "http://www.apple.com/nl/ios/"
           %h4= link_to("iOS 6", "http://www.apple.com/nl/ios/")
           %p= mercury_content_for(:ios5)
-        %li.tech-container
+        %li.tech-container#jquery{'data-magellan-destination'=>'jquery'}
           = link_to image_tag("tech/jquery.png"), "http://jquery.com/"
           %h4= link_to("jQuery", "http://jquery.com/")
           %p= mercury_content_for(:jquery)
-        %li.tech-container
+        %li.tech-container#mailchimp{'data-magellan-destination'=>'mailchimp'}
           = link_to image_tag("tech/mailchimp.png"), "http://mailchimp.com"
           %h4= link_to("MailChimp", "http://mailchimp.com")
           %p= mercury_content_for(:mailchimp)
-        %li.tech-container
+        %li.tech-container#mercury{'data-magellan-destination'=>'mercury'}
           = link_to image_tag("tech/mercury.png"), "http://jejacks0n.github.com/mercury/"
           %h4= link_to("Mercury editor", "http://jejacks0n.github.com/mercury/")
           %p= mercury_content_for(:mercury)
-        %li.tech-container
+        %li.tech-container#svg{'data-magellan-destination'=>'svg'}
           = link_to image_tag("tech/svg.png"), "http://www.w3.org/Graphics/SVG/"
           %h4= link_to("Scalable vector graphics", "http://www.w3.org/Graphics/SVG/")
           %p= mercury_content_for(:svg)
-        %li.tech-container
+        %li.tech-container#heroku{'data-magellan-destination'=>'heroku'}
           = link_to image_tag("tech/heroku.png"), "http://www.heroku.com/"
           %h4= link_to("Heroku", "http://www.heroku.com/")
           %p= mercury_content_for(:heroku)
-        %li.tech-container
+        %li.tech-container#aws{'data-magellan-destination'=>'aws'}
           = link_to image_tag("tech/aws.png"), "http://aws.amazon.com/"
           %h4= link_to("Amazon web services", "http://aws.amazon.com/")
           %p= mercury_content_for(:aws)
-        %li.tech-container
+        %li.tech-container#cucumber{'data-magellan-destination'=>'cucumber'}
           = link_to image_tag("tech/cucumber.png"), "http://cukes.info/"
           %h4= link_to("Cucumber", "http://cukes.info/")
           %p= mercury_content_for(:cucumber)
-        %li.tech-container
+        %li.tech-container#rof{'data-magellan-destination'=>'rof'}
           = link_to image_tag("tech/railsonfire.png"), "http://www.railsonfire.com/"
           %h4= link_to("Railsonfire", "http://www.railsonfire.com/")
           %p= mercury_content_for(:railsonfire)
-        %li.tech-container
+        %li.tech-container#facebook{'data-magellan-destination'=>'facebook'}
           = link_to image_tag("tech/facebook.png"), "http://developers.facebook.com/"
           %h4= link_to("Facebook applicaties", "http://developers.facebook.com/")
           %p= mercury_content_for(:facebook)
-        %li.tech-container
+        %li.tech-container#nodejs{'data-magellan-destination'=>'nodejs'}
           = link_to image_tag("tech/nodejs.png"), "http://nodejs.org/"
           %h4= link_to("node.js", "http://nodejs.org/")
           %p= mercury_content_for(:nodejs)
-        %li.tech-container
+        %li.tech-container#d3js{'data-magellan-destination'=>'d3js'}
           = link_to image_tag("tech/d3js.png"), "http://d3js.org/"
           %h4= link_to("d3.js", "http://d3js.org/")
           %p= mercury_content_for(:d3js)
