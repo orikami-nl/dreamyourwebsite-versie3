@@ -1,7 +1,11 @@
 .container#projects, #project{
 
-  h1, h2, a h1, a h2, h3 a{
+  h1, h2, a h1, a h2, h3 a, h4 a{
     color: $dyw-orange;
+  }
+
+  h4 a:hover{
+    color: darken($dyw-orange, 20%);
   }
 
   h4.subheader, h4.subheader small{

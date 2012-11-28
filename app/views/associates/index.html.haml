@@ -1,35 +1,64 @@
-= header_for :about
+= header_for "Over ons", "Wij van dreamyourweb raden dreamyourweb aan", "red"
 
 .container#associates
   .row
-    .eight.columns
+    .two.columns.hide-for-small#barServices
+      .sticky-side-nav{"data-magellan-expedition"=>'fixed'}
+        %h5 Over ons
+        %ul.side-nav
+          %li{'data-magellan-arrival'=>'over-dyw'}= link_to "Over dreamyourweb", "#over-dyw"
+          %li{'data-magellan-arrival'=>'dreamteam'}= link_to "Het dreamteam", "#dreamteam"
+          %li{'data-magellan-arrival'=>'culture'}= link_to "De werkvloer", "#culture"
+          %li{'data-magellan-arrival'=>'buzz'}= link_to "Buzz", "#buzz"
 
-      %h2 You dream it, together we realize it!
-      = mercury_content_for :body
+    .ten.columns
 
-      %h3 Onze mensen
-    
-      - @associates.each do |associate|
-        .associate-container
-          .row
-            .twelve.columns
-              %h4= link_to associate.name, associate_path(associate)
-          .row
-            .associate-photo-index.three.columns
-              = image_tag associate.avatar_url(:medium).to_s
-            .associate-description.nine.columns
-              = associate.description.html_safe
-              %dl.sub-nav
-                %dd= link_to 'Bekijk blog', associate_posts_path(associate), :class => "bookman-link"
-                %dd= link_to 'Lees bio', associate_path(associate), :class => "bookman-link"
-                %dd= link_to 'Contact', {:action => "index", :controller => "contact", :aan => build_mail_address(associate.name)}, :class => "bookman-link"
-                - if admin_signed_in?
-                  %dd= link_to 'Edit', edit_associate_path(associate), :class => "bookman-link admin"
-                  %dd= link_to 'Destroy', associate, confirm: 'Weet je het zeker? Het is namelijk ook mogelijk om deze associates op non-actief te zetten via edit. Op deze manier blijven zijn blogposts wel bestaan.', method: :delete, :class => "bookman-link admin"              
+      .border-bottom#over-ons
+        .row
+          .twelve.columns
+            %h2 You dream it, together we realize it!
+            %h2.subheader 
+              %small= mercury_content_for :body
+            .row
+              .six.columns
+                %h4 Ontwikkel alleen wat nodig is
+                %p Niemand zit te wachten op een nodeloos ingewikkelde toepassing. We houden er dan ook van om snel tot de kern te komen van een idee. We stellen de juiste vragen, waarna we eerst bouwen wat echt nodig is. Daarna kijken we naar wat er nog mist. Op deze manier krijgen onze klanten en hun gebruikers precies wat ze nodig hebben; niet meer en niet minder.
+              .six.columns
+                %h4 Test je aannames
+                %p Omdat je zeker wilt weten dat je idee ook in de praktijk gaat werken, testen we doorlopend of de applicatie bereikt wat hij moet bereiken. Door doorlopend te testen komen we er al vroeg achter waar we moeten bijsturen.
+            .row
+              .six.columns
+                %h4 Werk samen met de klant
+                %p Twee hoofden zijn beter dan een. Wij gaan er vanuit dat onze klanten experts zijn op het gebied van hun business en een visie hebben op hoe het beter kan. Door samenwerkingen aan te gaan kunnen we deze visie waarmaken in een applicatie op maat.
+              .six.columns
+                %h4 Optimaliseer op basis van data
+                %p Analyseren zit in ons bloed. Omdat we allemaal academisch zijn opgeleid weten we wat het is om onderzoek te doen. We zoeken dan ook constant naar de beste verwoordingen en layout, op basis van hoe de gebruikers met de applicatie omgaan.
 
-      - if admin_signed_in?
-        = link_to 'New associates', new_associate_path, :class => "bookman-link admin"
+      .border-bottom#dreamteam
+        .row
+          .twelve.columns
+            %h2 Onze mensen
+            %h2.subheader 
+              %small Wij zijn 5 wetenschappers met verschillende disciplines, brede interesses en een passie voor mooie dingen maken!
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            %ul.block-grid.five-up.mobile-three-up#head-shots
+              - @associates.each do |associate|
+                %li.associate-container
+                  %h6.job-title Lean person
+                  = link_to associate_path(associate) do
+                    = image_tag associate.avatar_url(:medium).to_s
+                    %h6.name= associate.name
 
-    .four.columns
-      %h3 Onze kernwaarden
-      = mercury_content_for :sidebar
+      .border-bottom#culture
+        .row
+          .twelve.columns
+            %h2 Altijd gezellig op de werkvloer
+            %h2.subheader 
+              %small Fun staat voorop. Wij zorgen altijd voor een gezellig kantoor.
+
+      .border-bottom#buzz
+        .row
+          .twelve.columns
+            %h2 Waar hebben we het nu over?
+            %h2.subheader 
+              %small Volg ons op twitter en facebook!

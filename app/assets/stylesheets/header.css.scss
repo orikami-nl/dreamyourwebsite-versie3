@@ -25,16 +25,6 @@ header{
 			float: left;
 			clear: both;
 		}
-		h1.subheader{
-			margin-top: 0;
-			background-color: transparentize($dyw-black, 0.1);	
-			padding: 0;
-			small{
-				padding: 0 6px 6px 6px;
-				line-height: 60%;
-				color: $white;
-			}
-		}
 
 		background-image: url(header_portfolio.jpg);
 
@@ -57,11 +47,30 @@ header{
 			background-color: #75a557;
 			border-color: $dyw-green;
 			background-image: url(header_portfolio.jpg);
+			h1{background-color: transparentize($dyw-green, 0.1)};
 		}
 
 		&.orange{
 			border-color: $dyw-orange;
 			background-image: url(header_portfolio.jpg);
+			h1{background-color: transparentize($dyw-orange, 0.1)};
+		}
+
+		&.red{
+			border-color: $dyw-red;
+			background-image: url(header_about.jpg);
+			h1{background-color: transparentize($dyw-red, 0.1)};
+		}
+
+		h1.subheader{
+			margin-top: 0;
+			background-color: transparentize($dyw-black, 0.1);	
+			padding: 0;
+			small{
+				padding: 0 6px 6px 6px;
+				line-height: 60%;
+				color: $white;
+			}
 		}
 	}
 

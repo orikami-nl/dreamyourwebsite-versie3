@@ -35,8 +35,6 @@
           #huge-project-image
             = image_tag @project.full_picture.to_s
         .four.columns          
-          %h5 Beschrijving
-          %p= @project.body.html_safe
           - if admin_signed_in?
             = link_to "Edit Project", edit_project_path(@project), :class => "bookman-link admin"
 
