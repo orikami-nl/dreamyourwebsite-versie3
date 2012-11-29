@@ -10,9 +10,7 @@
 }
 
 #products, #tech{
-	h1, h2, a h1, a h2{
-		color: $dyw-green;
-	}
+	@include page-color($dyw-green);
 }
 
 #products{	

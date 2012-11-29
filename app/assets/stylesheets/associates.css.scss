@@ -5,11 +5,10 @@
 }
 
 #associates{
-	h1, h2, a h1, a h2, h3 a, h4 a{
-    	color: $dyw-red;
-  	}
-  	h6.name{
-		text-align: center;
+  @include page-color($dyw-red);
+
+	h6.name{
+	 text-align: center;
 	}
 	h6.job-title{
 		text-transform: uppercase;

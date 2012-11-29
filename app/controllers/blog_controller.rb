@@ -10,18 +10,14 @@ class BlogController < ApplicationController
 
   def index
     kiss_record "View blog"
+    show_draft = admin_signed_in? ?  true : false ;
+
   	if !params[:tag].nil?
-      if admin_signed_in?
-        @posts = Post.tagged_with(params[:tag]).page(params[:page]).per(5)
-      else
-        @posts = Post.where(:draft => false).tagged_with(params[:tag]).page(params[:page]).per(5)
-      end
+      @posts = Post.drafts(show_draft).tagged_with(params[:tag]).page(params[:page]).per(5)
+    elsif !params[:name].nil?
+      @posts = Post.drafts(show_draft).includes(:associate).where(:associates => {:name => params[:name]}).page(params[:page]).per(5)
   	else
-      if admin_signed_in?
-  		  @posts = Post.page(params[:page]).per(5)
-      else
-        @posts = Post.where(:draft => false).page(params[:page]).per(5)
-      end
+      @posts = Post.drafts(show_draft).page(params[:page]).per(5)
   	end
   	@associates = Associate.all
   end

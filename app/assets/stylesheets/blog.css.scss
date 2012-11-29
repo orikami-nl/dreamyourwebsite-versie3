@@ -1,8 +1,7 @@
 #blog{
-	h1, h2, a h1, a h2, h2 a{
-		color: $dyw-purple;
-	}
 
+  @include page-color($dyw-purple);
+  
 	h2{
 		margin-bottom: 0;
 		font-family: OpenSansBold;

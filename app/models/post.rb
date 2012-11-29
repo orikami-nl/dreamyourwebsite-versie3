@@ -13,8 +13,16 @@ class Post < ActiveRecord::Base
 		self.title_for_url = self.title.to_url
 	end
 
-	
 	def to_param
 		self.title_for_url
 	end
+
+	def self.drafts(show=false)
+    if false
+      self.where(:draft => false)
+    else
+    	self
+    end
+  end
+
 end
