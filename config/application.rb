@@ -55,7 +55,7 @@ module Dywsite2
     config.assets.enabled = true
     # To get Compass to work
 
-    config.i18n.available_locales = :nl
+    config.i18n.available_locales = [:nl, :en]
 
   end
 end

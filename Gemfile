@@ -49,6 +49,9 @@ gem "ZenTest", "4.6.0"
 gem 'mercury-rails'
 
 gem 'rails-i18n'
+gem 'redcarpet'
+gem 'codemirror-rails'
+
 
 
 group :test do

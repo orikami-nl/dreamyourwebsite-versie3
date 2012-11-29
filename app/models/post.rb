@@ -25,4 +25,15 @@ class Post < ActiveRecord::Base
     end
   end
 
+  rails_admin do 
+    edit do
+      field :excerpt, :text do
+        codemirror true
+      end
+      field :body, :text do
+        codemirror true
+      end
+    end
+  end 
+
 end

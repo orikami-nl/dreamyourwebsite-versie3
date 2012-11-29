@@ -1,12 +1,12 @@
-%p= link_to "Geef alle artikelen weer", blog_path, :class => "bookman-link"
-%h5 Selecteer op schrijver:
-#associate-selection
+%p= link_to "Alle artikelen", blog_path, :class => "button"
+#associate-selection.border-bottom
+  %h5 Filter op schrijver:
   %ul.block-grid.five-up
     - @associates.each do |associate|
       %li
         .selection-picture.inner-shadow.lifted.shadow-small
           = link_to image_tag(associate.avatar_url(:thumb).to_s, :alt => associate.name, :title => associate.name), {:controller => :blog, :action => :index, :name => associate.name}
-%h5 Selecteer op onderwerp:
+%h5 Filter op onderwerp:
 .tag-cloud
   - tag_cloud(@tags, %w(css1 css2 css3 css4 css5 css6)) do |tag, css_class|
     = link_to tag.name, {:controller => :blog, :action => :index, :tag => tag.name }, :class => css_class
