@@ -1,7 +1,5 @@
 .container.home{
-	h1, h2, a h1, a h2{
-		color: $dyw-your;
-	}
+	@include page-color($dyw-your);
 }
 
 #partner-logos{
@@ -9,6 +7,7 @@
 		border: none;
 		cursor: pointer;
 	}
+	text-align: center;
 }
 
 #dreamteam-header{
@@ -123,7 +122,7 @@ h1.super{
 }
 
 #manifesto{
-	@include border-bottom();
+	// @include border-bottom();
 	.button-clean{
 		margin-bottom: 0;
 	}

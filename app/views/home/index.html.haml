@@ -23,17 +23,17 @@
         %li
           = link_to products_path(:anchor => "innovation") do
             = image_tag("service-innovation.png")
-            %h3 Innovatie consultancy
+            %h4 Innovatie consultancy
           %p Wij ondersteunen je in het innovatie traject
         %li
           = link_to products_path(:anchor => "development") do
             = image_tag("service-development.png")
-            %h3 Software ontwikkeling
+            %h4 Software ontwikkeling
           %p Maatwerk web-apps en mobiele-apps
         %li
           = link_to products_path(:anchor => "workshop") do
             = image_tag("service-workshop.png")
-            %h3 Lean innovatie workshops
+            %h4 Lean innovatie workshops
           %p Leer om lean een succesvol product te ontwikkelen
 
 .container.home#projects-container-home
@@ -50,16 +50,23 @@
 
 .container.home#manifesto
   .row
-    .four.columns.push-eight
-      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
-    .eight.columns.pull-four
+    .twelve.columns
       %h2= mercury_content_for :manifesto_header, :simple
+      %h2.subheader
+        %small Wij houden van gave dingen maken.
+  .row
+    .four.columns
+      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
+    .eight.columns
       = mercury_content_for :manifesto_body
-      = link_to "Lees meer over ons", associates_path, :class => "button-clean"
+      = link_to "Lees meer over ons", associates_path, :class => "button"
 
 .container.home.last#partner-logos
   .row
-    %h2= mercury_content_for :partners_header, :simple
-    %ul.block-grid.four-up.mobile-three-up
-      - if !@partners.nil?
-        = render :partial => 'partner_logo', :collection => @partners, :as => :partner
+    .twelve.columns
+      .panel
+        %h2.subheader
+          %small= mercury_content_for :partners_header, :simple
+        %ul.block-grid.four-up.mobile-three-up
+          - if !@partners.nil?
+            = render :partial => 'partner_logo', :collection => @partners, :as => :partner
