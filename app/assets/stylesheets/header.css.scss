@@ -43,6 +43,12 @@ header{
 			background-image: url(header_about.jpg);
 		}
 
+		&.blue{
+			border-color: $dyw-your;
+			background-image: url(header_portfolio.jpg);
+			h1{background-color: transparentize($dyw-your, 0.1)};
+		}
+
 		&.green{
 			background-color: #75a557;
 			border-color: $dyw-green;
