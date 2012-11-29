@@ -1,3 +1,21 @@
-// Place all the styles related to the contact controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#contact{
+  h1, h2, a h1, a h2{
+    color: $dyw-pink;
+  }
+}
+
+#contact-info{
+
+  h5{
+    color: #888;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    text-transform:uppercase;
+    font-size: 90%;
+  }
+
+  ul, li{
+    list-style: none;
+  }
+
+}

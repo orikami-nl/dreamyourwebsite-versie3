@@ -77,12 +77,14 @@ html,body{
 }
 
 h2 + h2.subheader{
-	margin-top: -15px;
+	margin-top: -5px;
 }
 
-small{
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small{
 	font-family: OpenSansLight;
 	font-weight: 50;
+	display: block;
+	line-height: 150%;
 }
 
 @media only screen and (min-width: 768px) {

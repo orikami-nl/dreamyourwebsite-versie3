@@ -1,7 +1,41 @@
-= header_for "Contact", "Neem contact met ons op", "pink"
+= header_for "Laat van je horen", "Wij zijn dreamyourweb. Een innovatieve software ontwikkelaar in Nijmegen", "pink"
 
 .container#contact
   .row
     .eight.columns
-      = mercury_content_for :body
-      = render 'form'
+      %h2 Neem contact op
+      %h2.subheader
+        %small We zitten recht tegenover het centraal station van Nijmegen. Kom gerust langs om te kijken wat we voor je kunnen betekenen.
+
+      #contact-info
+
+        %h5 Bezoekadres
+        %ul
+          %li Stationsplein
+          %li 6500AA Nijmegen
+
+        %h5 Postadres
+        %ul
+          %li Muntweg 512
+          %li 6532 TS Nijmegen
+
+        %dl
+          %dt Telefoonnummer:
+          %dd +31 (0)24-301 0100
+        
+        %dl
+          %dd
+            %a{:href => "mailto:info@dreamyourweb.nl"} info@dreamyourweb.nl
+        
+        %dl
+          %dt KvK:
+          %dd 52749096
+
+        %dl
+          %dt BTW: 
+          %dd 8505.80.626
+
+        <div id="mapviewer"><iframe id="map" Name="mapFrame" scrolling="no" width="500" height="400" frameborder="0" src="http://www.bing.com/maps/embed/?lvl=16&amp;cp=51.84285225413634~5.85440211904908&amp;sty=r&amp;draggable=true&amp;v=2&amp;dir=0&amp;where1=Stationsplein+13%2C+6512+Nijmegen%2C+Netherlands&amp;form=LMLTEW&amp;pp=51.8429985~5.8544502&amp;mkt=en-us&amp;emid=bbe389a3-5f16-77c5-95d3-e31525c27a9a&amp;w=500&amp;h=400"></iframe><div id="LME_maplinks" style="line-height:20px;"><a id="LME_largerMap" href="http://www.bing.com/maps/?mm_embed=map&amp;cp=51.84285225413634~5.85440211904908&amp;lvl=16&amp;sty=r&amp;where1=Stationsplein+13%2C+6512+Nijmegen%2C+Netherlands&amp;form=LMLTEW" target="_blank">View Larger Map</a>&nbsp;<a id="LME_directions" href="http://www.bing.com/maps/?mm_embed=dir&amp;cp=51.84285225413634~5.85440211904908&amp;rtp=~pos.51.8429985_5.8544502_Stationsplein+13%2C+6512+Nijmegen%2C+Netherlands&amp;lvl=16&amp;sty=r&amp;form=LMLTEW" target="_blank">Get Directions</a>&nbsp;<a id="LME_birdsEye" href="http://www.bing.com/maps/?mm_embed=be&amp;cp=51.84285225413634~5.85440211904908&amp;lvl=18&amp;sty=b&amp;where1=Stationsplein+13%2C+6512+Nijmegen%2C+Netherlands&amp;form=LMLTEW" target="_blank">View Bird's Eye</a></div></div>
+
+
+    .four.columns

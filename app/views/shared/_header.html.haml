@@ -1,7 +1,8 @@
 - content_for :header do
   .header-container{class: color_class, style: !background.nil? ? "background-image: url(headers/#{background})" : ""}
     .row
-      .twelve.columns
+      .four.hide-for-small.columns.push-eight
+      .eight.mobile-four.columns.pull-four
         %h1 #{title}
         %h1.subheader 
           %small #{subheader}

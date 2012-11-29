@@ -27,11 +27,6 @@
    	<%= f.label 'Uw e-mail adres of telefoonnummer:' %><br />
    	<%= f.text_field :info, :style=>'width: 600px;' %>
  	</div>
- 	<div class="sweetness">
-   	<%= text_field_tag('its_so_sweet[email]','john@doe.com',:tabindex=>900,:autocomplete=>"off") %>
-   	<%= text_field_tag('its_so_sweet[name]','',:tabindex=>901,:autocomplete=>"off") %>
-   	<%= check_box_tag('its_so_sweet[agree]',1,false,:tabindex=>902,:autocomplete=>"off") %>
- 	</div>  
 	<div class="actions">
    	<%= f.submit "Verzenden"%>
  	</div>
