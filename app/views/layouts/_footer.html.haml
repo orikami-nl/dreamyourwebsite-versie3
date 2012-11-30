@@ -27,9 +27,10 @@
     %br BTW: 8505.80.626
 
   .four.columns#footer-social
-    %h4 Social
-    %a.fc-webicon.twitter.large{:href => "http://twitter.com/#!/dreamyourweb"} Twitter
-    %a.fc-webicon.facebook.large{:href => "http://www.facebook.com/pages/dreamyourweb/140587376041746"} Facebook
+    %h5 Meer dreamyourweb
+    = link_to "Twitter", "http://twitter.com/#!/dreamyourweb", class: "fc-webicon twitter large"
+    = link_to "Facebook", "http://www.facebook.com/pages/dreamyourweb/140587376041746", class: "fc-webicon facebook large"
+    = link_to "RSS", blog_feed_path, class: "fc-webicon rss large"
 
   / .four.columns#footer-more
   /   %h4 Meer info

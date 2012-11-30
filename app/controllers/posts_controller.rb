@@ -24,7 +24,10 @@ class PostsController < ApplicationController
     else
       @posts = @associate.posts.where(:draft => false).page(params[:page]).per(5)
     end
+
   end
+
+
 
   # GET /posts/1
   # GET /posts/1.json

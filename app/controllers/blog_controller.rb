@@ -20,6 +20,15 @@ class BlogController < ApplicationController
       @posts = Post.drafts(show_draft).page(params[:page]).per(5)
   	end
   	@associates = Associate.all
+
+  end
+
+  def feed
+    @posts = Post.drafts(false).order("published_at DESC").limit(20)
+
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
   end
 
   private
