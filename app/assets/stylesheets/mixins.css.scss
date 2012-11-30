@@ -68,4 +68,10 @@
 	.button{
 		background-color: $color;
 	}
+
+	ul.pagination{
+		li.page.current > a{
+			background-color: $color;
+		}
+	}
 }
