@@ -1,4 +1,5 @@
   jQuery(function($){
+    SyntaxHighlighter.config.tagName = 'code';
     SyntaxHighlighter.all();
       $(".tweet").tweet({
 					avatar_size: 48,

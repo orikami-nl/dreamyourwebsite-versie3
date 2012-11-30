@@ -30,6 +30,8 @@ class Post < ActiveRecord::Base
     edit do
       field :excerpt, :text do
         codemirror true
+        codemirror_config :mode => 'markdown',:theme => 'night', :lineWrapping => true
+        codemirror_assets :mode => '/assets/codemirror/modes/markdown.js',  :theme => '/assets/codemirror/themes/night.css'
       end
       field :body, :text do
         codemirror true
