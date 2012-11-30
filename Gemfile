@@ -84,3 +84,5 @@ gem 'unicorn-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+
+gem 'paper_trail'

@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
 	acts_as_taggable
+	has_paper_trail
 
 	belongs_to :associate
 	has_many :comments, :dependent => :destroy
@@ -32,6 +33,8 @@ class Post < ActiveRecord::Base
       end
       field :body, :text do
         codemirror true
+        codemirror_config :mode => 'markdown',:theme => 'night', :lineWrapping => true
+        codemirror_assets :mode => '/assets/codemirror/modes/markdown.js',  :theme => '/assets/codemirror/themes/night.css'
       end
     end
   end 

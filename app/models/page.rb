@@ -1,5 +1,8 @@
 class Page < ActiveRecord::Base
-validates :locale, :presence => true
+
+  has_paper_trail
+  
+  validates :locale, :presence => true
 
   has_many :page_contents, :dependent => :delete_all
 
