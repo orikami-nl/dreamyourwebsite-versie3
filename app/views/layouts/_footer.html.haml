@@ -22,22 +22,17 @@
     
   .four.columns#footer-contact
 
-    %a{:href => "mailto:info@dreamyourweb.nl"} info@dreamyourweb.nl
-    %br KvK: 52749096
-    %br BTW: 8505.80.626
-
   .four.columns#footer-social
-    %h5 Meer dreamyourweb
-    = link_to "Twitter", "http://twitter.com/#!/dreamyourweb", class: "fc-webicon twitter large"
-    = link_to "Facebook", "http://www.facebook.com/pages/dreamyourweb/140587376041746", class: "fc-webicon facebook large"
-    = link_to "RSS", blog_feed_path+".rss", class: "fc-webicon rss large"
+    %h5.subheader Meer dreamyourweb
+    = render :partial => "/shared/social"
 
   / .four.columns#footer-more
   /   %h4 Meer info
   /   %span#contact-button= link_to "", contact_path(:aan => "info@dreamyourweb.nl")
   /   = link_to image_tag("wbso-stamp.png"), "http://www.agentschapnl.nl/nl/node/100392"
-.row
-  %small
-    © 2011 dreamyourweb V.O.F. - Alle rechten voorbehouden -
-    = link_to "Disclaimer", disclaimer_path
-    = link_to "Algemene Voorwaarden", terms_and_conditions_path
+#footer-bottom
+  .row
+    .twelve.columns
+      © 2012 dreamyourweb V.O.F. - Alle rechten voorbehouden -
+      = link_to "Disclaimer", disclaimer_path
+      = link_to "Algemene Voorwaarden", terms_and_conditions_path

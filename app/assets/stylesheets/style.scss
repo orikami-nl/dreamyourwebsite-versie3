@@ -87,6 +87,10 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small{
 	line-height: 150%;
 }
 
+.subheader{
+	font-family: OpenSansLight;
+}
+
 @media only screen and (min-width: 768px) {
 	.block-grid.two-up > li:nth-child(2n+1),
 	.block-grid.three-up > li:nth-child(3n+1),
@@ -139,4 +143,8 @@ pre {
 		margin: 0;
 	}
 	overflow: auto;
+}
+
+.fc-webicon{
+  margin-right: 10px;
 }
