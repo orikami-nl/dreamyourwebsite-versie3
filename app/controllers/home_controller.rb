@@ -2,8 +2,6 @@ class HomeController < ApplicationController
 	# manageable_mercury_content_for :body, :title, :dreamteam, :layout => "home_layout"
 	# layout "home_layout"
 
-  caches_action :index
-
 	def mobile_agent?
 		request.user_agent =~ /Mobile|webOS/ and not request.user_agent =~ /iPad/
 	end
@@ -34,7 +32,7 @@ class HomeController < ApplicationController
     if admin_signed_in?
       @post = Post.first
     else
-      @post = Post.where(:draft => false).first
+      @post = Post.where(:draft => false).order("pusblished_at DESC").first
     end
     @project = Project.last
     @partners = Partner.get_random(4)

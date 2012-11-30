@@ -1,3 +1,5 @@
+- markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, {:fenced_code_blocks => true})
+
 - content_for(:header) do
   .container#dreamteam-header
     .row
@@ -55,11 +57,29 @@
       %h2.subheader
         %small Wij houden van gave dingen maken.
   .row
-    .four.columns
-      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
     .eight.columns
       = mercury_content_for :manifesto_body
       = link_to "Lees meer over ons", associates_path, :class => "button"
+    .four.columns
+      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
+
+.container.home#home-live
+  .row
+    .twelve.columns
+      %h2 dreamyourweb live
+      %h2.subheader
+        %small Wat houd ons nu bezig?
+  .row
+    .six.columns
+      .panel.twitter
+        %i.foundicon-star
+        %h5.subheader Twitter
+    .six.columns
+      .panel.blog
+        %i.foundicon-star
+        %h5.subheader Blog
+        %h4= @post.title
+        = markdown.render(@post.excerpt).html_safe
 
 .container.home.last#partner-logos
   .row

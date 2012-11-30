@@ -3,6 +3,7 @@
 }
 
 #partner-logos{
+	@include border-bottom();
 	.has-tip{
 		border: none;
 		cursor: pointer;
@@ -122,12 +123,27 @@ h1.super{
 }
 
 #manifesto{
-	// @include border-bottom();
+	@include border-bottom();
 	.button-clean{
 		margin-bottom: 0;
 	}
 	.dyw-moon{
 		margin-left: 50px;
+	}
+}
+
+#home-live{
+	color: $white;
+	.panel{
+		h1, h2, h3, h4, h5, h6{
+			color: $white;
+		}
+	}
+	.panel.twitter{
+		background-color: $dyw-your;
+	}
+	.panel.blog{
+		background-color: $dyw-purple;
 	}
 }
 
