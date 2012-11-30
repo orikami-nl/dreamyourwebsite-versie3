@@ -3,16 +3,16 @@
 footer {
 	position: relative;
 	background-color: $dyw-black;
-	color: $white;
+	color: #919191;
 	margin: 0;
 	padding: 0;
 	background-repeat: repeat-x;
 	background-position: center top;
 	a {
 		text-decoration: none;
-	 	color: $white;
+	 	color: #ccc;
 	 	&:visited {
-	    	color: $white;
+	    	color: #ccc;
 	    }
 	  	&:hover {
 	    	color: white;
@@ -25,7 +25,6 @@ footer {
 		height: 42px;
 	}
 	.row.footer-content{
-		margin-top: -20px;
 	}
 
 	#footer-contact{
@@ -41,6 +40,13 @@ footer {
 		background-color: black;
 		height: 30px;
 		padding-top: 8px;
+	}
+
+	h5.subheader{
+		text-transform: uppercase;
+		font-family: OpenSansBold;
+		font-size: 90%;
+		margin-top: 0;
 	}
 
 }
