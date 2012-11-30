@@ -1,26 +1,24 @@
-<div id="associate-content">
+= header_for "#{@associate.name}", "", "red", @associate.avatar_url(:polaroid)
 
-	<h3>Biografie van <%= @associate.name %></h3>
-	<hr class="small-line">
-	<div id="associate-photo">
-		<%= image_tag @associate.avatar_url(:polaroid).to_s %>
-	</div>
+.container#associates
+  .row
+    .nine.columns
+      %h2 Associate UVP
+      .row
+        .eight.columns
+          = @associate.biography.html_safe
+          - if admin_signed_in?
+            = link_to 'Edit', RailsAdmin::Engine.routes.url_helpers.edit_path(model_name: :associate, id: @associate.id), class: "button"
+            = link_to 'Bekijk blog', {:controller => :blog, :action => :index, :name => @associate.name}, class: "button"
+            = mail_to "Contact", build_mail_address(@associate.name), :class => "button"
 
-	<%= @associate.biography.html_safe %>
-
-	<ul>
-		<li>
-			  <%= link_to 'Bekijk blog', associate_posts_path(@associate), :class => "bookman-link" %>
-		</li>
-		<li>
-				<%= link_to "Contact", {:action => "index", :controller => "contact", :aan => build_mail_address(@associate.name)}, :class => "bookman-link" %>
-		</li>
-	</ul>
-	<div style="clear:both"></div>
-</div>
-
-<%#if admin_signed_in? %>
-	<br><%= link_to 'Edit associate', edit_associate_path(@associate), :class => "bookman-link admin" %>
-<% #end %>
-
-<%= link_to 'Terug', about_path, :class => "bookman-link" %>
+        .four.columns
+        
+    .three.columns
+      %h5 De dreamyourwebbers
+      %ul.block-grid.three-up
+        - @associates.each do |associate|
+          %li
+            = link_to associate_path(associate) do
+              = image_tag associate.avatar_url(:medium).to_s
+      

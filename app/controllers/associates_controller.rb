@@ -2,19 +2,24 @@ class AssociatesController < ApplicationController
 
 	before_filter :authenticate_admin!, :except => [:show, :index]
 
+  def get_associates
+    if admin_signed_in?
+      @associates = Associate.all
+    else
+      @associates = Associate.where(:active => true)
+    end
+  end
+
   # GET /associates
   # GET /associates.json
   def index
-		if admin_signed_in?
-    	@associates = Associate.all
-		else
-    	@associates = Associate.where(:active => true)
-		end
+		get_associates
   end
 
   # GET /associates/1
   # GET /associates/1.json
   def show
+    get_associates
     @associate = Associate.find_by_name_for_url(params[:id])
   end
 
