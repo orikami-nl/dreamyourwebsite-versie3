@@ -26,7 +26,7 @@
             %h3 dreamyourweb logo
             %h3.subheader
               %small On logo is een halve maan omdat ons logo een halve maan is
-              
+
           .eight.columns
             %h4 Ontwikkel alleen wat nodig is
             %p Niemand zit te wachten op een nodeloos ingewikkelde toepassing. We houden er dan ook van om snel tot de kern te komen van een idee. We stellen de juiste vragen, waarna we eerst bouwen wat echt nodig is. Daarna kijken we naar wat er nog mist. Op deze manier krijgen onze klanten en hun gebruikers precies wat ze nodig hebben; niet meer en niet minder.
@@ -47,7 +47,7 @@
             %ul.block-grid.five-up.mobile-three-up#head-shots
               - @associates.each do |associate|
                 %li.associate-container
-                  %h6.job-title Lean person
+                  %h6.job-title= associate.job_title
                   = link_to associate_path(associate) do
                     = image_tag associate.avatar_url(:medium).to_s
                     %h6.name= associate.name

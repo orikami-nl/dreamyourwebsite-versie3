@@ -1,35 +1,40 @@
 .footer-shadow
 .row.footer-content
-  .two.columns#footer-navigation
-    %h4 Sitemap
-    %nav
-      %ul#footer-nav
-        %li= link_to "Home", home_path
-        %li= link_to "Portfolio", projects_path
-        %li= link_to "About", associates_path
-        %li= link_to "Blog", blog_path
-        %li= link_to "Contact", contact_path(:aan => "info@dreamyourweb.nl")
-  .three.columns#footer-contact
-    %h4 contact
-    %p
-      %b dreamyourweb VOF
-      %br Muntweg 512
-      %br 6532 TS Nijmegen
-      %br Tel: +31 (0)24 301 0100
-      %br E-mail:
-      %a{:href => "mailto:info@dreamyourweb.nl"} info@dreamyourweb.nl
-      %br KvK: 52749096
-      %br BTW: 8505.80.626
+  .four.columns#footer-contact
 
-  .three.columns#footer-social
+    .row
+      .two.columns
+        %i.foundicon-phone
+      .ten.columns
+        %p
+          Wil je kletsen?
+          %br
+          %strong Bel ons op +31 (0)24 301 0100
+
+    .row
+      .two.columns
+        %i.foundicon-mail
+      .ten.columns
+        %p
+          Mail je liever?
+          %br
+          %strong Mail naar #{mail_to "info@dreamyourweb.nl"}
+    
+  .four.columns#footer-contact
+
+    %a{:href => "mailto:info@dreamyourweb.nl"} info@dreamyourweb.nl
+    %br KvK: 52749096
+    %br BTW: 8505.80.626
+
+  .four.columns#footer-social
     %h4 Social
     %a.fc-webicon.twitter.large{:href => "http://twitter.com/#!/dreamyourweb"} Twitter
     %a.fc-webicon.facebook.large{:href => "http://www.facebook.com/pages/dreamyourweb/140587376041746"} Facebook
 
-  .four.columns#footer-more
-    %h4 Meer info
-    %span#contact-button= link_to "", contact_path(:aan => "info@dreamyourweb.nl")
-    = link_to image_tag("wbso-stamp.png"), "http://www.agentschapnl.nl/nl/node/100392"
+  / .four.columns#footer-more
+  /   %h4 Meer info
+  /   %span#contact-button= link_to "", contact_path(:aan => "info@dreamyourweb.nl")
+  /   = link_to image_tag("wbso-stamp.png"), "http://www.agentschapnl.nl/nl/node/100392"
 .row
   %small
     © 2011 dreamyourweb V.O.F. - Alle rechten voorbehouden -

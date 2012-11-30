@@ -1,9 +1,9 @@
-= header_for "#{@associate.name}", "", "red", @associate.avatar_url(:polaroid)
+= header_for "#{@associate.name}", @associate.job_title, "red", @associate.avatar_url(:polaroid)
 
 .container#associates
   .row
     .nine.columns
-      %h2 Associate UVP
+      %h2 @associate.uvp
       .row
         .eight.columns
           = @associate.biography.html_safe

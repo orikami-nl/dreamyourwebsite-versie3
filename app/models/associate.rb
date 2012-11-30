@@ -1,6 +1,6 @@
 class Associate < ActiveRecord::Base
 	has_many :posts
-	attr_accessible :name, :avatar, :biography, :description, :name_for_url, :active
+	attr_accessible :name, :avatar, :job_title, :uvp, :biography, :description, :name_for_url, :active
 	validates_presence_of :name
 	mount_uploader :avatar, PictureUploader
 	before_save :build_url
