@@ -1,27 +1,13 @@
 class CommentsController < ApplicationController
 	before_filter :authenticate_admin!, :only => :destroy
 	before_filter :get_post_and_associate, :tag_cloud
-	before_filter :check_honeypots, :only => [:create]
 	layout "sidebar_layout"
 
   #cache_sweeper :comment_sweeper
 
-  def check_honeypots
-    return true if honeypot_untouched?
-    flash[:notice] = 'U bent een spambot, of gebruikt een vreemd script. (Zo niet, dan heb ik overdreven gereageerd. Probeer het alstublieft nog eens.)'
-    redirect_to :back
-    return false
-  end
-
-  def honeypot_untouched?
-    submitted = params['its_so_sweet']
-    return false if submitted.blank?
-    submitted['email'] == 'john@doe.com' && submitted['name'] == '' && submitted['agree'].blank?
-	end
-
 	def get_post_and_associate
 		@post = Post.find_by_title_for_url(params[:post_id])
-		@associate = Associate.find_by_name_for_url(params[:associate_id])
+		@associate = @post.associate
 		@associates = Associate.all
     # logger.debug "Post hash: #{@post.id}"
 	end
@@ -43,10 +29,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
 		    CommentMail.new(:body => @comment.body, :name => @comment.name, :email => @comment.email, :associate_email => (@post.associate.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"), :post_title => @post.title).deliver
-        format.html { redirect_to associate_post_path(@associate, @post), notice: 'Uw commentaar is geplaatst.' }
+        format.html { redirect_to post_path(@post), notice: 'Uw commentaar is geplaatst.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { redirect_to associate_post_path(@associate, @post), notice: 'Uw commentaar kon niet geplaatst worden.' }
+        format.html { redirect_to post_path(@post), notice: 'Uw commentaar kon niet geplaatst worden.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

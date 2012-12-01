@@ -52,6 +52,8 @@ gem 'rails-i18n'
 gem 'redcarpet'
 gem 'codemirror-rails'
 
+gem 'honeypot-captcha'
+
 
 
 group :test do

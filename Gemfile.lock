@@ -146,6 +146,7 @@ GEM
     highrise (3.0.3)
       activeresource (~> 3.0)
     hike (1.2.1)
+    honeypot-captcha (0.0.2)
     httparty (0.6.1)
       crack (= 0.1.8)
     httpauth (0.1)
@@ -363,6 +364,7 @@ DEPENDENCIES
   google_drive
   haml-rails
   highrise
+  honeypot-captcha
   httparty
   jquery-rails
   kaminari
