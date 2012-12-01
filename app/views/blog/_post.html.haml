@@ -7,9 +7,13 @@
           #{time_tag(post.updated_at.to_date)} door #{post.associate.name}
           - if admin_signed_in?
             = link_to 'Edit', RailsAdmin::Engine.routes.url_helpers.edit_path(model_name: :post, id: post.id), :class => "button small post-edit-button"
+      .tags
+        - post.tag_list.split(',').first.each do |tag|
+          = link_to controller: :blog, action: :index, tag: tag do
+            %span.round.label #{tag.humanize}
+
+
   #post-excerpt
     - markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, {:fenced_code_blocks => true})
     = markdown.render(post.excerpt).html_safe
     = markdown.render(post.body).html_safe
-
-      

@@ -1,10 +1,11 @@
   jQuery(function($){
     SyntaxHighlighter.config.tagName = 'code';
     SyntaxHighlighter.all();
-      $(".tweet").tweet({
+
+      $("#twwets").tweet({
 					avatar_size: 48,
           // username: ["thijsvdlaar", "bramdenteuling", "dreamyourweb", "lvandewall", "jelmerwolterink", "logmaor"],
-          query: "(from:dreamyourweb) OR (@dreamyourweb from:thijsvdlaar) OR (@dreamyourweb from:bramdenteuling) OR (@dreamyourweb from:lvandewall) OR (@dreamyourweb from:jelmerwolterink) OR (@dreamyourweb from:logmaor)",
+          query: "(from:dreamyourweb) OR (from:thijsvdlaar) OR (from:bramdenteuling) OR (from:lvandewall) OR (from:Andreslamont)",
           count: 2,
           loading_text: "Tweets laden..."
       });

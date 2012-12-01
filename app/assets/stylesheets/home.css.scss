@@ -3,7 +3,6 @@
 }
 
 #partner-logos{
-	@include border-bottom();
 	.has-tip{
 		border: none;
 		cursor: pointer;
@@ -133,14 +132,16 @@ h1.super{
 }
 
 #home-live{
+	@include border-bottom();
 	color: $white;
 	.panel{
 		h1, h2, h3, h4, h5, h6{
 			color: $white;
+			font-family: OpenSansBold;
 		}
 	}
 	.panel.twitter{
-		background-color: $dyw-your;
+		background-color: $dyw-red;
 	}
 	.panel.blog{
 		background-color: $dyw-purple;

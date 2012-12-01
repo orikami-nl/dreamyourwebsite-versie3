@@ -32,7 +32,7 @@ class HomeController < ApplicationController
     if admin_signed_in?
       @post = Post.first
     else
-      @post = Post.where(:draft => false).order("pusblished_at DESC").first
+      @post = Post.where(:draft => false).order("published_at DESC").first
     end
     @project = Project.last
     @partners = Partner.get_random(4)

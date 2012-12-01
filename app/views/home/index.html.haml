@@ -72,11 +72,12 @@
   .row
     .six.columns
       .panel.twitter
-        %i.foundicon-star
+        / %i.foundicon-star
         %h5.subheader Twitter
+        #tweets
     .six.columns
       .panel.blog
-        %i.foundicon-star
+        / %i.foundicon-star
         %h5.subheader Blog
         %h4= @post.title
         = markdown.render(@post.excerpt).html_safe

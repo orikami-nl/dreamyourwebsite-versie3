@@ -3,12 +3,26 @@
   @include page-color($dyw-purple);
   
 	h4.subheader{
-		margin-top: 0;
+		margin: 0;
+    margin-bottom: 4px;
 		time{
 			font-family: OpenSansBold;
 			text-transform: uppercase;
 		}
 	}
+  .tags{
+    margin-bottom: 17px;
+    span{
+      background-color: $dyw-purple;
+      margin-right: 2px;
+    }
+    a{
+      display: block;
+      float: left;
+      margin-bottom: 8px;
+    }
+    @include clearfix(); 
+  }
 
 	.tag-cloud{
 		a{

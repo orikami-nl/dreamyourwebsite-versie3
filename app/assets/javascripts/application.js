@@ -17,6 +17,7 @@
 //= require mercury
 //= require outerHTML
 //= require home
+//= require shared
 //= require jwplayer
 //= require analytics
 //= require bugherd

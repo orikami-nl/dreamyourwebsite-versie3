@@ -60,7 +60,7 @@
 
 .project-image
 {
-  padding: 1px;
+  // padding: 1px;
 
   position: relative;
 
@@ -71,9 +71,10 @@
   }
 
   a{
+    display: block;
     max-width: 280px; 
-    @include inner-shadow();
-    @include lifted-shadow();
+    // @include inner-shadow();
+    // @include lifted-shadow();
   }
 
   img {
