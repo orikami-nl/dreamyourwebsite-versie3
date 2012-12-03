@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Dreamyourweb | Uitnodiging</title>
-		<%= stylesheet_link_tag    "application" %>
-		<%= javascript_include_tag "application" %>
+		<title>Dreamyourweb | Uitnodiging Office Warming</title>
 		<%= csrf_meta_tags %>
+		<style type="text/css">
+			body, html{
+				margin: 0;
+				padding: 0;
+				font-family: "Helvertica Neue", "Helvetica", Arial
+			}
+			.container{
+				background-color: #333;
+				width: 960px;
+				margin: 0 auto;
+
+				padding-top: 50px;
+			}
+			.foto{
+				background-image: url(assets/office-warming.jpg);
+				height: 639px;
+				width: 960px;
+			}
+
+			.foto a.hoedjes{
+				height: 639px;
+				width: 960px;
+				display: block;
+			}
+			.foto .hoedjes:hover{
+				background-image: url(assets/office-warming-hoedjes.png);	
+			}
+			.textje{
+				padding: 20px;
+				color: white;
+			}
+		</style>
 	</head>
 
-	<div style="text-align:center; margin-top:20px; border:2px solid #6666CC; width:700px; margin-left:auto; margin-right:auto; padding-bottom:20px; padding-top:20px;">
-		<h1>dreamyourweb bestaat 1 jaar!</h1><br>
-		<h2>Dat is natuurlijk reden voor een feestje.<h2>
-		<h2>Op zaterdag 12 mei willen we dit heuglijke feit dan ook vieren met een BBQ!<h2>
-		<%= image_tag "invitation/bbq.gif", :style => "margin-top:20px;margin-bottom:20px;" %>
-		<h2>St. Canisiussingel 25, rond 18:00.</h2>
-		<h2>Ivm inkopen graag even laten weten of je er bij kunt zijn, via thijs@dreamyourweb.nl.</h2>
-	</div>
+	<body>
+		<div class="container">
+			<div class="foto">
+				<a href="#" class="hoedjes"></a>
+			</div>
+			<div class="textje">
+				<iframe width="920" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=metterswane+nijmegen&amp;aq=&amp;sll=51.833886,5.818326&amp;sspn=0.082104,0.164452&amp;ie=UTF8&amp;hq=metterswane&amp;hnear=Nijmegen,+Gelderland,+The+Netherlands&amp;t=m&amp;cid=13961916312842738767&amp;ll=51.843016,5.854189&amp;spn=0.005303,0.01972&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
+				<h2>Routebeschrijving</h2>
+				<p>
+					Als je met de rug naar het station staat, loop dan vanaf het station rechts om het gebouw heen. Bij verdwalen bel Thijs: 06 187 305 39.
+				</p>
+			</div>
+		</div>
+	</body>
+
 </html>
 
 
