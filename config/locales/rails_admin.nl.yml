@@ -1,0 +1,188 @@
+# Localization file for Dutch.
+# Translated from the English locale by Luuk Hendriks (DRiKE on github), used the date and datetime
+# from https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/nl.yml
+# credits for those sections to Ariejan de Vroom and Floris Huetink
+
+nl:
+  admin:
+    home:
+      name: Home
+    pagination:
+      previous: "&laquo; Vorige"
+      next: "Volgende &raquo;"
+      truncate: "…"
+    misc:
+      filter_date_format: "dd-mm-yy" # a combination of 'dd', 'mm' and 'yy' with any delimiter. No other interpolation will be done!
+      search: "Zoeken"
+      filter: "Filter"
+      refresh: "Vernieuw"
+      show_all: "Toon allen"
+      add_filter: "Filter toevoegen"
+      bulk_menu_title: "Geselecteerde items"
+      remove: "Verwijder"
+      add_new: "Nieuw toevoegen"
+      chosen: "Gekozen %{name}"
+      chose_all: "Kies allen"
+      clear_all: "Verwijder allen"
+      up: "Omhoog"
+      down: "Omlaag"
+      navigation: "Navigatie"
+      log_out: "Uitloggen"
+      ago: "geleden"
+    flash:
+      successful: "%{name} succesvol %{action}"
+      error: "%{name} onsuccesvol %{action}"
+      noaction: "Geen acties uitgevoerd"
+      model_not_found: "Model '%{model}' niet gevonden"
+      object_not_found: "%{model} met id '%{id}' niet gevonden"
+    table_headers:
+      model_name: "Modelnaam"
+      last_used: "Laatst gebruikt"
+      records: "Records"
+      username: "Gebruiker"
+      changes: "Aanpassingen"
+      created_at: "Datum/Tijd"
+      item: "Item"
+      message: "Bericht"
+    actions:
+      dashboard:
+        title: "Site-administratie"
+        menu: "Dashboard"
+        breadcrumb: "Dashboard"
+      index:
+        title: "Lijst van %{model_label_plural}"
+        menu: "Lijst"
+        breadcrumb: "%{model_label_plural}"
+      show:
+        title: "Details van %{model_label} '%{object_label}'"
+        menu: "Toon"
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: "Toon in site"
+      new:
+        title: "Nieuwe %{model_label}"
+        menu: "Nieuwe toevoegen"
+        breadcrumb: "Nieuw"
+        link: "%{model_label} toevoegen"
+        done: "aangemaakt"
+      edit:
+        title: "Edit %{model_label} '%{object_label}'"
+        menu: "Edit"
+        breadcrumb: "Edit"
+        link: "Edit this %{model_label}"
+        done: "geüpdate"
+      delete:
+        title: "Verwijder %{model_label} '%{object_label}'"
+        menu: "Verwijder"
+        breadcrumb: "Verwijder"
+        link: "Verwijder '%{object_label}'"
+        done: "Verwijderd"
+      bulk_delete:
+        title: "Verwijder %{model_label_plural}"
+        menu: "Meerdere verwijderen"
+        breadcrumb: "Meerdere verwijderen"
+        bulk_link: "Verwijder geselecteerde %{model_label_plural}"
+      export:
+        title: "Exporteer %{model_label_plural}"
+        menu: "Exporteer"
+        breadcrumb: "Exporteer"
+        link: "Exporteer gevonden %{model_label_plural}"
+        bulk_link: "Exporteer geselecteerde %{model_label_plural}"
+        done: "geëxporteerd"
+      history_index:
+        title: "Geschiedenis voor %{model_label_plural}"
+        menu: "Geschiedenis"
+        breadcrumb: "Geschiedenis"
+      history_show:
+        title: "Geschiedenis voor %{model_label} '%{object_label}'"
+        menu: "Geschiedenis"
+        breadcrumb: "Geschiedenis"
+    form:
+      cancel: "Annuleren"
+      basic_info: "Basisinfo"
+      required: "Verplicht"
+      optional: "Optioneel"
+      one_char: "karakter"
+      char_length_up_to: "lengte tot"
+      char_length_of: "lengte van"
+      save: "Opslaan"
+      save_and_add_another: "Opslaan en nieuwe toevoegen"
+      save_and_edit: "Opslaan en aanpassen"
+      all_of_the_following_related_items_will_be_deleted: "? The following related items may be deleted or orphaned:"
+      are_you_sure_you_want_to_delete_the_object: "Are you sure you want to delete this %{model_name}"
+      confirmation: "Ja, ik weet het zeker"
+      bulk_delete: "The following objects will be deleted, which may delete or orphan some of their related dependencies:"
+      new_model: "%{name} (new)"
+    export:
+      confirmation: "Exporteer naar %{name}"
+      select: "Selecteer velden om te exporteren"
+      fields_from: "Velden van %{name}"
+      fields_from_associated: "Velden van gerelateerde %{name}"
+      display: "Toon %{name}: %{type}"
+      options_for: "Opties voor %{name}"
+      empty_value_for_associated_objects: "<leeg>"
+      click_to_reverse_selection: 'Klik om selectie te inverteren'
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "Encodeer naar"
+        encoding_to_help: "Choose output encoding. Leave empty to let current input encoding untouched: (%{name})"
+        skip_header: "Geen header"
+        skip_header_help: "Do not output a header (no fields description)"
+        default_col_sep: ","
+        col_sep: "Kolomscheidingsteken"
+        col_sep_help: "Leave blank for default ('%{value}')" # value is default_col_sep
+
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "een halve minuut"
+      less_than_x_seconds:
+        one: "minder dan een seconde"
+        other: "minder dan %{count} seconden"
+      x_seconds:
+        one: "1 seconde"
+        other: "%{count} seconden"
+      less_than_x_minutes:
+        one: "minder dan een minuut"
+        other: "minder dan %{count} minuten"
+      x_minutes:
+        one: "1 minuut"
+        other: "%{count} minuten"
+      about_x_hours:
+        one: "ongeveer een uur"
+        other: "ongeveer %{count} uur"
+      x_days:
+        one: "1 dag"
+        other: "%{count} dagen"
+      about_x_months:
+        one: "ongeveer een maand"
+        other: "ongeveer %{count} maanden"
+      x_months:
+        one: "1 maand"
+        other: "%{count} maanden"
+      about_x_years:
+        one: "ongeveer een jaar"
+        other: "ongeveer %{count} jaar"
+      over_x_years:
+        one: "meer dan een jaar"
+        other: "meer dan %{count} jaar"
+      almost_x_years:
+        one: "bijna een jaar"
+        other: "bijna %{count} jaar"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+      only_day: "%e"
+
+    day_names: [zondag, maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag]
+    abbr_day_names: [zon, maa, din, woe, don, vri, zat]
+
+    month_names: [~, januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december]
+    abbr_month_names: [~, jan, feb, mar, apr, mei, jun, jul, aug, sep, okt, nov, dec]
+    order:
+      - :day
+      - :month
+      - :year

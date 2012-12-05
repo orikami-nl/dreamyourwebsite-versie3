@@ -7,13 +7,12 @@ RailsAdmin.config do |config|
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Dywsite2', 'Admin']
+  config.main_app_name = ['dreamyourweb', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_admin } # auto-generated
-  I18n.locale = :en
   config.audit_with :paper_trail, Admin
 
   # If you want to track changes on your models:

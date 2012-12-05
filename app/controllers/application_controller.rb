@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :kiss
 
-
   def kiss
   	if admin_signed_in?
   		kiss_identify current_admin.email
