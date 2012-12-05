@@ -5,12 +5,10 @@ header{
 		border-top-style: solid;
 		border-top-width: 3px;
 		border-top-color: $dyw-your;
-		background-size: auto 100%;
 		min-height: 175px;
-		background-color: $dyw-black;
+		background-color: black;
 		background-position: center top;
 		background-repeat: no-repeat;
-		background-size: auto 100%;
 
 		h1{
 			background-color: transparentize(green, 0.1);
@@ -18,9 +16,12 @@ header{
 			padding: 3px 10px 10px 10px;
 			margin-top: 20px;
 			color: $dyw-very-light-blue;
+			max-width: 66.66667%;
 			@include respondTo(smallScreen){
 				// font-size: ms(8);
 				// line-height: ms(8);
+				background-size: auto 100%;
+				max-width: 100%;
 			}
 			float: left;
 			clear: both;
@@ -52,7 +53,7 @@ header{
 		&.green{
 			background-color: #75a557;
 			border-color: $dyw-green;
-			background-image: url(header_portfolio.jpg);
+			background-image: url(headers/portfolio.jpg);
 			h1{background-color: transparentize($dyw-green, 0.1)};
 		}
 
@@ -64,19 +65,19 @@ header{
 
 		&.red{
 			border-color: $dyw-red;
-			background-image: url(header_about.jpg);
+			background-image: url(headers/about.jpg);
 			h1{background-color: transparentize($dyw-red, 0.1)};
 		}
 
 		&.purple{
 			border-color: $dyw-purple;
-			background-image: url(header_blog.jpg);
+			background-image: url(headers/blog.jpg);
 			h1{background-color: transparentize($dyw-purple, 0.1)};
 		}
 
 		&.pink{
 			border-color: $dyw-pink;
-			background-image: url(header_contact.jpg);
+			background-image: url(headers/contact.jpg);
 			h1{background-color: transparentize($dyw-pink, 0.1)};
 		}
 
