@@ -54,6 +54,8 @@ gem 'codemirror-rails'
 
 gem 'honeypot-captcha'
 
+gem 'rails-dev-tweaks', '~> 0.6.1'
+
 
 
 group :test do

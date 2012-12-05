@@ -1,3 +1,6 @@
+app_environment_variables = File.join(Rails.root, 'config', 'env_variables.rb')
+load(app_environment_variables) if File.exists?(app_environment_variables)
+
 CarrierWave.configure do |config|
 	config.fog_credentials = {
     :provider => 'AWS',

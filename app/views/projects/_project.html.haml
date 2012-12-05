@@ -3,8 +3,7 @@
     %h6 #{project.project_type}
     .project-image
       = link_to project_path(project) do
-        = image_tag(project.picture_url(:portfolio_full).to_s)
-        .image_overlay Lees Meer
+        = image_tag(project.picture_url(:tablet).to_s)
     .project-description
       %h4= link_to(project.title, project_path(project))
       - if admin_signed_in?
