@@ -2,6 +2,7 @@ header{
 	margin-bottom: $nav-margin;
 
 	.header-container{
+		@include single-box-shadow(#333, 0, 0, 15px, 0px, true);
 		border-top-style: solid;
 		border-top-width: 3px;
 		border-top-color: $dyw-your;
@@ -29,37 +30,22 @@ header{
 
 		background-image: url(header_portfolio.jpg);
 
-		&.diensten{
-			background-color: #01288d;
-			background-image: url(header_products.jpg);
-		}
-
-		&.portfolio{
-			background-color: #75a557;
-			background-image: url(header_portfolio.jpg);
-		}
-
-		&.about{
-			background-color: #316497;
-			background-image: url(header_about.jpg);
-		}
-
 		&.blue{
 			border-color: $dyw-your;
-			background-image: url(header_portfolio.jpg);
+			background-image: url(headers/portfolio.jpg);
 			h1{background-color: transparentize($dyw-your, 0.1)};
 		}
 
 		&.green{
-			background-color: #75a557;
+			// background-color: #75a557;
 			border-color: $dyw-green;
-			background-image: url(headers/portfolio.jpg);
+			background-image: url(headers/products.jpg);
 			h1{background-color: transparentize($dyw-green, 0.1)};
 		}
 
 		&.orange{
 			border-color: $dyw-orange;
-			background-image: url(header_portfolio.jpg);
+			background-image: url(headers/portfolio.jpg);
 			h1{background-color: transparentize($dyw-orange, 0.1)};
 		}
 
