@@ -7,7 +7,7 @@
       #post-facebook
         <div class="fb-like" data-href=#{post_url(@post)} data-send="true" data-width="450" data-show-faces="true", :data-href></div>
       #comments-container
-        = render :partial => "comment", :collection => @comments, :spacer_template => "commentspacer"
+        = render :partial => "comment", :collection => @comments
       #postcomment-container
         = render 'comments/form'
 

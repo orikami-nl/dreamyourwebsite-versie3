@@ -139,12 +139,21 @@ h1.super{
 			color: $white;
 			font-family: OpenSansBold;
 		}
+		height: 270px;
+		p{
+			display: block;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
 	}
 	.panel.twitter{
 		background-color: $dyw-red;
 	}
 	.panel.blog{
 		background-color: $dyw-purple;
+	}
+	h5{
+		border-color:  $white;
 	}
 }
 

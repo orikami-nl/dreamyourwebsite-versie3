@@ -1,0 +1,13 @@
+.comment-container.panel
+  .comment-header
+  %h4.subheader
+    %small 
+      #{time_tag(comment.created_at.to_date)} door #{Sanitize.clean(comment.name)}
+  .comment-body
+    %p= raw Sanitize.clean(comment.body, Sanitize::Config::BASIC)
+    - if admin_signed_in?
+      %p= raw Sanitize.clean(comment.email)
+      %p
+        = link_to 'Edit comment', edit_post_comment_path(@post, comment)
+        |
+        = link_to 'Delete comment', post_comment_path(@post, comment), confirm: "Are you sure?", method: :delete
