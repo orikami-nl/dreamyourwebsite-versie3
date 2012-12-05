@@ -38,6 +38,27 @@
             %h4 Lean innovatie workshops
           %p Leer om lean een succesvol product te ontwikkelen
 
+.container.home#manifesto
+  .row
+    .eight.columns
+      %h2= mercury_content_for :manifesto_header, :simple
+      %h2.subheader
+        %small Wij houden van gave dingen maken.
+      = mercury_content_for :manifesto_body
+      = link_to "Lees meer over ons", associates_path, :class => "button"
+    .four.columns
+      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
+
+.container.home.last#partner-logos
+  .row
+    .twelve.columns
+      .panel
+        %h2.subheader
+          %small= mercury_content_for :partners_header, :simple
+        %ul.block-grid.four-up.mobile-three-up
+          - if !@partners.nil?
+            = render :partial => 'partner_logo', :collection => @partners, :as => :partner
+
 .container.home#projects-container-home
   .row
     .twelve.columns
@@ -48,20 +69,6 @@
     .twelve.columns
       %ul.block-grid.three-up.mobile-three-up
         = render :partial => "project", :collection => @projects
-
-
-.container.home#manifesto
-  .row
-    .twelve.columns
-      %h2= mercury_content_for :manifesto_header, :simple
-      %h2.subheader
-        %small Wij houden van gave dingen maken.
-  .row
-    .eight.columns
-      = mercury_content_for :manifesto_body
-      = link_to "Lees meer over ons", associates_path, :class => "button"
-    .four.columns
-      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
 
 .container.home#home-live
   .row
@@ -81,13 +88,3 @@
         %h5.subheader Blog
         %h4= @post.title
         = markdown.render(@post.excerpt).html_safe
-
-.container.home.last#partner-logos
-  .row
-    .twelve.columns
-      .panel
-        %h2.subheader
-          %small= mercury_content_for :partners_header, :simple
-        %ul.block-grid.four-up.mobile-three-up
-          - if !@partners.nil?
-            = render :partial => 'partner_logo', :collection => @partners, :as => :partner

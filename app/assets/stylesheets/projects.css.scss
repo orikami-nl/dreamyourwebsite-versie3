@@ -49,7 +49,7 @@
 
 .project-container{
     margin: 0 auto;
-    max-width: 280px;
+    // max-width: 280px;
     h6{
       padding-left: 2px;
       text-transform: uppercase;
@@ -61,49 +61,43 @@
 .project-image
 {
   // padding: 1px;
+  max-width: 300px; 
+  max-height: 200px; 
+  background-image: url(tablet.png);
+  background-size: 100%;
 
   position: relative;
 
   a:hover{
-    .image_overlay{
-      display: block;
-    }
   }
 
   a{
+    padding: 27px 28px 27px 28px;
     display: block;
-    max-width: 280px; 
-    // @include inner-shadow();
-    // @include lifted-shadow();
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
   img {
-    position: relative;
     height: auto;
+    width: 100%;
+    height: 100%;
   }
 
-
-  .image_overlay{
-    z-index: 2;
-    display: none;    
+  .gloss-container{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 280px;
-    padding-top: 33%;
-    height: 100%;   
-    color: $dyw-orange;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: text-bottom;
-    font-size: ms(3);
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.6);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)";
+    height: 100%;
+    z-index: 10;
+    background-image: url(tablet-gloss.png);
+    background-size: 100%;
   }
+
 }
+
 
 .project-description{
   max-width: 280px;

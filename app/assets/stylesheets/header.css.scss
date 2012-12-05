@@ -2,7 +2,7 @@ header{
 	margin-bottom: $nav-margin;
 
 	.header-container{
-		@include single-box-shadow(#333, 0, 0, 15px, 0px, true);
+		@include single-box-shadow(black, 0, 0, 15px, 0px, true);
 		border-top-style: solid;
 		border-top-width: 3px;
 		border-top-color: $dyw-your;
