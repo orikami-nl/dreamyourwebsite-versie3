@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121130112818) do
+ActiveRecord::Schema.define(:version => 20121206143035) do
 
   create_table "admins", :force => true do |t|
     t.string    "email",                                 :default => "", :null => false
@@ -189,6 +189,7 @@ ActiveRecord::Schema.define(:version => 20121130112818) do
     t.string   "full_picture"
     t.text     "body"
     t.string   "project_type"
+    t.text     "vp"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

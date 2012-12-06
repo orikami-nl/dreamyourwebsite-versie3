@@ -39,7 +39,9 @@ class ProjectThumbUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    super.chomp(File.extname(super)) + '.png'
+    if !super.nil?
+      super.chomp(File.extname(super)) + '.png'
+    end
   end
 
 end
