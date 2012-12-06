@@ -87,5 +87,6 @@
       .panel.blog
         / %i.foundicon-star
         %h5.subheader Blog
-        %h4= @post.title
+        =link_to post_path(@post) do
+          %h4= @post.title
         = markdown.render(@post.excerpt).html_safe
