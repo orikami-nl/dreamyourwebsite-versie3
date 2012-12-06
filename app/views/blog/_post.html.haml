@@ -5,6 +5,12 @@
       %h4.subheader
         %small 
           #{time_tag(post.published_at.to_date)} door #{post.associate.name}
+          - if post.comments.count > 0
+            |
+            = link_to "#{post.comments.count} reacties", post_path(post, anchor: "postcomment-container")
+          - else
+            |
+            = link_to "Reageer", post_path(post, anchor: "postcomment-container")
           - if admin_signed_in?
             = link_to 'Edit', RailsAdmin::Engine.routes.url_helpers.edit_path(model_name: :post, id: post.id), :class => "button small post-edit-button"
       .tags
