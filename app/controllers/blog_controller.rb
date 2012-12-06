@@ -13,11 +13,11 @@ class BlogController < ApplicationController
     show_draft = admin_signed_in? ?  true : false ;
 
   	if !params[:tag].nil?
-      @posts = Post.drafts(show_draft).tagged_with(params[:tag]).page(params[:page]).per(5)
+      @posts = Post.drafts(show_draft).tagged_with(params[:tag]).page(params[:page]).order("published_at DESC").per(5)
     elsif !params[:name].nil?
-      @posts = Post.drafts(show_draft).includes(:associate).where(:associates => {:name => params[:name]}).page(params[:page]).per(5)
+      @posts = Post.drafts(show_draft).includes(:associate).where(:associates => {:name => params[:name]}).page(params[:page]).order("published_at DESC").per(5)
   	else
-      @posts = Post.drafts(show_draft).page(params[:page]).per(5)
+      @posts = Post.drafts(show_draft).page(params[:page]).order("published_at DESC").per(5)
   	end
   	@associates = Associate.all
 

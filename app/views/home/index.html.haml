@@ -5,13 +5,13 @@
     .row
       .twelve.columns
         %h1.super
-          %span.big-ass= mercury_content_for :UVP_line_1, :simple
-          %span.big-ass= mercury_content_for :UVP_line_2, :simple
+          %span.big-ass Wij maken
+          %span.big-ass slimme applicaties
         %h1.super
-          %span.sub-uvp= mercury_content_for :sub_UVP_line_1, :simple
-          %span.sub-uvp= mercury_content_for :sub_UVP_line_2, :simple
-          %span.sub-uvp= mercury_content_for :sub_UVP_line_3, :simple
-          %span.sub-uvp= mercury_content_for :sub_UVP_line_4, :simple
+          %span.sub-uvp dreamyourweb bouwt niet direct wat er gevraagd wordt,
+          %span.sub-uvp maar kijkt eerst wat echt nodig is.
+          %span.sub-uvp Doordat we zowel meedenken als uitvoeren
+          %span.sub-uvp Verloopt het ontwikkeltraject effectief en efficiënt.
 
 .container.home#we-do-this
   / .row
@@ -26,39 +26,39 @@
           = link_to products_path(:anchor => "innovation") do
             = image_tag("service-innovation.png")
             %h4 Innovatie consultancy
-          %p Wij ondersteunen je in het innovatie traject
+          %p Wij geven waardevol advies over hoe je een innovatie traject aanpakt. Waar liggen de kansen en risico's van het huidige project plan? Samen stippelen we een traject uit dat de kans van slagen van het project maximaliseert.
         %li
           = link_to products_path(:anchor => "development") do
             = image_tag("service-development.png")
             %h4 Software ontwikkeling
-          %p Maatwerk web-apps en mobiele-apps
+          %p Wij ontwikkelen maatwerk web-apps en mobiele-apps
         %li
           = link_to products_path(:anchor => "workshop") do
             = image_tag("service-workshop.png")
             %h4 Lean innovatie workshops
-          %p Leer om lean een succesvol product te ontwikkelen
-
-.container.home#manifesto
-  .row
-    .eight.columns
-      %h2= mercury_content_for :manifesto_header, :simple
-      %h2.subheader
-        %small Wij houden van gave dingen maken.
-      = mercury_content_for :manifesto_body
-      = link_to "Lees meer over ons", associates_path, :class => "button"
-    .four.columns
-      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
+          %p Leer zelf hoe je efficiënt je innovatie traject inricht
 
 .container.home#projects-container-home
   .row
     .twelve.columns
-      %h3= mercury_content_for :portfolio_header, :simple
+      %h3 Onze meest recente projecten
       %h3.subheader
         %small Neem een kijkje naar de geweldige projecten die we hebben gedaan.
   .row
     .twelve.columns
       %ul.block-grid.three-up.mobile-three-up
         = render :partial => "project", :collection => @projects
+
+.container.home#manifesto
+  .row
+    .eight.columns
+      %h2 Een jong en dynamisch team
+      %h2.subheader
+        %small Om samen gave dingen mee te maken
+      %p Om een goed product te bouwen heb je zowel kennis van de markt en bedrijfscontext nodig als design en technische kennis. Wij presteren het best als technische partner. We maken daarom ook graag even persoonlijk kennis!
+      = link_to "Lees meer over ons", associates_path, :class => "button"
+    .four.columns
+      = image_tag "dywmoon_200x200.png", class: "dyw-moon"
 
 .container.home.last#partner-logos
   .row
@@ -87,5 +87,6 @@
       .panel.blog
         / %i.foundicon-star
         %h5.subheader Blog
-        %h4= @post.title
+        =link_to post_path(@post) do
+          %h4= @post.title
         = markdown.render(@post.excerpt).html_safe

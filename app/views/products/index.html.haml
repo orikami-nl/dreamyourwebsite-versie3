@@ -47,25 +47,30 @@
           .twelve.columns
             %ul.block-grid.five-up.mobile-three-up.flow-circles
               %li
-                =image_tag("flow-circle-1.png")
-                %h6 Jouw idee
-                %p Kennismaken is bij ons altijd gratis en vrijblijvend
+                =link_to flow_path(anchor: "anchor-idea") do
+                  =image_tag("flow-circle-1.png")
+                  %h6 Jouw idee
+                  %p Kennismaken is bij ons altijd gratis en vrijblijvend
               %li
-                =image_tag("flow-circle-2.png")
-                %h6 Kern van het idee
-                %p Samen komen we tot de belangrijkste leer- en knelpunten
+                =link_to flow_path(anchor: "anchor-core-idea") do
+                  =image_tag("flow-circle-2.png")
+                  %h6 Kern van het idee
+                  %p Samen komen we tot de belangrijkste leer- en knelpunten
               %li
-                =image_tag("flow-circle-3.png")
-                %h6 Validatie
-                %p Nog voor het bouwen zoveel mogelijk leren
+                =link_to flow_path(anchor: "anchor-validation") do
+                  =image_tag("flow-circle-3.png")
+                  %h6 Validatie
+                  %p Nog voor het bouwen zoveel mogelijk leren
               %li
-                =image_tag("flow-circle-4.png")
-                %h6 Kern product
-                %p Bouw de belangrijkste functionaliteit en kijk of het werkt
+                =link_to flow_path(anchor: "anchor-core-product") do
+                  =image_tag("flow-circle-4.png")
+                  %h6 Kern product
+                  %p Bouw de belangrijkste functionaliteit en kijk of het werkt
               %li
-                =image_tag("flow-circle-5.png")
-                %h6 Optimalisatie
-                %p Bijsturen op in de praktijk geleerde lessen
+                =link_to flow_path(anchor: "anchor-optimalization") do
+                  =image_tag("flow-circle-5.png")
+                  %h6 Optimalisatie
+                  %p Bijsturen op in de praktijk geleerde lessen
 
       #c.border-bottom.section-lean{'data-magellan-destination'=>'c'}
         .row

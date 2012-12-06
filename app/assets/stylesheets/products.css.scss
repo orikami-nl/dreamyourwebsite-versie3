@@ -16,12 +16,13 @@
 #products{	
 
 	.service-image{
-		h3{
-			line-height: 60px;
+		vertical-align: center;
+		h4{
+			height: 50px;
 		}
-		background-size: 60px;
+		background-size: 50px;
 		background-position: left-center;
-		padding-left: 80px;
+		padding-left: 60px;
 		background-repeat: no-repeat;
 	}
 
@@ -31,23 +32,15 @@
 		margin-left: 30px;
 	}
 
-	.service-image.scan{
-		background-image: url(service-scan.png);
-	}
-	.service-image.bmcheck{
-		background-image: url(service-bmcheck.png);
-	}
-	.service-image.uservalidation{
-		background-image: url(service-uservalidation.png);
-	}
+
 	.service-image.development{
-		background-image: url(service-development.png);
+		background-image: url(service-development-small-green.png);
 	}
 	.service-image.workshop{
-		background-image: url(service-workshop.png);
+		background-image: url(service-workshop-small-green.png);
 	}
 	.service-image.innovation{
-		background-image: url(service-innovation.png);
+		background-image: url(service-innovation-small-green.png);
 	}
 
 }
