@@ -37,7 +37,9 @@
 	margin-top: -$nav-margin;
 	padding-top: 30px;
 	li{
-		text-align: center;
+		h4{
+			text-align: center;
+		}
 		p{margin: 0;}
 	}
 	a:link, a:hover{
