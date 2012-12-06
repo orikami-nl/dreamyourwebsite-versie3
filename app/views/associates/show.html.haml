@@ -5,15 +5,16 @@
     .nine.columns
       %h2 #{@associate.uvp}
       .row
-        .eight.columns
+
+        .four.columns.push-eight
+          = image_tag @associate.avatar_url(:large)
+
+        .eight.columns.pull-four
           = @associate.biography.html_safe
           - if admin_signed_in?
             = link_to 'Edit', RailsAdmin::Engine.routes.url_helpers.edit_path(model_name: :associate, id: @associate.id), class: "button"
             = link_to 'Bekijk blog posts', {:controller => :blog, :action => :index, :name => @associate.name}, class: "button"
             = mail_to "Contact", build_mail_address(@associate.name), :class => "button"
-
-        .four.columns
-          = image_tag @associate.avatar_url(:polaroid)
         
     .three.columns
       %h5 De dreamyourwebbers
