@@ -4,7 +4,7 @@
       %h2= link_to(post.title, post_path(post), :class => "post-title")
       %h4.subheader
         %small 
-          #{time_tag(post.updated_at.to_date)} door #{post.associate.name}
+          #{time_tag(post.published_at.to_date)} door #{post.associate.name}
           - if admin_signed_in?
             = link_to 'Edit', RailsAdmin::Engine.routes.url_helpers.edit_path(model_name: :post, id: post.id), :class => "button small post-edit-button"
       .tags
