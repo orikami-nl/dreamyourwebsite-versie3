@@ -19,6 +19,7 @@
 //= require home
 //= require shared
 //= require jwplayer
+//= require skypeCheck
 //= require analytics
 //= require bugherd
 //= require_self
