@@ -14,84 +14,11 @@
 		margin-bottom: 50px;
 		color: $dyw-flow-black;
 	}
-	.row{
-		width: 100%;
-		// margin-top: 100px;
-		// margin-bottom: 250px;
-		margin-left: 0;
-	}
-	.row:after{
-    	content: ".";
-    	display: block;
-    	height: 0;
-    	clear: both;
-    	visibility: hidden;
-	}
-	.left{
-		float: left;
-		width: 480px;
-		margin: 0;
-	}
-	.right{
-		float: right;
-		width: 480px;
-		margin: 0;
-	}
 
 	p{
-		padding-left: 25px;
-		padding-right: 25px;
 		color: $dyw-flow-black;
-		font-size: 14px;
+		// font-size: 14px;
 		line-height: 26px;
-	}
-
-	#clouds{
-		margin-top: 100px;
-		margin-bottom: 200px;
-		height: 373px;
-		background-image: url(flow-clouds.png);
-	}
-
-	#idea{
-		margin-top: 20px;
-		height: 300px;
-		background-image: url(flow-idea.png);
-	}
-	#core-idea{
-		margin-top: 20px;
-		height: 392px;
-		background-image: url(flow-core-idea.png);
-	}
-	#bm{
-		margin-top: 20px;
-		height: 312px;
-		background-image: url(flow-bm.png);
-	}
-	#validation{
-		margin-top: 20px;
-		height: 431px;
-		background-image: url(flow-validation.png);
-	}
-	#core-product{
-		margin-top: 100px;
-		height: 199px;
-		background-image: url(flow-core-product.png);
-	}
-	#optimalization{
-		margin-top: 20px;
-		height: 464px;
-		background-image: url(flow-optimalization.png);
-	}
-
-	.row.arrows{
-		background-image: url(flow-arrows.png);
-		background-repeat: no-repeat;
-		background-position: center center;
-		height: 300px;
-	}
-	.row.bottom-row{
-		margin-bottom: 100px;
 	}
 }
 
