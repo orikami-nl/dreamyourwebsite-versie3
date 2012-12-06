@@ -71,22 +71,22 @@
             = render :partial => 'partner_logo', :collection => @partners, :as => :partner
 
 
-.container.home#home-live
-  / .row
-  /   .twelve.columns
-  /     %h2 dreamyourweb live
-  /     %h2.subheader
-  /       %small Wat houd ons nu bezig?
-  .row
-    .six.columns
-      .panel.twitter
-        / %i.foundicon-star
-        %h5.subheader Twitter
-        #tweets
-    .six.columns
-      .panel.blog
-        / %i.foundicon-star
-        %h5.subheader Blog
-        =link_to post_path(@post) do
-          %h4= @post.title
-        = markdown.render(@post.excerpt).html_safe
+/ .container.home#home-live
+/   / .row
+/   /   .twelve.columns
+/   /     %h2 dreamyourweb live
+/   /     %h2.subheader
+/   /       %small Wat houd ons nu bezig?
+/   .row
+/     .six.columns
+/       .panel.twitter
+/         / %i.foundicon-star
+/         %h5.subheader Twitter
+/         #tweets
+/     .six.columns
+/       .panel.blog
+/         / %i.foundicon-star
+/         %h5.subheader Blog
+/         =link_to post_path(@post) do
+/           %h4= @post.title
+/         = markdown.render(@post.excerpt).html_safe
