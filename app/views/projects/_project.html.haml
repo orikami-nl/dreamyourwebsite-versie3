@@ -7,7 +7,7 @@
     .project-description
       %h4= link_to(project.title, project_path(project))
       - if admin_signed_in?
-        = link_to 'Edit', edit_project_path(project), :class => 'admin'
+        = link_to 'Edit', RailsAdmin::Engine.routes.url_helpers.edit_path(model_name: :project, id: project.id)
         = link_to 'Destroy', project, :class => 'admin', confirm: 'Are you sure?', method: :delete
       .excerpt-container
         #{project.excerpt.html_safe}

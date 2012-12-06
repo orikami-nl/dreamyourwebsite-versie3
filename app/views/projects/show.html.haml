@@ -19,7 +19,7 @@
         / %h5 Technieken
         / %ul
         /   %li Techniek 1
-        /   %li Techniek 2
+        /   %li Techniek 2z
         /   %li Techniek 3
         /   %li Techniek 4
         /   %li Techniek 5
@@ -29,13 +29,13 @@
         .twelve.columns
           %h2= @project.vp
           %h4.subheader
-            %small= @project.body.html_safe
+            %small
+          %p= @project.body.html_safe
       .row
         .eight.columns
           #huge-project-image
             = image_tag @project.full_picture.to_s
         .four.columns          
           - if admin_signed_in?
-            = link_to "Edit Project", edit_project_path(@project), :class => "bookman-link admin"
-
+            = link_to 'Edit', RailsAdmin::Engine.routes.url_helpers.edit_path(model_name: :project, id: @project.id), class: "button"
 
