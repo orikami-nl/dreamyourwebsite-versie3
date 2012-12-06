@@ -108,7 +108,6 @@ h1.super{
 
 #projects-container-home{
 	@include border-bottom();
-	padding-top: 30px;
 	.project-container{
 		h3{
 	   		a{
@@ -122,6 +121,7 @@ h1.super{
 }
 
 #manifesto{
+	@include border-bottom();
 	.button-clean{
 		margin-bottom: 0;
 	}
