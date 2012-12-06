@@ -1,48 +1,67 @@
-= header_for :diensten
+= header_for "De dreamyourweb flow", "We werken met een efficient lean proces.", "green"
 
 .container#flow
-  .row#clouds
-    .twelve.columns
-      %h1
-        het dream<span class="blue">your</span>web proces
-
   .row
-    .six.columns
-      %h2
-        %span.blue Jouw
-        Idee
-      = mercury_content_for :flow_jouw_idee_body
-    .six.columns#idea
-  .row.arrows
+    .two.columns.hide-for-small#barServices
+      .sticky-side-nav{"data-magellan-expedition"=>'fixed'}
+        %h5 Flow
+        %ul.side-nav
+          %li{'data-magellan-arrival'=>'idea'}= link_to "Jouw idee", "#anchor-idea"
+          %li{'data-magellan-arrival'=>'core-idea'}= link_to "Kern idee", "#anchor-core-idea"
+          %li{'data-magellan-arrival'=>'validation'}= link_to "Validatie", "#anchor-validation"
+          %li{'data-magellan-arrival'=>'core-product'}= link_to "Kern product", "#anchor-core-product"
+          %li{'data-magellan-arrival'=>'optimalization'}= link_to "Optimalisatie", "#anchor-optimalization"
 
-  .row
-    .six.columns#core-idea
-    .six.columns
-      %h2
-        Kern van het
-        %span.blue Idee
-      = mercury_content_for :flow_kern_van_het_idee_body
-  .row.arrows
+    .ten.columns
+      .row
+        .twelve.columns
+          %h2 dreamyourweb proces flow
+          %h2.subheader
+            %small Ons efficiente lean proces zorgt voor een optimaal verloop voor ieder project. Door snelle beslissingen te maken en goed te meten kunnen we alleen de dingen te doen die echt impact hebben.
 
-  .row
-    .six.columns#validation
-    .six.columns
-      %h2 Validatie
-      = mercury_content_for :flow_validatie_body
-  .row.arrows
+      .border-bottom.arrow-border
+        .row#anchor-idea{'data-magellan-destination'=>'idea'}
+          .six.columns#idea.push-six
+            = image_tag "flow-idea.png"
+          .six.columns.pull-six
+            %h3
+              %span.blue Jouw
+              Idee
+            = mercury_content_for :flow_jouw_idee_body
 
-  .row
-    .six.columns
-      %h2
-        Kern
-        %span.blue Product
-      = mercury_content_for :flow_kern_product_body
-    .six.columns#core-product
-  .row.arrows
 
-  .row.bottom-row
-    .six.columns#optimalization
-    .six.columns
-      %h2
-        Optimalisatie
-      = mercury_content_for :flow_optimlisatie_body
+      .border-bottom.arrow-border
+        .row#anchor-core-idea{'data-magellan-destination'=>'core-idea'}
+          .six.columns#core-idea
+            = image_tag "flow-core-idea.png"
+          .six.columns
+            %h3
+              Kern van het
+              %span.blue Idee
+            = mercury_content_for :flow_kern_van_het_idee_body
+
+      .border-bottom.arrow-border
+        .row#anchor-validation{'data-magellan-destination'=>'validation'}
+          .six.columns#validation.push-six
+            = image_tag "flow-validation.png"
+          .six.columns.pull-six
+            %h3 Validatie
+            = mercury_content_for :flow_validatie_body
+
+      .border-bottom.arrow-border
+        .row#anchor-core-product{'data-magellan-destination'=>'core-product'}
+          .six.columns#core-product
+            = image_tag "flow-core-product.png"
+          .six.columns
+            %h3
+              Kern
+              %span.blue Product
+            = mercury_content_for :flow_kern_product_body
+
+      .row#anchor-optimalization{'data-magellan-destination'=>'optimalization'}
+        .six.columns#optimalization.push-six
+          = image_tag "flow-optimalization.png"
+        .six.columns.pull-six
+          %h3
+            Optimalisatie
+          = mercury_content_for :flow_optimlisatie_body

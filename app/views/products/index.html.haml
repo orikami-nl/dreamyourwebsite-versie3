@@ -44,25 +44,30 @@
           .twelve.columns
             %ul.block-grid.five-up.mobile-three-up.flow-circles
               %li
-                =image_tag("flow-circle-1.png")
-                %h6 Jouw idee
-                %p Hele korte beschrijving van deze stap
+                =link_to flow_path(anchor: "anchor-idea") do
+                  =image_tag("flow-circle-1.png")
+                  %h6 Jouw idee
+                  %p Hele korte beschrijving van deze stap
               %li
-                =image_tag("flow-circle-2.png")
-                %h6 Kern van het idee
-                %p Hele korte beschrijving van deze stap
+                =link_to flow_path(anchor: "anchor-core-idea") do
+                  =image_tag("flow-circle-2.png")
+                  %h6 Kern van het idee
+                  %p Hele korte beschrijving van deze stap
               %li
-                =image_tag("flow-circle-3.png")
-                %h6 Validatie
-                %p Hele korte beschrijving van deze stap
+                =link_to flow_path(anchor: "anchor-validation") do
+                  =image_tag("flow-circle-3.png")
+                  %h6 Validatie
+                  %p Hele korte beschrijving van deze stap
               %li
-                =image_tag("flow-circle-4.png")
-                %h6 Kern product
-                %p Hele korte beschrijving van deze stap
+                =link_to flow_path(anchor: "anchor-core-product") do
+                  =image_tag("flow-circle-4.png")
+                  %h6 Kern product
+                  %p Hele korte beschrijving van deze stap
               %li
-                =image_tag("flow-circle-5.png")
-                %h6 Optimalisatie
-                %p Hele korte beschrijving van deze stap
+                =link_to flow_path(anchor: "anchor-optimalization") do
+                  =image_tag("flow-circle-5.png")
+                  %h6 Optimalisatie
+                  %p Hele korte beschrijving van deze stap
 
       #c.border-bottom.section-lean{'data-magellan-destination'=>'c'}
         .row
