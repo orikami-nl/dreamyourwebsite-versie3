@@ -10,3 +10,4 @@ config/heroku_env.rb
 Vagrantfile
 .vagrant
 Thumbs.db
+config/env_variables.rb
