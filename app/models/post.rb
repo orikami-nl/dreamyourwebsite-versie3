@@ -28,12 +28,13 @@ class Post < ActiveRecord::Base
 
   rails_admin do 
     edit do
-      field :excerpt, :text do
+      configure :excerpt do
         codemirror true
         codemirror_config :mode => 'markdown',:theme => 'night', :lineWrapping => true
         codemirror_assets :mode => '/assets/codemirror/modes/markdown.js',  :theme => '/assets/codemirror/themes/night.css'
+
       end
-      field :body, :text do
+      configure :body do
         codemirror true
         codemirror_config :mode => 'markdown',:theme => 'night', :lineWrapping => true
         codemirror_assets :mode => '/assets/codemirror/modes/markdown.js',  :theme => '/assets/codemirror/themes/night.css'
