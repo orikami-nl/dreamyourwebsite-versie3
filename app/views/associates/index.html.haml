@@ -7,7 +7,7 @@
         %h5 Over ons
         %ul.side-nav
           %li{'data-magellan-arrival'=>'dreamteam'}= link_to "Het dreamteam", "#dreamteam"
-          %li{'data-magellan-arrival'=>'kennis maken'}= link_to "Kennis maken?", "#kennis"
+          %li{'data-magellan-arrival'=>'kennis'}= link_to "Kennis maken?", "#kennis"
 
     .ten.columns
       .border-bottom#dreamteam{'data-magellan-destination'=>'dreamteam'}
@@ -25,7 +25,7 @@
                     = image_tag associate.avatar_url(:medium).to_s
                     %h6.name= associate.name
 
-      .border-bottom#culture{'data-magellan-destination'=>'kennis'}
+      .border-bottom#kennis{'data-magellan-destination'=>'kennis'}
         .row
           .twelve.columns
             %h2 Wij maken graag kennis met je!
