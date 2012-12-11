@@ -43,12 +43,12 @@ class Project < ActiveRecord::Base
 	   ["Mercury", "6"],
 	   ["SVG", "7"],
 	   ["Heroku", "8"],
-	   ["AWS", ""],
-	   ["Rails on Fire", "9"],
-	   ["node.js", "10"],
-	   ["d3.js", "11"],
-	   ["raphael.js", "12"],
-	   ["Android", "13"]]
+	   ["AWS", "0"],
+	   ["Rails on Fire", "10"],
+	   ["node.js", "11"],
+	   ["d3.js", "12"],
+	   ["raphael.js", "13"],
+	   ["Android", "14"]]
   end
 
   def available_tech
