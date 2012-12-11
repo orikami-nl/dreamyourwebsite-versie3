@@ -36,8 +36,9 @@
         .six.columns
           = image_tag @project.full_picture.to_s, class: "offcanvas-laptop"
       .row
-        .twelve.columns.move-to-front
-          = @project.body.html_safe
+        .twelve.columns.move-to-front.project-content
+          - markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, {:fenced_code_blocks => true})
+          = markdown.render(@project.body).html_safe
 
       .row
         .four.columns          

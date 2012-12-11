@@ -75,8 +75,8 @@ class Project < ActiveRecord::Base
     edit do
       configure :body do
         codemirror true
-        codemirror_config :mode => 'htmlmixed',:theme => 'night', :lineWrapping => true
-        codemirror_assets :mode => '/assets/codemirror/modes/htmlmixed.js',  :theme => '/assets/codemirror/themes/html.css'
+        codemirror_config :mode => 'markdown',:theme => 'night', :lineWrapping => true
+        codemirror_assets :mode => '/assets/codemirror/modes/markdown.js',  :theme => '/assets/codemirror/themes/night.css'
       end
     end
   end 

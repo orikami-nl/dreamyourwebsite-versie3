@@ -104,7 +104,7 @@
 
 .offcanvas-laptop{
   max-width: 250%;
-  margin-left: -30%;
+  margin-left: -35%;
   margin-bottom: -15%;
   @include respondTo(smallScreen){
     max-width: 100%;
@@ -114,4 +114,25 @@
 
 .move-to-front{
     z-index: 10;
+}
+
+.project-content{
+  img{
+    width: 50%;
+    height: auto;
+    float: left;
+    @include respondTo(smallScreen){
+      width: 100%;
+    }
+    display: block;
+    margin-right: 20px; 
+  } 
+  img[alt=right]{
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+  }
+  hr{
+    color: none;
+  }
 }

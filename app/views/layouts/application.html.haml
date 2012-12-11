@@ -27,15 +27,17 @@
         = yield(:header)
     = yield(:full)
     - if content_for?(:sidebar)
-      .row.main-container
-        %section.eight.columns
-          = yield
-        .four.columns
-          = yield(:sidebar)
+      #mainContainer
+        .row.main-row
+          %section.eight.columns
+            = yield
+          .four.columns
+            = yield(:sidebar)
     - else
-      .row.main-container
-        %section.twelve.columns
-          = yield
+      #mainContainer
+        .row.main-row
+          %section.twelve.columns
+            = yield
 
     %footer
       = render 'layouts/footer'
