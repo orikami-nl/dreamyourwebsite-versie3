@@ -26,18 +26,20 @@
               - if not tech.empty?
                 %li
                   = link_to @project.available_tech[tech.to_i][0], @project.available_tech[tech.to_i][1]
-                  
+
     .nine.columns
       .row
-        .twelve.columns
+        .six.columns.move-to-front
           %h2= @project.vp
-          %h4.subheader
-            %small
-          %p= @project.body.html_safe
+          %h3.subheader
+            %small= @project.excerpt.html_safe
+        .six.columns
+          = image_tag @project.full_picture.to_s, class: "offcanvas-laptop"
       .row
-        .eight.columns
-          #huge-project-image
-            = image_tag @project.full_picture.to_s
+        .twelve.columns.move-to-front
+          = @project.body.html_safe
+
+      .row
         .four.columns          
           - if admin_signed_in?
             = link_to 'Edit', RailsAdmin::Engine.routes.url_helpers.edit_path(model_name: :project, id: @project.id), class: "button"

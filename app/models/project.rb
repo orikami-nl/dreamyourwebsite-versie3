@@ -6,6 +6,8 @@ class Project < ActiveRecord::Base
 	validates_uniqueness_of :title_for_url
 	before_save :build_url
 
+	has_paper_trail
+
 	serialize :services, Array
 	serialize :tech, Array
 
@@ -68,6 +70,16 @@ class Project < ActiveRecord::Base
 	   ["raphael.js", "http://raphaeljs.com/"],
 	   ["Android", "http://www.android.com/"]]
   end
+
+	rails_admin do 
+    edit do
+      configure :body do
+        codemirror true
+        codemirror_config :mode => 'htmlmixed',:theme => 'night', :lineWrapping => true
+        codemirror_assets :mode => '/assets/codemirror/modes/htmlmixed.js',  :theme => '/assets/codemirror/themes/html.css'
+      end
+    end
+  end 
 
 
 end

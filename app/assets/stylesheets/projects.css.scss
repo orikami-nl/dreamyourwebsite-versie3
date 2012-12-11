@@ -101,3 +101,17 @@
     font-size: 12px;
   }
 }
+
+.offcanvas-laptop{
+  max-width: 250%;
+  margin-left: -30%;
+  margin-bottom: -15%;
+  @include respondTo(smallScreen){
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.move-to-front{
+    z-index: 10;
+}
