@@ -20,23 +20,21 @@
   /     %h2.subheader
   /       %small Wij kunnne je helpen met je innovatieve idee van A tot Z te brengen.
   .row
-    .twelve.columns
-      %ul.block-grid.three-up.mobile-three-up
-        %li
-          = link_to products_path(:anchor => "innovation") do
-            = image_tag("service-innovation.png")
-            %h4 Innovatie consultancy
-          %p Wij geven waardevol advies over hoe je een innovatie traject aanpakt. Waar liggen de kansen en risico's van het huidige project plan? Samen stippelen we een traject uit dat de kans van slagen van het project maximaliseert.
-        %li
-          = link_to products_path(:anchor => "development") do
-            = image_tag("service-development.png")
-            %h4 Software ontwikkeling
-          %p Wij ontwikkelen maatwerk web-apps en mobiele-apps. Wij zijn gespecialiseerd in applicaties die omgaan met grote datasets, data-analyse en datavisualisatie.
-        %li
-          = link_to products_path(:anchor => "workshop") do
-            = image_tag("service-workshop.png")
-            %h4 Lean innovatie workshops
-          %p Leer zelf hoe je efficiënt je innovatie traject inricht. Wij verzorgen workshops, waarbij we focussen op hoe je als organisatie om kunt gaan met vernieuwing in een hoog veranderlijke, complexe markt.
+    .four.columns
+      = link_to products_path(:anchor => "innovation") do
+        = image_tag("service-innovation.png")
+        %h4 Innovatie consultancy
+      %p Wij geven waardevol advies over hoe je een innovatie traject aanpakt. Waar liggen de kansen en risico's van het huidige project plan? Samen stippelen we een traject uit dat de kans van slagen van het project maximaliseert.
+    .four.columns
+      = link_to products_path(:anchor => "development") do
+        = image_tag("service-development.png")
+        %h4 Software ontwikkeling
+      %p Wij ontwikkelen maatwerk web-apps en mobiele-apps. Wij zijn gespecialiseerd in applicaties die omgaan met grote datasets, data-analyse en datavisualisatie.
+    .four.columns
+      = link_to products_path(:anchor => "workshop") do
+        = image_tag("service-workshop.png")
+        %h4 Lean innovatie workshops
+      %p Leer zelf hoe je efficiënt je innovatie traject inricht. Wij verzorgen workshops, waarbij we focussen op hoe je als organisatie om kunt gaan met vernieuwing in een hoog veranderlijke, complexe markt.
 
 .container.home#projects-container-home
   .row
@@ -45,9 +43,7 @@
       %h3.subheader
         %small Neem een kijkje bij de geweldige projecten die we hebben gedaan.
   .row
-    .twelve.columns
-      %ul.block-grid.three-up.mobile-three-up
-        = render :partial => "project", :collection => @projects
+    = render :partial => "project", :collection => @projects
 
 .container.home#manifesto
   .row
