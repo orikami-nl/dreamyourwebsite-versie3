@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
 	end
 
 	def self.drafts(show=false)
-    if false
+    if show == false
       self.where(:draft => false)
     else
     	self
