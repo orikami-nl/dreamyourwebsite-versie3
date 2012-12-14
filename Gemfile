@@ -90,3 +90,5 @@ gem 'unicorn-rails'
 
 
 gem 'paper_trail'
+gem 'turbolinks'
+gem 'jquery-turbolinks'
