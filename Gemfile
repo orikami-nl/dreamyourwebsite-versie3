@@ -90,5 +90,5 @@ gem 'unicorn-rails'
 
 
 gem 'paper_trail'
-gem 'turbolinks'
+gem 'turbolinks', :git => "git://github.com/rails/turbolinks.git"
 gem 'jquery-turbolinks'
