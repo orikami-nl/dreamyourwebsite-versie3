@@ -1,5 +1,7 @@
 Dywsite2::Application.routes.draw do
 
+  captcha_route
+
   mount Mercury::Engine => '/'
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

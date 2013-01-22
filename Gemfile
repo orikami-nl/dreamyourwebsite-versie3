@@ -52,7 +52,8 @@ gem 'rails-i18n'
 gem 'redcarpet'
 gem 'codemirror-rails'
 
-gem 'honeypot-captcha'
+gem 'easy_captcha'
+gem 'rmagick'
 
 gem 'rails-dev-tweaks', '~> 0.6.1'
 

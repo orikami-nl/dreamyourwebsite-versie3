@@ -28,10 +28,12 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        session[:comment] = nil
 		    CommentMail.new(:body => @comment.body, :name => @comment.name, :email => @comment.email, :associate_email => (@post.associate.name.match(/\w+/).to_s.downcase + "@dreamyourweb.nl"), :post_title => @post.title).deliver
         format.html { redirect_to post_path(@post), notice: 'Uw commentaar is geplaatst.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
+        session[:comment] = @comment
         format.html { redirect_to post_path(@post), notice: 'Uw commentaar kon niet geplaatst worden.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end

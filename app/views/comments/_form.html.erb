@@ -1,27 +1,38 @@
-<%= form_for [@post, @comment], :html => { :honeypot => true } do |f| %>
+<%= form_for [@post, @comment] do |f| %>
   <div class="row">
-    <% if @comment.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-        <ul>
-        <% @comment.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <div class="twelve columns">
-      <%= f.text_field :name, :value => "", placeholder: "Naam" %>
+      <% if @comment.errors.any? %>
+        <div id="error_explanation" class="alert-box alert">
+          <h5><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h5>
+
+          <ul>
+          <% @comment.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
 
     <div class="twelve columns">
-      <%= f.email_field :email, :value => "", placeholder: "E-mail (wordt niet weergeven)" %>
+      <%= f.text_field :name, placeholder: "Naam" %>
+    </div>
+
+    <div class="twelve columns">
+      <%= f.email_field :email, placeholder: "E-mail (wordt niet weergeven)" %>
     </div>
 
     <div class="twelve columns">
       <%= f.text_area :body, :rows => 6 %>
+    </div>
+
+
+    <div class="twelve columns">
+      <%= captcha_tag %>
+    </div>
+
+    <div class="twelve columns">
+      <%= f.text_field :captcha, placeholder: "Wat staat hier boven?" %>
     </div>
     
     <div class="twelve columns">

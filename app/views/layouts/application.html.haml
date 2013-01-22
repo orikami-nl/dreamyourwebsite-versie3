@@ -25,6 +25,7 @@
     - if content_for?(:header)
       %header
         = yield(:header)
+
     = yield(:full)
     - if content_for?(:sidebar)
       #mainContainer
@@ -37,6 +38,14 @@
       #mainContainer
         .row.main-row
           %section.twelve.columns
+            - if flash[:notice]
+              .alert-box
+                = flash[:notice]
+                %a.close{:href => ""} &times;
+            - if flash[:error]
+              .alert-box.alert
+                = flash[:error]
+                %a.close{:href => ""} &times;
             = yield
 
     %footer

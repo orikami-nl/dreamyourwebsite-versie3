@@ -38,7 +38,11 @@ class PostsController < ApplicationController
     else
       @post = Post.where(:draft => false).find_by_title_for_url(params[:id])
     end
-    @comment = @post.comments.new
+    if session[:comment].nil?
+      @comment = @post.comments.new
+    else
+      @comment = session[:comment]
+    end
 		@comments = @post.comments.all.reverse
   end
 
