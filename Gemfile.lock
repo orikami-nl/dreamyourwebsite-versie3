@@ -144,6 +144,9 @@ GEM
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
     formatador (0.2.3)
+    foundation-icons-sass-rails (2.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     fssm (0.2.9)
     gherkin (2.10.0)
       json (>= 1.4.6)
@@ -386,6 +389,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails (>= 1.0)
   fog
+  foundation-icons-sass-rails
   google_drive
   haml-rails
   highrise

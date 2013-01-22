@@ -48,7 +48,17 @@ footer {
 		font-size: 90%;
 		margin-top: 0;
 	}
-
 }
+
+	[class*="foundicon-"].large{
+		height: 50px;
+		width: 50px;
+		display: block;
+		font-size: 50px;
+	}
+
+	.social-container{
+		i{float: left; margin-right: 10px;}
+	}
 
 

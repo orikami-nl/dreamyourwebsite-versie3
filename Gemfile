@@ -15,6 +15,7 @@ group :assets do
 
   gem 'compass-rails'
   gem 'zurb-foundation', :git => 'git://github.com/zurb/foundation.git', :branch => 'master'
+  gem 'foundation-icons-sass-rails'
 end
 
 gem 'mechanize'

@@ -1,5 +1,12 @@
-= link_to "Twitter", "http://twitter.com/#!/dreamyourweb", class: "fc-webicon twitter large"
-= link_to "Facebook", "http://www.facebook.com/dreamyourweb", class: "fc-webicon facebook large"
-= link_to "Linkedin", "http://nl.linkedin.com/company/dreamyourweb", class: "fc-webicon linkedin large"
-= link_to "Skype", "skype:info-dyw?chat", class: "fc-webicon skype large"
-= link_to "RSS", blog_feed_path+".rss", class: "fc-webicon rss large"
+.social-container
+  = link_to "http://twitter.com/#!/dreamyourweb" do
+    %i.social.foundicon-twitter.large
+  = link_to "http://www.facebook.com/dreamyourweb" do
+    %i.social.foundicon-facebook.large
+  = link_to "http://nl.linkedin.com/company/dreamyourweb" do
+    %i.social.foundicon-linkedin.large
+  = link_to "skype:info-dyw?chat" do
+    %i.social.foundicon-skype.large
+  = link_to blog_feed_path+".rss" do
+    %i.social.foundicon-rss.large
+  %div{:style => "clear:both;"}
