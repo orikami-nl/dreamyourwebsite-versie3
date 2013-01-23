@@ -25,6 +25,8 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = @post.comments.new(params[:comment])
+    @comment.captcha_verification = session[:captcha]
+    @comment.put_captcha
 
     respond_to do |format|
       if @comment.save
