@@ -137,8 +137,20 @@ code{
 	padding: 0 3px 0 3px;
 }
 
+.linenodiv pre{
+	color: $white;
+}
+
+.highlight{
+	background-color: $dyw-pre;
+}
+
 pre {
 	@extend .panel;
+	background-color: $dyw-pre;
+	white-space: pre-wrap;
+	word-break: hyphenate;
+	word-wrap: break-word;
 	display: block;
 	padding: 10px;
 	code{
@@ -146,7 +158,7 @@ pre {
 		border: none;
 		margin: 0;
 	}
-	overflow: auto;
+	// overflow: auto;
 }
 
 .fc-webicon, a.fc-webicon, a.fc-webicon:hover{

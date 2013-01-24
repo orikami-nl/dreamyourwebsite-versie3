@@ -51,6 +51,7 @@ gem 'mercury-rails'
 
 gem 'rails-i18n'
 gem 'redcarpet'
+gem 'pygments.rb'
 gem 'codemirror-rails'
 
 gem 'easy_captcha'
