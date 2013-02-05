@@ -22,9 +22,7 @@
           %br
           %strong Mail naar #{mail_to "info@dreamyourweb.nl"}
     
-  .three.columns#footer-contact
-
-  .five.columns#footer-social
+  .four.columns#footer-social
     %h5.subheader Meer dreamyourweb
     = render :partial => "/shared/social"
 
@@ -32,6 +30,18 @@
   /   %h4 Meer info
   /   %span#contact-button= link_to "", contact_path(:aan => "info@dreamyourweb.nl")
   /   = link_to image_tag("wbso-stamp.png"), "http://www.agentschapnl.nl/nl/node/100392"
+  .four.columns#footer-mailchimp
+
+    #mc_embed_signup
+      %form#mc-embedded-subscribe-form.validate{:action => "http://dreamyourweb.us6.list-manage1.com/subscribe/post?u=3082661f66553b5c2e92c8f6e&amp;id=d984878ae8", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+        %h5.subheader Nieuwsbrief
+        %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Email"}
+        #mce-responses.clear
+          #mce-error-response.response{:style => "display:none"}
+          #mce-success-response.response{:style => "display:none"}
+        .clear
+          %input#mc-embedded-subscribe.button{:name => "subscribe", :type => "submit", :value => "Schrijf je in!", :class => "button"}
+
 #footer-bottom
   .row
     .twelve.columns

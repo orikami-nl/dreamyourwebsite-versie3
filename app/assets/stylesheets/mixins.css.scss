@@ -73,7 +73,7 @@
 		}
 	}
 
-	.button, a.button{
+	.button, a.button, input[type='submit'], input.button{
 		color: $white;
 		background-color: $color;
 		&:hover{
