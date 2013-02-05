@@ -42,6 +42,8 @@ gem 'split', :require => 'split/dashboard'
 gem 'split-analytics', :require => 'split/analytics'
 
 gem 'rails_admin'
+gem 'rails_admin_tag_list'
+
 
 gem 'coderay'
 

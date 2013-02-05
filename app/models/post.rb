@@ -39,6 +39,9 @@ class Post < ActiveRecord::Base
         codemirror_config :mode => 'markdown',:theme => 'night', :lineWrapping => true
         codemirror_assets :mode => '/assets/codemirror/modes/markdown.js',  :theme => '/assets/codemirror/themes/night.css'
       end
+      fields_of_type :tag_list do
+        partial 'tag_list_with_suggestions'
+      end
     end
   end 
 
