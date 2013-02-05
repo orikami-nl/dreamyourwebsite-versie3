@@ -95,4 +95,20 @@ module ApplicationHelper
     end
   end
 
+  def meta_keywords(keyswords = nil)
+    if keyswords.present?
+      content_for :meta_keywords, keywords
+    else
+      content_for?(:meta_keywords) ? [content_for(:meta_keywords), META_CONFIG['meta_keywords']].join(', ') : META_CONFIG['meta_keywords']
+    end
+  end
+
+  def meta_description(desc = nil)
+    if desc.present?
+      content_for :meta_description, desc
+    else
+      content_for?(:meta_description) ? [content_for(:meta_description), META_CONFIG['meta_description']].join(', ') : META_CONFIG['meta_description']
+    end
+  end
+
 end
