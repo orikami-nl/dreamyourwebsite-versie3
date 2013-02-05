@@ -7,6 +7,7 @@
         %h5 Over ons
         %ul.side-nav
           %li{'data-magellan-arrival'=>'dreamteam'}= link_to "Het dreamteam", "#dreamteam"
+          %li{'data-magellan-arrival'=>'portfolio'}= link_to "Portfolio", "#portfolio"
           %li{'data-magellan-arrival'=>'kennis'}= link_to "Kennis maken?", "#kennis"
 
     .ten.columns
@@ -24,6 +25,16 @@
                   = link_to associate_path(associate) do
                     = image_tag associate.avatar_url(:medium).to_s
                     %h6.name= associate.name
+
+      .border-bottom#portfolio{'data-magellan-destination'=>'portfolio'}
+        .row
+          .twelve.columns
+            %h2 We maken geweldige applicaties
+            %h2.subheader
+              %small Kijk eens wat we de laatste tijd hebben gedaan.
+        .row
+          = render :partial => "home/project", :collection => @projects
+
 
       .border-bottom#kennis{'data-magellan-destination'=>'kennis'}
         .row

@@ -14,6 +14,7 @@ class AssociatesController < ApplicationController
   # GET /associates.json
   def index
 		get_associates
+    @projects = Project.order("created_at DESC").limit(3)
   end
 
   # GET /associates/1
