@@ -65,8 +65,20 @@
 	h1, h2, a h1, a h2, h2 a, h1 a{
 		color: $color;
 	}
-	.button{
+
+	a{
+		color: $color;
+		&:hover{
+			color: darken($color, 20%);
+		}
+	}
+
+	.button, a.button{
+		color: $white;
 		background-color: $color;
+		&:hover{
+			background-color: darken($color, 20%);
+		}
 	}
 
 	ul.pagination{
@@ -74,4 +86,5 @@
 			background-color: $color;
 		}
 	}
+
 }

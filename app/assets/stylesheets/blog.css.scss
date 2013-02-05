@@ -20,18 +20,14 @@
       display: block;
       float: left;
       margin-bottom: 8px;
+      &:hover{
+        span{
+          background-color: darken($dyw-purple, 20%);
+        }
+      }
     }
     @include clearfix(); 
   }
-
-	.tag-cloud{
-		a{
-			color: $dyw-purple;
-		}
-		a:hover{
-			color: darken($dyw-purple, 20%);
-		}
-	}
 
   .post-container ul{
     list-style-type: disc;
