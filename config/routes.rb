@@ -21,6 +21,7 @@ Dywsite2::Application.routes.draw do
   get "/uitnodiging", :to => "home#invitation"
 
 	get "/blog", :to => "blog#index"
+  match "/blog/:name" ,:to => "blog#index"
   get "/products", :to => "products#index"
 	get "/products/web-consultancy", :to => "products#web_consultancy", :as => "web_consultancy"
 	get "/products/web-development", :to => "products#web_development", :as => "web_development"

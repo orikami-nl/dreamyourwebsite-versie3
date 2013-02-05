@@ -8,7 +8,7 @@
       - if !params[:tag].nil?
         %h1.subheader Tag: #{params[:tag]}
       - if !params[:name].nil?
-        %h1.subheader #{params[:name]}
+        %h1.subheader #{@associate.name}
 
       = render :partial => "post", :collection => @posts
       = paginate @posts

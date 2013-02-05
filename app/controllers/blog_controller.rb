@@ -15,7 +15,8 @@ class BlogController < ApplicationController
   	if !params[:tag].nil?
       @posts = Post.drafts(show_draft).tagged_with(params[:tag]).page(params[:page]).order("published_at DESC").per(5)
     elsif !params[:name].nil?
-      @posts = Post.drafts(show_draft).includes(:associate).where(:associates => {:name => params[:name]}).page(params[:page]).order("published_at DESC").per(5)
+      @posts = Post.drafts(show_draft).includes(:associate).where(:associates => {:name_for_url => params[:name]}).page(params[:page]).order("published_at DESC").per(5)
+      @associate = @posts.first.associate
   	else
       @posts = Post.drafts(show_draft).page(params[:page]).order("published_at DESC").per(5)
   	end
