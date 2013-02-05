@@ -89,4 +89,10 @@ module ApplicationHelper
     render partial: "/shared/header", locals: {title: header, subheader: subheader, color_class: color_class, background: background}
   end
 
+  def page_title(title)
+    content_for :title do
+      "dreamyourweb - #{title}"
+    end
+  end
+
 end
