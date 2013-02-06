@@ -16,3 +16,11 @@
     .ten.columns
       %ul.block-grid.three-up.mobile-two-up
         = render :partial => "project", :collection => @projects
+
+        %li
+          .project-container.your-project
+            .project-image
+              = link_to contact_path do
+                %i.general.foundicon-plus
+            .project-description
+              %h4= link_to("Jouw project", contact_path)
