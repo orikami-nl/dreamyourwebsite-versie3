@@ -65,6 +65,8 @@ Dywsite2::Application.routes.draw do
 		resources :pages, :only => [:index, :edit, :update]
 	end 
 
+  get 'sitemap.xml' => 'sitemap#index', as: 'sitemap', defaults: { format: 'xml' }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
