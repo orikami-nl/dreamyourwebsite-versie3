@@ -23,6 +23,7 @@
 //= require jwplayer
 //= require skypeCheck
 //= require analytics
+//= require google-analytics-turbolinks
 //= require bugherd
 //= require_self
 
