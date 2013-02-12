@@ -2,6 +2,10 @@
 	@include page-color($dyw-your);
 }
 
+.text-bottom-align{
+	vertical-align:bottom;
+}
+
 #partner-logos{
 	.has-tip{
 		border: none;
