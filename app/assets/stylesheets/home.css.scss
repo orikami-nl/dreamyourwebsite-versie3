@@ -37,8 +37,9 @@
 }
 
 #we-do-this{
+	background-color: #BCE4EE;
 	@include border-bottom();
-	margin-top: -$nav-margin;
+	// margin-top: -$nav-margin;
 	padding-top: 30px;
 	.four.columns{
 		h4{
