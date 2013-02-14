@@ -59,6 +59,10 @@ html,body{
 	}
 }
 
+.sticky-side-nav{
+	max-width: 137px
+}
+
 .panel {
 	h5{
 		border-bottom-color: #aaa;
@@ -82,6 +86,12 @@ html,body{
 
 h2 + h2.subheader{
 	margin-top: -5px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	&.right{
+		text-align: right;
+	}
 }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small{
