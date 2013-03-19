@@ -42,6 +42,17 @@
         .clear
           %input#mc-embedded-subscribe.button{:name => "subscribe", :type => "submit", :value => "Schrijf je in!", :class => "button"}
 
+.footer-links-container
+  .row.footer-content
+    .twelve.columns
+      %p.footer-links
+        = link_to("Data analyse", data_analysis_path) + " - "
+        = link_to("Data visualisatie", data_visualization_path) + " - "
+        = link_to("Machine learning", machine_learning_path) + " - "
+        = link_to("Ruby on Rails webdevelopment", ruby_on_rails_path) + " - "
+        = link_to("Custom survey apps", survey_app_path) + " - "
+        = link_to("Lean management", lean_management_path)
+
 #footer-bottom
   .row
     .twelve.columns

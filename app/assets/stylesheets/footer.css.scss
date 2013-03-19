@@ -8,6 +8,12 @@ footer {
 	padding: 0;
 	background-repeat: repeat-x;
 	background-position: center top;
+	.footer-links {
+		text-align:center;
+	}
+	.footer-links-container p {
+		margin-bottom:10px;
+	}
 	a {
 		text-decoration: none;
 	 	color: #ccc;

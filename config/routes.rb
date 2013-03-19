@@ -33,12 +33,12 @@ Dywsite2::Application.routes.draw do
   get "/admin/clear", :to => "admin/pages#clear"
 
   #Landing pages
-  get "/data-analyse", :to => "landingpages#data_analysis"
-  get "/data-visualisatie", :to => "landingpages#data_visualization"
-  get "/ruby-on-rails", :to => "landingpages#ruby_on_rails"
-  get "/enquete-app", :to => "landingpages#survey_app"
-  get "/machine-learning", :to => "landingpages#machine_learning"
-  get "/lean-management", :to => "landingpages#lean_management"
+  get "/data-analyse", :to => "landingpages#data_analysis", :as => "data_analysis"
+  get "/data-visualisatie", :to => "landingpages#data_visualization", :as => "data_visualization"
+  get "/ruby-on-rails", :to => "landingpages#ruby_on_rails", :as => "ruby_on_rails"
+  get "/enquete-app", :to => "landingpages#survey_app", :as => "survey_app"
+  get "/machine-learning", :to => "landingpages#machine_learning", :as => "machine_learning"
+  get "/lean-management", :to => "landingpages#lean_management", :as => "lean_management"
 
   match 'mobile', :to => 'mobile#index'
   match 'full', :to => 'home#full'
