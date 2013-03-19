@@ -99,7 +99,7 @@ module ApplicationHelper
     if keyswords.present?
       content_for :meta_keywords, keywords
     else
-      content_for?(:meta_keywords) ? [content_for(:meta_keywords), META_CONFIG['meta_keywords']].join(', ') : META_CONFIG['meta_keywords']
+      content_for?(:meta_keywords) ? content_for(:meta_keywords) : META_CONFIG['meta_keywords']
     end
   end
 
@@ -107,7 +107,7 @@ module ApplicationHelper
     if desc.present?
       content_for :meta_description, desc
     else
-      content_for?(:meta_description) ? [content_for(:meta_description), META_CONFIG['meta_description']].join(', ') : META_CONFIG['meta_description']
+      content_for?(:meta_description) ? content_for(:meta_description) : META_CONFIG['meta_description']
     end
   end
 
