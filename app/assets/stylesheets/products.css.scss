@@ -13,6 +13,11 @@
 	@include page-color($dyw-green);
 }
 
+h2.lean-header{
+	color:$dyw-black !important;
+	font-size:25px !important;
+}
+
 #products{	
 
 	.service-image{

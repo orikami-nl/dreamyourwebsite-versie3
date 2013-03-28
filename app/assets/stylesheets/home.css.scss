@@ -92,7 +92,9 @@ h1.super{
 			padding: 8px;
 		}
 	}
+}
 
+h2.super{
 	span.sub-uvp{
 		clear: both;
 		font-family: OpenSansBold;
@@ -112,8 +114,22 @@ h1.super{
 	}
 }
 
+h2.theme-header{
+	font-size:20px;
+	text-align:center;
+}
 
+h2.recent-projects-header{
+	color:$dyw-black !important;
+}
 
+p.three-themes{
+	font-size:26px;
+	font-family: OpenSansBold,"Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color:$dyw-black;	
+}
 #projects-container-home{
 	@include border-bottom();
 	.project-container{

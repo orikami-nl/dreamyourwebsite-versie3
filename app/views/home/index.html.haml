@@ -7,7 +7,7 @@
         %h1.super
           %span.big-ass Wij maken next-gen
           %span.big-ass data applicaties
-        %h1.super
+        %h2.super
           %span.sub-uvp Dreamyourweb geeft inzicht in data. 
           %span.sub-uvp We bouwen maatwerk applicaties, 
           %span.sub-uvp die gericht zijn op het omgaan met
@@ -21,28 +21,28 @@
     /       %small Wij kunnne je helpen met je innovatieve idee van A tot Z te brengen.
     .row
       .twelve.columns
-        %h2 Wij richten ons op drie nauwverwante thema's
+        %p.three-themes Wij richten ons op drie nauwverwante thema's:
     .row
       .four.columns
         = link_to products_path(:anchor => "datastromen") do
           = image_tag("insight.png")
-          %h4 Inzicht in complexe datastromen
+          %h2.theme-header Inzicht in complexe datastromen
         %p Als beslisser is het soms lastig om wegwijs te worden in alle gegevens die beschikbaar zijn. Zeker in een moderne constant veranderende omgeving. Wij structureren, berekenen, visualiseren en vergelijken met je mee. Zo krijg je weer inzicht, waar en wanneer het het hardste nodig is.
       .four.columns
         = link_to products_path(:anchor => "kennis") do
           = image_tag("datacollection.png")
-          %h4 Nieuwe kennis vergaren
+          %h2.theme-header Nieuwe kennis vergaren
         %p Blijven leren is voor de meeste instellingen en bedrijven van levensbelang. We bieden maatwerk applicaties voor datacollectie en het vergaren van nieuwe kennis. Wij bezitten verschillende tools om snel, betrouwbaar en op locatie nieuwe data te verzamelen. Zo kun je op basis van harde gegevens je conclusies trekken en koers bepalen.
       .four.columns
         = link_to products_path(:anchor => "optimalisatie") do
           = image_tag("integration.png")
-          %h4 Verbinden van kennis en kunde
+          %h2.theme-header Verbinden van kennis en kunde
         %p Als je met veel verschillende databronnen werkt, kan het lastig zijn om alles optimaal te stroomlijnen. We hebben verschillende gereedschappen in ons bezit om kennis, kunde en resources uit verschillende hoeken met elkaar te verbinden. Hierbij staat bij ons maatschappelijk ondernemerschap hoog in het vaandel. 
 
 .container.home#projects-container-home
   .row
     .twelve.columns
-      %h3 Onze meest recente projecten
+      %h2.recent-projects-header Onze meest recente projecten
       %h3.subheader
         %small Neem een kijkje in de innovatieve projecten die we recentelijk hebben gedaan.
   .row
@@ -52,7 +52,7 @@
   .row
     .eight.columns
       %h2 Een jong en dynamisch team
-      %h2.subheader
+      %h3.subheader
         %small Om samen gave dingen mee te maken
       %p Om een goed product te bouwen heb je zowel kennis van de markt en bedrijfscontext nodig, als kennis over design en techniek. Wij presteren het best als technische partner. We maken daarom ook graag even persoonlijk kennis!
       = link_to "Lees meer over ons", associates_path, :class => "button"

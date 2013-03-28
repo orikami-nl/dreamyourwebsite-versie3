@@ -16,7 +16,7 @@
         .row
           .twelve.columns
             %h2 Ons team
-            %h2.subheader 
+            %h3.subheader 
               %small Wij zijn 5 wetenschappers met verschillende specialisaties en een gezamenlijke passie voor mooie dingen maken!
             %p Onze slogan zegt genoeg: "You dream it, together we realize it". Wij werken samen met organisaties om innovatieve producten op te leveren. Daarbij zijn onze specialisaties natuurlijk cruciaal. De specialisaties binnen ons team reiken van interactie design tot machine learning en van big data tot business model validatie.
             %ul.block-grid.five-up.mobile-three-up#head-shots
@@ -31,7 +31,7 @@
         .row
           .twelve.columns
             %h2 We maken geweldige applicaties
-            %h2.subheader
+            %h3.subheader
               %small Kijk eens wat we de laatste tijd hebben gedaan.
         .row
           = render :partial => "home/project", :collection => @projects
@@ -41,6 +41,6 @@
         .row
           .twelve.columns
             %h2 Wij maken graag kennis met je!
-            %h2.subheader 
+            %h3.subheader 
               %small Kom vooral eens langs op ons kantoor voor een kop koffie!
             =link_to "Kijk even op de contact pagina", contact_path, class: "button"
